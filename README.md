@@ -6,18 +6,22 @@ Static site. No build step, no dependencies. Open `index.html` in a browser to v
 
 ```
 site/
-├── index.html      the register (landing page)
-├── licence.html    copyright, licence terms, citation formats
-├── LICENSE.md      the same, as a plain-text notice
-├── modules/
-│   ├── medico-legal-care-sexual-violence-survivor.html
-│   └── safe-evidence-sequencer.html
-└── README.md
+├── index.html                                       the register (landing page)
+├── licence.html                                     copyright, licence, citation formats
+├── medico-legal-care-sexual-violence-survivor.html  FMT-01
+├── safe-evidence-sequencer.html                     FMT-02
+├── LICENSE.md
+├── README.md
+└── .nojekyll
+
+All files sit flat — no folders. This matches the live repo. If you ever introduce a
+folder, update the `href` values in index.html AND the `path` values in licence.html
+together, or the links break.
 ```
 
 ## Adding a new resource
 
-1. Put the `.html` file in `modules/`. Use a lowercase, hyphenated filename.
+1. Put the `.html` file in the repo root. Use a lowercase, hyphenated filename.
 2. Open `index.html`, scroll to the `<script>` block near the bottom, and add one entry
    to the `MODULES` list:
 
@@ -30,7 +34,7 @@ site/
   title:  "Title of the resource",
   blurb:  "One or two sentences on what it does.",
   chips:  ["Topic", "Topic", "Topic"],   // or [] for none
-  href:   "modules/your-file.html",
+  href:   "your-file.html",
   action: "Start the drill"      // link text, written as an action
 }
 ```
@@ -44,14 +48,10 @@ at the *next* unwritten number, or delete that block if you would rather not sho
 
 Two things to set:
 
-1. **`licence.html`** — set `SITE_URL` at the top of the `<script>` block to the real
-   address. Every citation format on the page builds itself from it. Set `YEAR` too if the
-   year of publication is not the current year.
-2. **`licence.html`** — add a contact address in the *Permissions and corrections* section.
-   There is a commented-out `mailto:` line ready for it.
-
-The licence is currently **CC BY-NC-ND 4.0**. See `LICENSE.md` for the four places to edit
-if you want a different one.
+1. **`licence.html`** — `SITE_URL` is set to `https://drfmthsc.github.io/Website`. Update it
+   if you rename the repo. Set `YEAR` too if the year of publication is not the current year.
+2. Decide whether the two resources should share one licence — FMT-01 is CC BY-NC-ND 4.0
+   and FMT-02 is CC BY-NC 4.0. See `LICENSE.md`.
 
 ## Publishing
 

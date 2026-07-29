@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Copyright, licence and citation · Forensic Medicine Workbench</title>
-<meta name="description" content="Copyright, licence terms and citation formats for the Forensic Medicine Workbench by Dr Harvinder Singh Chhabra, HIMS, SRHU, Dehradun.">
+<meta name="description" content="Copyright, licence terms and citation formats for the Forensic Medicine Workbench by Dr Harvinder Singh Chhabra.">
 <meta name="author" content="Dr Harvinder Singh Chhabra">
 <meta name="copyright" content="© 2026 Dr Harvinder Singh Chhabra">
 <meta name="license" content="https://creativecommons.org/licenses/by-nc-nd/4.0/">
@@ -42,6 +42,8 @@
     letter-spacing:.14em;text-transform:uppercase;
   }
   .topbar span:last-child{color:#9DB2B0;text-align:right}
+  .topbar a{color:inherit;text-decoration:none}
+  .topbar a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
 
   .pagehead{border-bottom:1px solid var(--line)}
   .pagehead .wrap{padding-top:34px;padding-bottom:40px}
@@ -70,13 +72,20 @@
     background:var(--card);border:1px solid var(--line);border-radius:3px;
     box-shadow:var(--shadow);padding:26px 30px;position:relative;overflow:hidden;
   }
-  .panel::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--moss)}
+  .panel::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--pan,var(--moss))}
   .lic-tag{
     display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;
-    font-weight:600;letter-spacing:.1em;color:var(--moss);
-    border:1px solid var(--moss);border-radius:2px;padding:5px 11px;margin-bottom:14px;
+    font-weight:600;letter-spacing:.1em;color:var(--pan,var(--moss));
+    border:1px solid var(--pan,var(--moss));border-radius:2px;padding:5px 11px;margin-bottom:14px;
   }
-  .panel h3{font-size:22px;margin-bottom:10px;letter-spacing:-.01em}
+  .panel h3{font-size:20px;margin-bottom:10px;letter-spacing:-.01em}
+  .panel + .panel{margin-top:18px}
+  .lic-ref{
+    display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px;
+  }
+  .full-terms{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px}
+  .full-terms a{color:var(--pan,var(--moss));text-underline-offset:3px}
   .terms{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
   .terms h4{
     font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;
@@ -180,8 +189,8 @@
 
 <div class="topbar">
   <div class="wrap">
-    <span>Department of Forensic Medicine &amp; Toxicology</span>
-    <span>HIMS · SRHU · Dehradun</span>
+    <span>Medico-legal teaching resources</span>
+    <span><a href="mailto:dr.fmt.hsc@gmail.com">dr.fmt.hsc@gmail.com</a></span>
   </div>
 </div>
 
@@ -206,17 +215,20 @@
 
   <section aria-labelledby="h-licence">
     <h2 class="sec-head" id="h-licence">Licence</h2>
-    <div class="panel">
+    <p>Each resource carries its own licence. Check the one you are using.</p>
+
+    <div class="panel" style="--pan:var(--clay)">
+      <span class="lic-ref">FMT-01 · Medico-legal Care of the Sexual Violence Survivor</span>
       <span class="lic-tag">CC BY-NC-ND 4.0</span>
-      <h3>Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International</h3>
+      <h3>Attribution–NonCommercial–NoDerivatives 4.0 International</h3>
       <p>Teach with it, share it, print it for your students. Credit the author, keep it non-commercial, and pass it on unchanged.</p>
       <div class="terms">
         <div class="yes">
           <h4>You may</h4>
           <ul>
-            <li>Copy and redistribute the material in any medium or format</li>
+            <li>Copy and redistribute it in any medium or format</li>
             <li>Print it and hand it out in teaching</li>
-            <li>Link to it, or host a verbatim copy on an institutional site</li>
+            <li>Link to it, or host a verbatim copy elsewhere</li>
           </ul>
         </div>
         <div class="no">
@@ -228,13 +240,41 @@
           </ul>
         </div>
       </div>
+      <p class="full-terms"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Full terms — creativecommons.org/licenses/by-nc-nd/4.0</a></p>
     </div>
-    <p style="margin-top:20px">Full terms: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">creativecommons.org/licenses/by-nc-nd/4.0</a>. For translation, adaptation, commercial use, or inclusion in a course pack that falls outside these terms, write to the author — permission is usually straightforward to arrange.</p>
+
+    <div class="panel" style="--pan:var(--teal)">
+      <span class="lic-ref">FMT-02 · SAFE Evidence Sequencer</span>
+      <span class="lic-tag">CC BY-NC 4.0</span>
+      <h3>Attribution–NonCommercial 4.0 International</h3>
+      <p>The same, but you may also adapt it — build on the scenarios, translate it, reshape it for your own teaching. Say what you changed and keep the notice.</p>
+      <div class="terms">
+        <div class="yes">
+          <h4>You may</h4>
+          <ul>
+            <li>Copy and redistribute it in any medium or format</li>
+            <li>Adapt, remix, translate and build on it</li>
+            <li>Use it in your own teaching materials</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h4>On these terms</h4>
+          <ul>
+            <li>Credit the author and indicate any changes you made</li>
+            <li>No commercial use without written permission</li>
+            <li>Retain this licence notice when adapting</li>
+          </ul>
+        </div>
+      </div>
+      <p class="full-terms"><a href="https://creativecommons.org/licenses/by-nc/4.0/">Full terms — creativecommons.org/licenses/by-nc/4.0</a></p>
+    </div>
+
+    <p style="margin-top:22px">For commercial use, or anything else outside these terms, write to <a href="mailto:dr.fmt.hsc@gmail.com">dr.fmt.hsc@gmail.com</a> — permission is usually straightforward to arrange.</p>
   </section>
 
   <section aria-labelledby="h-cite">
     <h2 class="sec-head" id="h-cite">How to cite</h2>
-    <p>Pick what you are citing, then copy the format your journal or department asks for. The access date updates to today.</p>
+    <p>Pick what you are citing, then copy the format your journal or examiner asks for. The access date updates to today.</p>
     <div class="picker" id="picker" role="group" aria-label="What to cite"></div>
     <div id="citations"></div>
   </section>
@@ -269,8 +309,8 @@
 
   <section aria-labelledby="h-contact">
     <h2 class="sec-head" id="h-contact">Permissions and corrections</h2>
-    <p>Found an error, or want to use this outside the licence terms? Write to the author at the Department of Forensic Medicine &amp; Toxicology, Himalayan Institute of Medical Sciences, Swami Rama Himalayan University, Dehradun.</p>
-    <!-- Add a contact address here, e.g.: <p><a href="mailto:you@srhu.edu.in">you@srhu.edu.in</a></p> -->
+    <p>Found an error, or want to use this outside the licence terms? Write to the author.</p>
+    <p><a href="mailto:dr.fmt.hsc@gmail.com">dr.fmt.hsc@gmail.com</a></p>
   </section>
 
 </main>
@@ -290,9 +330,6 @@
 const SITE_URL = "https://drfmthsc.github.io/Website";   // ← update if you rename the repo
 
 const AUTHOR      = { full: "Chhabra, Harvinder Singh", vancouver: "Chhabra HS", apa: "Chhabra, H. S." };
-const PUBLISHER   = "Department of Forensic Medicine & Toxicology, Himalayan Institute of Medical Sciences, Swami Rama Himalayan University";
-const PUB_SHORT   = "Himalayan Institute of Medical Sciences, Swami Rama Himalayan University";
-const PLACE       = "Dehradun";
 const YEAR        = new Date().getFullYear();       // ← replace with the year of publication
 
 /* ---- ADD A NEW RESOURCE HERE TOO (mirror of the register) ---- */
@@ -315,11 +352,11 @@ function formats(item){
   const inWhole = item.key === "all" ? "" : " In: Forensic Medicine Workbench [Internet].";
   return [
     ["Vancouver / NLM",
-     `${AUTHOR.vancouver}. ${item.title}${item.key === "all" ? " [Internet]." : "."}${inWhole} ${PLACE}: ${PUBLISHER}; ${YEAR} [cited ${cited}]. Available from: ${url}`],
+     `${AUTHOR.vancouver}. ${item.title}${item.key === "all" ? " [Internet]." : "."}${inWhole} ${YEAR} [cited ${cited}]. Available from: ${url}`],
     ["APA 7th",
-     `${AUTHOR.apa} (${YEAR}). ${item.title}${item.key === "all" ? "" : ". In Forensic Medicine Workbench"}. ${PUB_SHORT}. Retrieved ${citedAPA}, from ${url}`],
+     `${AUTHOR.apa} (${YEAR}). ${item.title}${item.key === "all" ? "" : ". In Forensic Medicine Workbench"}. Retrieved ${citedAPA}, from ${url}`],
     ["BibTeX",
-     `@misc{chhabra${YEAR}${item.key},\n  author       = {${AUTHOR.full}},\n  title        = {${item.title}},\n  year         = {${YEAR}},\n  institution  = {${PUB_SHORT}},\n  address      = {${PLACE}, India},\n  howpublished = {\\url{${url}}},\n  note         = {Accessed ${cited}}\n}`]
+     `@misc{chhabra${YEAR}${item.key},\n  author       = {${AUTHOR.full}},\n  title        = {${item.title}},\n  year         = {${YEAR}},\n  howpublished = {\\url{${url}}},\n  note         = {Accessed ${cited}}\n}`]
   ];
 }
 
