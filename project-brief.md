@@ -35,7 +35,9 @@ index.html                                      the register / landing page
 licence.html                                    copyright, licence, citation formats
 medico-legal-care-sexual-violence-survivor.html resource FMT-01
 safe-evidence-sequencer.html                    resource FMT-02
-seal.png                                        emblem, transparent (masthead + logo)
+mlr-recall.html                                 resource FMT-03
+seal.png                                        emblem, dark ink (light pages)
+seal-light.png                                  emblem, pale ink (dark pages)
 seal-card.jpg                                   emblem on parchment, for og:image only
 README.md
 LICENSE.md
@@ -53,6 +55,12 @@ If a folder is ever introduced, the `href` values in `index.html` and the `path`
 full pathway in six sections: Consent, History, Examination, Evidence collection, Framing the
 medical opinion, Deposition in court. Includes an "Opinion Engine" that generates the verbatim
 MoHFW provisional and final opinion wording.
+
+**FMT-03 — MLR-Recall.** A recall trainer. 119 cards cross-mapping IPC, CrPC and IEA sections
+to BNS, BNSS and BSA, each carrying the provision text. Learn and quiz modes, filterable by
+statute, with a mastery percentage. Dark-themed, unlike the rest of the site — that is
+deliberate and should be left alone. Posts flagged corrections to a Google Apps Script
+endpoint owned by the author, with a mailto fallback.
 
 **FMT-02 — SAFE Evidence Sequencer.** An interactive drill. The user orders the steps of a
 medico-legal examination into the correct protocol sequence and sets aside anything prohibited
@@ -133,7 +141,7 @@ prints cleanly. Keep all four.
 
 ## Licence
 
-Both resources are under **CC BY-NC-ND 4.0** — share and print freely with credit, no
+All resources are under **CC BY-NC-ND 4.0** — share and print freely with credit, no
 commercial use, no altered versions redistributed. The reasoning for NoDerivatives: if someone
 excerpts a resource, changes a statutory section number incorrectly, and redistributes it under
 the author's name, that error could reach a real case.

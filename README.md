@@ -10,7 +10,9 @@ site/
 ├── licence.html                                     copyright, licence, citation formats
 ├── medico-legal-care-sexual-violence-survivor.html  FMT-01
 ├── safe-evidence-sequencer.html                     FMT-02
-├── seal.png                                         masthead watermark (ink-only, transparent)
+├── mlr-recall.html                                  FMT-03
+├── seal.png                                         emblem, dark ink (light pages)
+├── seal-light.png                                   emblem, pale ink (MLR-Recall's dark page)
 ├── seal-card.jpg                                    link-preview image for shared URLs
 ├── LICENSE.md
 ├── README.md
@@ -84,7 +86,9 @@ the drill's scoring and certificate, runs offline in the browser.
   - On `index.html` as the masthead emblem, in its own grid column so no text can cross it.
     Size and strength are the `.mast-grid` column width and the `opacity` on `.seal`
     (currently `.46`; `.72` at 92px on phones, where it sits above the title).
-  - On both resources as a small logo top-right (`.wb-logo`), linked back to `index.html`.
+  - On each resource as a small logo top-right (`.wb-logo`), linked back to `index.html`.
     Below 760px it drops above the heading instead. Hidden when printing.
+  - MLR-Recall is dark-themed, so it uses `seal-light.png` — the same emblem with the ink
+    recoloured pale. Dark ink would be invisible there.
 - `seal-card.jpg` is the original emblem on its parchment, used only by the `og:image` tag.
   It is what appears when the site link is shared on WhatsApp, Slack or social media.
