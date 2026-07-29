@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medico-legal Care of the Sexual Violence Survivor · Forensic Medicine Workbench</title>
+<meta name="author" content="Dr Harvinder Singh Chhabra">
+<meta name="copyright" content="© 2026 Dr Harvinder Singh Chhabra">
+<meta name="license" content="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+<meta name="description" content="Step-by-step medico-legal reference for the examining doctor — consent to deposition — aligned with BNS/BNSS/BSA. Prepared by Dr Harvinder Singh Chhabra, HIMS, SRHU, Dehradun.">
+<meta name="theme-color" content="#22383D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="FMT · Sexual Violence">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2322383D'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-weight='bold' fill='%23fff' text-anchor='middle'%3E%C2%A7%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="data:application/json,%7B%22name%22%3A%22Medico-legal%20Care%20in%20Sexual%20Violence%22%2C%22short_name%22%3A%22FMT%20Guide%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23F0EDE6%22%2C%22theme_color%22%3A%22%2322383D%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%2520xmlns%253D%2527http%253A%252F%252Fwww.w3.org%252F2000%252Fsvg%2527%2520viewBox%253D%25270%25200%2520100%2520100%2527%253E%253Crect%2520width%253D%2527100%2527%2520height%253D%2527100%2527%2520fill%253D%2527%252322383D%2527%252F%253E%253C%252Fsvg%253E%22%2C%22sizes%22%3A%22any%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A2A2E; --ink-soft:#48595D; --paper:#F0EDE6; --card:#FFFFFF;
+    --slate:#365158; --slate-deep:#22383D; --clay:#9C5B3B; --seal:#7C2A2E;
+    --moss:#4A6B52; --gold:#9A7524; --wash-slate:#E5ECEC; --wash-clay:#F3E9E2;
+    --line:#D8D2C6; --line-strong:#BEB6A6;
+    --shadow:0 1px 0 rgba(26,42,46,.03), 0 22px 48px -34px rgba(26,42,46,.5);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.62;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px 96px;position:relative;z-index:1;}
+  h1,h2,h3,h4{font-family:"Newsreader",Georgia,serif;margin:0;line-height:1.14;font-weight:600;}
+  .mono{font-family:"IBM Plex Mono",monospace;}
+
+  .watermark{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.045;}
+  @media print{.watermark{opacity:.06;}}
+
+  .printbtn{position:fixed;right:20px;bottom:20px;z-index:60;background:var(--slate-deep);border:1px solid var(--slate-deep);color:#EAF0EF;font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:11px 15px;border-radius:9px;cursor:pointer;display:inline-flex;gap:8px;align-items:center;box-shadow:var(--shadow);transition:.18s;}
+  .printbtn:hover{background:var(--clay);border-color:var(--clay);}
+  .printbtn svg{width:14px;height:14px;}
+
+  /* floating quick-access engine button */
+  .enginebtn{position:fixed;right:20px;bottom:60px;z-index:60;background:var(--clay);border:1px solid var(--clay);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:11px 15px;border-radius:9px;cursor:pointer;display:inline-flex;gap:8px;align-items:center;box-shadow:var(--shadow);transition:.18s;text-decoration:none;}
+  .enginebtn:hover{background:var(--slate-deep);border-color:var(--slate-deep);}
+  .enginebtn svg{width:14px;height:14px;}
+  @media print{.enginebtn{display:none;}}
+
+  /* masthead signpost */
+  .signpost{margin-top:28px;display:flex;align-items:center;gap:18px;background:var(--slate-deep);border-radius:14px;padding:18px 22px;text-decoration:none;box-shadow:var(--shadow);transition:.18s;border:1px solid var(--slate-deep);}
+  .signpost:hover{background:#2b444a;transform:translateY(-1px);}
+  .sp-txt{display:flex;flex-direction:column;gap:2px;}
+  .sp-eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);font-weight:600;}
+  .sp-title{font-family:"Newsreader",serif;font-size:1.3rem;font-weight:600;color:#fff;line-height:1.1;}
+  .sp-sub{font-size:.86rem;color:#B4C6C3;line-height:1.45;margin-top:2px;}
+  .sp-arrow{margin-left:auto;font-size:1.6rem;color:var(--clay);flex:none;transition:.18s;}
+  .signpost:hover .sp-arrow{transform:translateX(4px);}
+  @media print{.signpost{display:none;}}
+
+  /* dominant index entry */
+  .index a.hero-link{background:var(--slate-deep);color:#fff;font-weight:600;padding:9px 12px;}
+  .index a.hero-link:hover{background:#2b444a;}
+  .index a.hero-link::before{color:var(--clay);}
+  .index a.hero-link .core{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;background:var(--clay);color:#fff;padding:2px 7px;border-radius:5px;font-weight:600;}
+
+  /* hero step treatment */
+  .step.hero{background:linear-gradient(180deg,rgba(156,91,59,.06),rgba(156,91,59,0) 340px);border-radius:18px;padding:4px 22px 22px;margin-left:-22px;margin-right:-22px;scroll-margin-top:18px;}
+  @media(max-width:560px){.step.hero{margin-left:-12px;margin-right:-12px;padding:4px 12px 16px;}}
+  .hero-ribbon{display:inline-flex;align-items:center;gap:8px;margin:18px 0 6px;background:var(--clay);color:#fff;font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:6px 13px;border-radius:7px;}
+  .hero-ribbon .hr-star{font-size:.8rem;}
+  .step.hero .step-head{border-bottom:2px solid var(--clay);}
+  .step.hero .step-head .no{background:var(--clay);}
+  .step.hero .step-head h2{font-size:1.85rem;}
+  @media print{.step.hero{background:none;}.hero-ribbon{background:#fff;color:var(--clay);border:1px solid var(--clay);}}
+
+  .mast{padding:54px 0 30px;border-bottom:2px solid var(--ink);margin-bottom:6px;}
+  .mast .over{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);font-weight:600;margin-bottom:20px;}
+  .mast h1{font-size:clamp(2.1rem,5.5vw,3.3rem);font-weight:600;letter-spacing:-.015em;max-width:17ch;}
+  .mast h1 em{font-style:italic;color:var(--slate);}
+  .mast .lede{font-size:1.1rem;color:var(--ink-soft);max-width:62ch;margin:22px 0 0;}
+  .byline{margin-top:26px;display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:5px 12px;border-left:3px solid var(--clay);padding:4px 0 4px 15px;}
+  .byline .lead{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);font-weight:600;}
+  .byline b{font-weight:600;font-size:1.02rem;font-family:"Newsreader",serif;}
+  .byline .aff{font-size:.86rem;color:var(--ink-soft);}
+
+  .draftbar{background:var(--wash-clay);border:1px dashed var(--clay);border-radius:10px;padding:12px 16px;margin:24px 0 0;font-size:.84rem;color:var(--clay);font-family:"IBM Plex Mono",monospace;letter-spacing:.02em;}
+
+  .statusbar{background:var(--slate-deep);color:#DCE6E5;border-radius:12px;padding:16px 20px;margin:26px 0 8px;font-size:.9rem;display:flex;gap:14px;align-items:flex-start;line-height:1.55;}
+  .statusbar svg{width:20px;height:20px;flex:none;color:#8FB8AE;margin-top:3px;}
+  .statusbar b{color:#fff;}
+
+  .key{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 8px;}
+  @media(max-width:640px){.key{grid-template-columns:1fr;}}
+  .key .k{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:.84rem;box-shadow:var(--shadow);line-height:1.5;}
+  .key .k .pill{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:3px 8px;border-radius:5px;display:inline-block;margin-bottom:7px;}
+  .pill.stat{background:var(--wash-clay);color:var(--seal);}
+  .pill.court{background:#F5EFDD;color:var(--gold);}
+  .pill.proto{background:#E6EEE7;color:var(--moss);}
+  .key .k span{color:var(--ink-soft);}
+
+  .step{margin:54px 0 0;scroll-margin-top:18px;}
+  .step-head{display:flex;align-items:baseline;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--line-strong);margin-bottom:20px;}
+  .step-head .no{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:.9rem;color:#fff;background:var(--slate);border-radius:7px;padding:6px 11px;flex:none;letter-spacing:.04em;}
+  .step-head h2{font-size:1.62rem;font-weight:600;letter-spacing:-.01em;}
+  .step-head .tag{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-align:right;}
+  @media(max-width:560px){.step-head .tag{display:none;}}
+
+  p{margin:0 0 15px;font-size:1rem;}
+  .step p{max-width:70ch;}
+  .lead-p{font-size:1.06rem;color:var(--ink);}
+  strong{font-weight:600;}
+  .sec{color:var(--seal);font-family:"IBM Plex Mono",monospace;font-size:.8em;font-weight:600;white-space:nowrap;}
+
+  h3.sub{font-family:"Newsreader",serif;font-size:1.24rem;font-weight:600;margin:28px 0 10px;color:var(--ink);}
+  h3.sub .n{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.14em;color:var(--clay);text-transform:uppercase;display:block;margin-bottom:5px;font-weight:600;}
+
+  .wholist{list-style:none;margin:6px 0 15px;padding:0;}
+  .wholist li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.98rem;color:var(--ink-soft);line-height:1.55;}
+  .wholist li:last-child{border-bottom:none;}
+  .wholist li strong{color:var(--ink);}
+
+  /* two-tier consent capacity */
+  .tiers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;}
+  @media(max-width:640px){.tiers{grid-template-columns:1fr;}}
+  .tier{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);}
+  .tier .age{font-family:"Newsreader",serif;font-size:1.8rem;font-weight:600;color:var(--slate);line-height:1;}
+  .tier .age small{font-size:.9rem;color:var(--ink-soft);font-family:"IBM Plex Sans";font-weight:500;}
+  .tier .lbl{font-weight:600;margin:8px 0 6px;font-size:.98rem;}
+  .tier p{font-size:.9rem;color:var(--ink-soft);margin:0;line-height:1.5;}
+  .tier .refs{margin-top:10px;font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--seal);letter-spacing:.02em;}
+
+  .juris{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:18px 22px;margin:18px 0;box-shadow:var(--shadow);}
+  .juris .head{font-family:"Newsreader",serif;font-style:italic;font-size:1.06rem;color:var(--ink);margin-bottom:12px;}
+  .juris ul{list-style:none;margin:0;padding:0;}
+  .juris li{padding:9px 0;border-bottom:1px dotted var(--line-strong);font-size:.95rem;color:var(--ink-soft);line-height:1.55;}
+  .juris li:last-child{border-bottom:none;}
+  .juris li strong{color:var(--ink);}
+  .tagpill{font-family:"IBM Plex Mono",monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:2px 7px;border-radius:5px;margin-right:6px;vertical-align:2px;}
+  .tagpill.stat{background:var(--wash-clay);color:var(--seal);}
+  .tagpill.court{background:#F5EFDD;color:var(--gold);}
+  .tagpill.proto{background:#E6EEE7;color:var(--moss);}
+
+  /* escalation chain */
+  .chain{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 4px;}
+  .chain .c{background:var(--wash-slate);border:1px solid var(--line-strong);border-radius:8px;padding:8px 12px;font-size:.86rem;font-weight:500;color:var(--slate-deep);}
+  .chain .ar{color:var(--line-strong);font-weight:700;}
+
+  .exlist{list-style:none;margin:6px 0 0;padding:0;}
+  .exlist li{padding:10px 0;border-bottom:1px solid var(--line);font-size:.96rem;color:var(--ink-soft);line-height:1.55;}
+  .exlist li:last-child{border-bottom:none;}
+  .exlist li strong{color:var(--ink);display:inline;}
+
+  .op{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--slate);border-radius:0 12px 12px 0;padding:17px 20px;margin:14px 0;box-shadow:var(--shadow);}
+  .op .scenario{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);font-weight:600;margin-bottom:6px;}
+  .op .quote{font-family:"Newsreader",serif;font-size:1.05rem;line-height:1.55;color:var(--ink);font-style:italic;border-left:2px solid var(--line-strong);padding-left:14px;}
+  .op .why{font-size:.86rem;color:var(--ink-soft);margin-top:11px;padding-top:10px;border-top:1px dotted var(--line-strong);line-height:1.5;}
+  .op .why b{color:var(--ink);}
+  .op.warn{border-left-color:var(--seal);}
+  .op.warn .scenario{color:var(--seal);}
+
+  .index{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:28px 0 8px;box-shadow:var(--shadow);}
+  .index h4{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;font-weight:600;}
+  .index ol{margin:0;padding:0;list-style:none;counter-reset:idx;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;}
+  @media(max-width:640px){.index ol{grid-template-columns:1fr;}}
+  .index li{counter-increment:idx;}
+  .index a{display:flex;gap:12px;align-items:baseline;text-decoration:none;color:var(--ink);padding:6px 8px;border-radius:7px;transition:background .15s;font-size:.96rem;}
+  .index a:hover{background:var(--wash-slate);}
+  .index a::before{content:counter(idx,decimal-leading-zero);font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--clay);font-weight:600;flex:none;}
+  .index a.pending{color:var(--ink-soft);opacity:.6;}
+  .index a.pending::after{content:" · part 2";font-family:"IBM Plex Mono",monospace;font-size:.66rem;color:var(--clay);}
+
+  /* evidence timeline */
+  .timeline{margin:16px 0 6px;}
+  .tl-row{display:grid;grid-template-columns:200px 1fr;gap:14px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);}
+  @media(max-width:560px){.tl-row{grid-template-columns:1fr;gap:4px;}}
+  .tl-row:last-child{border-bottom:none;}
+  .tl-label{font-weight:600;font-size:.9rem;}
+  .tl-bar{height:22px;border-radius:5px;background:linear-gradient(90deg,var(--slate),var(--wash-slate));display:flex;align-items:center;padding-left:12px;color:var(--slate-deep);font-family:"IBM Plex Mono",monospace;font-size:.72rem;font-weight:600;}
+  .tl-bar.b1{max-width:28%;} .tl-bar.b2{max-width:42%;} .tl-bar.b3{max-width:62%;} .tl-bar.b4{max-width:88%;} .tl-bar.b5{max-width:100%;background:linear-gradient(90deg,var(--clay),var(--wash-clay));color:#5a3320;}
+
+  /* 21-day ceiling */
+  .ceiling{background:var(--wash-clay);border:1px solid #E0C9BC;border-left:4px solid var(--clay);border-radius:0 12px 12px 0;padding:18px 20px;margin:18px 0;}
+  .ceiling h4{color:var(--clay);font-size:1.1rem;margin-bottom:8px;}
+  .ceiling p{margin:0 0 8px;font-size:.95rem;}
+  .ceiling p:last-child{margin-bottom:0;}
+  .ceiling .big{font-family:"Newsreader",serif;font-size:1.5rem;color:var(--clay);font-weight:600;}
+
+  /* necessity / assault */
+  .necessity{background:#F7E9EA;border:1px solid #E3C4C6;border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .necessity h4{color:var(--seal);font-size:1.08rem;margin-bottom:8px;}
+  .necessity p{margin:0;font-size:.95rem;line-height:1.55;}
+  .necessity p strong{color:var(--seal);}
+
+  /* ordered swab steps */
+  ol.steps{margin:8px 0 0;padding-left:0;list-style:none;counter-reset:ev;}
+  ol.steps li{counter-increment:ev;position:relative;padding:10px 0 10px 40px;border-bottom:1px solid var(--line);font-size:.96rem;color:var(--ink-soft);line-height:1.55;}
+  ol.steps li:last-child{border-bottom:none;}
+  ol.steps li::before{content:counter(ev);position:absolute;left:0;top:10px;width:26px;height:26px;background:var(--wash-slate);color:var(--slate-deep);border-radius:7px;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:.82rem;display:flex;align-items:center;justify-content:center;}
+  ol.steps li strong{color:var(--ink);}
+
+  /* decision engine widget */
+  .engine-widget{background:var(--card);border:2px solid var(--slate-deep);border-radius:16px;margin:22px 0;overflow:hidden;box-shadow:var(--shadow);scroll-margin-top:16px;}
+  .ew-head{background:var(--slate-deep);color:#EAF0EF;padding:16px 20px;}
+  .ew-head h4{color:#fff;font-size:1.12rem;margin-bottom:3px;}
+  .ew-head p{margin:0;font-size:.82rem;color:#A9BEBA;}
+  .ew-body{padding:20px;}
+  .ew-q{margin-bottom:17px;}
+  .ew-q .qlbl{font-weight:600;font-size:.92rem;margin-bottom:9px;display:flex;gap:8px;align-items:baseline;}
+  .ew-q .qlbl .qn{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--clay);}
+  .ew-q .qhint{font-weight:400;color:var(--ink-soft);font-size:.8rem;}
+  .ew-opts{display:flex;flex-wrap:wrap;gap:8px;}
+  .ew-opt{border:1.5px solid var(--line-strong);background:#fff;color:var(--ink);border-radius:8px;padding:8px 13px;font-size:.86rem;cursor:pointer;font-family:inherit;transition:.14s;}
+  .ew-opt:hover{border-color:var(--slate);}
+  .ew-opt.on{background:var(--slate);border-color:var(--slate);color:#fff;}
+  .ew-out{margin-top:8px;border-top:1px solid var(--line);padding-top:18px;}
+  .ew-out .placeholder{color:var(--ink-soft);font-size:.9rem;font-style:italic;}
+  .ew-card{background:var(--paper);border-radius:10px;padding:14px 16px;margin-bottom:11px;}
+  .ew-card:last-child{margin-bottom:0;}
+  .ew-card h5{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin:0 0 8px;font-weight:600;}
+  .ew-card ul{margin:0;padding-left:18px;font-size:.9rem;color:var(--ink);}
+  .ew-card ul li{margin-bottom:4px;}
+  .ew-card p{margin:0;font-size:.9rem;color:var(--ink);}
+  .ew-card.warn{background:#F7E9EA;}
+  .ew-card.warn h5{color:var(--seal);}
+  .ew-reset{margin-top:14px;background:none;border:1px solid var(--line-strong);color:var(--ink-soft);border-radius:7px;padding:6px 12px;font-size:.74rem;cursor:pointer;font-family:"IBM Plex Mono",monospace;letter-spacing:.04em;}
+  .ew-reset:hover{border-color:var(--slate);color:var(--ink);}
+  @media print{.engine-widget{display:none;}}
+
+  /* static flowchart */
+  .flowchart{margin:20px 0;}
+  .fc-node{border:1.5px solid var(--slate);background:var(--wash-slate);border-radius:10px;padding:12px 16px;font-size:.9rem;font-weight:500;text-align:center;color:var(--slate-deep);}
+  .fc-node.start{background:var(--slate-deep);color:#fff;border-color:var(--slate-deep);}
+  .fc-decision{border:1.5px solid var(--clay);background:var(--wash-clay);border-radius:10px;padding:10px 16px;font-weight:600;text-align:center;font-size:.92rem;color:var(--clay);}
+  .fc-conn{width:2px;height:16px;background:var(--line-strong);margin:6px auto;}
+  .fc-branches{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0;}
+  @media(max-width:560px){.fc-branches{grid-template-columns:1fr;}}
+  .fc-branch{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 12px;font-size:.82rem;}
+  .fc-branch .fc-t{display:block;font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--slate);font-size:.72rem;margin-bottom:3px;}
+  .fc-branch .fc-d{color:var(--ink-soft);line-height:1.42;}
+  .fc-branch.stop{border-color:var(--seal);background:#F7E9EA;}
+  .fc-branch.stop .fc-t{color:var(--seal);}
+
+  /* opinion engine */
+  .engine{background:var(--slate-deep);color:#E4ECEB;border-radius:16px;padding:26px 26px 22px;margin:22px 0;}
+  .engine h3{color:#fff;font-size:1.32rem;margin-bottom:6px;}
+  .engine>p{color:#C6D6D3;font-size:.96rem;max-width:none;}
+  .engine .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0 4px;}
+  .engine .flow .n{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:8px 12px;font-size:.84rem;font-weight:500;}
+  .engine .flow .n.red{border-color:#b06a5c;background:rgba(176,106,92,.18);color:#f3cfc6;}
+  .engine .flow .ar{color:#6f8e88;font-weight:700;}
+  .engine .foot{font-size:.88rem;color:#B7C8C5;margin-top:14px;border-top:1px solid rgba(255,255,255,.14);padding-top:14px;line-height:1.55;}
+  .engine .foot .sec{color:#f0cfc6;}
+
+  .op .trigger{font-size:.9rem;color:var(--ink-soft);margin-bottom:11px;}
+  .op .trigger b{color:var(--ink);}
+
+  /* MoHFW opinion proforma tables */
+  .proforma{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);margin:16px 0;}
+  .pf-head{background:var(--slate-deep);color:#fff;padding:12px 18px;font-family:"Newsreader",serif;font-size:1.06rem;font-weight:600;}
+  .pf-head span{display:block;font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:#A9BEBA;font-weight:400;margin-top:3px;}
+  .pf-group{background:var(--wash-slate);padding:7px 18px;font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--slate-deep);font-weight:600;}
+  .pf-row{display:grid;grid-template-columns:140px 1fr;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);}
+  @media(max-width:560px){.pf-row{grid-template-columns:1fr;gap:4px;}}
+  .pf-row:last-child{border-bottom:none;}
+  .pf-key{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--slate);font-weight:600;line-height:1.45;}
+  .pf-op{font-family:"Newsreader",serif;font-style:italic;font-size:.98rem;color:var(--ink);line-height:1.5;}
+  .pf-op .rat{display:block;font-family:"IBM Plex Sans";font-style:normal;font-size:.8rem;color:var(--ink-soft);margin-top:5px;}
+  .pf-cite{font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--ink-soft);letter-spacing:.02em;margin:2px 0 0;}
+
+  /* forbidden panel */
+  .forbid{background:var(--wash-clay);border:1px solid #E0C9BC;border-radius:14px;padding:20px 22px;margin:22px 0;}
+  .forbid h4{color:var(--seal);margin-bottom:6px;font-size:1.12rem;}
+  .forbid>p{font-size:.9rem;color:var(--ink-soft);margin-bottom:12px;}
+  .forbid .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 0;border-bottom:1px solid #E4D2C6;}
+  @media(max-width:560px){.forbid .row{grid-template-columns:1fr;gap:5px;}}
+  .forbid .row:last-child{border-bottom:none;}
+  .forbid .no{font-size:.92rem;color:var(--seal);line-height:1.45;}
+  .forbid .no::before{content:"\2717  ";font-weight:700;}
+  .forbid .yes{font-size:.92rem;color:#3f5a46;line-height:1.45;}
+  .forbid .yes::before{content:"\2713  ";font-weight:700;color:var(--moss);}
+  .forbid .basis{grid-column:1/-1;font-family:"IBM Plex Mono",monospace;font-size:.68rem;color:var(--ink-soft);letter-spacing:.02em;}
+
+  /* reference card */
+  .refcard{background:var(--slate-deep);color:#E4ECEB;border-radius:16px;padding:26px;margin:32px 0;}
+  .refcard h3{color:#fff;font-size:1.3rem;margin-bottom:4px;}
+  .refcard .sub{color:#A9BEBA;font-size:.86rem;margin-bottom:18px;line-height:1.5;}
+  .refcard .tbl-wrap{overflow-x:auto;}
+  .refcard table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:440px;}
+  .refcard th{background:transparent;color:#8FB8AE;border-bottom:1px solid rgba(255,255,255,.22);font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;padding:9px 12px;text-align:left;}
+  .refcard td{background:transparent;color:#DCE6E5;border-bottom:1px solid rgba(255,255,255,.08);padding:10px 12px;}
+  .refcard td:first-child{color:#fff;}
+  .refcard .mono{font-family:"IBM Plex Mono",monospace;color:#f0cfc6;white-space:nowrap;}
+
+  /* consent checklist */
+  .checklist{background:var(--card);border:2px solid var(--slate);border-radius:16px;margin:20px 0;overflow:hidden;box-shadow:var(--shadow);}
+  .cl-head{background:var(--slate);color:#EAF0EF;padding:15px 20px;}
+  .cl-head h4{color:#fff;font-size:1.1rem;margin-bottom:3px;}
+  .cl-head p{margin:0;font-size:.82rem;color:#C6D6D3;}
+  .cl-body{padding:8px 20px 18px;}
+  .cl-group{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);font-weight:600;margin:16px 0 6px;}
+  .cl-item{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer;user-select:none;}
+  .cl-item:last-child{border-bottom:none;}
+  .cl-box{flex:none;width:22px;height:22px;border:2px solid var(--line-strong);border-radius:6px;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:.14s;background:#fff;}
+  .cl-box svg{width:14px;height:14px;stroke:#fff;opacity:0;transition:.14s;}
+  .cl-item.done .cl-box{background:var(--moss);border-color:var(--moss);}
+  .cl-item.done .cl-box svg{opacity:1;}
+  .cl-item.done .cl-txt{color:var(--ink-soft);}
+  .cl-txt{font-size:.94rem;line-height:1.5;color:var(--ink);}
+  .cl-txt .sec{margin-left:2px;}
+  .cl-progress{margin:14px 0 2px;height:6px;background:var(--wash-slate);border-radius:99px;overflow:hidden;}
+  .cl-progress span{display:block;height:100%;width:0;background:var(--moss);transition:width .25s;}
+  .cl-count{font-size:.78rem;color:var(--ink-soft);margin-top:6px;font-family:"IBM Plex Mono",monospace;}
+  .cl-reset{margin-top:12px;background:none;border:1px solid var(--line-strong);color:var(--ink-soft);border-radius:7px;padding:6px 12px;font-size:.74rem;cursor:pointer;font-family:"IBM Plex Mono",monospace;letter-spacing:.04em;}
+  .cl-reset:hover{border-color:var(--slate);color:var(--ink);}
+  .cl-nonneg{background:#F7E9EA;border-top:1px solid #E3C4C6;margin:14px -20px -18px;padding:14px 20px;}
+  .cl-nonneg h5{color:var(--seal);font-size:.82rem;margin:0 0 6px;font-family:"IBM Plex Sans";font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
+  .cl-nonneg ul{margin:0;padding-left:18px;font-size:.86rem;color:var(--ink);line-height:1.5;}
+  .cl-nonneg li{margin-bottom:4px;}
+  /* prohibition item */
+  .cl-bar-item{display:flex;gap:12px;align-items:flex-start;padding:11px 13px;margin:8px 0 2px;background:#F7E9EA;border:1px solid #E3C4C6;border-radius:9px;}
+  .cl-bar-item .cl-no{flex:none;width:22px;height:22px;border-radius:6px;background:var(--seal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;margin-top:1px;}
+  .cl-bar-item .cl-txt{font-size:.94rem;line-height:1.5;color:var(--ink);}
+  .cl-bar-item .cl-txt strong{color:var(--seal);}
+  @media print{.cl-bar-item{background:#fff;border-color:#333;}.cl-bar-item .cl-no{background:#fff;color:#333;border:1.5px solid #333;}}
+  @media print{
+    .cl-box{border-color:#333;}
+    .cl-item.done .cl-box{background:#fff;border-color:#333;}
+    .cl-item.done .cl-box svg{opacity:1;stroke:#333;}
+    .cl-progress,.cl-count,.cl-reset{display:none;}
+    .checklist{border-color:#333;}
+    .cl-head{background:#fff;color:#000;border-bottom:1px solid #333;}
+    .cl-head h4{color:#000;}.cl-head p{color:#333;}
+  }
+
+  /* handoff pointer to engine */
+  .handoff{background:var(--wash-slate);border:1px solid var(--line-strong);border-left:4px solid var(--clay);border-radius:0 12px 12px 0;padding:16px 20px;margin:18px 0;}
+  .handoff p{margin:0;font-size:.95rem;color:var(--ink);line-height:1.55;}
+  .handoff a{color:var(--clay);font-weight:600;white-space:nowrap;}
+
+  footer{margin-top:44px;padding-top:22px;border-top:2px solid var(--ink);}
+  footer .cred{font-family:"Newsreader",serif;font-size:1.02rem;color:var(--ink);margin-bottom:10px;}
+  footer .feedback{font-size:.88rem;color:var(--ink-soft);margin-bottom:10px;}
+  footer .feedback a{color:var(--clay);font-weight:600;}
+  footer .disc{font-size:.8rem;line-height:1.6;color:var(--ink-soft);}
+  footer .licence{margin:16px 0;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:10px;}
+  footer .lic-line{font-size:.84rem;color:var(--ink);line-height:1.55;}
+  footer .lic-line a{color:var(--clay);font-weight:600;}
+  footer .lic-cite{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:.8rem;color:var(--ink-soft);line-height:1.55;font-family:"IBM Plex Mono",monospace;}
+  footer .lic-cite span{display:block;text-transform:uppercase;letter-spacing:.1em;font-size:.62rem;color:var(--clay);font-weight:600;margin-bottom:4px;}
+
+  .runcredit{display:none;}
+  @media print{
+    body{background:#fff;}
+    .printbtn,.index{display:none;}
+    .step,.op,.juris,.tier,.engine,.forbid,.ceiling,.necessity,.fc-branches,.fc-branch,.proforma,.pf-row{page-break-inside:avoid;}
+    .runcredit{display:block;position:fixed;bottom:5mm;left:0;right:0;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:7pt;letter-spacing:.04em;color:#555;}
+  }
+</style>
+</head>
+<body>
+<div class="watermark" aria-hidden="true">
+  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <defs><pattern id="wm" width="400" height="240" patternUnits="userSpaceOnUse" patternTransform="rotate(-24)">
+      <text x="0" y="130" font-family="'IBM Plex Mono',monospace" font-size="16" font-weight="500" fill="#1A2A2E">Dr Harvinder Singh Chhabra</text>
+    </pattern></defs>
+    <rect width="100%" height="100%" fill="url(#wm)"/>
+  </svg>
+</div>
+<button class="printbtn" onclick="window.print()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>Print / PDF</button>
+<a class="enginebtn" href="#engine"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>Opinion Engine</a>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="over">Forensic Medicine &amp; Toxicology · Clinical Reference</div>
+    <h1>Medico-legal Care of the <em>Sexual Violence</em> Survivor</h1>
+    <p class="lede">A plain-language, step-by-step guide for the examining doctor — from consent to court — written so any MBBS student or non-specialist can follow it. Aligned with the new criminal codes (BNS, BNSS, BSA), in force 1 July 2024. Its focus is the skill exams and courts test hardest: <strong>writing a reasoned medical opinion</strong>.</p>
+    <div class="byline">
+      <span class="lead">Prepared by</span>
+      <b>Dr Harvinder Singh Chhabra</b>
+      <span class="aff">Assistant Professor · Himalayan Institute of Medical Sciences, SRHU, Dehradun</span>
+    </div>
+    <a class="signpost" href="#engine">
+      <div class="sp-txt"><span class="sp-eyebrow">The centrepiece</span><span class="sp-title">The Opinion Engine</span><span class="sp-sub">Where every step comes together — generate the verbatim MoHFW provisional &amp; final opinion for your case.</span></div>
+      <span class="sp-arrow">→</span>
+    </a>
+  </header>
+
+  <div class="statusbar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <div><b>Before you rely on any rule below, check its legal status.</b> This guide marks what is <b>statute</b> (binds everywhere in India), what is a <b>court direction</b> (binds only that High Court's territory), and what is <b>protocol</b> (recommended practice). Section numbers follow the new codes; always confirm against the bare Act and your State's current MoHFW-based protocol before using them in a report or in court.</div>
+  </div>
+
+  <div class="key">
+    <div class="k"><span class="pill stat">Statute · pan-India</span><span>Binding law under BNS, BNSS, BSA or POCSO. Applies in every State, including Uttarakhand.</span></div>
+    <div class="k"><span class="pill court">Court direction · local</span><span>An order of one High Court. Binds only that Court's territory — e.g. Karnataka, or Punjab-Haryana-Chandigarh.</span></div>
+    <div class="k"><span class="pill proto">Protocol · practice</span><span>MoHFW / DHR guidance and hospital policy. Strongly advised, but not itself a penal provision.</span></div>
+  </div>
+
+  <nav class="index">
+    <h4>The six steps, in order</h4>
+    <ol>
+      <li><a href="#s1">Consent</a></li>
+      <li><a href="#s2">History</a></li>
+      <li><a href="#s3">Examination</a></li>
+      <li><a href="#s4">Evidence collection</a></li>
+      <li><a class="hero-link" href="#s5">Framing the opinion <span class="core">core skill</span></a></li>
+      <li><a href="#s6">Deposition in court</a></li>
+    </ol>
+  </nav>
+
+  <!-- STEP 1 CONSENT -->
+  <section class="step" id="s1">
+    <div class="step-head"><span class="no">01</span><h2>Consent</h2><span class="tag">S 184 BNSS · S 26–28 BNS · S 27 POCSO</span></div>
+
+    <p class="lead-p">Before you touch the survivor for any examination — whether to treat her injuries or to collect forensic evidence — you must obtain her informed consent. This is not a formality to rush through.</p>
+
+    <p>Under <span class="sec">S 184 BNSS</span>, an examination done without valid consent is unlawful, and neither the police nor a court can force it. Equally important: if she agrees to treatment but refuses the forensic examination, you must <strong>still treat her</strong>. Refusing evidence collection can never become a reason to deny medical care, and admission, evidence collection or filing a police complaint is not a precondition for treatment.</p>
+
+    <p><strong>"Informed" consent means she genuinely understands what she is agreeing to.</strong> So, in a language she speaks comfortably, explain three things before she signs: what the examination will involve (including that you will examine her body and genitals), what evidence you intend to collect and why, and what treatment you can offer. Only after she has understood all of this do you take her written consent. If she has questions, answer them. If she wants a trusted person present during the examination, allow it — but police personnel must not be in the examination room.</p>
+
+    <p><strong>Her consent does not have to be all-or-nothing.</strong> She may agree to some parts and decline others — for example, consenting to treatment and a general examination, but refusing genital evidence collection. That is her right. When she declines any part, explain why that part matters; if she still refuses, record it clearly as an <strong>informed refusal</strong>, witnessed and signed. The consent form itself carries three signatures: the survivor's, the examining doctor's, and a witness (any disinterested person). Consent obtained through fear or a misconception of fact is not valid consent <span class="sec">(S 28 BNS)</span>.</p>
+
+    <h3 class="sub"><span class="n">Consent capacity — the two tiers</span>The age that matters depends on the risk of the act, not on how "personal" it feels</h3>
+    <p>A common confusion is to think the genital examination needs a higher consent age because it feels invasive. It does not. In law, the consent threshold turns on <strong>how risky the act is</strong> — whether it is an ordinary act done in good faith for the person's benefit, or one that carries a real risk of serious harm. The routine medico-legal examination sits in the lower-risk tier; only genuinely hazardous procedures sit in the higher one.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="age">12<small> &amp; above</small></div>
+        <div class="lbl">General examination &amp; ordinary care</div>
+        <p>An act not intended to cause death or grievous hurt, done in good faith and with consent for the person's benefit — this covers the routine medico-legal examination. For a child under 12, the <strong>parent or guardian</strong> consents.</p>
+        <div class="refs">Principle: S 26 BNS · guardian for &lt;12: S 27 BNS · age line per MoHFW protocol</div>
+      </div>
+      <div class="tier">
+        <div class="age">18<small> &amp; above</small></div>
+        <div class="lbl">Risky / invasive procedures</div>
+        <p>Where the act may cause death or grievous hurt — and for a medical termination of pregnancy — valid consent requires the person to be 18 or older.</p>
+        <div class="refs">Principle: S 25 BNS · MTP age per MTP Act / MoHFW</div>
+      </div>
+    </div>
+    <p style="font-size:.86rem;color:var(--ink-soft);"><strong>A note on the sections:</strong> S 25/26/27 BNS state the good-faith-consent-benefit <em>principle</em>; the specific ages (12, 18) come from the surrounding legal scheme and the MoHFW protocol, not from the wording of those sections. Cite the section for the principle and attribute the age to the protocol. (Take care: <span class="sec">S 27 BNS</span> — guardian consent for a child — is a different provision from <span class="sec">S 27 POCSO</span> below, which is why every section here names its Act.)</p>
+
+    <h3 class="sub"><span class="n">When she cannot consent herself</span>Who may consent on her behalf</h3>
+    <p>Some survivors cannot give valid consent on their own. You must know who may consent for them, and in every case that person acts in her best interest:</p>
+    <ul class="wholist">
+      <li><strong>An adult with capacity</strong> consents for herself.</li>
+      <li><strong>A child under 18</strong> is governed by <span class="sec">S 27 POCSO</span>: a woman doctor examines, and a parent, guardian, or an adult the child trusts is present throughout. For consent, the <strong>parent or guardian consents on the child's behalf</strong> (the child's own assent is sought too). The MoHFW protocol confirms that for a child under 12, consent for examination is taken from the parent or guardian.</li>
+      <li><strong>A survivor who is mentally ill or has a disability:</strong> consent may be given by a parent or guardian, the Child Welfare Committee (if a child), or the court — using an interpreter or special educator as needed.</li>
+      <li><strong>A survivor who is intoxicated or unconscious</strong> cannot consent at that moment; a guardian may consent, and any genuinely life-saving procedure may proceed without consent. Re-take her consent once she is able to give it.</li>
+    </ul>
+
+    <h3 class="sub"><span class="n">When no guardian is available, or the guardian is the problem</span>Two different situations — do not confuse them</h3>
+    <p>The UNFPA/CFSL guidance mentions consent by a "panel of senior doctors" where a child has no guardian. In practice this is better handled as a clear <strong>line of institutional responsibility</strong>, so that one identifiable person is always accountable and care is never delayed waiting for a committee to assemble. The two situations are distinct:</p>
+    <p><strong>1 · The guardian is simply unavailable.</strong> Escalate down a chain of institutional authority, each acting and documenting the decision in the child's best interest:</p>
+    <div class="chain">
+      <span class="c">Hospital administrator / Medical Superintendent</span><span class="ar">→</span>
+      <span class="c">Officer-in-charge (RMO / duty in-charge)</span><span class="ar">→</span>
+      <span class="c">Treating doctor</span>
+    </div>
+    <p style="font-size:.86rem;color:var(--ink-soft);"><span class="tagpill proto">Protocol</span>This chain is administrative best practice — neither POCSO nor the BNS names it. The MoHFW protocol supports the principle: where a child may be accompanied by the abuser, a female person <em>appointed by the head of the institution</em> is called in to be present during the examination.</p>
+    <p><strong>2 · The guardian is present but acting against the child</strong> — as can happen in incest. Here the answer is not the hospital chain but the <strong>Child Welfare Committee (CWC)</strong>, which holds the legal responsibility for the care and protection of the child. <span class="tagpill stat">Statute</span></p>
+
+    <h3 class="sub"><span class="n">Who may examine her</span>Read this by jurisdiction — do not assume a rule from one State applies in yours</h3>
+    <p>The national protocol position and the local court directions form layers. Start from the national rule, then apply any stricter overlay for your jurisdiction or for a child.</p>
+    <div class="juris">
+      <div class="head">The layered rule on the examiner's gender</div>
+      <ul>
+        <li><span class="tagpill proto">Protocol · pan-India</span><strong>National MoHFW position (the baseline everywhere, including Uttarakhand):</strong> <em>any</em> registered medical practitioner may examine — a gynaecologist is not required. Every possible effort should be made to find a <strong>female doctor</strong>; if none is available, a <strong>male doctor may examine in the presence of a female attendant</strong>. Lack of a lady doctor must never delay or deny examination or treatment.</li>
+        <li><span class="tagpill proto">Protocol</span><strong>Transgender / intersex survivor:</strong> the survivor chooses whether a female or male doctor examines; if a female doctor is unavailable, a male doctor examines with a female attendant present.</li>
+        <li><span class="tagpill stat">Statute · pan-India</span><strong>A child under 18:</strong> <span class="sec">S 27 POCSO</span> requires a <strong>woman doctor</strong> as far as possible — a stricter overlay than the adult rule, applying in every State. Where the abuser may be accompanying the child, a female person appointed by the head of the institution is present.</li>
+        <li><span class="tagpill court">Court · local</span><strong>Punjab, Haryana &amp; Chandigarh:</strong> a female sexual-assault victim is <strong>not to be examined by a male doctor</strong> — from <em>State of Haryana v. Rajesh</em> (Punjab &amp; Haryana High Court, 2002), written into the Punjab Medico-legal Manual, 2018. Binds that region only.</li>
+        <li><span class="tagpill court">Court · local</span><strong>Karnataka:</strong> adult rape victims to be examined by or under a <strong>female doctor</strong> until BNSS is amended — interim direction in <em>Ajay Kumar Behera v. State of Karnataka</em> (2024). Binds Karnataka only.</li>
+        <li><span class="tagpill stat">Statute</span><strong>Adult survivor, national law:</strong> <span class="sec">S 184 BNSS</span> is silent on the examiner's gender; it requires a registered medical practitioner in a Government/local-authority hospital, with consent, within 24 hours, report sent within 7 days. So outside Punjab-Haryana-Chandigarh and Karnataka, the protocol rule above governs — do not cite those local directions as if they bound you here.</li>
+      </ul>
+    </div>
+
+    <h3 class="sub"><span class="n">Consent checklist</span>An aide-mémoire — tick on screen, or print it blank for revision</h3>
+    <div class="checklist" id="consentCheck">
+      <div class="cl-head"><h4>Before you begin, have you…</h4><p>A memory aid that the steps were done — not a certificate of consent. Capacity and genuine understanding remain your clinical judgement.</p></div>
+      <div class="cl-body">
+        <div class="cl-group">Explaining &amp; obtaining</div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Explained, in a language she understands, the <strong>nature and purpose</strong> of the examination — including that body and genitals will be examined</span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Explained <strong>what evidence</strong> will be collected and why, and the <strong>treatment</strong> offered</span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Answered her questions; offered to have a <strong>trusted person</strong> present</span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Confirmed she is consenting <strong>voluntarily</strong> — no fear, pressure or misconception <span class="sec">(S 28 BNS)</span></span></div>
+        <div class="cl-group">The right people</div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Identified <strong>who gives valid consent</strong> — herself, or the guardian / hospital chain / CWC route for a child <span class="sec">(S 26–27 BNS · S 27 POCSO)</span></span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Confirmed the <strong>right examiner</strong> for your jurisdiction, and a <strong>female attendant</strong> present where required</span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt"><strong>Police are not</strong> in the examination room</span></div>
+        <div class="cl-group">Recording it</div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Written consent taken, signed by <strong>survivor + examining doctor + witness</strong></span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Treated consent as <strong>partial-able</strong> — each part (treatment / general exam / genital evidence / police) agreed separately</span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">If she declined any part → recorded an <strong>informed refusal</strong>, witnessed — and continued treatment regardless</span></div>
+        <div class="cl-progress"><span id="clBar"></span></div>
+        <div class="cl-count" id="clCount">0 of 10 completed</div>
+        <button class="cl-reset" id="clReset">↺ Clear ticks</button>
+        <div class="cl-nonneg">
+          <h5>Non-negotiable — true whatever the ticks say</h5>
+          <ul>
+            <li>Treatment is <strong>never</strong> withheld because she refused the examination or police involvement.</li>
+            <li>Capacity and genuine understanding are <strong>your clinical judgement</strong> — this list confirms steps were done; it does not certify she had capacity or truly understood.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2 HISTORY -->
+  <section class="step" id="s2">
+    <div class="step-head"><span class="no">02</span><h2>History</h2><span class="tag">Take it once · gently</span></div>
+
+    <p class="lead-p">Take the history once, sensitively, without making her relive the trauma or repeat it to person after person. She may omit painful details; do not press. Your aim is not to interrogate but to understand enough to guide the examination and treatment — and to believe what she tells you.</p>
+
+    <p>The history has a specific forensic purpose: it tells you <strong>what evidence to look for</strong>, and it fixes the <strong>timeline</strong> on which your later opinion will stand or fall. So while you take it kindly, make sure it captures the following, because each point changes what you do next.</p>
+
+    <ul class="exlist">
+      <li><strong>The nature of the act.</strong> Was it penetrative or non-penetrative? Penile, or with an object or body part? Which orifice — vaginal, anal, oral, urethral? Was ejaculation noticed? Each answer points you to a different set of swabs.</li>
+      <li><strong>The time since the incident.</strong> This single figure decides what can still be recovered. Record it as precisely as she can give it — you will use it directly in Step 4.</li>
+      <li><strong>What she did afterwards.</strong> Did she bathe, douche, wash, change clothes, urinate, defecate, eat or drink, brush or rinse her mouth? Every one of these can remove evidence — and, just as importantly, each later <em>explains</em> a negative finding in your opinion.</li>
+      <li><strong>Whether she was menstruating</strong> at the time of the assault or now. Document it, and collect evidence anyway — heavy flow can wash away trace, so note it rather than skip collection.</li>
+      <li><strong>What you must NOT record:</strong> her past sexual history. It is legally barred and irrelevant to this offence <span class="sec">(S 48 BSA; proviso to S 146 BSA)</span>. Asking about it is itself improper.</li>
+    </ul>
+
+    <div class="op warn">
+      <div class="scenario">For children — history is possible, and it counts</div>
+      <div class="quote">Do not assume a young child cannot give a history. History-taking can be helped with dolls and body charts. Believe what the child reports; the myth that children are "tutored" to make false complaints must not colour your response.</div>
+      <div class="why"><b>Source:</b> MoHFW 2014 protocol, guidelines for responding to children.</div>
+    </div>
+
+    <h3 class="sub"><span class="n">History checklist</span>An aide-mémoire — tick on screen, or print it blank for revision</h3>
+    <div class="checklist" id="historyCheck">
+      <div class="cl-head"><h4>Did your history cover these — gathered gently?</h4><p>A memory aid for coverage — not a script to read out. Take it once, sensitively; never press, never make her repeat it.</p></div>
+      <div class="cl-body">
+        <div class="cl-group">The manner</div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Taken <strong>once</strong>, sensitively, in privacy — not made to repeat it to person after person</span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Did not press for details she avoided; <strong>believed her account</strong></span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">For a child: used <strong>dolls / body charts</strong> if needed; did not assume a young child cannot give a history</span></div>
+        <div class="cl-group">Content — drives evidence &amp; the timeline</div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt"><strong>Nature of the act</strong> — penetrative / non-penetrative; penile / object / body part; orifice(s); ejaculation noticed?</span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt"><strong>Time since the incident</strong> — as precise as she can give it</span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt"><strong>Post-assault acts</strong> — bathed, douched, washed, changed clothes, urinated, defecated, ate / drank, rinsed mouth</span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt"><strong>Menstruation</strong> — at the time of the incident, and now</span></div>
+        <div class="cl-group">Content — for treatment &amp; risk</div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt">Enough to assess <strong>pregnancy, STI and HIV risk</strong> and the need for prophylaxis</span></div>
+        <div class="cl-item"><span class="cl-box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><span class="cl-txt"><strong>Loss of consciousness</strong>, or suspected intoxication / drugging during the incident</span></div>
+        <div class="cl-progress"><span id="hlBar"></span></div>
+        <div class="cl-count" id="hlCount">0 of 9 completed</div>
+        <button class="cl-reset" id="hlReset">↺ Clear ticks</button>
+        <div class="cl-bar-item">
+          <span class="cl-no">✕</span>
+          <span class="cl-txt"><strong>Do NOT record past sexual history.</strong> It is legally barred and irrelevant to this offence <span class="sec">(S 48 BSA; proviso to S 146 BSA)</span>. Asking about it is itself improper — this is a prohibition, not a task to tick.</span>
+        </div>
+        <div class="cl-nonneg">
+          <h5>Non-negotiable — true whatever the ticks say</h5>
+          <ul>
+            <li>This list confirms <strong>coverage</strong>; it does not make the interview sensitive — that is your judgement.</li>
+            <li><strong>Never press</strong> for traumatic detail, and never make her repeat her account unnecessarily.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3 EXAMINATION -->
+  <section class="step" id="s3">
+    <div class="step-head"><span class="no">03</span><h2>Examination</h2><span class="tag">Privacy · dignity · only what is indicated</span></div>
+
+    <p class="lead-p">Examine her in complete privacy, in the dedicated room, having explained each step first. Collect body and genital findings together — the same examination serves both her treatment and the forensic record. Work in a fixed order so you miss nothing, and write down what you see, not what you assume.</p>
+
+    <h3 class="sub"><span class="n">General examination</span>Start away from the genitals</h3>
+    <p>Begin with her general condition — build and nourishment, mental state (calm, anxious, withdrawn), and secondary sexual characters. Examine and describe her <strong>clothing</strong> before it is removed: note tears, missing or torn buttons, and stains (blood, semen, mud, grass), because clothing is itself evidence. Then examine the whole body, front and back, head to toe, and mark every injury on a body diagram, recording for each its type, size, and exact site. Remember that most survivors have no body injuries at all — their absence means nothing on its own.</p>
+
+    <h3 class="sub"><span class="n">Local (genital and anal) examination</span>Only where the history indicates — never routine, especially in children</h3>
+    <p>Examine the areas relevant to what she has described, and simply describe what you find — presence or absence, and any injury, bleeding, discharge or stain, with its site and size. <strong>In children, genital and anal examination must not be done mechanically or routinely</strong>; examine when the history or specific indicators (pain on urination or defecation, bleeding, relevant symptoms) call for it. Structures to describe:</p>
+    <ul class="exlist">
+      <li><strong>External genitalia:</strong> pubic region, labia majora and minora, clitoris.</li>
+      <li><strong>Introital structures:</strong> fourchette, posterior commissure, hymen, and vaginal rugae — described factually, never interpreted as proof of chastity or "habituation".</li>
+      <li><strong>Perineum and inner thighs;</strong> the vagina, for injury, bleeding or discharge.</li>
+      <li><strong>Anus:</strong> anal mucosa (smooth or thickened), any tears (recent or old), sphincter tone (patulous or not), and stains.</li>
+      <li><strong>Mouth and oral cavity,</strong> where oral contact is alleged.</li>
+    </ul>
+    <p>Carry out <strong>age estimation</strong> only where age is genuinely in doubt and no reliable documentary proof exists — not routinely.</p>
+
+    <div class="op warn">
+      <div class="scenario">Two practices you must never do — and why it is more than a rule</div>
+      <div class="quote">Never perform the per-vaginum "two-finger test." Never comment on vaginal laxity, on the hymen as a sign of "habituation", or on past sexual experience — none of these has any bearing on whether this offence occurred.</div>
+      <div class="why"><b>Why:</b> the Supreme Court has held the two-finger test unconstitutional and re-victimising, and <span class="sec">S 48 BSA</span> with the proviso to <span class="sec">S 146 BSA</span> bars evidence of character or previous sexual experience on the question of consent. It is also the textbook example of a wider principle you will meet again in Step 4 — <b>an examination or procedure that is not indicated, or is done against the woman's will without justification, is not a neutral act</b>. Anything outside the scope of her consent is unlawful under <span class="sec">S 184 BNSS</span>, and such an unconsented intrusion can itself amount to assault and expose the doctor.</div>
+    </div>
+
+    <h3 class="sub"><span class="n">Classifying injuries</span>Simple or grievous — and it is yours to decide</h3>
+    <p>Where injuries are present, you must classify each as <strong>simple</strong> or <strong>grievous</strong>, and give your reasons. <strong>Grievous hurt</strong> is defined in <span class="sec">S 116 BNS</span> — its clauses include fracture or dislocation, permanent disfigurement, loss of a sense, and any hurt that endangers life or keeps the person in severe pain or unable to follow their ordinary pursuits for fifteen days. Voluntarily causing grievous hurt is <span class="sec">S 117 BNS</span>, and hurt caused by a dangerous weapon or means is <span class="sec">S 118 BNS</span>. This classification is the examining doctor's own responsibility — if you call an injury life-endangering, support it with clinical or operative notes.</p>
+  </section>
+
+  <!-- STEP 4 EVIDENCE -->
+  <section class="step" id="s4">
+    <div class="step-head"><span class="no">04</span><h2>Evidence collection</h2><span class="tag">Time-critical · indicated · sealed · logged</span></div>
+
+    <p class="lead-p">What is worth collecting depends almost entirely on how much time has passed. Collect only what is indicated, with consent, and with the honest primary purpose of helping her — and remember throughout that finding no evidence does <strong>not</strong> mean no assault occurred.</p>
+
+    <h3 class="sub"><span class="n">The clock decides</span>What survives, and for how long</h3>
+    <div class="timeline">
+      <div class="tl-row"><div class="tl-label">Motile (living) spermatozoa</div><div class="tl-bar b1">up to ~12–24 h</div></div>
+      <div class="tl-row"><div class="tl-label">Spermatozoa (non-motile)</div><div class="tl-bar b2">up to ~24–48 h</div></div>
+      <div class="tl-row"><div class="tl-label">Semen / blood / lubricant</div><div class="tl-bar b3">up to ~4–5 days</div></div>
+      <div class="tl-row"><div class="tl-label">DNA — cervix / high vagina</div><div class="tl-bar b4">beyond a week (site-dependent)</div></div>
+      <div class="tl-row"><div class="tl-label">Clothing, hair, trace, nails</div><div class="tl-bar b5">collect even when delayed</div></div>
+    </div>
+
+    <div class="ceiling">
+      <h4>The collection ceiling — up to 21 days</h4>
+      <p>The often-quoted <strong>"96 hours"</strong> is a protocol default for the classic microscopy targets — motile sperm and fresh seminal fluid. It is not a biological deadline. The <strong>reliable persistence window is about 3–7 days</strong> in the vagina and cervix, with recovery falling sharply as time passes. <strong>DNA extends this</strong>: the cervix acts as a sheltered reservoir, and with enhanced methods male DNA has been recovered beyond a week. Isolated recoveries up to about 19 days have been reported, though these rest on distrusted outlier data (traced by DiFrancesco &amp; Richards to a single table removed from later editions, whose own authors doubted the long intervals) — so they mark an <em>outer bound</em>, not an expectation.</p>
+      <p>Taking all of this into account, <span class="big">collection may be undertaken up to 21 days</span> from the assault. <strong>Beyond 21 days there is no indication to collect biological evidence.</strong> Late presentation is never itself a reason to turn a survivor away — collect clothing and durable trace regardless of delay, and prefer cervical / high-vaginal sampling in late cases.</p>
+    </div>
+
+    <div class="necessity">
+      <h4>Necessity and consent — both are required</h4>
+      <p>Collect only what is clinically or forensically <strong>indicated</strong>, and only with <strong>consent</strong>. Beyond the point where a recoverable yield is realistic, collecting a sample anyway — or performing any examination against the woman's will without justification — is not a neutral act. Because anything outside the scope of her consent is unlawful <span class="sec">(S 184 BNSS)</span> and every person has a right to bodily integrity, <strong>such an unnecessary or unconsented intrusion can itself amount to an assault and expose the doctor</strong>. The abolished two-finger test is the textbook example: an intrusion that was neither indicated nor justifiable.</p>
+    </div>
+
+    <div class="handoff">
+      <p><strong>→ The decision engine is in Step 5.</strong> Once you have the history, the findings and (later) the FSL result, the interactive engine there turns them into the collection plan <em>and</em> the verbatim MoHFW provisional &amp; final opinion. <a href="#s5">Go to the Opinion Engine →</a></p>
+    </div>
+
+    <h3 class="sub"><span class="n">The order of genital swabs</span>Outside-in, so one sample does not contaminate the next</h3>
+    <p>When you do collect genital samples, the sequence matters. Take the outer samples before the inner ones, so that collecting a deeper sample does not drag material onto an outer site you have not yet swabbed:</p>
+    <ol class="steps">
+      <li><strong>Vulval swab first</strong> — separate the labia and swab the inner surface of the labia minora and the fossa navicularis, before any vaginal or cervical swab.</li>
+      <li><strong>Vaginal swab</strong> next — from the anterior and posterior fornices, using a speculum.</li>
+      <li><strong>Cervical swab</strong> — from the cervical os, collecting as much of the mucous plug as possible; the best DNA yield in late-presenting cases.</li>
+      <li><strong>Anal / oral swabs</strong> where the history indicates; also nail clippings, pubic-hair combings, and any loose hair or foreign material.</li>
+    </ol>
+
+    <h3 class="sub"><span class="n">Keeping evidence admissible</span>Drying, sealing, and the chain of custody</h3>
+    <p>Collecting the sample is only half the job; how you handle it decides whether a court can use it.</p>
+    <ul class="exlist">
+      <li><strong>Air-dry, then pack, seal and label</strong> every item. Use paper envelopes or bags for biological samples — never polythene, which traps moisture and degrades DNA.</li>
+      <li><strong>Take a reference sample</strong> (blood or buccal) from the survivor for DNA comparison; DNA is the most decisive evidence when collected and preserved properly.</li>
+      <li><strong>Maintain the chain of custody.</strong> From the moment you collect until you hand over to the police or FSL, the samples are the doctor's and hospital's responsibility. A designated person keeps them secure, and every transfer is documented and signed. A break in this chain can make good evidence inadmissible.</li>
+      <li><strong>If she is menstruating</strong> at collection, document it, collect anyway, and arrange a repeat examination — heavy flow may have carried trace away.</li>
+    </ul>
+  </section>
+
+  <!-- STEP 5 OPINION -->
+  <section class="step hero" id="s5">
+    <div class="hero-ribbon"><span class="hr-star">★</span> The flagship of this guide · everything above builds to this</div>
+    <div class="step-head"><span class="no">05</span><h2>Framing the medical opinion</h2><span class="tag">The centrepiece</span></div>
+
+    <p class="lead-p">This is where most answers — and many real reports — go wrong. Understand one thing first: the doctor performs a <strong>medical examination</strong>. Whether "rape" or "sexual assault" occurred is a <strong>legal</strong> conclusion for the court, not a medical one. Your task is a <strong>reasoned opinion</strong> that correlates the history with your findings and honestly explains what is present, what is absent, and why.</p>
+
+    <div class="engine">
+      <h3>The opinion engine</h3>
+      <p>Build every opinion the same way. Never leap from a finding straight to a verdict.</p>
+      <div class="flow">
+        <span class="n">History of the assault</span><span class="ar">→</span>
+        <span class="n">Findings — positive <em>and</em> negative</span><span class="ar">→</span>
+        <span class="n">Correlate the two</span><span class="ar">→</span>
+        <span class="n">Reasoned opinion</span><span class="ar">→</span>
+        <span class="n red">State the limitations</span>
+      </div>
+      <div class="foot">You cannot opine that rape occurred. You <em>can</em> state whether your findings are consistent with the history — and you must give reasons, including reasons for any negatives. <span class="sec">S 39 BSA</span> makes the doctor an expert witness; <span class="sec">S 45 BSA</span> makes the grounds of the opinion themselves relevant; and <span class="sec">S 184 BNSS</span> requires a reasoned report.</div>
+    </div>
+
+    <p><strong>State these two facts before any opinion — examiners and courts both reward them:</strong></p>
+    <ul class="exlist">
+      <li>Skin or mucosal injuries are found in only about <strong>one-third</strong> of forced-assault cases, so the <strong>absence of injury does not exclude assault</strong>.</li>
+      <li>Not resisting is <strong>not</strong> consent <span class="sec">(S 63 BNS)</span>; so the absence of "resistance injuries" proves nothing about whether she consented.</li>
+    </ul>
+
+    <h3 class="sub"><span class="n">The engine</span>Answer the questions — get the collection plan and the verbatim MoHFW provisional &amp; final opinion</h3>
+    <div class="engine-widget" id="engine">
+      <div class="ew-head"><h4>Evidence &amp; opinion decision engine</h4><p>Answer the questions to get the collection plan and the <b>verbatim MoHFW 2014 provisional &amp; final opinion</b>. Guidance only — clinical judgement and consent always govern.</p></div>
+      <div class="ew-body">
+        <div class="ew-q">
+          <div class="qlbl"><span class="qn">Q1</span> How long since the assault?</div>
+          <div class="ew-opts" data-q="time" data-multi="false">
+            <button class="ew-opt" data-v="24h">≤ 24 h</button>
+            <button class="ew-opt" data-v="48h">24–48 h</button>
+            <button class="ew-opt" data-v="5d">2–5 days</button>
+            <button class="ew-opt" data-v="21d">5–21 days</button>
+            <button class="ew-opt" data-v="over">&gt; 21 days</button>
+          </div>
+        </div>
+        <div class="ew-q">
+          <div class="qlbl"><span class="qn">Q2</span> Nature of the act? <span class="qhint">select all that apply</span></div>
+          <div class="ew-opts" data-q="orifice" data-multi="true">
+            <button class="ew-opt" data-v="vaginal">Vaginal</button>
+            <button class="ew-opt" data-v="anal">Anal</button>
+            <button class="ew-opt" data-v="oral">Oral</button>
+            <button class="ew-opt" data-v="contact">Skin / non-penetrative</button>
+          </div>
+        </div>
+        <div class="ew-q">
+          <div class="qlbl"><span class="qn">Q3</span> Ejaculation / condom?</div>
+          <div class="ew-opts" data-q="ejac" data-multi="false">
+            <button class="ew-opt" data-v="ejac">Ejaculation reported</button>
+            <button class="ew-opt" data-v="condom">Condom used</button>
+            <button class="ew-opt" data-v="unknown">Unknown</button>
+          </div>
+        </div>
+        <div class="ew-q">
+          <div class="qlbl"><span class="qn">Q4</span> Post-assault acts? <span class="qhint">select all that apply</span></div>
+          <div class="ew-opts" data-q="post" data-multi="true">
+            <button class="ew-opt" data-v="washed">Bathed / washed / douched</button>
+            <button class="ew-opt" data-v="changed">Changed clothes</button>
+            <button class="ew-opt" data-v="none">None</button>
+          </div>
+        </div>
+        <div class="ew-q">
+          <div class="qlbl"><span class="qn">Q5</span> Genital injuries on examination?</div>
+          <div class="ew-opts" data-q="genital" data-multi="false">
+            <button class="ew-opt" data-v="present">Present</button>
+            <button class="ew-opt" data-v="absent">Absent</button>
+          </div>
+        </div>
+        <div class="ew-q">
+          <div class="qlbl"><span class="qn">Q6</span> Body (physical) injuries on examination?</div>
+          <div class="ew-opts" data-q="physical" data-multi="false">
+            <button class="ew-opt" data-v="present">Present</button>
+            <button class="ew-opt" data-v="absent">Absent</button>
+          </div>
+        </div>
+        <div class="ew-q">
+          <div class="qlbl"><span class="qn">Q7</span> Penetration type? <span class="qhint">for the final opinion</span></div>
+          <div class="ew-opts" data-q="pentype" data-multi="false">
+            <button class="ew-opt" data-v="penile">Penile</button>
+            <button class="ew-opt" data-v="nonpenile">Non-penile (finger / object)</button>
+            <button class="ew-opt" data-v="nonpenetrative">Non-penetrative (bite / suck / fondle / kiss)</button>
+          </div>
+        </div>
+        <div class="ew-q">
+          <div class="qlbl"><span class="qn">Q8</span> FSL report? <span class="qhint">leave blank for provisional only</span></div>
+          <div class="ew-opts" data-q="fsl" data-multi="false">
+            <button class="ew-opt" data-v="awaited">Awaited</button>
+            <button class="ew-opt" data-v="semen">Positive — semen</button>
+            <button class="ew-opt" data-v="semendrug">Positive — semen + drugs/alcohol</button>
+            <button class="ew-opt" data-v="lubricant">Positive — lubricant only</button>
+            <button class="ew-opt" data-v="negative">Negative</button>
+          </div>
+        </div>
+        <div class="ew-out" id="ewOut"><p class="placeholder">Answer the questions to see the recommended collection, expected yield, and the matching MoHFW provisional &amp; final opinion.</p></div>
+        <button class="ew-reset" id="ewReset">↺ Start over</button>
+      </div>
+    </div>
+
+    <h3 class="sub"><span class="n">Printable flowchart</span>The same logic, at a glance</h3>
+    <div class="flowchart">
+      <div class="fc-node start">Survivor presents — consent obtained, history taken</div>
+      <div class="fc-conn"></div>
+      <div class="fc-decision">Q1 · How long since the assault?</div>
+      <div class="fc-branches">
+        <div class="fc-branch"><span class="fc-t">≤ 24 h</span><span class="fc-d">Motile sperm possible → wet-mount slide + swabs / slides</span></div>
+        <div class="fc-branch"><span class="fc-t">24–48 h</span><span class="fc-d">Non-motile sperm → swabs / slides</span></div>
+        <div class="fc-branch"><span class="fc-t">2–5 days</span><span class="fc-d">Semen / lubricant / blood → swabs</span></div>
+        <div class="fc-branch"><span class="fc-t">5–21 days</span><span class="fc-d">Microscopy unlikely; DNA from cervix / high vagina + clothing / trace</span></div>
+        <div class="fc-branch stop"><span class="fc-t">&gt; 21 days</span><span class="fc-d">No indication to collect biological samples — treat &amp; document</span></div>
+      </div>
+      <div class="fc-conn"></div>
+      <div class="fc-decision">Q2 · Which orifice? (collect outside-in)</div>
+      <div class="fc-branches">
+        <div class="fc-branch"><span class="fc-t">Vaginal</span><span class="fc-d">Vulval → vaginal (fornices) → cervical swab</span></div>
+        <div class="fc-branch"><span class="fc-t">Anal</span><span class="fc-d">External anal → rectal swab</span></div>
+        <div class="fc-branch"><span class="fc-t">Oral</span><span class="fc-d">Oral / buccal swab</span></div>
+        <div class="fc-branch"><span class="fc-t">Skin</span><span class="fc-d">Moistened swab of stains; nail clippings</span></div>
+      </div>
+      <div class="fc-conn"></div>
+      <div class="fc-decision">Q3 · Post-assault acts / condom?</div>
+      <div class="fc-branches">
+        <div class="fc-branch"><span class="fc-t">Bathed / washed</span><span class="fc-d">Trace loss expected → use the &ldquo;bathed / washed&rdquo; opinion wording</span></div>
+        <div class="fc-branch"><span class="fc-t">Condom used</span><span class="fc-d">Semen / sperm unlikely → use the &ldquo;condom used&rdquo; opinion wording</span></div>
+      </div>
+      <div class="fc-conn"></div>
+      <div class="fc-node">Always: clothing (paper bags, air-dried) · nail clippings · loose hair / trace · reference blood / buccal for DNA · treat · maintain chain of custody</div>
+    </div>
+
+    <h3 class="sub"><span class="n">The official opinion proformas</span>Verbatim from the MoHFW 2014 protocol — the same wordings the engine generates</h3>
+    <p>The examining doctor writes <strong>two</strong> opinions: a <strong>provisional</strong> one immediately after examination (from history and clinical findings), and a <strong>final</strong> one after the FSL report. The MoHFW protocol gives ready wordings for each, keyed on whether <strong>genital</strong> and <strong>body (physical)</strong> injuries are present and on the FSL result. They are reproduced verbatim below; where the protocol cites "Sec 375 IPC" the current section is added in brackets.</p>
+
+    <div class="proforma">
+      <div class="pf-head">Provisional opinion<span>Issued immediately after examination · MoHFW 2014, p. 32</span></div>
+      <div class="pf-row"><div class="pf-key">Genital +<br>Physical +</div><div class="pf-op">"There are signs suggestive of recent use of force / forceful penetration of vagina / anus. Sexual violence cannot be ruled out."<span class="rat">Reasoning to record: evidence for semen and spermatozoa is yet to be tested by laboratory examination (in penile penetration).</span></div></div>
+      <div class="pf-row"><div class="pf-key">Genital +<br>Physical −</div><div class="pf-op">"There are signs suggestive of recent forceful penetration of vagina / anus."<span class="rat">Reasoning to record: the lack of physical injuries could be because the survivor was unconscious, under the effect of alcohol / drugs, overpowered or threatened. It could be because there was fingering or penetration by object with or without lubricant — an offence under Sec 375 IPC [now S 63 BNS].</span></div></div>
+      <div class="pf-row"><div class="pf-key">Genital −<br>Physical +</div><div class="pf-op">"There are signs of use of force, however vaginal or anal or oral penetration cannot be ruled out."<span class="rat">Reasoning to record: the lack of genital injuries could be because of use of lubricant, or fingering / penetration by object.</span></div></div>
+      <div class="pf-row"><div class="pf-key">Genital −<br>Physical −</div><div class="pf-op">"There are no signs of use of force; however final opinion is reserved pending availability of FSL reports. Sexual violence cannot be ruled out."<span class="rat">Reasoning to record: the lack of genital injuries could be because of use of lubricant; the lack of physical injuries because the survivor was unconscious, under the effect of alcohol / drugs, overpowered or threatened; or fingering / penetration by object with lubricant — an offence under Sec 375 IPC [now S 63 BNS].</span></div></div>
+    </div>
+
+    <div class="proforma">
+      <div class="pf-head">Final opinion<span>After the FSL report · MoHFW 2014, pp. 35–36</span></div>
+      <div class="pf-group">Penile penetration — FSL positive for semen</div>
+      <div class="pf-row"><div class="pf-key">Genital + / Physical +<br>· or + / − · or − / +</div><div class="pf-op">"There are signs suggestive of forceful vaginal / anal intercourse."</div></div>
+      <div class="pf-row"><div class="pf-key">Genital − / Physical −<br>semen +</div><div class="pf-op">"There are signs suggestive of vaginal / anal intercourse."</div></div>
+      <div class="pf-row"><div class="pf-key">Genital − / Physical −<br>drugs/alcohol + semen +</div><div class="pf-op">"There are signs suggestive of vaginal / anal intercourse under the influence of drugs / alcohol."</div></div>
+      <div class="pf-group">Non-penile penetration — FSL negative for semen / alcohol / drugs / lubricant</div>
+      <div class="pf-row"><div class="pf-key">Genital + / Physical +</div><div class="pf-op">"There are no signs suggestive of vaginal / anal intercourse, but there is evidence of physical and genital assault."</div></div>
+      <div class="pf-row"><div class="pf-key">Genital + / Physical −</div><div class="pf-op">"There are no signs suggestive of vaginal / anal intercourse, but there is evidence of genital assault."</div></div>
+      <div class="pf-row"><div class="pf-key">Genital − / Physical +</div><div class="pf-op">"There are no signs suggestive of vaginal / anal intercourse, but there is evidence of physical assault."</div></div>
+      <div class="pf-row"><div class="pf-key">Genital − / Physical −</div><div class="pf-op">"There are no signs suggestive of penetration of vagina / anus."</div></div>
+      <div class="pf-row"><div class="pf-key">Genital − / Physical −<br>lubricant + only</div><div class="pf-op">"There is a possibility of vaginal / anal penetration by a lubricated object."</div></div>
+      <div class="pf-group">Non-penetrative assault — pick the line matching the finding</div>
+      <div class="pf-row"><div class="pf-key">Bite / suck / fondle / kiss / masturbation</div><div class="pf-op">"…signs suggestive of bite mark/s / sucking mark/s / forceful physical injuries (fondling) / salivary contact (kissing) / seminal fluid contact (masturbation) on ___ site."<span class="rat">Where there are no signs but the history suggests such an act, still document a good history — the survivor may have washed or bathed.</span></div></div>
+    </div>
+
+    <h3 class="sub"><span class="n">Supplementary phrasings</span>For specific situations the injury/FSL tables do not label directly</h3>
+    <p>These are reasoning scaffolds for framing a particular circumstance clearly; use them alongside the official proformas above, not instead of them.</p>
+
+    <div class="op">
+      <div class="scenario">A · Positive genital or body findings are present</div>
+      <div class="trigger"><b>When to use:</b> you have found something — e.g. a fresh abrasion at the posterior fourchette, or a tear with surrounding redness.</div>
+      <div class="quote">"On examination there are findings — [state them, e.g. a fresh abrasion at the posterior fourchette] — which are consistent with the history of recent vaginal penetration as alleged. Final correlation awaits the FSL report."</div>
+      <div class="why"><b>Note:</b> write "consistent with," never "proves." An injury confirms contact or force; it does not prove the legal offence.</div>
+    </div>
+
+    <div class="op">
+      <div class="scenario">B · No injuries, but the history is consistent</div>
+      <div class="trigger"><b>When to use:</b> your examination is entirely normal, yet her account is clear. The most common and most misunderstood situation.</div>
+      <div class="quote">"There are no demonstrable injuries or positive findings on examination. This does not exclude the alleged sexual violence, as injuries are present in only about one-third of such cases and their absence is well recognised. The findings therefore do not rule out the history as alleged."</div>
+      <div class="why"><b>Why it matters:</b> it turns a normal examination into a <em>reasoned</em> negative rather than an implied denial. This is the single most important wording in this guide.</div>
+    </div>
+
+    <div class="op">
+      <div class="scenario">C · She presented late (within the collection window but delayed)</div>
+      <div class="trigger"><b>When to use:</b> several days have passed, so biological trace is diminished but she is still within ~21 days.</div>
+      <div class="quote">"The survivor presented approximately [X] days after the alleged incident. Biological evidence of the kind ordinarily recoverable early is diminished with time, and its reduction is attributable to this delay rather than to non-occurrence of the incident. Cervical / high-vaginal sampling and durable trace have been collected, and DNA analysis may still assist."</div>
+      <div class="why"><b>Why:</b> it ties the reduced yield explicitly to elapsed time while keeping the late-DNA route open.</div>
+    </div>
+
+    <div class="op">
+      <div class="scenario">D · She bathed, washed or changed afterwards</div>
+      <div class="trigger"><b>When to use:</b> the history includes a post-assault act that would have removed evidence.</div>
+      <div class="quote">"The survivor reports having bathed and changed her clothing after the incident. Such activity is a recognised cause of loss of seminal and trace evidence; the absence of such evidence here is consistent with that activity and does not negate the history."</div>
+      <div class="why"><b>Why:</b> it names the specific evidence-removing act from her history and links it directly to the negative finding.</div>
+    </div>
+
+    <div class="op">
+      <div class="scenario">E · A condom was reportedly used</div>
+      <div class="trigger"><b>When to use:</b> she reports condom use, so semen and sperm are unlikely to be found.</div>
+      <div class="quote">"The survivor reports that a condom was used. This markedly reduces the likelihood of recovering semen or spermatozoa; their absence is therefore expected and does not exclude penetration. Reference and trace samples have been preserved for DNA comparison."</div>
+      <div class="why"><b>Why:</b> it explains a specific expected negative and keeps the DNA route open for identification.</div>
+    </div>
+
+    <div class="op">
+      <div class="scenario">F · FSL / laboratory result awaited</div>
+      <div class="trigger"><b>When to use:</b> at the end of every examination, before the lab has reported.</div>
+      <div class="quote">"This is a provisional opinion based on clinical examination. The final opinion — particularly regarding the presence of semen or spermatozoa and DNA correlation — will be furnished on receipt of the FSL report."</div>
+      <div class="why"><b>Rule:</b> give a provisional opinion at once when you have positive findings or a positive wet-mount; reserve the final opinion for the FSL report. Never back-date a report.</div>
+    </div>
+
+    <div class="op warn">
+      <div class="scenario">What your opinion may — and may not — address</div>
+      <div class="quote">May address: evidence of a penetrative or non-penetrative act; mental capacity to consent (affected by disease, alcohol or drugs); age, where consent capacity or punishment depends on it; and material to identify the assailant (DNA from hair, semen, blood or nails). Must not address: whether "rape" occurred, whether she is "habituated to sex", penis size, or virginity.</div>
+    </div>
+
+    <div class="forbid">
+      <h4>Never write this — write this instead</h4>
+      <p>The left column loses cases and exposes the doctor. The right column says the same thing lawfully and defensibly.</p>
+      <div class="row"><div class="no">"Rape is confirmed / has occurred."</div><div class="yes">"Findings are consistent with the history of penetration as alleged."</div><div class="basis">Rape is a legal finding for the court, not the doctor — S 63 / S 64 BNS</div></div>
+      <div class="row"><div class="no">"No injuries, therefore no assault."</div><div class="yes">"No injuries seen; their absence does not exclude assault (present in only ~1/3 of cases)."</div><div class="basis">A reasoned negative is required — S 39 / S 45 BSA</div></div>
+      <div class="row"><div class="no">"Victim is habituated to sex."</div><div class="yes">Omit entirely — it is irrelevant to the present offence.</div><div class="basis">Barred — S 48 BSA &amp; proviso to S 146 BSA</div></div>
+      <div class="row"><div class="no">"Hymen intact, so no penetration."</div><div class="yes">Describe the finding factually; do not equate the hymen with penetration or chastity.</div><div class="basis">Two-finger test held unconstitutional — Supreme Court</div></div>
+      <div class="row"><div class="no">A final opinion issued before the FSL report.</div><div class="yes">Provisional opinion now; final opinion on receipt of the FSL report.</div><div class="basis">Reasoned, staged opinion — S 184 BNSS</div></div>
+    </div>
+  </section>
+
+  <!-- STEP 6 DEPOSITION -->
+  <section class="step" id="s6">
+    <div class="step-head"><span class="no">06</span><h2>Deposition in court</h2><span class="tag">S 39 BSA · expert witness</span></div>
+
+    <p class="lead-p">On matters of medical science, the doctor gives evidence as an <strong>expert witness</strong> <span class="sec">(S 39 BSA)</span>; on everything else, as an ordinary witness. Your job in the witness box is to uphold the science plainly and honestly — including stating, without fear, the limits of what medical evidence can show.</p>
+
+    <p><strong>Prepare before you go.</strong> Know the case; keep short notes of the history, examination, evidence collected and the opinion you drew; carry the file, the FSL report and related papers; and meet the prosecutor (APP/PP) beforehand to understand what will be asked.</p>
+
+    <p><strong>In the box, keep it simple and truthful.</strong> Use plain words — say "bleeding," not "haemorrhage." Answer the question that is asked; do not lecture the court or argue with counsel. If the honest answer is <em>"I do not know,"</em> say so — that is a proper answer, and going beyond your knowledge only damages your credibility. Stay composed and do not appear to favour the side that called you.</p>
+
+    <p><strong>On textbooks:</strong> do not accept a book as an authority unless you agree with every statement in it, and when a passage is read to you, insist on reading it yourself — together with the lines before and after — so its meaning is not distorted.</p>
+
+    <p><strong>In child cases,</strong> do not reveal the child's identity unless it is in the child's best interest. POCSO trials are conducted in a child-friendly, in-camera setting, and the child is not made to face the accused.</p>
+  </section>
+
+  <!-- REFERENCE CARD -->
+  <div class="refcard">
+    <h3>Quick section reference — old code to new</h3>
+    <div class="sub">In force 1 July 2024. IPC became BNS · CrPC became BNSS · IEA became BSA. POCSO and the JJ Act are unchanged. Always confirm against the bare Act before citing in a report or in court.</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Purpose</th><th>Old code</th><th>New code</th></tr></thead>
+        <tbody>
+          <tr><td>Definition of rape / punishment</td><td class="mono">IPC 375 / 376</td><td class="mono">S 63 / S 64 BNS</td></tr>
+          <tr><td>Consent — good-faith act for benefit</td><td class="mono">IPC 88</td><td class="mono">S 26 BNS</td></tr>
+          <tr><td>Consent — child / unsound mind, by guardian</td><td class="mono">IPC 89</td><td class="mono">S 27 BNS</td></tr>
+          <tr><td>Consent invalid if by fear / misconception</td><td class="mono">IPC 90</td><td class="mono">S 28 BNS</td></tr>
+          <tr><td>Grievous hurt — definition</td><td class="mono">IPC 320</td><td class="mono">S 116 BNS</td></tr>
+          <tr><td>Voluntarily causing grievous hurt</td><td class="mono">IPC 322 / 325</td><td class="mono">S 117 BNS</td></tr>
+          <tr><td>Hurt by dangerous weapon / means</td><td class="mono">IPC 324 / 326</td><td class="mono">S 118 BNS</td></tr>
+          <tr><td>Medical exam of victim of rape</td><td class="mono">CrPC 164A</td><td class="mono">S 184 BNSS</td></tr>
+          <tr><td>Medical exam of accused</td><td class="mono">CrPC 53 / 53A / 54</td><td class="mono">S 51 / S 52 / S 53 BNSS</td></tr>
+          <tr><td>Free first-aid / treatment mandate</td><td class="mono">CrPC 357C</td><td class="mono">S 397 BNSS</td></tr>
+          <tr><td>Doctor as expert witness</td><td class="mono">IEA 45</td><td class="mono">S 39 BSA (grounds S 45)</td></tr>
+          <tr><td>Character / past sexual history barred</td><td class="mono">IEA 53A / 146</td><td class="mono">S 48 / S 146 proviso BSA</td></tr>
+          <tr><td>Child victim — woman doctor</td><td class="mono">POCSO 27</td><td class="mono">S 27 POCSO (unchanged)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <div class="cred">Prepared by Dr Harvinder Singh Chhabra · Assistant Professor, Himalayan Institute of Medical Sciences, SRHU, Dehradun</div>
+    <div class="feedback">Feedback, corrections and suggestions welcome — <a href="mailto:dr.fmt.hsc@gmail.com?subject=Feedback%20%E2%80%94%20Medico-legal%20Care%20Guide">dr.fmt.hsc@gmail.com</a></div>
+    <div class="licence">
+      <div class="lic-line">© 2026 Dr Harvinder Singh Chhabra, Assistant Professor, HIMS, SRHU, Dehradun. Licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a> — you may share this work with attribution, for non-commercial use, without modification.</div>
+      <div class="lic-cite"><span>How to cite (Vancouver):</span> Chhabra HS. Medico-legal care of the sexual violence survivor [Internet]. Dehradun: Himalayan Institute of Medical Sciences, SRHU; 2026 [cited YYYY Mon DD]. Available from: [insert published URL]</div>
+    </div>
+    <div class="disc">A teaching reference for medical students and practitioners. Statutory section numbers reflect the BNS, BNSS and BSA as in force from 1 July 2024, and should be verified against the current bare Acts and your State's MoHFW / DHR sexual-violence protocol before use in any report or in court. The 21-day collection ceiling is a stated practical bound drawn from the persistence literature (3–7 day reliable window; DNA/cervix extension; the ~19-day figure traced and cautioned against by DiFrancesco &amp; Richards, <em>Science &amp; Justice</em>), not a fixed statutory limit; individual clinical judgement governs. Court directions cited (Karnataka; Punjab-Haryana-Chandigarh) bind only their own jurisdictions. Sources drawn on include the MoHFW Guidelines &amp; Protocols for Medico-legal Care for Survivors/Victims of Sexual Violence (2014), the CFSL Chandigarh guidelines, and the UNFPA/Maharashtra handbook. This document contains no case-identifying or victim-identifying material.</div>
+  </footer>
+
+</div>
+<div class="runcredit">Medico-legal Care of the Sexual Violence Survivor · Dr Harvinder Singh Chhabra · Assistant Professor, HIMS, SRHU, Dehradun</div>
+
+<script>
+(function(){
+  var state = { time:null, orifice:[], ejac:null, post:[], genital:null, physical:null, pentype:null, fsl:null };
+  var engine = document.getElementById('engine');
+  if(!engine) return;
+  var out = document.getElementById('ewOut');
+  var BNS = ' [now S 63 BNS]';
+
+  engine.querySelectorAll('.ew-opts').forEach(function(group){
+    var q = group.getAttribute('data-q');
+    var multi = group.getAttribute('data-multi') === 'true';
+    group.querySelectorAll('.ew-opt').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var v = btn.getAttribute('data-v');
+        if(multi){
+          var arr = state[q];
+          var i = arr.indexOf(v);
+          if(i>-1){ arr.splice(i,1); btn.classList.remove('on'); }
+          else { arr.push(v); btn.classList.add('on'); }
+        } else {
+          state[q] = v;
+          group.querySelectorAll('.ew-opt').forEach(function(b){ b.classList.remove('on'); });
+          btn.classList.add('on');
+        }
+        render();
+      });
+    });
+  });
+
+  document.getElementById('ewReset').addEventListener('click', function(){
+    state = { time:null, orifice:[], ejac:null, post:[], genital:null, physical:null, pentype:null, fsl:null };
+    engine.querySelectorAll('.ew-opt').forEach(function(b){ b.classList.remove('on'); });
+    out.innerHTML = '<p class="placeholder">Answer the questions to see the recommended collection, expected yield, and the matching MoHFW provisional &amp; final opinion.</p>';
+  });
+
+  // ---- MoHFW 2014 provisional opinion (p. 32), keyed on genital x physical injuries ----
+  function provisional(){
+    var g = state.genital, p = state.physical;
+    if(!g || !p) return null;
+    var op, rat;
+    if(g==='present' && p==='present'){
+      op = 'There are signs suggestive of recent use of force / forceful penetration of vagina / anus. Sexual violence cannot be ruled out.';
+      rat = 'Evidence for semen and spermatozoa are yet to be tested by laboratory examination (in case of penile penetration).';
+    } else if(g==='present' && p==='absent'){
+      op = 'There are signs suggestive of recent forceful penetration of vagina / anus.';
+      rat = 'The lack of physical injuries could be because the survivor was unconscious, under the effect of alcohol / drugs, overpowered or threatened. It could be because there was fingering or penetration by object with or without use of lubricant — which is an offence under Sec 375 IPC'+BNS+'.';
+    } else if(g==='absent' && p==='present'){
+      op = 'There are signs of use of force, however vaginal or anal or oral penetration cannot be ruled out.';
+      rat = 'The lack of genital injuries could be because of the use of lubricant, or fingering / penetration by object.';
+    } else {
+      op = 'There are no signs of use of force; however final opinion is reserved pending availability of FSL reports. Sexual violence cannot be ruled out.';
+      rat = 'The lack of genital injuries could be because of use of lubricant. The lack of physical injuries could be because the survivor was unconscious, under the effect of alcohol / drugs, overpowered or threatened. It could also be because there was fingering or penetration by object with use of lubricant — which is an offence under Sec 375 IPC'+BNS+'.';
+    }
+    return {op:op, rat:rat};
+  }
+
+  // ---- MoHFW 2014 final opinion (pp. 35-36) ----
+  function finalOpinion(){
+    if(!state.fsl || state.fsl==='awaited') return {reserved:true};
+    if(state.pentype==='nonpenetrative'){ return {nonpen:true}; }
+    var g = state.genital, p = state.physical, f = state.fsl, key = g+'|'+p, op;
+    if(f==='semen'){
+      if(key==='absent|absent') op = 'There are signs suggestive of vaginal / anal intercourse.';
+      else op = 'There are signs suggestive of forceful vaginal / anal intercourse.';
+    } else if(f==='semendrug'){
+      op = 'There are signs suggestive of vaginal / anal intercourse under the influence of drugs / alcohol.';
+    } else if(f==='lubricant'){
+      op = 'There is a possibility of vaginal / anal penetration by a lubricated object.';
+    } else { // negative
+      if(key==='present|present') op = 'There are no signs suggestive of vaginal / anal intercourse, but there is evidence of physical and genital assault.';
+      else if(key==='present|absent') op = 'There are no signs suggestive of vaginal / anal intercourse, but there is evidence of genital assault.';
+      else if(key==='absent|present') op = 'There are no signs suggestive of vaginal / anal intercourse, but there is evidence of physical assault.';
+      else op = 'There are no signs suggestive of penetration of vagina / anus.';
+    }
+    return {op:op};
+  }
+
+  var nonpenList = [
+    'There are signs suggestive of bite mark/s on ___ site (time the injury).',
+    'There are signs suggestive of sucking mark/s on ___ site (time the injury).',
+    'There are signs suggestive of forceful physical injuries on ___ site (time the injury) — which may be due to fondling.',
+    'There are signs suggestive of salivary contact — which may be due to kissing.',
+    'There are signs suggestive of seminal fluid contact — which may be due to masturbation.'
+  ];
+
+  function render(){
+    if(!state.time){ return; }
+    var html = '';
+
+    // ---- collection ----
+    if(state.time === 'over'){
+      html += '<div class="ew-card warn"><h5>No indication to collect</h5>'+
+        '<p>More than 21 days have passed. There is <b>no indication to collect biological evidence</b> — a recoverable yield is not realistic. Collecting non-indicated samples, or examining against her will without justification, can itself be an unlawful, unconsented intrusion (S 184 BNSS). Still provide treatment, prophylaxis, support and full documentation.</p></div>';
+    } else {
+      var timeText = {
+        '24h':'Motile spermatozoa may still be present — take a wet-mount slide plus swabs / slides.',
+        '48h':'Non-motile spermatozoa may be found; motile sperm unlikely — swabs / slides.',
+        '5d':'Sperm unlikely; semen, lubricant or blood traces may persist — swabs.',
+        '21d':'Microscopy unlikely to show sperm. DNA — especially from the cervix / high vagina — may still be recoverable. Prioritise durable trace.'
+      }[state.time];
+      var collect = [];
+      if(state.orifice.indexOf('vaginal')>-1) collect.push('Genital swabs <b>outside-in</b>: vulval → vaginal (fornices) → <b>cervical</b> (best late-case DNA yield)');
+      if(state.orifice.indexOf('anal')>-1) collect.push('External anal then rectal swab');
+      if(state.orifice.indexOf('oral')>-1) collect.push('Oral / buccal swab');
+      if(state.orifice.indexOf('contact')>-1) collect.push('Moistened swab of suspected skin stains');
+      if(state.time==='24h' || state.time==='48h') collect.unshift('Wet-mount slide + dry swabs / slides for microscopy');
+      collect.push('Clothing (paper bags, air-dried, sealed, labelled)');
+      collect.push('Nail clippings and loose hair / trace');
+      collect.push('Reference blood / buccal sample for DNA comparison');
+
+      var exp = [timeText];
+      if(state.ejac==='condom') exp.push('<b>Condom reported</b> → semen / spermatozoa unlikely; absence is expected, not evidence of non-occurrence.');
+      if(state.post.indexOf('washed')>-1) exp.push('<b>Bathed / washed / douched</b> → loss of seminal and trace evidence is expected.');
+      if(state.orifice.length===0) exp.push('Select the nature of the act (Q2) to tailor the swab list.');
+
+      html += '<div class="ew-card"><h5>Collect</h5><ul><li>'+collect.join('</li><li>')+'</li></ul></div>';
+      html += '<div class="ew-card"><h5>What to expect</h5><ul><li>'+exp.join('</li><li>')+'</li></ul></div>';
+    }
+
+    // ---- provisional opinion ----
+    var pr = provisional();
+    if(pr){
+      html += '<div class="ew-card"><h5>Provisional medical opinion — verbatim</h5>'+
+        '<p style="font-family:\'Newsreader\',serif;font-style:italic;font-size:1rem;">&ldquo;'+pr.op+'&rdquo;</p>'+
+        '<p style="margin-top:8px;font-size:.84rem;color:var(--ink-soft);"><b>Reasoning to record:</b> '+pr.rat+'</p>'+
+        '<p style="margin-top:8px;font-size:.72rem;color:var(--slate);font-family:\'IBM Plex Mono\',monospace;">Source: MoHFW 2014, Guidelines &amp; Protocols, p. 32</p></div>';
+    } else {
+      html += '<div class="ew-card"><h5>Provisional medical opinion</h5><p style="font-size:.88rem;color:var(--ink-soft);">Answer Q5 (genital injuries) and Q6 (body injuries) to generate the verbatim MoHFW provisional opinion.</p></div>';
+    }
+
+    // ---- final opinion ----
+    var fo = finalOpinion();
+    if(fo && fo.nonpen){
+      html += '<div class="ew-card"><h5>Final opinion — non-penetrative assault (pick the matching line)</h5><ul style="font-family:\'Newsreader\',serif;font-style:italic;">'+
+        '<li>'+nonpenList.join('</li><li>')+'</li></ul>'+
+        '<p style="margin-top:6px;font-size:.72rem;color:var(--slate);font-family:\'IBM Plex Mono\',monospace;">Source: MoHFW 2014, Guidelines &amp; Protocols, pp. 35–36</p></div>';
+    } else if(fo && fo.op){
+      html += '<div class="ew-card"><h5>Final medical opinion — verbatim</h5>'+
+        '<p style="font-family:\'Newsreader\',serif;font-style:italic;font-size:1rem;">&ldquo;'+fo.op+'&rdquo;</p>'+
+        '<p style="margin-top:8px;font-size:.72rem;color:var(--slate);font-family:\'IBM Plex Mono\',monospace;">Source: MoHFW 2014, Guidelines &amp; Protocols, pp. 35–36 · given after the FSL report</p></div>';
+    } else {
+      html += '<div class="ew-card"><h5>Final medical opinion</h5><p style="font-size:.88rem;color:var(--ink-soft);">The final opinion is reserved until the FSL report. Answer Q7 (penetration type) and Q8 (FSL result) to generate the verbatim MoHFW final opinion.</p></div>';
+    }
+
+    out.innerHTML = html;
+  }
+})();
+
+// ---- checklists (consent, history) ----
+(function(){
+  document.querySelectorAll('.checklist').forEach(function(cl){
+    var items = cl.querySelectorAll('.cl-item');
+    var bar = cl.querySelector('.cl-progress span');
+    var count = cl.querySelector('.cl-count');
+    var reset = cl.querySelector('.cl-reset');
+    function update(){
+      var done = cl.querySelectorAll('.cl-item.done').length;
+      if(bar) bar.style.width = Math.round(done/items.length*100) + '%';
+      if(count) count.textContent = done + ' of ' + items.length + ' completed';
+    }
+    items.forEach(function(it){
+      it.addEventListener('click', function(){ it.classList.toggle('done'); update(); });
+    });
+    if(reset) reset.addEventListener('click', function(){
+      items.forEach(function(it){ it.classList.remove('done'); });
+      update();
+    });
+    update();
+  });
+})();
+</script>
+</body>
+</html>

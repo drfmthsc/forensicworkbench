@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAFE Evidence Sequencer · Forensic Medicine Workbench</title>
+<meta name="author" content="Dr Harvinder Singh Chhabra">
+<meta name="copyright" content="© 2026 Dr Harvinder Singh Chhabra">
+<meta name="license" content="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#eef2f3; --surface:#ffffff; --surface-2:#f6f9f9;
+    --ink:#17212a; --ink-soft:#51606c; --ink-faint:#7d8b95;
+    --line:#d3dde1; --line-soft:#e5ecee;
+    --teal:#0e6b6b; --teal-deep:#093f3f;
+    --correct:#2f7d4f; --correct-bg:#eaf5ee;
+    --amber:#a86a12; --amber-bg:#fbf3e4;
+    --brick:#b0392f; --brick-bg:#fbeceb;
+    --p1:#093f3f; --p2:#12595a; --p3:#1c7370; --p4:#2b8a80; --p5:#4c9f92; --p6:#77b6ab;
+    --radius:10px; --shadow:0 1px 2px rgba(23,33,42,.06), 0 6px 20px rgba(23,33,42,.05);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1160px;margin:0 auto;padding:28px 20px 80px}
+
+  /* Header */
+  header.masthead{border:1px solid var(--line);background:linear-gradient(180deg,#ffffff,#fbfdfd);border-radius:14px;padding:26px 28px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  header.masthead::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,var(--p1),var(--p2),var(--p3),var(--p4),var(--p5),var(--p6))}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:500;margin:0 0 8px}
+  header.masthead h1{font-family:"IBM Plex Serif",serif;font-weight:600;font-size:28px;line-height:1.15;margin:0 0 6px;letter-spacing:-.01em}
+  header.masthead p.sub{margin:0;color:var(--ink-soft);max-width:66ch}
+  .refline{margin-top:14px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:12.5px;color:var(--ink-faint);font-family:"IBM Plex Mono",monospace}
+  .byline{margin-top:12px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-soft)}
+  .byline strong{color:var(--ink);font-weight:600}
+
+  /* Scenario tabs */
+  .scenario-bar{margin:20px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+  .scen-tab{font-family:"IBM Plex Sans",sans-serif;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:10px 14px;cursor:pointer;flex:1 1 210px;min-width:200px;transition:border-color .15s,background .15s}
+  .scen-tab:hover{border-color:var(--teal)}
+  .scen-tab.active{border-color:var(--teal);background:var(--surface-2);box-shadow:inset 0 0 0 1px var(--teal)}
+  .scen-tab .st-k{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:3px}
+  .scen-tab .st-t{font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.25}
+  .scen-tab:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+
+  /* Scenario vignette */
+  .scenario{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 22px;box-shadow:var(--shadow)}
+  .scenario h2{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin:0 0 8px}
+  .scenario p{margin:0;color:var(--ink)}
+  .vign{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:12px}
+  .vign div{font-size:13px}
+  .vign span{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+  .vign strong{font-weight:600;color:var(--ink)}
+
+  /* Toolbar */
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:20px 0 16px;position:sticky;top:0;z-index:5;background:var(--paper);padding:10px 0}
+  button{font-family:inherit;font-size:13.5px;cursor:pointer;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 14px;transition:background .15s,border-color .15s,transform .05s;font-weight:500}
+  button:hover{border-color:var(--teal);background:var(--surface-2)}
+  button:active{transform:translateY(1px)}
+  button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+  button.primary{background:var(--teal);color:#fff;border-color:var(--teal)}
+  button.primary:hover{background:var(--teal-deep);border-color:var(--teal-deep)}
+  button.ghost{background:transparent}
+  .timer{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:var(--surface)}
+  .timer strong{color:var(--ink);font-weight:600}
+  .toggle{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:var(--ink-soft);user-select:none}
+  .toggle input{accent-color:var(--teal);width:16px;height:16px}
+  .toolbar .spacer{margin-left:auto}
+
+  /* Board */
+  .board{display:grid;grid-template-columns:1fr 1.15fr;gap:18px;align-items:start}
+  @media(max-width:860px){.board{grid-template-columns:1fr}}
+  .col{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+  .col > .col-head{padding:13px 18px;border-bottom:1px solid var(--line-soft);display:flex;align-items:baseline;gap:10px}
+  .col-head h3{font-family:"IBM Plex Serif",serif;font-weight:600;font-size:16px;margin:0}
+  .col-head .count{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);margin-left:auto}
+  .col-head .hint{font-size:12px;color:var(--ink-faint)}
+  .col-body{padding:12px}
+  .col-body.pool{min-height:120px}
+
+  /* Cards */
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:11px 12px;margin-bottom:9px;display:flex;gap:10px;align-items:flex-start;transition:box-shadow .15s,border-color .15s}
+  .card:last-child{margin-bottom:0}
+  .card .txt{flex:1;min-width:0}
+  .card .txt p{margin:0;font-size:13.6px;line-height:1.4}
+  .card .phase-tag{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#fff;padding:2px 7px;border-radius:20px;display:inline-block;margin-top:6px;font-weight:500}
+  .card .note{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);font-size:12.2px;color:var(--ink-soft);display:none}
+  .card.show-note .note{display:block}
+  .card .num{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;color:var(--ink-faint);min-width:22px;text-align:right;padding-top:1px}
+  .card .ctrls{display:flex;flex-direction:column;gap:4px}
+  .card .ctrls button{padding:3px 7px;font-size:11.5px;line-height:1.1;border-radius:6px;min-width:30px}
+  .card .ctrls.row{flex-direction:row;flex-wrap:wrap;max-width:76px;justify-content:flex-end}
+  .pool .card{cursor:default}
+  .pool .card .ctrls button.add{border-color:var(--teal);color:var(--teal)}
+  .pool .card .ctrls button.excl{border-color:var(--brick);color:var(--brick)}
+  #sequence .card{position:relative;padding-left:16px}
+  #sequence .card::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:4px;border-radius:4px;background:var(--line)}
+  #sequence .card[data-phase="1"]::before{background:var(--p1)}
+  #sequence .card[data-phase="2"]::before{background:var(--p2)}
+  #sequence .card[data-phase="3"]::before{background:var(--p3)}
+  #sequence .card[data-phase="4"]::before{background:var(--p4)}
+  #sequence .card[data-phase="5"]::before{background:var(--p5)}
+  #sequence .card[data-phase="6"]::before{background:var(--p6)}
+  .phase-c1{background:var(--p1)} .phase-c2{background:var(--p2)} .phase-c3{background:var(--p3)}
+  .phase-c4{background:var(--p4)} .phase-c5{background:var(--p5)} .phase-c6{background:var(--p6)}
+  .card.ok{border-color:var(--correct);background:var(--correct-bg)}
+  .card.warn{border-color:var(--amber);background:var(--amber-bg)}
+  .card.bad{border-color:var(--brick);background:var(--brick-bg);border-width:1.5px}
+  .status{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:6px}
+  .card.ok .status{color:var(--correct)} .card.warn .status{color:var(--amber)} .card.bad .status{color:var(--brick)}
+  .empty{color:var(--ink-faint);font-size:13px;text-align:center;padding:22px 10px;font-style:italic}
+  #exclude-col .col-head{background:var(--surface-2)}
+  #exclude .card{background:var(--surface-2)}
+
+  /* Results */
+  #results{margin-top:20px;display:none}
+  #results.show{display:block}
+  .scorecard{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+  .score-head{display:flex;flex-wrap:wrap;align-items:center;gap:20px;padding:20px 24px;border-bottom:1px solid var(--line-soft)}
+  .score-ring{display:flex;align-items:baseline;gap:6px}
+  .score-ring .big{font-family:"IBM Plex Serif",serif;font-size:42px;font-weight:600;line-height:1}
+  .score-ring .slash{font-size:20px;color:var(--ink-faint)}
+  .score-meta{font-size:13px;color:var(--ink-soft)}
+  .verdict{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:5px 12px;border-radius:20px;margin-left:auto}
+  .verdict.clean{background:var(--correct-bg);color:var(--correct)}
+  .verdict.flag{background:var(--brick-bg);color:var(--brick)}
+  .progress{display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:14px 24px;border-bottom:1px solid var(--line-soft);background:var(--surface-2)}
+  .progress .stat{display:flex;flex-direction:column;line-height:1.25}
+  .progress .stat span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+  .progress .stat strong{font-size:15px;font-weight:600;color:var(--ink)}
+  .trend{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px}
+  .trend.up{background:var(--correct-bg);color:var(--correct)}
+  .trend.down{background:var(--brick-bg);color:var(--brick)}
+  .trend.flat{background:var(--line-soft);color:var(--ink-soft)}
+  .attempts{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto;align-items:center}
+  .attempts .lbl{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+  .attempt-chip{font-family:"IBM Plex Mono",monospace;font-size:11px;padding:3px 7px;border-radius:6px;border:1px solid var(--line);color:var(--ink-soft);background:var(--surface)}
+  .attempt-chip.clean{border-color:var(--correct);color:var(--correct);font-weight:600}
+  .attempt-chip.crit{border-color:var(--brick);color:var(--brick)}
+  .mastered{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--correct);font-weight:600}
+  .focus{padding:15px 24px;border-bottom:1px solid var(--line-soft)}
+  .focus .fh{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin:0 0 7px}
+  .focus .fbody{border-left:3px solid var(--amber);background:var(--amber-bg);padding:11px 15px;border-radius:0 8px 8px 0;font-size:13.4px;line-height:1.5}
+  .focus.clean .fbody{border-left-color:var(--correct);background:var(--correct-bg)}
+  .focus.neutral .fbody{border-left-color:var(--teal);background:var(--surface-2)}
+  .focus .fbody b{font-weight:600}
+  .checks{padding:16px 24px}
+  .checks h4{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 12px;font-weight:600}
+  .check{display:flex;gap:11px;padding:9px 0;border-bottom:1px solid var(--line-soft);align-items:flex-start}
+  .check:last-child{border-bottom:none}
+  .check .mark{font-family:"IBM Plex Mono",monospace;font-weight:600;flex:none;width:20px;text-align:center}
+  .check.pass .mark{color:var(--correct)}
+  .check.fail .mark{color:var(--brick)}
+  .check .ctext{font-size:13.4px}
+  .check .ctext b{font-weight:600}
+  .check .detail{display:block;color:var(--ink-soft);font-size:12.4px;margin-top:2px}
+  .results-actions{display:flex;gap:10px;padding:15px 24px;flex-wrap:wrap;align-items:center;border-top:1px solid var(--line-soft)}
+  .btn-sm{font-size:12.5px;padding:8px 13px}
+  .name-field{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-soft)}
+  .name-field input{font-family:inherit;font-size:13px;border:1px solid var(--line);border-radius:7px;padding:7px 10px;min-width:170px}
+  .name-field input:focus-visible{outline:2px solid var(--teal);outline-offset:1px}
+
+  /* Handling round */
+  .handling{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+  .handling .h-head{padding:16px 22px;border-bottom:1px solid var(--line-soft)}
+  .handling .h-head h3{font-family:"IBM Plex Serif",serif;font-size:18px;margin:0 0 3px}
+  .handling .h-head p{margin:0;color:var(--ink-soft);font-size:13px}
+  .h-item{display:flex;gap:12px;align-items:flex-start;padding:12px 22px;border-bottom:1px solid var(--line-soft)}
+  .h-item:last-of-type{border-bottom:none}
+  .h-item .h-txt{flex:1;font-size:13.7px}
+  .h-item .h-note{display:none;color:var(--ink-soft);font-size:12.3px;margin-top:5px}
+  .h-item.revealed .h-note{display:block}
+  .h-choices{display:flex;gap:6px;flex:none}
+  .h-choices button{font-size:12px;padding:6px 11px;border-radius:7px}
+  .h-choices button.sel{border-color:var(--teal);background:var(--teal);color:#fff}
+  .h-item.right .h-txt{color:var(--ink)}
+  .h-item.right{background:var(--correct-bg)}
+  .h-item.wrong{background:var(--brick-bg)}
+  .h-mark{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;flex:none;width:18px;text-align:center;padding-top:6px}
+  .h-item.right .h-mark{color:var(--correct)} .h-item.wrong .h-mark{color:var(--brick)}
+  .h-actions{padding:15px 22px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .h-score{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--ink)}
+
+  /* Reminders */
+  .reminders{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:20px 24px}
+  .reminders h3{font-family:"IBM Plex Serif",serif;font-size:17px;margin:0 0 4px}
+  .reminders .lead{color:var(--ink-soft);font-size:13px;margin:0 0 14px}
+  .rem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .rem{border:1px solid var(--line-soft);border-radius:9px;padding:13px 14px;background:var(--surface-2)}
+  .rem .k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:600;margin:0 0 5px}
+  .rem p{margin:0;font-size:12.8px;color:var(--ink)}
+
+  /* Licence */
+  .license{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:18px 22px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+  .cc-badge{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13px;letter-spacing:.05em;border:1.5px solid var(--ink);border-radius:8px;padding:9px 13px;color:var(--ink);white-space:nowrap;flex:none}
+  .license .ltext{flex:1;min-width:250px;font-size:12.8px;color:var(--ink-soft);line-height:1.55}
+  .license .ltext strong{color:var(--ink);font-weight:600}
+  .license a{color:var(--teal)}
+  footer.foot{margin-top:28px;text-align:center;font-size:12px;color:var(--ink-faint);line-height:1.6}
+  footer.foot a{color:var(--teal)}
+
+  /* Print report */
+  #print-report{display:none}
+  @media print{
+    body{background:#fff}
+    .wrap > *:not(#print-report){display:none !important}
+    #print-report{display:block !important;font-size:12px;color:#000}
+    #print-report h2{font-family:"IBM Plex Serif",serif;margin:0 0 2px}
+    #print-report .pr-band{border:2px solid #000;padding:14px 18px;border-radius:8px;margin-bottom:16px}
+    #print-report .pr-meta{display:flex;flex-wrap:wrap;gap:6px 28px;margin:10px 0 18px;font-family:"IBM Plex Mono",monospace;font-size:11px}
+    #print-report ol{margin:0;padding-left:22px}
+    #print-report li{margin-bottom:4px}
+    #print-report .pr-check{margin:3px 0}
+    #print-report .pr-foot{margin-top:22px;border-top:1px solid #000;padding-top:10px;font-size:10px}
+    #print-report .pr-sign{margin-top:34px;display:flex;justify-content:space-between}
+    #print-report .pr-sign span{border-top:1px solid #000;padding-top:4px;width:44%;font-size:10px}
+  }
+
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Forensic Medicine · SAFE protocol trainer</p>
+    <h1>Evidence Collection Sequencer</h1>
+    <p class="sub">Choose a case, order the steps of the medico-legal examination into the correct protocol sequence, and set aside anything that is prohibited or not indicated for that case. Which samples are relevant changes with the scenario.</p>
+    <div class="refline">MoHFW (2014) Guidelines &amp; Protocols · SAFE kit · Legal references per BNSS / BNS / BSA, 2023 (in force 1 July 2024) · Teaching aid, not a substitute for the statutory proforma</div>
+    <p class="byline">Created by <strong>Dr Harvinder Singh Chhabra</strong> · Assistant Professor, Forensic Medicine, HIMS, SRHU, Dehradun</p>
+  </header>
+
+  <div class="scenario-bar" id="scenario-bar" role="tablist" aria-label="Case scenarios"></div>
+
+  <section class="scenario" id="scenario">
+    <h2>Case vignette</h2>
+    <p id="vignette-text"></p>
+    <div class="vign" id="vignette-meta"></div>
+  </section>
+
+  <div class="toolbar">
+    <button class="primary" id="btn-check">Check my sequence</button>
+    <button id="btn-model" class="ghost">Reveal model sequence</button>
+    <button id="btn-reset" class="ghost">Reset &amp; reshuffle</button>
+    <span class="timer" id="timer">Time <strong>00:00</strong></span>
+    <label class="toggle spacer"><input type="checkbox" id="tg-exam"> Exam mode (OSCE)</label>
+    <label class="toggle"><input type="checkbox" id="tg-study"> Study mode</label>
+  </div>
+
+  <div class="board">
+    <div>
+      <div class="col" id="pool-col">
+        <div class="col-head"><h3>Available steps</h3><span class="hint">Add — or exclude</span><span class="count" id="pool-count"></span></div>
+        <div class="col-body pool" id="pool"></div>
+      </div>
+      <div class="col" id="exclude-col" style="margin-top:18px">
+        <div class="col-head"><h3>Excluded</h3><span class="hint">Prohibited or not indicated</span><span class="count" id="exclude-count"></span></div>
+        <div class="col-body" id="exclude"><div class="empty">Nothing excluded yet</div></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-head"><h3>My protocol sequence</h3><span class="hint">First step at the top</span><span class="count" id="seq-count"></span></div>
+      <div class="col-body" id="sequence"><div class="empty">Add steps from the left to build the examination sequence</div></div>
+    </div>
+  </div>
+
+  <section id="results">
+    <div class="scorecard">
+      <div class="score-head">
+        <div class="score-ring"><span class="big" id="score-num">0</span><span class="slash">/ <span id="score-total">0</span></span></div>
+        <div class="score-meta" id="score-meta"></div>
+        <span class="verdict" id="verdict"></span>
+      </div>
+      <div class="progress" id="progress"></div>
+      <div class="focus" id="focus"></div>
+      <div class="checks"><h4>Critical checks</h4><div id="critical-list"></div></div>
+      <div class="results-actions">
+        <button class="btn-sm primary" id="btn-again">Revise &amp; check again</button>
+        <span class="name-field"><label for="stu-name">Name for score sheet</label><input id="stu-name" type="text" placeholder="Student name" autocomplete="off"></span>
+        <button class="btn-sm ghost" id="btn-print">Print score sheet</button>
+        <button class="btn-sm ghost" id="btn-clear-progress">Clear progress</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="handling" id="handling">
+    <div class="h-head">
+      <h3>Specimen handling &amp; chain of custody</h3>
+      <p>The errors that lose cases in court. Mark each practice as sound or poor, then check.</p>
+    </div>
+    <div id="handling-list"></div>
+    <div class="h-actions">
+      <button class="btn-sm primary" id="btn-handling-check">Check handling</button>
+      <button class="btn-sm ghost" id="btn-handling-reset">Reset</button>
+      <span class="h-score" id="handling-score"></span>
+    </div>
+  </section>
+
+  <section class="reminders">
+    <h3>Non-negotiable reminders</h3>
+    <p class="lead">The points learners most often get wrong — worth restating every time.</p>
+    <div class="rem-grid">
+      <div class="rem"><p class="k">Consent is layered</p><p>Separate informed consent for examination and for sample collection — each may be declined and care continues. For a minor, the guardian consents. Informing the police, by contrast, is mandatory (BNSS S 397), not consent-dependent.</p></div>
+      <div class="rem"><p class="k">Care is mandatory</p><p>Examination and treatment cannot be denied or delayed for want of an FIR — a medico-legal emergency (<em>State of Karnataka v. Manjanna</em>). The exam is governed by <strong>BNSS S 184</strong> (which replaced CrPC S 164A); denying care is punishable under the <strong>BNS</strong>.</p></div>
+      <div class="rem"><p class="k">Reporting is mandatory</p><p>Hospitals must inform the police for every sexual-assault victim, adult or minor (<strong>BNSS S 397</strong>, ex CrPC S 357C). For a minor, <strong>POCSO S 19</strong> adds a stricter duty whose breach is itself punishable under <strong>S 21</strong>.</p></div>
+      <div class="rem"><p class="k">No two-finger test</p><p>The per-vaginum "two-finger" / laxity test and "virginity" opinions are prohibited; anyone performing it is guilty of misconduct (<em>State of Jharkhand v. Shailendra Kumar Rai</em>, 2022). Under the <strong>BSA, 2023</strong>, the survivor's past sexual history is not admissible to imply consent.</p></div>
+      <div class="rem"><p class="k">Identity is protected</p><p>S 228A IPC (now <strong>BNS S 72</strong>) bars disclosing a victim's identity. Per <em>Nipun Saxena v. Union of India</em> (2018), a minor victim's identity may be revealed only with the <strong>Special Court's</strong> permission, in the child's best interest — a guardian's consent alone is not enough.</p></div>
+      <div class="rem"><p class="k">96-hour window</p><p>Collect trace evidence up to 96 h; yield falls sharply after 72 h. Collect transient evidence — oral swab, dried secretions, urine for DFSA — early.</p></div>
+      <div class="rem"><p class="k">Preserve, then examine</p><p>Undress the survivor over a sheet, air-dry swabs before packing, label and seal every specimen, and maintain chain of custody to the investigating officer.</p></div>
+      <div class="rem"><p class="k">Minors → POCSO</p><p>Under 18, POCSO applies: guardian consent and a woman doctor (POCSO S 27(4)). Reporting is mandatory as above — POCSO simply makes non-reporting an offence.</p></div>
+      <div class="rem"><p class="k">Treat, don't just collect</p><p>Emergency contraception, STI prophylaxis, HIV PEP (start within 72 h), tetanus and psychological first aid are part of the same visit — not an afterthought.</p></div>
+      <div class="rem"><p class="k">Privacy in the room</p><p>Police may not be present during the examination. Prefer a female examiner; a transgender / intersex survivor may choose the examiner.</p></div>
+    </div>
+  </section>
+
+  <section class="license">
+    <span class="cc-badge">CC BY-NC 4.0</span>
+    <div class="ltext">
+      <strong>SAFE Evidence Sequencer</strong> © 2026 <strong>Dr Harvinder Singh Chhabra</strong>, Assistant Professor, Department of Forensic Medicine, Himalayan Institute of Medical Sciences (HIMS), Swami Rama Himalayan University (SRHU), Dehradun.<br>
+      Released under the <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">Creative Commons Attribution–NonCommercial 4.0 International</a> licence — free to use, share and adapt for teaching and other non-commercial purposes with attribution to the author; commercial use requires permission. When adapting, retain this notice.
+    </div>
+  </section>
+
+  <footer class="foot">
+    A teaching simulation for forensic-medicine training. It models the sequencing logic of the MoHFW protocol and does not reproduce the statutory proforma.<br>
+    Verify against the current MoHFW guidelines, the BNSS/BNS/BSA provisions and your institutional SOP before clinical use.
+  </footer>
+
+  <div id="print-report"></div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Master step definitions (superset across all scenarios) ---------- */
+  var STEPS = {
+    stabilise:{phase:1,order:1,kind:"exam",role:"core",text:"Attend to acute / life-threatening medical needs first and stabilise the survivor.",note:"The examination is a medico-legal emergency, but resuscitation and management of serious injuries always take priority over evidence collection."},
+    consent:{phase:1,order:2,kind:"admin",role:"core",text:"Obtain written informed consent — for the examination and for sample collection (each may be declined).",note:"Consent is layered and each element can be declined; care proceeds regardless. Informing the police is a separate, mandatory duty (BNSS S 397), not part of consent. (BNSS S 184 requires consent for the examination itself.)"},
+    report:{phase:1,order:2.5,kind:"admin",role:"core",text:"Inform the police of the case without delay — the hospital must intimate the police (mandatory under BNSS S 397).",note:"Informing the police is mandatory for every sexual-assault victim, adult or minor (BNSS S 397, ex CrPC S 357C; general duty under BNSS S 35). It is distinct from, and does not override, the survivor's autonomy over the examination. For a minor, POCSO S 19 adds a specific reporting duty whose breach is punishable under S 21."},
+    history:{phase:2,order:3,kind:"exam",role:"core",text:"Take a detailed history — incident account, menstrual / obstetric and relevant medical history.",note:"Guides which samples are relevant (e.g. oral swab only if oral penetration) and the treatment plan; record in the survivor's own words."},
+    genexam:{phase:2,order:4,kind:"exam",role:"core",text:"Perform a general physical examination — demeanour, vitals and injuries — and document all findings.",note:"Systematic head-to-toe documentation of injuries with site, size and type, using a body chart. Precedes local sampling."},
+    disrobe:{phase:2,order:5,kind:"collect",role:"core",text:"Undress the survivor over a spread sheet; collect any falling debris and each clothing item into a separate paper bag.",note:"Paper — not plastic — prevents mould and DNA degradation. The ground sheet captures loose trace evidence."},
+    oralswab:{phase:3,order:6,kind:"collect",role:"cond",text:"Collect oral swabs before the survivor eats, drinks or rinses.",note:"Indicated only if oral penetration is alleged. Salivary and seminal traces in the mouth degrade quickly — among the most time-sensitive samples."},
+    surfaceswab:{phase:3,order:7,kind:"collect",role:"core",text:"Swab dried secretions, stains and bite marks on the body surface (a UV / Wood's lamp can help locate them).",note:"Moisten the swab for dried stains. Bite marks may also be photographed and swabbed for the assailant's saliva."},
+    nailhair:{phase:3,order:8,kind:"collect",role:"core",text:"Take nail clippings / scrapings and collect loose or matted head hair.",note:"Nail evidence may hold the assailant's skin or blood from a struggle. Collect before the hands are washed."},
+    urine:{phase:3,order:9,kind:"collect",role:"cond",text:"Collect a urine sample for a drug screen.",note:"Indicated only if drug-facilitated assault is suspected. Many sedative agents clear rapidly — obtain urine early, ideally before the survivor next voids."},
+    localexam:{phase:4,order:10,kind:"exam",role:"core",text:"Examine the external genitalia and anal region and document injuries — without any two-finger / laxity test.",note:"Inspect and document findings only. Per-vaginum 'laxity' testing and virginity opinions are prohibited and irrelevant."},
+    vaginalswab:{phase:4,order:11,kind:"collect",role:"cond",text:"Collect vulval, vaginal and cervical swabs and prepare smears.",note:"Indicated if vaginal penetration is alleged. Order outer to inner; prepare wet and dry smears; record the number of swabs."},
+    analswab:{phase:4,order:12,kind:"collect",role:"cond",text:"Collect anal / perianal swabs.",note:"Indicated only if anal penetration is alleged. Document perianal injuries separately from genital findings."},
+    pubichair:{phase:4,order:13,kind:"collect",role:"core",text:"Comb the pubic hair for loose foreign hair and collect any matted pubic hair.",note:"Combings may recover the assailant's hair. Cut matted hair rather than pulling."},
+    blood:{phase:5,order:14,kind:"collect",role:"core",text:"Draw a blood sample for DNA reference / grouping (and alcohol or drugs if relevant).",note:"Provides the survivor's reference profile to distinguish from the assailant's DNA in the other samples."},
+    seal:{phase:5,order:15,kind:"admin",role:"core",text:"Air-dry the swabs; then label, seal and pack every specimen and maintain the chain of custody.",note:"Wet-packed swabs grow mould and destroy DNA. Sealing and documented custody are essential for admissibility — do this only once all specimens are collected."},
+    treatment:{phase:6,order:16,kind:"treat",role:"core",text:"Provide treatment — wound care, emergency contraception, STI prophylaxis, HIV PEP (within 72 h) and tetanus.",note:"Time-critical prophylaxis is part of this visit. Emergency contraception and PEP have their own windows, independent of evidence timing."},
+    closure:{phase:6,order:17,kind:"treat",role:"core",text:"Give psychological first aid, arrange referral and follow-up, hand samples to the IO, and provide a copy of the report free of cost.",note:"Survivor-centred closure: safety, mental-health support, follow-up for STI / pregnancy, and lawful handover of sealed evidence."}
+  };
+
+  var TRAPS = {
+    twofinger:{kind:"trap",text:"Perform a per-vaginum 'two-finger' test to assess vaginal laxity or habituation to sex.",note:"Prohibited. Unscientific, degrading and irrelevant to whether assault occurred. Anyone conducting it is guilty of misconduct — State of Jharkhand v. Shailendra Kumar Rai (2022); the Court also directed that it be removed from medical curricula."},
+    virginity:{kind:"trap",text:"Record an opinion on the survivor's 'virginity' based on hymen findings.",note:"Prohibited. Hymenal status does not establish or exclude sexual assault; such comments must not be made."},
+    refuse:{kind:"trap",text:"Refuse or delay the examination until an FIR is lodged or a police requisition arrives.",note:"Wrong. The examination is a medico-legal emergency (BNSS S 184) and denying care is punishable under the BNS. The survivor may self-report — no FIR is needed first."},
+    police:{kind:"trap",text:"Allow the investigating police officer to remain inside the examination room.",note:"Wrong. Police must not be present during the examination; only a chosen support person or female attendant as appropriate."}
+  };
+
+  var PHASE_NAMES = {1:"Immediate priorities",2:"History & preparation",3:"Transient & surface evidence",4:"Examination & genital/anal samples",5:"Reference sample & handling",6:"Treatment & closure"};
+  var CORE = Object.keys(STEPS).filter(function(id){return STEPS[id].role==="core";});
+  var CONDS = ["oralswab","analswab","urine","vaginalswab"];
+  var TRAP_IDS = Object.keys(TRAPS);
+
+  /* ---------- Scenarios ---------- */
+  var SCENARIOS = [
+    { id:"adult-vo", tabK:"Case A · adult", tabT:"Adult woman · vaginal + oral",
+      vignette:"An adult woman presents about 30 hours after an alleged assault involving vaginal and oral penetration. She is conscious and haemodynamically stable, has not bathed or changed, and consents to examination. She has not been sent by the police.",
+      meta:[["Time since incident","~30 h (within 96 h)"],["Alleged acts","Vaginal + oral"],["Age / capacity","Adult, consenting"],["Route","Self-report (no requisition)"]],
+      indicated:{vaginalswab:true,oralswab:true,analswab:false,urine:false} },
+    { id:"minor-pocso", tabK:"Case B · minor", tabT:"Adolescent (15) · POCSO",
+      vignette:"A 15-year-old girl is brought by her guardian about 20 hours after an alleged assault involving vaginal penetration. She is stable. Because she is a minor, the POCSO Act governs consent and reporting.",
+      meta:[["Time since incident","~20 h"],["Alleged acts","Vaginal"],["Age / capacity","Minor (15) — POCSO"],["Consent","Guardian"]],
+      indicated:{vaginalswab:true,oralswab:false,analswab:false,urine:false},
+      over:{ consent:{text:"Obtain written informed consent from the guardian (the survivor is a minor) — for examination and sample collection."},
+             report:{text:"Report to the SJPU / police without delay — mandatory under POCSO S 19 (failure to report is itself punishable under S 21)."} } },
+    { id:"male-anal", tabK:"Case C · male", tabT:"Adult man · anal",
+      vignette:"An adult man presents about 40 hours after an alleged assault involving anal penetration. He is stable and consents to examination.",
+      meta:[["Time since incident","~40 h"],["Alleged acts","Anal"],["Age / capacity","Adult, consenting"],["Route","Self-report"]],
+      indicated:{vaginalswab:false,oralswab:false,analswab:true,urine:false}, applicable:["oralswab","analswab","urine"], femaleAnatomy:false,
+      over:{ history:{text:"Take a detailed history — incident account and relevant medical history."},
+             localexam:{text:"Examine the external genitalia and anal region and document injuries — findings only, with no opinion on 'habituation'.",note:"Inspect and document. Do not comment on sphincter tone or 'habituation' to infer prior anal intercourse — such opinions are discredited and have no place in the report."},
+             treatment:{text:"Provide treatment — wound care, STI prophylaxis, HIV PEP (within 72 h) and tetanus.",note:"Time-critical prophylaxis is part of this visit. HIV PEP has its own window — start within 72 h — independent of evidence timing."},
+             closure:{note:"Survivor-centred closure: safety, mental-health support, follow-up for STIs, and lawful handover of sealed evidence."} } },
+    { id:"adult-dfsa", tabK:"Case D · DFSA", tabT:"Adult woman · suspected DFSA",
+      vignette:"An adult woman presents about 8 hours after an alleged assault involving vaginal penetration. She reports amnesia and drowsiness and suspects she was drugged. She is now oriented and consents.",
+      meta:[["Time since incident","~8 h"],["Alleged acts","Vaginal"],["Concern","Drug-facilitated (DFSA)"],["Age / capacity","Adult, consenting"]],
+      indicated:{vaginalswab:true,oralswab:false,analswab:false,urine:true} }
+  ];
+
+  function scenarioById(id){ for(var i=0;i<SCENARIOS.length;i++){ if(SCENARIOS[i].id===id) return SCENARIOS[i]; } return SCENARIOS[0]; }
+  function def(id){ return STEPS[id] || TRAPS[id]; }
+
+  // Required / not-applicable / pool for a scenario
+  function applicableConds(sc){ return sc.applicable || CONDS; }
+  var FEMALE_TRAPS=["twofinger","virginity"];
+  function scenarioTraps(sc){
+    if(sc.femaleAnatomy===false) return TRAP_IDS.filter(function(id){ return FEMALE_TRAPS.indexOf(id)<0; });
+    return TRAP_IDS;
+  }
+  function requiredIds(sc){
+    var r = CORE.slice();
+    applicableConds(sc).forEach(function(id){ if(sc.indicated[id]) r.push(id); });
+    return r;
+  }
+  function notApplicableIds(sc){ return applicableConds(sc).filter(function(id){ return !sc.indicated[id]; }); }
+  function poolIds(sc){
+    return CORE.slice().concat(applicableConds(sc)).concat(scenarioTraps(sc));
+  }
+
+  /* ---------- State ---------- */
+  var state = { scId:SCENARIOS[0].id, pool:[], sequence:[], exclude:[], studyMode:false, examMode:false,
+                checked:false, attempts:[], best:null, everClean:false, startTs:null, elapsed:0 };
+  var lastResult=null;
+
+  /* ---------- Progress persistence (per scenario) ---------- */
+  var STORE_KEY="safeSequencer.progress.v2";
+  function loadStore(){ try{ var raw=localStorage.getItem(STORE_KEY); return raw?JSON.parse(raw):{}; }catch(e){ return {}; } }
+  function saveStore(obj){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(obj)); }catch(e){} }
+  function loadProgress(scId){
+    var s=loadStore(); var d=s[scId]||{};
+    state.attempts=d.attempts||[]; state.best=(d.best!=null?d.best:null); state.everClean=!!d.everClean;
+  }
+  function saveProgress(){
+    var s=loadStore();
+    s[state.scId]={attempts:state.attempts.slice(-30),best:state.best,everClean:state.everClean};
+    saveStore(s);
+  }
+  function recordAttempt(r){
+    var lastN=state.attempts.length?state.attempts[state.attempts.length-1].n:0;
+    var clean=(r.criticalFails===0 && r.phaseCorrect===r.total && r.placedValid===r.total);
+    state.attempts.push({n:lastN+1,score:r.phaseCorrect,total:r.total,critical:r.criticalFails,clean:clean,ts:Date.now()});
+    if(state.best==null||r.phaseCorrect>state.best) state.best=r.phaseCorrect;
+    if(clean) state.everClean=true;
+    saveProgress();
+  }
+
+  /* ---------- Timer ---------- */
+  var timerInt=null;
+  function fmtTime(ms){ var s=Math.floor(ms/1000); return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0"); }
+  function startTimer(){ state.startTs=Date.now(); state.elapsed=0; if(timerInt) clearInterval(timerInt);
+    timerInt=setInterval(function(){ state.elapsed=Date.now()-state.startTs; document.querySelector("#timer strong").textContent=fmtTime(state.elapsed); },1000);
+    document.querySelector("#timer strong").textContent="00:00";
+  }
+
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+
+  /* ---------- Build a scenario ---------- */
+  function buildScenario(scId){
+    state.scId=scId; var sc=scenarioById(scId);
+    state.pool=shuffle(poolIds(sc));
+    state.sequence=[]; state.exclude=[]; state.checked=false;
+    loadProgress(scId);
+    lastResult=null;
+    startTimer();
+    // scenario tabs
+    document.querySelectorAll(".scen-tab").forEach(function(t){ t.classList.toggle("active", t.getAttribute("data-sc")===scId); t.setAttribute("aria-selected", t.getAttribute("data-sc")===scId); });
+    // vignette
+    document.getElementById("vignette-text").textContent=sc.vignette;
+    document.getElementById("vignette-meta").innerHTML=sc.meta.map(function(m){ return '<div><span>'+m[0]+'</span><strong>'+m[1]+'</strong></div>'; }).join("");
+    document.getElementById("results").classList.remove("show");
+    render();
+  }
+
+  /* ---------- Rendering ---------- */
+  var el={ pool:document.getElementById("pool"), sequence:document.getElementById("sequence"), exclude:document.getElementById("exclude"),
+    poolCount:document.getElementById("pool-count"), seqCount:document.getElementById("seq-count"), exCount:document.getElementById("exclude-count"),
+    results:document.getElementById("results") };
+
+  function stepText(id){
+    var sc=scenarioById(state.scId);
+    if(sc.over && sc.over[id] && sc.over[id].text) return sc.over[id].text;
+    return def(id).text;
+  }
+  function stepNote(id){
+    var sc=scenarioById(state.scId);
+    if(sc.over && sc.over[id] && sc.over[id].note) return sc.over[id].note;
+    return def(id).note;
+  }
+  function phaseTag(id){ var s=def(id); if(!s.phase) return ""; return '<span class="phase-tag phase-c'+s.phase+'">P'+s.phase+' · '+PHASE_NAMES[s.phase]+'</span>'; }
+
+  function cardHTML(id, where, idx){
+    var s=def(id);
+    var revealHere = state.studyMode || (state.checked && where!=="pool" && !state.examMode);
+    var showPhase = revealHere && !!s.phase;
+    var noteCls = revealHere ? " show-note" : "";
+    var html='<div class="card'+noteCls+'" data-id="'+id+'"'+(where==="sequence"&&s.phase?(' data-phase="'+s.phase+'"'):'')+'>';
+    if(where==="sequence") html+='<div class="num">'+(idx+1)+'</div>';
+    html+='<div class="txt"><p>'+stepText(id)+'</p>';
+    if(showPhase) html+=phaseTag(id);
+    html+='<div class="note">'+stepNote(id)+'</div><div class="status" data-status></div></div>';
+    if(where==="pool"){
+      html+='<div class="ctrls"><button class="add" data-act="add" data-id="'+id+'">Add →</button><button class="excl" data-act="excl" data-id="'+id+'">⊘ Exclude</button></div>';
+    } else if(where==="sequence"){
+      html+='<div class="ctrls row"><button data-act="up" data-id="'+id+'" title="Move up">↑</button><button data-act="down" data-id="'+id+'" title="Move down">↓</button><button data-act="excl" data-id="'+id+'" title="Exclude">⊘</button><button data-act="return" data-id="'+id+'" title="Return">↩</button></div>';
+    } else {
+      html+='<div class="ctrls"><button data-act="return" data-id="'+id+'">↩ Return</button></div>';
+    }
+    return html+'</div>';
+  }
+
+  function render(){
+    el.pool.innerHTML = state.pool.length ? state.pool.map(function(id){return cardHTML(id,"pool");}).join("") : '<div class="empty">All steps placed</div>';
+    el.sequence.innerHTML = state.sequence.length ? state.sequence.map(function(id,i){return cardHTML(id,"sequence",i);}).join("") : '<div class="empty">Add steps from the left to build the examination sequence</div>';
+    el.exclude.innerHTML = state.exclude.length ? state.exclude.map(function(id){return cardHTML(id,"exclude");}).join("") : '<div class="empty">Nothing excluded yet</div>';
+    el.poolCount.textContent=state.pool.length+" left";
+    el.seqCount.textContent=state.sequence.length+" placed";
+    el.exCount.textContent=state.exclude.length;
+    if(state.checked) applyFeedback();
+  }
+
+  function removeFrom(a,id){ var i=a.indexOf(id); if(i>-1) a.splice(i,1); }
+
+  document.addEventListener("click", function(e){
+    var b=e.target.closest("button[data-act]"); if(!b) return;
+    var act=b.getAttribute("data-act"), id=b.getAttribute("data-id");
+    state.checked=false; el.results.classList.remove("show");
+    if(act==="add"){ removeFrom(state.pool,id); state.sequence.push(id); }
+    else if(act==="excl"){ removeFrom(state.pool,id); removeFrom(state.sequence,id); if(state.exclude.indexOf(id)<0) state.exclude.push(id); }
+    else if(act==="return"){ removeFrom(state.sequence,id); removeFrom(state.exclude,id); if(state.pool.indexOf(id)<0) state.pool.push(id); }
+    else if(act==="up"){ var i=state.sequence.indexOf(id); if(i>0){ state.sequence.splice(i,1); state.sequence.splice(i-1,0,id);} }
+    else if(act==="down"){ var j=state.sequence.indexOf(id); if(j>-1&&j<state.sequence.length-1){ state.sequence.splice(j,1); state.sequence.splice(j+1,0,id);} }
+    render();
+  });
+
+  /* ---------- Scoring ---------- */
+  function scoreSequence(){
+    var sc=scenarioById(state.scId);
+    var required=requiredIds(sc);
+    var notApp=notApplicableIds(sc);
+    var total=required.length;
+    var reqSet={}; required.forEach(function(id){reqSet[id]=true;});
+    var naSet={}; notApp.forEach(function(id){naSet[id]=true;});
+
+    var idxInSeq={}; state.sequence.forEach(function(id,i){idxInSeq[id]=i;});
+    // required steps that are placed, in sequence order, for phase check
+    var placedReq=state.sequence.filter(function(id){return reqSet[id];});
+    var phases=placedReq.map(function(id){return def(id).phase;});
+    var prefMax=[],m=-Infinity; for(var i=0;i<phases.length;i++){prefMax[i]=m; if(phases[i]>m)m=phases[i];}
+    var sufMin=[],n=Infinity; for(var k=phases.length-1;k>=0;k--){sufMin[k]=n; if(phases[k]<n)n=phases[k];}
+
+    var cardStatus={}, phaseCorrect=0;
+    placedReq.forEach(function(id,i){
+      var ph=def(id).phase;
+      var ok=(prefMax[i]===-Infinity||prefMax[i]<=ph)&&(sufMin[i]===Infinity||sufMin[i]>=ph);
+      cardStatus[id]=ok?"ok":"warn"; if(ok) phaseCorrect++;
+    });
+    // wrong things in sequence
+    state.sequence.forEach(function(id){
+      if(def(id).kind==="trap") cardStatus[id]="bad";
+      else if(naSet[id]) cardStatus[id]="bad";
+    });
+
+    var checks=[];
+    function present(id){ return idxInSeq.hasOwnProperty(id); }
+
+    // C1 consent precedes exam/collect/treat required steps
+    var c1=true, c1missing=!present("consent");
+    if(present("consent")){ var ci=idxInSeq["consent"];
+      required.forEach(function(id){ if(id==="consent"||id==="stabilise"||id==="report") return;
+        if(present(id)&&idxInSeq[id]<ci) c1=false; }); } else c1=false;
+    checks.push({pass:c1,title:"Informed consent precedes examination and collection",detail:c1?"Consent is taken before any examination, sampling or treatment.":(c1missing?"Consent has not been placed.":"A step is placed before consent. Nothing may be examined or collected before consent is obtained.")});
+
+    // C2 stabilise before collection & exam
+    var c2=true;
+    if(present("stabilise")){ var si=idxInSeq["stabilise"];
+      required.forEach(function(id){ if(id==="stabilise") return; var k=def(id).kind;
+        if((k==="collect"||k==="exam")&&present(id)&&idxInSeq[id]<si) c2=false; }); } else c2=false;
+    checks.push({pass:c2,title:"Acute medical needs stabilised before evidence collection",detail:c2?"Life-threatening conditions are addressed before the exam proceeds.":"Stabilisation must come before examination and sampling."});
+
+    // C5 only indicated samples collected (no not-applicable conditional in sequence)
+    var naInSeq=state.sequence.filter(function(id){return naSet[id];});
+    var c5=naInSeq.length===0;
+    checks.push({pass:c5,title:"Only samples indicated for this case are collected",detail:c5?"No sample is taken that the history does not indicate.":("Not indicated here: "+naInSeq.map(function(id){return "“"+shortLabel(id)+"”";}).join(", ")+". Collect only what the alleged acts justify — exclude the rest.")});
+
+    // C3 seal after every collected specimen
+    var c3=true;
+    if(present("seal")){ var sealI=idxInSeq["seal"];
+      required.forEach(function(id){ if(def(id).kind==="collect"&&present(id)&&idxInSeq[id]>sealI){ c3=false; if(cardStatus[id]!=="bad") cardStatus[id]="warn"; } });
+      if(!c3&&cardStatus["seal"]!=="bad") cardStatus["seal"]="warn";
+    } else c3=false;
+    checks.push({pass:c3,title:"Labelling, sealing and chain of custody come after all specimens",detail:c3?"Every specimen is collected before packing and sealing.":"A specimen is collected after sealing, or the sealing step is missing — evidence handling would be compromised."});
+
+    // C4 no prohibited practice in sequence
+    var trapInSeq=state.sequence.filter(function(id){return def(id).kind==="trap";});
+    var c4=trapInSeq.length===0;
+    checks.push({pass:c4,title:"No prohibited practice is included",detail:c4?"All prohibited practices are correctly excluded.":("Prohibited in the sequence: "+trapInSeq.map(function(id){return "“"+shortLabel(id)+"”";}).join(", ")+".")});
+
+    // C6 completeness
+    var reqExcluded=state.exclude.filter(function(id){return reqSet[id];});
+    var c6=(placedReq.length===total && reqExcluded.length===0);
+    var c6d;
+    if(c6) c6d="All "+total+" required steps for this case are included.";
+    else{ var bits=[]; if(placedReq.length<total) bits.push((total-placedReq.length)+" required step(s) not yet placed");
+      if(reqExcluded.length) bits.push(reqExcluded.length+" required step(s) wrongly excluded: "+reqExcluded.map(function(id){return "“"+shortLabel(id)+"”";}).join(", ")); c6d=bits.join("; ")+"."; }
+    checks.push({pass:c6,title:"All required steps are present",detail:c6d});
+    reqExcluded.forEach(function(id){ cardStatus[id]="warn"; });
+
+    return {cardStatus:cardStatus,phaseCorrect:phaseCorrect,placedValid:placedReq.length,total:total,checks:checks,
+      criticalFails:checks.filter(function(c){return !c.pass;}).length};
+  }
+
+  function shortLabel(id){ var t=def(id).text; return t.length>52?t.slice(0,49).replace(/[,;].*$/,'')+"…":t; }
+
+  /* ---------- Feedback on cards ---------- */
+  function applyFeedback(){
+    if(!lastResult||state.examMode) return;
+    var cs=lastResult.cardStatus;
+    document.querySelectorAll("#sequence .card, #exclude .card").forEach(function(c){ c.classList.remove("ok","warn","bad"); var st=c.querySelector("[data-status]"); if(st) st.textContent=""; });
+    document.querySelectorAll("#sequence .card").forEach(function(c){ var id=c.getAttribute("data-id"); var s=cs[id];
+      if(s){ c.classList.add(s); var lab=s==="ok"?"In sequence":s==="warn"?"Out of phase":(def(id).kind==="trap"?"Prohibited — remove":"Not indicated — exclude"); var st=c.querySelector("[data-status]"); if(st) st.textContent=lab; } });
+    var sc=scenarioById(state.scId), naSet={}; notApplicableIds(sc).forEach(function(id){naSet[id]=true;});
+    document.querySelectorAll("#exclude .card").forEach(function(c){ var id=c.getAttribute("data-id"); var s=cs[id];
+      if(def(id).kind==="trap"||naSet[id]){ c.classList.add("ok"); var st=c.querySelector("[data-status]"); if(st) st.textContent="Correctly excluded"; }
+      else if(s==="warn"){ c.classList.add("warn"); var st2=c.querySelector("[data-status]"); if(st2) st2.textContent="Required — return it"; } });
+  }
+
+  /* ---------- Focus hint ---------- */
+  function focusHint(r){
+    for(var i=0;i<r.checks.length;i++){ if(!r.checks[i].pass) return {cls:"",html:"<b>Fix first — "+r.checks[i].title+".</b> "+r.checks[i].detail}; }
+    for(var j=0;j<state.sequence.length;j++){ var id=state.sequence[j];
+      if(def(id).kind!=="trap"&&r.cardStatus[id]==="warn"){ return {cls:"",html:"<b>Nearly there.</b> “"+shortLabel(id)+"” is out of order — reconsider where <b>"+PHASE_NAMES[def(id).phase]+"</b> belongs."}; } }
+    return {cls:"clean",html:"<b>Protocol clean.</b> Every step is correctly sequenced, only indicated samples collected, and all prohibited practices excluded. Try another case."};
+  }
+
+  /* ---------- Progress + results ---------- */
+  function renderProgress(isAttempt){
+    var wrap=document.getElementById("progress");
+    var curN=state.attempts.length?state.attempts[state.attempts.length-1].n:null;
+    var best=state.best!=null?state.best:lastResult.phaseCorrect;
+    var trend="";
+    if(isAttempt&&state.attempts.length>=2){ var cur=state.attempts[state.attempts.length-1].score, prev=state.attempts[state.attempts.length-2].score, d=cur-prev;
+      trend=d>0?'<span class="trend up">▲ +'+d+' vs last</span>':d<0?'<span class="trend down">▼ '+d+' vs last</span>':'<span class="trend flat">= no change</span>'; }
+    var chips=state.attempts.slice(-8).map(function(a){ var cls=a.clean?"clean":(a.critical>0?"crit":""); return '<span class="attempt-chip '+cls+'" title="Attempt '+a.n+': '+a.score+'/'+a.total+', '+a.critical+' critical">'+a.n+'·'+a.score+'</span>'; }).join("");
+    var mastered=state.everClean?'<span class="mastered">✓ Mastered</span>':'';
+    var right=(chips||mastered)?'<div class="attempts">'+(chips?'<span class="lbl">History</span>'+chips:'')+mastered+'</div>':'';
+    wrap.innerHTML='<div class="stat"><span>Attempt</span><strong>'+(curN!=null?curN:"—")+'</strong></div>'
+      +'<div class="stat"><span>Best</span><strong>'+best+' / '+lastResult.total+'</strong></div>'
+      +'<div class="stat"><span>Time</span><strong>'+fmtTime(state.elapsed)+'</strong></div>'+trend+right;
+  }
+
+  function renderResults(isAttempt){
+    var r=lastResult;
+    document.getElementById("score-num").textContent=r.phaseCorrect;
+    document.getElementById("score-total").textContent=r.total;
+    document.getElementById("score-meta").textContent=r.placedValid+" of "+r.total+" steps placed · "+r.phaseCorrect+" correctly sequenced by phase";
+    var v=document.getElementById("verdict");
+    if(r.criticalFails===0&&r.phaseCorrect===r.total){ v.textContent="Protocol clean"; v.className="verdict clean"; }
+    else if(r.criticalFails>0){ v.textContent=r.criticalFails+" critical issue"+(r.criticalFails>1?"s":""); v.className="verdict flag"; }
+    else { v.textContent="Review sequencing"; v.className="verdict flag"; }
+    renderProgress(isAttempt);
+    var fbox=document.getElementById("focus");
+    if(state.examMode){ fbox.className="focus neutral"; fbox.innerHTML='<p class="fh">Exam mode</p><div class="fbody"><b>Submitted.</b> Per-step hints are withheld in exam mode. Review the critical checks below, or print the score sheet.</div>'; }
+    else if(isAttempt){ var f=focusHint(r); fbox.className="focus "+f.cls; fbox.innerHTML='<p class="fh">Focus next</p><div class="fbody">'+f.html+'</div>'; }
+    else { fbox.className="focus neutral"; fbox.innerHTML='<p class="fh">Model sequence</p><div class="fbody"><b>Reference answer shown.</b> Compare it against your last attempt, then reshuffle and rebuild it from memory.</div>'; }
+    document.getElementById("critical-list").innerHTML=r.checks.map(function(c){ return '<div class="check '+(c.pass?"pass":"fail")+'"><span class="mark">'+(c.pass?"✓":"✕")+'</span><span class="ctext"><b>'+c.title+'</b><span class="detail">'+c.detail+'</span></span></div>'; }).join("");
+    el.results.classList.add("show");
+  }
+
+  /* ---------- Handling round ---------- */
+  var HANDLING=[
+    {t:"Pack each clothing item in a separate paper bag.",ok:true,note:"Correct. Paper lets evidence breathe; plastic traps moisture and degrades DNA."},
+    {t:"Store swabs wet and sealed so they stay fresh.",ok:false,note:"Poor. Swabs must be air-dried before packing; moisture grows mould and destroys DNA."},
+    {t:"Air-dry swabs before packing and sealing them.",ok:true,note:"Correct. Drying is essential before a swab is sealed."},
+    {t:"Label and seal every specimen individually.",ok:true,note:"Correct. Individual labelling and sealing preserve identity and integrity."},
+    {t:"Maintain a signed chain-of-custody form with every handover.",ok:true,note:"Correct. Unbroken, documented custody is essential for admissibility."},
+    {t:"Hand samples to the police unsealed to save time.",ok:false,note:"Poor. Unsealed samples break custody integrity and are open to challenge."},
+    {t:"Reuse the same gloves across steps to work faster.",ok:false,note:"Poor. This risks cross-contamination between samples and sites."},
+    {t:"Send specimens to the FSL with a forwarding letter / requisition.",ok:true,note:"Correct. The forwarding letter links specimens to the case and instructions."}
+  ];
+  var hChoices={}, hChecked=false;
+  function renderHandling(){
+    document.getElementById("handling-list").innerHTML=HANDLING.map(function(it,i){
+      var sel=hChoices[i];
+      var cls=""; if(hChecked){ var correct=(sel==="correct")===it.ok && sel!=null; cls=sel==null?"":(correct?"right":"wrong"); if(cls) cls+=" revealed"; }
+      var mark=""; if(hChecked&&sel!=null){ mark=((sel==="correct")===it.ok)?"✓":"✕"; }
+      return '<div class="h-item '+cls+'" data-i="'+i+'"><div class="h-mark">'+mark+'</div><div class="h-txt">'+it.t+'<div class="h-note">'+it.note+'</div></div>'
+        +'<div class="h-choices"><button data-hc="'+i+'" data-v="correct" class="'+(sel==="correct"?"sel":"")+'">Sound</button><button data-hc="'+i+'" data-v="poor" class="'+(sel==="poor"?"sel":"")+'">Poor</button></div></div>';
+    }).join("");
+  }
+  document.addEventListener("click",function(e){
+    var b=e.target.closest("button[data-hc]"); if(!b) return;
+    var i=+b.getAttribute("data-hc"); hChoices[i]=b.getAttribute("data-v"); hChecked=false;
+    document.getElementById("handling-score").textContent=""; renderHandling();
+  });
+  function handlingScore(){ var s=0; HANDLING.forEach(function(it,i){ if(hChoices[i]!=null && (hChoices[i]==="correct")===it.ok) s++; }); return s; }
+  document.getElementById("btn-handling-check").addEventListener("click",function(){ hChecked=true; renderHandling();
+    document.getElementById("handling-score").textContent=handlingScore()+" / "+HANDLING.length+" correct"; });
+  document.getElementById("btn-handling-reset").addEventListener("click",function(){ hChoices={}; hChecked=false; document.getElementById("handling-score").textContent=""; renderHandling(); });
+
+  /* ---------- Print score sheet ---------- */
+  function buildPrintReport(){
+    var r=lastResult, sc=scenarioById(state.scId);
+    var name=(document.getElementById("stu-name").value||"____________________").trim();
+    var clean=r&&r.criticalFails===0&&r.phaseCorrect===r.total;
+    var seqList=state.sequence.map(function(id,i){ var mark=""; if(r&&!state.examMode){ var s=r.cardStatus[id]; mark=s==="ok"?" ✓":s==="warn"?" (out of phase)":s==="bad"?" (remove)":""; } return '<li>'+stepText(id).replace(/</g,"&lt;")+mark+'</li>'; }).join("");
+    var checksList=r?r.checks.map(function(c){ return '<div class="pr-check">'+(c.pass?"✓":"✕")+" "+c.title+'</div>'; }).join(""):"";
+    var hs=hChecked?(handlingScore()+" / "+HANDLING.length):"not attempted";
+    var band = clean
+      ? '<div class="pr-band"><h2>Certificate of completion</h2><div>This certifies that <b>'+name+'</b> completed the SAFE evidence-sequencing exercise with a clean protocol run.</div></div>'
+      : '<div class="pr-band"><h2>SAFE Evidence Sequencer — score sheet</h2></div>';
+    document.getElementById("print-report").innerHTML =
+      band
+      +'<div class="pr-meta"><span>Student: '+name+'</span><span>Case: '+sc.tabT+'</span><span>Date: '+new Date().toLocaleDateString()+'</span><span>Time taken: '+fmtTime(state.elapsed)+'</span>'
+      +'<span>Sequence score: '+(r?r.phaseCorrect+" / "+r.total:"—")+'</span><span>Critical issues: '+(r?r.criticalFails:"—")+'</span><span>Mode: '+(state.examMode?"Exam (OSCE)":"Practice")+'</span><span>Handling round: '+hs+'</span></div>'
+      +'<b>Submitted sequence</b><ol>'+seqList+'</ol>'
+      +'<b>Critical checks</b>'+checksList
+      +'<div class="pr-sign"><span>Examiner signature</span><span>Date</span></div>'
+      +'<div class="pr-foot">SAFE Evidence Sequencer © 2026 Dr Harvinder Singh Chhabra, Assistant Professor, Forensic Medicine, HIMS, SRHU, Dehradun. CC BY-NC 4.0. MoHFW (2014) protocol; legal references per BNSS/BNS/BSA 2023. Teaching aid — not a substitute for the statutory proforma.</div>';
+    window.print();
+  }
+
+  /* ---------- Toolbar wiring ---------- */
+  document.getElementById("btn-check").addEventListener("click",function(){
+    if(state.sequence.length===0){ el.results.classList.remove("show"); return; }
+    state.checked=true; lastResult=scoreSequence(); recordAttempt(lastResult); render(); renderResults(true);
+    el.results.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
+  document.getElementById("btn-reset").addEventListener("click",function(){ buildScenario(state.scId); });
+  document.getElementById("btn-model").addEventListener("click",function(){
+    var sc=scenarioById(state.scId), required=requiredIds(sc);
+    state.sequence=required.slice().sort(function(a,b){return def(a).order-def(b).order;});
+    state.exclude=notApplicableIds(sc).concat(scenarioTraps(sc));
+    state.pool=[]; state.studyMode=true; document.getElementById("tg-study").checked=true;
+    state.checked=true; lastResult=scoreSequence(); render(); renderResults(false);
+    el.results.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
+  document.getElementById("btn-again").addEventListener("click",function(){ el.results.classList.remove("show"); document.querySelector(".board").scrollIntoView({behavior:"smooth",block:"start"}); });
+  document.getElementById("btn-clear-progress").addEventListener("click",function(){ state.attempts=[]; state.best=null; state.everClean=false; saveProgress(); el.results.classList.remove("show"); });
+  document.getElementById("btn-print").addEventListener("click",buildPrintReport);
+  document.getElementById("tg-study").addEventListener("change",function(e){ state.studyMode=e.target.checked; if(state.studyMode){ document.getElementById("tg-exam").checked=false; state.examMode=false; } render(); });
+  document.getElementById("tg-exam").addEventListener("change",function(e){ state.examMode=e.target.checked; if(state.examMode){ document.getElementById("tg-study").checked=false; state.studyMode=false; } state.checked=false; el.results.classList.remove("show"); render(); });
+
+  /* ---------- Scenario tabs ---------- */
+  document.getElementById("scenario-bar").innerHTML=SCENARIOS.map(function(sc){
+    return '<button class="scen-tab" role="tab" data-sc="'+sc.id+'"><span class="st-k">'+sc.tabK+'</span><span class="st-t">'+sc.tabT+'</span></button>';
+  }).join("");
+  document.querySelectorAll(".scen-tab").forEach(function(t){ t.addEventListener("click",function(){ buildScenario(t.getAttribute("data-sc")); }); });
+
+  /* ---------- Init ---------- */
+  renderHandling();
+  buildScenario(SCENARIOS[0].id);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copyright, licence and citation · Forensic Medicine Workbench</title>
+<meta name="description" content="Copyright, licence terms and citation formats for the Forensic Medicine Workbench by Dr Harvinder Singh Chhabra, HIMS, SRHU, Dehradun.">
+<meta name="author" content="Dr Harvinder Singh Chhabra">
+<meta name="copyright" content="© 2026 Dr Harvinder Singh Chhabra">
+<meta name="license" content="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+<meta name="theme-color" content="#22383D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2322383D'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-weight='bold' fill='%23fff' text-anchor='middle'%3E%C2%A7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Tokens mirror index.html — each page in this site is self-contained. */
+  :root{
+    --ink:#1A2A2E; --ink-soft:#48595D; --ink-faint:#7A8689;
+    --paper:#F0EDE6; --card:#FFFFFF;
+    --slate:#365158; --slate-deep:#22383D;
+    --clay:#9C5B3B; --seal:#7C2A2E; --moss:#4A6B52; --gold:#9A7524; --teal:#0E6B6B;
+    --line:#D8D2C6; --line-strong:#BEB6A6;
+    --shadow:0 1px 0 rgba(26,42,46,.03), 0 18px 40px -32px rgba(26,42,46,.55);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:600;line-height:1.14;margin:0}
+  a{color:inherit}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+  .topbar{background:var(--slate-deep);color:#DCE5E4}
+  .topbar .wrap{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding-top:9px;padding-bottom:9px;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;
+  }
+  .topbar span:last-child{color:#9DB2B0;text-align:right}
+
+  .pagehead{border-bottom:1px solid var(--line)}
+  .pagehead .wrap{padding-top:34px;padding-bottom:40px}
+  .back{
+    display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--clay);margin-bottom:24px;
+  }
+  .back svg{transition:transform .18s ease}
+  .back:hover svg{transform:translateX(-4px)}
+  .pagehead h1{font-size:clamp(31px,4.6vw,44px);letter-spacing:-.018em}
+  .pagehead p{margin:16px 0 0;max-width:56ch;color:var(--ink-soft)}
+
+  section{padding-top:52px}
+  .sec-head{
+    font-size:13px;font-family:"IBM Plex Mono",monospace;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--slate-deep);
+    padding-bottom:12px;border-bottom:1px solid var(--line-strong);margin-bottom:24px;
+  }
+  section p{margin:0 0 14px;max-width:66ch;color:var(--ink-soft)}
+  section p:last-child{margin-bottom:0}
+  section p strong{color:var(--ink);font-weight:600}
+
+  /* Licence panel */
+  .panel{
+    background:var(--card);border:1px solid var(--line);border-radius:3px;
+    box-shadow:var(--shadow);padding:26px 30px;position:relative;overflow:hidden;
+  }
+  .panel::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--moss)}
+  .lic-tag{
+    display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:12px;
+    font-weight:600;letter-spacing:.1em;color:var(--moss);
+    border:1px solid var(--moss);border-radius:2px;padding:5px 11px;margin-bottom:14px;
+  }
+  .panel h3{font-size:22px;margin-bottom:10px;letter-spacing:-.01em}
+  .terms{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:22px;padding-top:22px;border-top:1px solid var(--line)}
+  .terms h4{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;margin:0 0 10px;font-weight:600;
+  }
+  .terms .yes h4{color:var(--moss)}
+  .terms .no h4{color:var(--seal)}
+  .terms ul{margin:0;padding-left:18px;font-size:14.5px;color:var(--ink-soft)}
+  .terms li{margin-bottom:6px}
+  .terms li::marker{color:var(--line-strong)}
+
+  /* Citation builder */
+  .picker{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .pick{
+    font-family:"IBM Plex Sans",sans-serif;font-size:13.5px;
+    border:1px solid var(--line);background:var(--card);color:var(--ink-soft);
+    border-radius:2px;padding:8px 14px;cursor:pointer;
+    transition:border-color .15s, color .15s, background .15s;
+  }
+  .pick:hover{border-color:var(--line-strong);color:var(--ink)}
+  .pick[aria-pressed="true"]{border-color:var(--slate-deep);color:var(--slate-deep);background:#F6F4EF;font-weight:600}
+  .pick:focus-visible{outline:2px solid var(--slate-deep);outline-offset:2px}
+
+  .cite{
+    background:var(--card);border:1px solid var(--line);border-radius:3px;
+    margin-bottom:14px;overflow:hidden;
+  }
+  .cite-top{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:9px 14px;border-bottom:1px solid var(--line);background:#FAF8F4;
+  }
+  .cite-top span{
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-faint);
+  }
+  .copy{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;border:1px solid var(--line-strong);background:transparent;
+    color:var(--ink-soft);border-radius:2px;padding:4px 10px;cursor:pointer;
+    transition:border-color .15s,color .15s;
+  }
+  .copy:hover{border-color:var(--slate-deep);color:var(--slate-deep)}
+  .copy[data-done="true"]{border-color:var(--moss);color:var(--moss)}
+  .copy:focus-visible{outline:2px solid var(--slate-deep);outline-offset:2px}
+  .cite pre{
+    margin:0;padding:16px 18px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;
+    line-height:1.75;color:var(--ink);white-space:pre-wrap;word-break:break-word;
+  }
+
+  /* Sources list */
+  .sources{list-style:none;margin:0;padding:0}
+  .sources li{
+    padding:16px 0;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:186px 1fr;gap:20px;
+  }
+  .sources li:first-child{padding-top:0}
+  .sources li:last-child{border-bottom:none}
+  .sources dt, .sources .who{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;
+    color:var(--slate-deep);font-weight:500;
+  }
+  .sources .what{font-size:14.5px;color:var(--ink-soft);margin:0}
+
+  .notice{
+    border-left:3px solid var(--seal);background:#FAF6F2;
+    border-radius:0 3px 3px 0;padding:18px 22px;
+  }
+  .notice p{margin:0 0 9px;font-size:14.5px;max-width:none}
+  .notice p:last-child{margin-bottom:0}
+  .notice strong{color:var(--seal);font-weight:600}
+
+  footer{margin-top:72px;border-top:1px solid var(--line);background:#EAE6DD}
+  footer .wrap{
+    padding-top:26px;padding-bottom:46px;
+    display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);
+    letter-spacing:.04em;
+  }
+  footer a{color:var(--ink-soft)}
+
+  a:focus-visible{outline:2px solid var(--slate-deep);outline-offset:3px;border-radius:2px}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none !important;transition:none !important}
+    html{scroll-behavior:auto}
+  }
+  @media (max-width:720px){
+    .terms{grid-template-columns:1fr;gap:20px}
+    .sources li{grid-template-columns:1fr;gap:6px}
+    .panel{padding:22px 24px}
+    section{padding-top:40px}
+  }
+  @media print{
+    body{background:#fff}
+    .copy,.picker,.back{display:none}
+    .cite{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Department of Forensic Medicine &amp; Toxicology</span>
+    <span>HIMS · SRHU · Dehradun</span>
+  </div>
+</div>
+
+<header class="pagehead">
+  <div class="wrap">
+    <a class="back" href="index.html">
+      <svg width="15" height="11" viewBox="0 0 15 11" fill="none" aria-hidden="true"><path d="M14 5.5H2M6 1.5l-4 4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Forensic Medicine Workbench
+    </a>
+    <h1>Copyright, licence and citation</h1>
+    <p>Who owns this material, what you may do with it, and how to cite it if you use it in teaching or in writing.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section aria-labelledby="h-copyright">
+    <h2 class="sec-head" id="h-copyright">Copyright</h2>
+    <p>© <span id="year">2026</span> <strong>Dr Harvinder Singh Chhabra</strong>. All text, illustrations, case scenarios and interactive material in the Forensic Medicine Workbench are the author's original work, except where a source is named below.</p>
+    <p>The author asserts the moral right to be identified as the author of this work.</p>
+  </section>
+
+  <section aria-labelledby="h-licence">
+    <h2 class="sec-head" id="h-licence">Licence</h2>
+    <div class="panel">
+      <span class="lic-tag">CC BY-NC-ND 4.0</span>
+      <h3>Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International</h3>
+      <p>Teach with it, share it, print it for your students. Credit the author, keep it non-commercial, and pass it on unchanged.</p>
+      <div class="terms">
+        <div class="yes">
+          <h4>You may</h4>
+          <ul>
+            <li>Copy and redistribute the material in any medium or format</li>
+            <li>Print it and hand it out in teaching</li>
+            <li>Link to it, or host a verbatim copy on an institutional site</li>
+          </ul>
+        </div>
+        <div class="no">
+          <h4>On these terms</h4>
+          <ul>
+            <li>Credit the author and link back to the original</li>
+            <li>No commercial use without written permission</li>
+            <li>No altered, adapted or excerpted versions may be distributed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:20px">Full terms: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">creativecommons.org/licenses/by-nc-nd/4.0</a>. For translation, adaptation, commercial use, or inclusion in a course pack that falls outside these terms, write to the author — permission is usually straightforward to arrange.</p>
+  </section>
+
+  <section aria-labelledby="h-cite">
+    <h2 class="sec-head" id="h-cite">How to cite</h2>
+    <p>Pick what you are citing, then copy the format your journal or department asks for. The access date updates to today.</p>
+    <div class="picker" id="picker" role="group" aria-label="What to cite"></div>
+    <div id="citations"></div>
+  </section>
+
+  <section aria-labelledby="h-sources">
+    <h2 class="sec-head" id="h-sources">Material from other sources</h2>
+    <p>The Workbench draws on public documents and law. Those remain the property of their originators and are used here for teaching, with attribution.</p>
+    <ul class="sources">
+      <li>
+        <span class="who">Ministry of Health &amp; Family Welfare, Government of India</span>
+        <p class="what">Guidelines &amp; Protocols: Medico-legal care for survivors/victims of sexual violence (2014). Opinion wording and examination protocol follow this document. © Government of India.</p>
+      </li>
+      <li>
+        <span class="who">Parliament of India</span>
+        <p class="what">Bharatiya Nyaya Sanhita, Bharatiya Nagarik Suraksha Sanhita and Bharatiya Sakshya Adhiniyam, 2023, in force 1 July 2024. Statutory text is reproduced or paraphrased for teaching; the bare Act governs.</p>
+      </li>
+      <li>
+        <span class="who">Typefaces</span>
+        <p class="what">Newsreader and IBM Plex, both under the SIL Open Font License 1.1, served via Google Fonts.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-disclaimer">
+    <h2 class="sec-head" id="h-disclaimer">Disclaimer</h2>
+    <div class="notice">
+      <p><strong>These are teaching aids.</strong> They do not replace the statutory proforma, your hospital's protocol, or the current text of the law. Where a resource and the official proforma differ, the proforma governs.</p>
+      <p>Clinical and legal responsibility for any examination rests with the examining doctor. Verify section numbers and procedural requirements against the current statute before relying on them in a report or in court.</p>
+      <p>The material is provided as it is, without warranty. Neither the author nor the institution accepts liability for any loss arising from its use.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-contact">
+    <h2 class="sec-head" id="h-contact">Permissions and corrections</h2>
+    <p>Found an error, or want to use this outside the licence terms? Write to the author at the Department of Forensic Medicine &amp; Toxicology, Himalayan Institute of Medical Sciences, Swami Rama Himalayan University, Dehradun.</p>
+    <!-- Add a contact address here, e.g.: <p><a href="mailto:you@srhu.edu.in">you@srhu.edu.in</a></p> -->
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span class="year">2026</span> Dr Harvinder Singh Chhabra · CC BY-NC-ND 4.0</span>
+    <span><a href="index.html">Back to the register</a></span>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   SET THIS ONCE, AFTER YOU PUBLISH
+   The citations below build themselves from it.
+   ============================================================ */
+const SITE_URL = "https://example.org/workbench";   // ← replace with the real address
+
+const AUTHOR      = { full: "Chhabra, Harvinder Singh", vancouver: "Chhabra HS", apa: "Chhabra, H. S." };
+const PUBLISHER   = "Department of Forensic Medicine & Toxicology, Himalayan Institute of Medical Sciences, Swami Rama Himalayan University";
+const PUB_SHORT   = "Himalayan Institute of Medical Sciences, Swami Rama Himalayan University";
+const PLACE       = "Dehradun";
+const YEAR        = new Date().getFullYear();       // ← replace with the year of publication
+
+/* ---- ADD A NEW RESOURCE HERE TOO (mirror of the register) ---- */
+const CITE_ITEMS = [
+  { key: "all",    tab: "The whole Workbench",  title: "Forensic Medicine Workbench: medico-legal practice, step by step", path: "" },
+  { key: "fmt01",  tab: "FMT-01 · The guide",   title: "Medico-legal care of the sexual violence survivor",                 path: "modules/medico-legal-care-sexual-violence-survivor.html" },
+  { key: "fmt02",  tab: "FMT-02 · The drill",   title: "SAFE evidence sequencer",                                           path: "modules/safe-evidence-sequencer.html" }
+];
+
+/* ---- build ---- */
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const now = new Date();
+const cited = `${now.getFullYear()} ${MONTHS[now.getMonth()]} ${now.getDate()}`;
+const citedAPA = `${["January","February","March","April","May","June","July","August","September","October","November","December"][now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+const base = SITE_URL.replace(/\/+$/, "");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+
+function formats(item){
+  const url = item.path ? `${base}/${item.path}` : base;
+  const inWhole = item.key === "all" ? "" : " In: Forensic Medicine Workbench [Internet].";
+  return [
+    ["Vancouver / NLM",
+     `${AUTHOR.vancouver}. ${item.title}${item.key === "all" ? " [Internet]." : "."}${inWhole} ${PLACE}: ${PUBLISHER}; ${YEAR} [cited ${cited}]. Available from: ${url}`],
+    ["APA 7th",
+     `${AUTHOR.apa} (${YEAR}). ${item.title}${item.key === "all" ? "" : ". In Forensic Medicine Workbench"}. ${PUB_SHORT}. Retrieved ${citedAPA}, from ${url}`],
+    ["BibTeX",
+     `@misc{chhabra${YEAR}${item.key},\n  author       = {${AUTHOR.full}},\n  title        = {${item.title}},\n  year         = {${YEAR}},\n  institution  = {${PUB_SHORT}},\n  address      = {${PLACE}, India},\n  howpublished = {\\url{${url}}},\n  note         = {Accessed ${cited}}\n}`]
+  ];
+}
+
+const picker = document.getElementById("picker");
+const box = document.getElementById("citations");
+
+picker.innerHTML = CITE_ITEMS.map((it, i) =>
+  `<button class="pick" type="button" data-key="${it.key}" aria-pressed="${i === 0}">${esc(it.tab)}</button>`
+).join("");
+
+function render(key){
+  const item = CITE_ITEMS.find(i => i.key === key) || CITE_ITEMS[0];
+  box.innerHTML = formats(item).map(([label, text]) => `
+    <div class="cite">
+      <div class="cite-top">
+        <span>${esc(label)}</span>
+        <button class="copy" type="button">Copy</button>
+      </div>
+      <pre>${esc(text)}</pre>
+    </div>`).join("");
+  picker.querySelectorAll(".pick").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.key === item.key)));
+}
+
+picker.addEventListener("click", e => {
+  const b = e.target.closest(".pick");
+  if (b) render(b.dataset.key);
+});
+
+box.addEventListener("click", async e => {
+  const b = e.target.closest(".copy");
+  if (!b) return;
+  const text = b.closest(".cite").querySelector("pre").textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const t = document.createElement("textarea");
+    t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); } catch { b.textContent = "Select and copy"; return; }
+    document.body.removeChild(t);
+  }
+  b.textContent = "Copied";
+  b.dataset.done = "true";
+  setTimeout(() => { b.textContent = "Copy"; b.removeAttribute("data-done"); }, 2000);
+});
+
+render("all");
+document.querySelectorAll("#year, .year").forEach(el => el.textContent = YEAR);
+</script>
+</body>
+</html>
