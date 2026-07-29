@@ -8,6 +8,12 @@
 <meta name="author" content="Dr Harvinder Singh Chhabra">
 <meta name="copyright" content="© 2026 Dr Harvinder Singh Chhabra">
 <meta name="license" content="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Forensic Medicine Workbench">
+<meta property="og:description" content="Medico-legal practice, step by step. Reference guides and interactive drills for the examining doctor.">
+<meta property="og:url" content="https://drfmthsc.github.io/Website/">
+<meta property="og:image" content="https://drfmthsc.github.io/Website/seal-card.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#22383D">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Workbench">
@@ -75,11 +81,9 @@
 
   /* Signature: the file stamp */
   .seal{
-    position:absolute;z-index:1;right:-46px;top:44px;width:290px;height:290px;
-    color:var(--seal);opacity:.10;transform:rotate(-9deg);pointer-events:none;
+    position:absolute;z-index:-1;right:-46px;top:22px;width:296px;height:296px;
+    opacity:.20;transform:rotate(-5deg);pointer-events:none;user-select:none;
   }
-  .seal-arc{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.24em;fill:currentColor;font-weight:500}
-  .seal-glyph{font-family:"Newsreader",Georgia,serif;font-size:96px;font-weight:600;fill:currentColor}
 
   /* ---------- Register ---------- */
   .register{padding:56px 0 8px}
@@ -205,7 +209,7 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width:720px){
-    .seal{width:190px;height:190px;right:-58px;top:24px;opacity:.09}
+    .seal{width:196px;height:196px;right:-40px;top:8px;opacity:.14}
     .masthead .wrap{padding-top:44px;padding-bottom:40px}
     .entry,.slot{grid-template-columns:1fr}
     .docket{
@@ -235,18 +239,8 @@
 </div>
 
 <header class="masthead">
-  <svg class="seal" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-    <defs>
-      <path id="sealArc" d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0"></path>
-    </defs>
-    <circle cx="100" cy="100" r="86" fill="none" stroke="currentColor" stroke-width="2.5"></circle>
-    <circle cx="100" cy="100" r="78" fill="none" stroke="currentColor" stroke-width="1"></circle>
-    <circle cx="100" cy="100" r="55" fill="none" stroke="currentColor" stroke-width="1"></circle>
-    <text class="seal-arc"><textPath href="#sealArc" startOffset="2%">FORENSIC MEDICINE · MEDICO-LEGAL RECORD · </textPath></text>
-    <text x="100" y="132" text-anchor="middle" class="seal-glyph">§</text>
-  </svg>
-
   <div class="wrap">
+    <img class="seal" src="seal.png" alt="" aria-hidden="true" decoding="async" width="640" height="640">
     <h1>Forensic Medicine Workbench</h1>
     <p class="subtitle">Medico-legal practice, step by step</p>
     <p class="lede">Working tools for the doctor on duty when a survivor arrives — what to do, in what order, and how to record it so that it holds in court.</p>

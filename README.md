@@ -10,6 +10,8 @@ site/
 ├── licence.html                                     copyright, licence, citation formats
 ├── medico-legal-care-sexual-violence-survivor.html  FMT-01
 ├── safe-evidence-sequencer.html                     FMT-02
+├── seal.png                                         masthead watermark (ink-only, transparent)
+├── seal-card.jpg                                    link-preview image for shared URLs
 ├── LICENSE.md
 ├── README.md
 └── .nojekyll
@@ -77,3 +79,8 @@ the drill's scoring and certificate, runs offline in the browser.
   to the register, add it there too so people can cite it directly.
 - Design tokens (the `:root` block) are duplicated in `index.html` and `licence.html`. Each
   page is self-contained, like the modules. Change a colour in one, change it in both.
+- `seal.png` is the emblem with its parchment background keyed out, so it tints against the
+  page rather than sitting on a beige square. Its visibility is set by `opacity` on the
+  `.seal` rule in `index.html` — currently `.20`, dropping to `.14` on small screens.
+- `seal-card.jpg` is the original emblem on its parchment, used only by the `og:image` tag.
+  It is what appears when the site link is shared on WhatsApp, Slack or social media.
