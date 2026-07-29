@@ -36,6 +36,7 @@ licence.html                                    copyright, licence, citation for
 medico-legal-care-sexual-violence-survivor.html resource FMT-01
 safe-evidence-sequencer.html                    resource FMT-02
 mlr-recall.html                                 resource FMT-03
+consent-study-notes.html                        resource FMT-04
 seal.png                                        emblem, dark ink (light pages)
 seal-light.png                                  emblem, pale ink (dark pages)
 seal-card.jpg                                   emblem on parchment, for og:image only
@@ -55,6 +56,10 @@ If a folder is ever introduced, the `href` values in `index.html` and the `path`
 full pathway in six sections: Consent, History, Examination, Evidence collection, Framing the
 medical opinion, Deposition in court. Includes an "Opinion Engine" that generates the verbatim
 MoHFW provisional and final opinion wording.
+
+**FMT-04 — Consent in Medical and Medico-legal Practice.** Long-form study notes in 14
+sections, written to the BNS/BNSS/BSA with old IPC and CrPC numbers alongside. Contains ~100
+checklist boxes whose state is saved in browser storage.
 
 **FMT-03 — MLR-Recall.** A recall trainer. 119 cards cross-mapping IPC, CrPC and IEA sections
 to BNS, BNSS and BSA, each carrying the provision text. Learn and quiz modes, filterable by
@@ -165,6 +170,14 @@ file, and the `<meta name="license">` tag in every file.
 7. **`.nojekyll` not yet uploaded.** GitHub Pages runs Jekyll by default and silently ignores
    files and folders whose names start with an underscore. An empty `.nojekyll` file exists
    locally but has not been pushed to the repo.
+
+## The retired repo
+
+MLR-Recall was originally published at `github.com/drfmthsc/BNS-BNSS-BSA-Recall`
+(`drfmthsc.github.io/BNS-BNSS-BSA-Recall/`). It now lives in the Workbench. The old repo holds
+only `index.html` and `404.html`, both redirect pages pointing at
+`drfmthsc.github.io/Website/mlr-recall.html`. Do not restore content there — edits belong in
+the Workbench copy.
 
 ## Working notes
 

@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consent in Medical and Medico-legal Practice · Forensic Medicine Workbench</title>
+<meta name="description" content="A sectioned account of consent in medical and medico-legal practice, written to the BNS, BNSS and BSA, 2023, with working checklists. Dr Harvinder Singh Chhabra.">
+<meta name="author" content="Dr Harvinder Singh Chhabra">
+<meta name="copyright" content="© 2026 Dr Harvinder Singh Chhabra">
+<meta name="license" content="https://creativecommons.org/licenses/by-nc-nd/4.0/">
+<style>
+:root{
+  --paper:#eceae4;
+  --card:#fcfbf8;
+  --ink:#191c24;
+  --ink-soft:#3c414c;
+  --muted:#6e7280;
+  --rule:#d7d4cb;
+  --rule-soft:#e6e3da;
+  --seal:#8a2b34;
+  --seal-bg:rgba(138,43,52,.055);
+  --teal:#0d6a68;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:70px}
+body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:15.5px; line-height:1.62; -webkit-text-size-adjust:100%}
+
+.wm{position:fixed; inset:0; z-index:0; pointer-events:none; display:flex; align-items:center; justify-content:center; overflow:hidden}
+.wm span{font-family:var(--serif); font-size:clamp(26px,6.5vw,68px); letter-spacing:.14em; color:var(--ink); opacity:.035; transform:rotate(-28deg); white-space:nowrap; line-height:1.9}
+
+.wrap{position:relative; z-index:1; max-width:1120px; margin:0 auto; padding:20px 16px 70px; display:grid; grid-template-columns:230px minmax(0,1fr); gap:34px; align-items:start}
+@media (max-width:900px){ .wrap{grid-template-columns:1fr; gap:0} }
+
+/* ---------- masthead ---------- */
+.mast{grid-column:1/-1; border-top:3px solid var(--ink); border-bottom:1px solid var(--rule); padding:16px 0 15px; margin-bottom:18px}
+.eyebrow{font-family:var(--mono); font-size:10.5px; letter-spacing:.22em; text-transform:uppercase; color:var(--seal); margin-bottom:8px}
+h1{font-family:var(--serif); font-size:clamp(27px,5vw,42px); line-height:1.06; margin:0 0 10px; font-weight:600; letter-spacing:-.01em}
+h1 em{font-style:italic; color:var(--seal)}
+.deck{max-width:66ch; color:var(--ink-soft); font-size:14.8px; margin:0 0 13px}
+.byline{font-family:var(--mono); font-size:11px; color:var(--muted); border-left:2px solid var(--seal); padding-left:10px; line-height:1.7}
+
+/* ---------- toc ---------- */
+.toc{position:sticky; top:16px; font-size:13px; border-left:1px solid var(--rule); padding-left:14px}
+.toc h4{font-family:var(--mono); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--seal); margin:0 0 10px; font-weight:400}
+.toc a{display:block; color:var(--ink-soft); text-decoration:none; padding:3px 0; line-height:1.35; border-left:2px solid transparent; margin-left:-16px; padding-left:14px}
+.toc a:hover{color:var(--ink)}
+.toc a.on{color:var(--seal); border-left-color:var(--seal); font-weight:600}
+.toc .num{font-family:var(--mono); font-size:10px; color:var(--muted); margin-right:6px}
+.tocbtns{margin-top:16px; display:flex; gap:6px; flex-wrap:wrap}
+.tbtn{font-family:var(--sans); font-size:12px; background:transparent; border:1px solid var(--rule); color:var(--ink-soft); padding:6px 9px; cursor:pointer; border-radius:2px}
+.tbtn:hover{border-color:var(--ink); color:var(--ink)}
+@media (max-width:900px){ .toc{position:static; border-left:0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:14px 0; margin-bottom:18px; columns:2; column-gap:18px} .toc h4{column-span:all} .toc a{margin-left:0; padding-left:0; border-left:0} .toc a.on{border-left:0} .tocbtns{column-span:all} }
+
+/* ---------- body ---------- */
+main{background:var(--card); border:1px solid var(--rule); border-top:3px solid var(--ink); padding:26px 26px 34px}
+@media (max-width:640px){ main{padding:18px 14px 24px} }
+
+section{margin-bottom:38px; scroll-margin-top:20px}
+h2{font-family:var(--serif); font-size:25px; font-weight:600; line-height:1.2; margin:0 0 4px; letter-spacing:-.005em}
+h2 .sn{font-family:var(--mono); font-size:12px; letter-spacing:.1em; color:var(--seal); display:block; margin-bottom:5px; font-weight:400}
+.sub{color:var(--muted); font-size:13.6px; margin:0 0 16px; padding-bottom:12px; border-bottom:1px solid var(--rule-soft)}
+h3{font-family:var(--serif); font-size:18px; font-weight:600; margin:26px 0 8px; line-height:1.25}
+h3 .hn{font-family:var(--mono); font-size:11px; color:var(--muted); margin-right:8px; letter-spacing:.06em}
+h4{font-size:14px; font-weight:700; margin:18px 0 6px; letter-spacing:.01em}
+p{margin:0 0 11px; max-width:78ch}
+ul,ol{margin:0 0 12px; padding-left:22px; max-width:78ch}
+li{margin-bottom:5px}
+li > ul,li > ol{margin-top:5px; margin-bottom:2px}
+strong{font-weight:700}
+em{font-style:italic}
+
+.ref{font-family:var(--mono); font-size:11.5px; letter-spacing:.02em; color:var(--seal); background:var(--seal-bg); border:1px solid rgba(138,43,52,.3); padding:1px 5px; white-space:nowrap; border-radius:1px}
+.old{font-family:var(--mono); font-size:11px; color:var(--muted)}
+
+/* ---------- boxes ---------- */
+.box{border:1px solid var(--rule); border-left:3px solid var(--teal); background:rgba(13,106,104,.035); padding:13px 15px; margin:14px 0}
+.box .lbl,.warn .lbl,.cl .lbl{font-family:var(--mono); font-size:9.8px; letter-spacing:.2em; text-transform:uppercase; display:block; margin-bottom:7px}
+.box .lbl{color:var(--teal)}
+.box p:last-child,.warn p:last-child,.cl p:last-child{margin-bottom:0}
+.warn{border:1px solid var(--rule); border-left:3px solid var(--seal); background:var(--seal-bg); padding:13px 15px; margin:14px 0}
+.warn .lbl{color:var(--seal)}
+.quote{font-family:var(--serif); font-size:16px; font-style:italic; color:var(--ink-soft); border-left:2px solid var(--rule); padding-left:14px; margin:12px 0}
+
+/* ---------- checklist ---------- */
+.cl{border:1px solid var(--rule); background:#fff; padding:14px 16px; margin:16px 0}
+.cl .lbl{color:var(--ink); border-bottom:1px solid var(--rule-soft); padding-bottom:7px}
+.cl ul{list-style:none; padding-left:0; margin:0; max-width:none}
+.cl li{display:flex; gap:10px; align-items:flex-start; margin:0; padding:6px 0; border-bottom:1px dotted var(--rule-soft); font-size:14.4px}
+.cl li:last-child{border-bottom:0}
+.cl input[type=checkbox]{flex:0 0 auto; margin:5px 0 0; width:15px; height:15px; accent-color:var(--seal); cursor:pointer}
+.cl label{cursor:pointer; flex:1 1 auto; line-height:1.5}
+.cl input:checked + label{color:var(--muted); text-decoration:line-through; text-decoration-thickness:1px}
+.cl .note{display:block; color:var(--muted); font-size:12.6px; font-style:italic; margin-top:2px; text-decoration:none}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto; margin:14px 0}
+table{border-collapse:collapse; width:100%; font-size:13.6px; min-width:520px}
+caption{text-align:left; font-family:var(--mono); font-size:9.8px; letter-spacing:.2em; text-transform:uppercase; color:var(--seal); padding-bottom:7px}
+th,td{border:1px solid var(--rule); padding:7px 9px; vertical-align:top; text-align:left}
+th{background:rgba(0,0,0,.035); font-weight:700; font-size:12.6px}
+tbody tr:nth-child(even) td{background:rgba(0,0,0,.014)}
+td.c,th.c{text-align:center}
+
+/* ---------- proforma ---------- */
+.proforma{border:1px solid var(--ink); background:#fff; padding:16px 18px; margin:16px 0; font-size:13.6px; font-family:var(--sans)}
+.proforma h5{font-family:var(--serif); font-size:15px; margin:0 0 4px; text-align:center; font-weight:600}
+.proforma .cen{text-align:center; color:var(--muted); font-size:11.5px; margin-bottom:12px}
+.proforma p{margin:0 0 9px; max-width:none}
+.fill{border-bottom:1px dotted var(--ink); display:inline-block; min-width:110px}
+.sigrow{display:flex; gap:16px; flex-wrap:wrap; margin-top:16px; font-size:12.4px; color:var(--ink-soft)}
+.sigrow div{flex:1 1 150px; border-top:1px solid var(--ink); padding-top:5px}
+
+/* ---------- footer ---------- */
+.foot{grid-column:1/-1; margin-top:26px; border-top:1px solid var(--rule); padding-top:16px; font-size:12.4px; color:var(--muted)}
+.foot p{margin:0 0 9px; max-width:90ch}
+.foot a{color:var(--seal)}
+.cc{display:inline-block; font-family:var(--mono); font-size:10px; letter-spacing:.12em; border:1px solid var(--rule); padding:3px 7px; color:var(--ink-soft); margin-bottom:9px}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{
+  .wm,.toc,.tocbtns{display:none!important}
+  body{background:#fff; font-size:10.5pt}
+  .wrap{display:block; max-width:none; padding:0}
+  main{border:0; padding:0}
+  section{page-break-inside:auto}
+  h2,h3{page-break-after:avoid}
+  .cl,.box,.warn,.proforma,table{page-break-inside:avoid}
+  a{color:inherit; text-decoration:none}
+}
+
+.wb-logo{display:block; position:absolute; right:0; top:14px; width:var(--wb-logo,74px); line-height:0; opacity:.9; transition:opacity .18s ease; z-index:3}
+.wb-logo:hover{opacity:1}
+.wb-logo img{width:100%; height:auto; display:block}
+.wb-logo:focus-visible{outline:2px solid var(--seal); outline-offset:4px; border-radius:50%}
+.mast{position:relative}
+.mast h1, .mast .deck{max-width:calc(100% - 100px)}
+.lic-cite{font-family:var(--mono); font-size:11.5px; line-height:1.7; color:var(--ink-soft); border-top:1px dashed var(--rule); padding-top:10px; margin-top:2px}
+.lic-cite span{display:block; font-weight:600; letter-spacing:.08em; text-transform:uppercase; font-size:10px; color:var(--muted); margin-bottom:3px}
+@media(max-width:760px){.wb-logo{position:static; width:58px; margin-bottom:12px} .mast h1,.mast .deck{max-width:none}}
+@media print{.wb-logo{display:none}}
+</style>
+</head>
+<body>
+
+<div class="wm" aria-hidden="true"><span>Dr Harvinder Singh Chhabra</span></div>
+
+<div class="wrap">
+
+  <header class="mast">
+      <a class="wb-logo" href="index.html" title="Forensic Medicine Workbench"><img src="seal.png" alt="Forensic Medicine Workbench — back to the register" width="640" height="640" decoding="async"></a>
+    <div class="eyebrow">Forensic Medicine &amp; Toxicology · with working checklists</div>
+    <h1>Consent in medical and <em>medico-legal practice</em></h1>
+    <p class="deck">A sectioned account, written to the Bharatiya Nyaya Sanhita, Bharatiya Nagarik Suraksha Sanhita and Bharatiya Sakshya Adhiniyam, 2023, with the old IPC and CrPC numbers alongside. Every clinical action that needs a sequence is given as a checklist you can tick; the ticks are saved on this device.</p>
+    <div class="byline">Dr Harvinder Singh Chhabra<br><a href="mailto:dr.fmt.hsc@gmail.com">dr.fmt.hsc@gmail.com</a></div>
+  </header>
+
+  <nav class="toc" id="toc" aria-label="Contents">
+    <h4>Contents</h4>
+    <a href="#s1"><span class="num">1</span>Meaning and legal basis</a>
+    <a href="#s2"><span class="num">2</span>Types of consent</a>
+    <a href="#s3"><span class="num">3</span>Essentials of a valid consent</a>
+    <a href="#s4"><span class="num">4</span>Informed consent</a>
+    <a href="#s5"><span class="num">5</span>Age, capacity, who consents</a>
+    <a href="#s6"><span class="num">6</span>BNS general exceptions, S 25–33</a>
+    <a href="#s7"><span class="num">7</span>Consent in the offence sections</a>
+    <a href="#s8"><span class="num">8</span>Special statutes</a>
+    <a href="#s9"><span class="num">9</span>Medico-legal examination</a>
+    <a href="#s10"><span class="num">10</span>Documentation and the form</a>
+    <a href="#s11"><span class="num">11</span>Refusal of consent</a>
+    <a href="#s12"><span class="num">12</span>Pitfalls that lose cases</a>
+    <a href="#s13"><span class="num">13</span>Rapid revision</a>
+    <a href="#s14"><span class="num">14</span>Conversion &amp; case tables</a>
+    <div class="tocbtns">
+      <button class="tbtn" id="printBtn" type="button">Print</button>
+      <button class="tbtn" id="resetBtn" type="button">Clear ticks</button>
+    </div>
+  </nav>
+
+  <main>
+
+<!-- ================= 1 ================= -->
+<section id="s1">
+  <h2><span class="sn">Section 1</span>Meaning and legal basis</h2>
+  <p class="sub">What consent is, where the law gets the idea from, and what happens to the doctor who acts without it.</p>
+
+  <h3><span class="hn">1.1</span>Definition</h3>
+  <p>Consent is the <strong>voluntary agreement, compliance or permission</strong> given by a person who has the capacity to give it, to an act proposed by another. In medicine it is the patient's permission for a specific examination, investigation, procedure or treatment, given after being told what it involves.</p>
+  <div class="box">
+    <span class="lbl">Hold on to this</span>
+    <p>Consent is a <strong>process</strong>, not a piece of paper. The signed form is only <em>evidence</em> that the process took place. A court asks what the patient was told, by whom, in what language and when — not whether a signature exists.</p>
+  </div>
+
+  <h3><span class="hn">1.2</span>Where the concept comes from</h3>
+  <ul>
+    <li><strong>Contract law.</strong> Indian Contract Act 1872, S 13 — two persons consent when they agree upon the same thing in the same sense (<em>consensus ad idem</em>). S 14 — consent is <strong>free</strong> when it is not caused by coercion, undue influence, fraud, misrepresentation or mistake.</li>
+    <li><strong>Law of torts.</strong> Touching another person without lawful justification is battery. Consent is the justification.</li>
+    <li><strong>Criminal law.</strong> Consent operates as a general exception under <span class="ref">BNS S 25</span> to <span class="ref">BNS S 33</span>, converting what would be hurt, grievous hurt or assault into a lawful act.</li>
+    <li><strong>Constitutional law.</strong> Article 21 — personal liberty read to include bodily integrity and medical self-determination (<em>K S Puttaswamy v Union of India</em>, 2017).</li>
+  </ul>
+
+  <h4>The maxims worth quoting</h4>
+  <ul>
+    <li><em>Volenti non fit injuria</em> — to a willing person, no injury is done.</li>
+    <li><em>Voluntas aegroti suprema lex</em> — the patient's <strong>will</strong> is the highest law. It has replaced the older paternalistic <em>salus aegroti suprema lex</em>, the patient's welfare is the highest law.</li>
+    <li><em>Nemo est supra leges</em> — nobody is above the law, including the treating doctor.</li>
+  </ul>
+  <p class="quote">"Every human being of adult years and sound mind has a right to determine what shall be done with his own body." — Cardozo J, <em>Schloendorff v Society of New York Hospital</em> (1914)</p>
+
+  <h3><span class="hn">1.3</span>Why the doctor needs consent</h3>
+  <ol>
+    <li>It respects patient autonomy — the ethical foundation.</li>
+    <li>It makes an otherwise criminal act lawful — the legal foundation.</li>
+    <li>It is a professional duty under the NMC Registered Medical Practitioner (Professional Conduct) Regulations, 2023, which replaced the MCI Code of Ethics Regulations 2002 (whose Regulation 7.16 required written consent before an operation).</li>
+    <li>It is the basis of the doctor–patient contract and the first defence in any negligence suit.</li>
+    <li>It protects the doctor from allegations of assault, molestation and unnecessary surgery.</li>
+  </ol>
+
+  <h3><span class="hn">1.4</span>Consequences of acting without consent</h3>
+  <div class="tw">
+  <table>
+    <caption>Table 1.1 — Liability when consent is absent or invalid</caption>
+    <thead><tr><th style="width:18%">Forum</th><th style="width:44%">Allegation</th><th>Provision or remedy</th></tr></thead>
+    <tbody>
+      <tr><td>Criminal</td><td>Assault, use of criminal force</td><td><span class="ref">BNS S 129</span> criminal force · <span class="ref">BNS S 130</span> assault · <span class="ref">BNS S 131</span> punishment <span class="old">(IPC 350, 351, 352)</span></td></tr>
+      <tr><td>Criminal</td><td>Hurt or grievous hurt caused by the procedure</td><td><span class="ref">BNS S 114</span>–<span class="ref">BNS S 117</span> <span class="old">(IPC 319–322)</span></td></tr>
+      <tr><td>Civil</td><td>Battery, trespass to the person</td><td>Damages; <strong>actionable without proof of injury</strong></td></tr>
+      <tr><td>Civil</td><td>Negligence — consent taken but risks not disclosed</td><td>Damages on proof of duty, breach, causation and damage</td></tr>
+      <tr><td>Consumer forum</td><td>Deficiency in service</td><td>Consumer Protection Act 2019 — compensation</td></tr>
+      <tr><td>Professional</td><td>Professional misconduct</td><td>State Medical Council / NMC Ethics and Medical Registration Board — warning, suspension, erasure</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3><span class="hn">1.5</span>When you may proceed without consent</h3>
+  <ul>
+    <li><strong>Emergency</strong>, where the patient cannot signify consent and no guardian can be reached in time — <span class="ref">BNS S 30</span>.</li>
+    <li><strong>Statutory compulsion</strong> — examination of an accused at police request <span class="ref">BNSS S 51</span>, <span class="ref">BNSS S 52</span>; medico-legal autopsy on requisition <span class="ref">BNSS S 194</span>; notifiable disease reporting; court-ordered examination.</li>
+    <li><strong>Public health</strong> — Epidemic Diseases Act 1897 and State epidemic regulations.</li>
+  </ul>
+  <div class="warn">
+    <span class="lbl">Caution</span>
+    <p>None of these is a licence to skip consent. Consent is still taken wherever it can be taken, and the reason for proceeding without it is written in the record at the time, not afterwards.</p>
+  </div>
+</section>
+
+<!-- ================= 2 ================= -->
+<section id="s2">
+  <h2><span class="sn">Section 2</span>Types of consent</h2>
+  <p class="sub">Classified by how it is expressed, by who gives it, and by how far it stretches.</p>
+
+  <h3><span class="hn">2.1</span>By the way it is expressed</h3>
+  <h4>Implied (tacit) consent</h4>
+  <p>Inferred from the patient's conduct — walking into the clinic, sitting down, rolling up a sleeve for blood pressure, opening the mouth, lying on the couch. It is the commonest form in practice and needs no writing.</p>
+  <ul>
+    <li>Covers <strong>routine, non-invasive examination only</strong>: inspection, palpation, percussion, auscultation, pulse, blood pressure, temperature.</li>
+    <li>Does <strong>not</strong> cover any procedure, any invasive act, intimate examination, or anything with material risk.</li>
+  </ul>
+
+  <h4>Express consent</h4>
+  <ul>
+    <li><strong>Oral</strong> — adequate for minor procedures such as venepuncture, dressing, injection, or a per-rectal examination. Legally as valid as written consent but far harder to prove; therefore record it in the notes and take it before a witness.</li>
+    <li><strong>Written</strong> — required for operations, general and regional anaesthesia, invasive and risky procedures, blood transfusion, and <strong>all medico-legal work</strong>. Its value is evidentiary.</li>
+  </ul>
+
+  <h3><span class="hn">2.2</span>By who gives it</h3>
+  <div class="tw">
+  <table>
+    <caption>Table 2.1 — Who may give consent</caption>
+    <thead><tr><th style="width:22%">Type</th><th style="width:32%">Given by</th><th>Typical setting and limits</th></tr></thead>
+    <tbody>
+      <tr><td>Personal</td><td>The patient, 12 years or above (general physical / non-invasive examination), 18 years or above (invasive procedures), of sound mind</td><td>The normal rule. Nobody else can override a competent individual's refusal</td></tr>
+      <tr><td>Proxy / substituted</td><td>Parent or guardian</td><td>Child under 12, or a person with mental illness — <span class="ref">BNS S 27</span></td></tr>
+      <tr><td><em>Loco parentis</em></td><td>Adult in charge of the child at the time</td><td>Schoolteacher on an excursion, hostel warden, when the guardian cannot be reached</td></tr>
+      <tr><td>Nominated representative</td><td>Person nominated in advance by the patient</td><td>Mental Healthcare Act 2017, S 14</td></tr>
+      <tr><td>Advance directive</td><td>The patient, while competent, for a future state of incompetence</td><td>Living will — <em>Common Cause v Union of India</em> (2018)</td></tr>
+      <tr><td>Presumed</td><td>Nobody — the doctor acts on necessity</td><td>Emergency, unconscious patient — <span class="ref">BNS S 30</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3><span class="hn">2.3</span>By how far it stretches</h3>
+  <ul>
+    <li><strong>Informed consent</strong> — the legal standard for any procedure. Section 4 deals with it in full.</li>
+    <li><strong>Specific consent</strong> — for one named procedure. A different or additional procedure needs a fresh consent.</li>
+    <li><strong>Blanket consent</strong> — the "I agree to any treatment considered necessary" line on the admission form. It has <strong>no value as consent for a specific procedure</strong>. It is the classic examination trap and a frequent reason cases are lost.</li>
+    <li><strong>Layered consent</strong> — used in sexual-assault examination: written consent taken separately for (1) the examination, (2) collection of samples, and (3) intimation to the police. Each may be declined independently, and treatment proceeds regardless.</li>
+  </ul>
+
+  <h3><span class="hn">2.4</span>Other recognised forms</h3>
+  <ul>
+    <li><strong>Research consent</strong> — written, before an impartial witness, with audio-video recording where required (New Drugs and Clinical Trials Rules, 2019).</li>
+    <li><strong>Telemedicine consent</strong> — implied when the patient initiates the consultation; explicit when a health worker or caregiver initiates it (Telemedicine Practice Guidelines, 2020).</li>
+    <li><strong>Consent for teaching, photography and publication</strong> — always separate from consent for treatment.</li>
+  </ul>
+</section>
+
+<!-- ================= 3 ================= -->
+<section id="s3">
+  <h2><span class="sn">Section 3</span>Essentials of a valid consent</h2>
+  <p class="sub">Four pillars — <strong>F I C S</strong> — and three riders that decide cases in court.</p>
+
+  <h3><span class="hn">3.1</span>Free</h3>
+  <p>Given voluntarily, without coercion, undue influence, fraud, misrepresentation or threat. Consent given under <strong>fear of injury</strong> or under a <strong>misconception of fact</strong> is not consent — <span class="ref">BNS S 28</span> — where the person doing the act knows, or has reason to believe, that this is why it was given.</p>
+  <p>Settings where voluntariness quietly fails: custodial and police-accompanied patients, employer- or insurance-directed examinations, and family pressure, particularly on women and on the elderly.</p>
+
+  <h3><span class="hn">3.2</span>Informed</h3>
+  <p>The patient must know what is being proposed and what it may cost them. The content of disclosure is set out in Section 4.1.</p>
+
+  <h3><span class="hn">3.3</span>Competent</h3>
+  <p>The person must have both <strong>legal capacity</strong> (age) and <strong>mental capacity</strong> (sound mind). Consent by a person who, from mental illness or intoxication, is unable to understand the nature and consequence of what is proposed is void — <span class="ref">BNS S 28</span>. Section 5 deals with capacity in full.</p>
+
+  <h3><span class="hn">3.4</span>Specific</h3>
+  <p>Consent covers the named procedure and nothing else. A further or different procedure needs fresh consent — <em>Samira Kohli v Dr Prabha Manchanda</em> (2008). The only exception is a finding that would be immediately life-threatening if left untreated.</p>
+
+  <h3><span class="hn">3.5</span>The three riders</h3>
+  <ul>
+    <li><strong>Documented</strong> — written, dated, timed, signed by the patient, the doctor and a disinterested witness, and filed with the record.</li>
+    <li><strong>Current</strong> — taken before the act, never after; renewed if there is a long delay or if the plan changes. Never after premedication and never on the operating table.</li>
+    <li><strong>Revocable</strong> — the patient may withdraw consent at any time, including during a procedure where it is safe to stop. Document the withdrawal as carefully as the consent.</li>
+  </ul>
+
+  <div class="cl">
+    <span class="lbl">Checklist 3A — Validity audit before you proceed</span>
+    <ul>
+      <li><input type="checkbox" id="c3a1"><label for="c3a1">The patient is 12 or above (non-invasive procedure), 18 or above (invasive procedure), or the correct guardian is present and identified</label></li>
+      <li><input type="checkbox" id="c3a2"><label for="c3a2">The patient is oriented, not sedated, not intoxicated, not in overwhelming pain</label></li>
+      <li><input type="checkbox" id="c3a3"><label for="c3a3">Consent is being taken <strong>before</strong> premedication and before the patient enters the theatre</label></li>
+      <li><input type="checkbox" id="c3a4"><label for="c3a4">The conversation is in a language the patient understands<span class="note">If an interpreter is used, record the interpreter's name and relationship</span></label></li>
+      <li><input type="checkbox" id="c3a5"><label for="c3a5">The named procedure on the form is the procedure actually planned, spelt out in full — no abbreviations</label></li>
+      <li><input type="checkbox" id="c3a6"><label for="c3a6">Diagnosis, purpose, risks, benefits, alternatives and consequences of refusal have all been discussed</label></li>
+      <li><input type="checkbox" id="c3a7"><label for="c3a7">The patient has been given the chance to ask questions, and the answers are recorded</label></li>
+      <li><input type="checkbox" id="c3a8"><label for="c3a8">No coercion — no employer, police officer or pressing relative directing the decision</label></li>
+      <li><input type="checkbox" id="c3a9"><label for="c3a9">A disinterested witness has signed<span class="note">Not a member of the operating team and not a person with an interest in the outcome</span></label></li>
+      <li><input type="checkbox" id="c3a10"><label for="c3a10">The form is dated <strong>and timed</strong>, and filed in the case record</label></li>
+    </ul>
+  </div>
+
+  <div class="warn">
+    <span class="lbl">Where consent cannot make an act lawful</span>
+    <ul style="margin-bottom:0">
+      <li>Acts that are offences <strong>independently of the harm caused</strong> — <span class="ref">BNS S 29</span>. Causing miscarriage, unless in good faith to save the woman's life, is an offence whatever she consents to.</li>
+      <li>No one can consent to their own death. Consent is no defence to murder; death caused with the consent of a person above 18 is culpable homicide not amounting to murder — Exception 5 to <span class="ref">BNS S 101</span>.</li>
+      <li>Consent to an illegal act — sex determination, sale of an organ, unlawful abortion — is void.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 4 ================= -->
+<section id="s4">
+  <h2><span class="sn">Section 4</span>Informed consent</h2>
+  <p class="sub">What must be disclosed, how much, which standard India follows, and the case you must be able to narrate.</p>
+
+  <h3><span class="hn">4.1</span>What must be disclosed</h3>
+  <div class="cl">
+    <span class="lbl">Checklist 4A — Content of disclosure</span>
+    <ul>
+      <li><input type="checkbox" id="c4a1"><label for="c4a1"><strong>Diagnosis</strong> and the nature of the illness, in plain words</label></li>
+      <li><input type="checkbox" id="c4a2"><label for="c4a2"><strong>Nature of the proposed procedure</strong> — what will physically be done, where, and under what anaesthesia</label></li>
+      <li><input type="checkbox" id="c4a3"><label for="c4a3"><strong>Purpose</strong> — what it is expected to achieve</label></li>
+      <li><input type="checkbox" id="c4a4"><label for="c4a4"><strong>Material risks and likely complications</strong>, including the common minor ones and the rare serious ones</label></li>
+      <li><input type="checkbox" id="c4a5"><label for="c4a5"><strong>Expected benefit</strong> and the realistic chance of success</label></li>
+      <li><input type="checkbox" id="c4a6"><label for="c4a6"><strong>Alternatives</strong>, including conservative treatment and doing nothing</label></li>
+      <li><input type="checkbox" id="c4a7"><label for="c4a7"><strong>Consequences of refusal</strong> and the prognosis without treatment</label></li>
+      <li><input type="checkbox" id="c4a8"><label for="c4a8"><strong>Who will perform it</strong>, and whether trainees will be involved</label></li>
+      <li><input type="checkbox" id="c4a9"><label for="c4a9"><strong>Cost</strong>, duration of stay, and expected recovery time</label></li>
+      <li><input type="checkbox" id="c4a10"><label for="c4a10">Any <strong>additional procedure</strong> that may become necessary, named specifically<span class="note">"Any other procedure found necessary" is not a valid substitute for naming it</span></label></li>
+    </ul>
+  </div>
+
+  <h3><span class="hn">4.2</span>How much must be disclosed — the competing standards</h3>
+  <div class="tw">
+  <table>
+    <caption>Table 4.1 — Standards of disclosure</caption>
+    <thead><tr><th style="width:26%">Standard</th><th style="width:26%">Leading case</th><th>Test applied</th></tr></thead>
+    <tbody>
+      <tr><td>Professional (reasonable doctor)</td><td><em>Bolam v Friern Hospital Management Committee</em> (1957)</td><td>What a responsible body of medical opinion would disclose</td></tr>
+      <tr><td>Professional, qualified</td><td><em>Bolitho v City and Hackney HA</em> (1997)</td><td>That body's practice must also withstand logical analysis</td></tr>
+      <tr><td>Prudent patient</td><td><em>Canterbury v Spence</em> (1972, USA)</td><td>What a reasonable patient in that position would want to know</td></tr>
+      <tr><td>Material risk / patient-centred</td><td><em>Montgomery v Lanarkshire Health Board</em> (2015, UK)</td><td>Any risk to which <em>this</em> patient would attach significance. Persuasive in India, not binding</td></tr>
+      <tr><td><strong>India</strong></td><td><strong><em>Samira Kohli v Dr Prabha Manchanda</em> (2008)</strong></td><td>Bolam-based professional standard. Information must be <strong>adequate, not exhaustive</strong>; the prudent-patient test was expressly not adopted</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3><span class="hn">4.3</span><em>Samira Kohli v Dr Prabha Manchanda</em> (2008) 2 SCC 1</h3>
+  <ol>
+    <li>Consent was taken for a <strong>diagnostic laparoscopy</strong> for prolonged menstrual bleeding.</li>
+    <li>Under general anaesthesia, the surgeon proceeded to an abdominal hysterectomy with bilateral salpingo-oophorectomy.</li>
+    <li>Consent for the larger operation was taken from the patient's <strong>mother</strong> while the patient was unconscious. Held <strong>invalid</strong>.</li>
+    <li>Consent for a diagnostic procedure is not consent for therapeutic surgery.</li>
+    <li>A further procedure during surgery is lawful only where delay would be <strong>life-threatening</strong>, not merely inconvenient or economical.</li>
+    <li>Compensation was awarded. The judgment is now the standard Indian statement of the law of medical consent.</li>
+  </ol>
+  <div class="box">
+    <span class="lbl">Rule from the case</span>
+    <p>Consent given by a relative while a competent adult is under anaesthesia is <strong>no consent at all</strong>. If a second procedure is anticipated, name it on the form and obtain consent for it in advance.</p>
+  </div>
+
+  <h3><span class="hn">4.4</span>Battery or negligence — keep them apart</h3>
+  <div class="tw">
+  <table>
+    <caption>Table 4.2 — The two distinct failures</caption>
+    <thead><tr><th style="width:30%">What went wrong</th><th style="width:22%">Action lies in</th><th>Authority</th></tr></thead>
+    <tbody>
+      <tr><td>No consent at all, or consent to a different act</td><td><strong>Battery</strong> — civil and criminal</td><td>Trespass to the person; <em>Samira Kohli</em> (2008)</td></tr>
+      <tr><td>Consent given, but risks not disclosed</td><td><strong>Negligence</strong>, not battery</td><td><em>Chatterton v Gerson</em> (1981) — once informed in broad terms of the nature of the procedure, consent is real</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3><span class="hn">4.5</span>Recognised limits on disclosure</h3>
+  <ul>
+    <li><strong>Therapeutic privilege</strong> — withholding information whose disclosure would itself cause the patient grave harm. Narrow, exceptional, and it must be reasoned in the notes.</li>
+    <li><strong>Patient waiver</strong> — "doctor, you decide". Valid, but record that full information was offered and declined.</li>
+    <li><strong>Emergency</strong> — necessity displaces disclosure for as long as the emergency lasts.</li>
+  </ul>
+  <div class="warn">
+    <span class="lbl">Remember</span>
+    <p>Consent is a defence to the <strong>act</strong>. It is never a defence to negligence in performing that act. A perfectly taken consent does not excuse a swab left in the abdomen.</p>
+  </div>
+</section>
+
+<!-- ================= 5 ================= -->
+<section id="s5">
+  <h2><span class="sn">Section 5</span>Age, capacity and who consents</h2>
+  <p class="sub">Three numbers carry most of the marks. Keep them apart from the ages of criminal responsibility.</p>
+
+  <h3><span class="hn">5.1</span>Age thresholds</h3>
+  <div class="tw">
+  <table>
+    <caption>Table 5.1 — Age and the validity of consent in India</caption>
+    <thead><tr><th style="width:16%">Age</th><th style="width:40%">Position</th><th>Provision</th></tr></thead>
+    <tbody>
+      <tr><td class="c"><strong>Under 12</strong></td><td>Consent has <strong>no legal value at all</strong>. The guardian consents, in good faith for the child's benefit</td><td><span class="ref">BNS S 28</span> · <span class="ref">BNS S 27</span></td></tr>
+      <tr><td class="c"><strong>12 to under 18</strong></td><td>May consent to a <strong>general physical examination</strong>. For any operation, anaesthesia or invasive procedure the guardian's written consent is required. Take the child's assent as well</td><td>Derived from <span class="ref">BNS S 25</span> read with <span class="ref">BNS S 27</span></td></tr>
+      <tr><td class="c"><strong>18 and above</strong></td><td>Full and valid consent, including consent to <strong>suffer harm</strong></td><td><span class="ref">BNS S 25</span></td></tr>
+      <tr><td class="c"><strong>18</strong></td><td>Age of consent to <strong>any sexual act</strong>. Below 18 it is rape whether or not she "consented"</td><td><span class="ref">BNS S 63</span> Sixthly · POCSO Act 2012</td></tr>
+      <tr><td class="c"><strong>18</strong></td><td>Age at which a person may consent to the MTP of her own pregnancy without a guardian</td><td>MTP Act 1971, amended 2021</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="warn">
+    <span class="lbl">Do not confuse</span>
+    <p>Under 7 <span class="ref">BNS S 20</span> and 7 to under 12 without maturity of understanding <span class="ref">BNS S 21</span> are ages of <strong>criminal responsibility</strong>, not of consent. Examiners deliberately mix these with the consent ages.</p>
+  </div>
+
+  <h3><span class="hn">5.2</span>Mental capacity</h3>
+  <p>Capacity is <strong>decision-specific and time-specific</strong>. A patient may lack capacity for a major operation at 2 a.m. in pain and have it at 10 a.m. the next morning.</p>
+  <div class="cl">
+    <span class="lbl">Checklist 5A — Assessing capacity at the bedside</span>
+    <ul>
+      <li><input type="checkbox" id="c5a1"><label for="c5a1">Can the patient <strong>understand</strong> the information given?</label></li>
+      <li><input type="checkbox" id="c5a2"><label for="c5a2">Can the patient <strong>retain</strong> it long enough to use it?</label></li>
+      <li><input type="checkbox" id="c5a3"><label for="c5a3">Can the patient <strong>weigh</strong> it — balance risks against benefits and against refusing?</label></li>
+      <li><input type="checkbox" id="c5a4"><label for="c5a4">Can the patient <strong>communicate</strong> a decision, by any means?</label></li>
+      <li><input type="checkbox" id="c5a5"><label for="c5a5">Is the patient free of acute intoxication, delirium, heavy sedation or shock?</label></li>
+      <li><input type="checkbox" id="c5a6"><label for="c5a6">Has the assessment and its result been written in the notes, with the time?<span class="note">An unusual or apparently irrational choice is not by itself evidence of incapacity</span></label></li>
+    </ul>
+  </div>
+  <ul>
+    <li>The BNS uses <strong>"mental illness"</strong>, which takes its meaning from the Mental Healthcare Act 2017 — <span class="ref">BNS S 2(19)</span>. The IPC words "insane" and "unsound mind" have been abandoned.</li>
+  </ul>
+
+  <h4>Mental Healthcare Act 2017</h4>
+  <p>The Act rebuilt consent in psychiatry around one principle: a person with mental illness is presumed to have the capacity to decide, and loses the right to decide only when, and only for as long as, capacity is actually absent. Substitute decision-making by the treating team is replaced by three devices — the advance directive, the nominated representative, and supported admission.</p>
+  <ul>
+    <li><strong>Capacity (Section 4).</strong> What is tested is function, never the label. A person has capacity if they can understand the information bearing on the decision, appreciate the reasonably foreseeable consequences of deciding or not deciding, and communicate the decision by any means. How the illness is classified does not enter into it — a diagnosis of schizophrenia does not by itself mean incapacity.</li>
+    <li><strong>Presumption of capacity.</strong> Every adult is presumed capable until the contrary is shown. Capacity is decision-specific and time-specific; it is assessed afresh for each decision and reviewed as the person's state changes.</li>
+    <li><strong>Advance directive (Section 5).</strong> Every person who is not a minor may make a written advance directive stating how they wish to be cared for and treated for a mental illness, how they wish not to be treated, and who they appoint as nominated representative, in order of precedence. Neither a history of mental illness nor of treatment bars a person from making one. Two limits matter: a choice made while capacitous overrides anything directed earlier (S 5(4)), and the directive does not apply to emergency treatment (S 9). The treating professional has a statutory duty to follow a valid directive (S 10).</li>
+    <li><strong>Nominated representative (Section 14).</strong> The person may appoint a representative to support their decisions when capacity is lost. Where none is appointed, the Act sets a fixed order — the person named in the advance directive, then a relative, then a caregiver, then a person appointed by the Mental Health Review Board, and last the Director of Social Welfare. The role is to give effect to the person's own will and preference; they decide <em>for</em> the person only where capacity is absent.</li>
+    <li><strong>Consent to treatment.</strong> Free and informed consent of the patient is the rule. Where a supported patient needs near-total support, the nominated representative may temporarily consent to the treatment plan on the person's behalf; that consent is recorded and capacity is reviewed every fortnight.</li>
+    <li><strong>Admission.</strong> Independent admission (Sections 85–86) is for a person who has capacity and seeks admission — they may leave at will. Supported admission (Sections 89 and 90) applies only when capacity is absent <em>and</em> the person has recently threatened or attempted harm to themselves, behaved violently, or shown an inability to care for themselves, and two psychiatrists certify that admission is the least restrictive option available. Capacity is then reviewed at least every seven days under Section 89 and by the end of each fortnight under Section 90.</li>
+    <li><strong>Other safeguards.</strong> ECT only with anaesthesia and muscle relaxants; prohibited for a minor without Review Board permission. Section 115 presumes severe stress behind an attempt at suicide and takes the attempt out of prosecution and punishment.</li>
+    <li>Intellectual disability is not the same as absence of capacity — <em>Suchita Srivastava v Chandigarh Administration</em> (2009), where the Supreme Court insisted on the woman's own consent to continue her pregnancy.</li>
+  </ul>
+
+  <h3><span class="hn">5.3</span>Who counts as the guardian</h3>
+  <ol>
+    <li>Parents.</li>
+    <li>Failing them, the person having lawful charge of the child.</li>
+    <li><em>Loco parentis</em> where the child is away from the parents.</li>
+    <li>For an incompetent adult, the nearest available relative. This is a <strong>courtesy consent</strong>: it supports, but does not replace, the doctor's duty to act in the patient's best interest under <span class="ref">BNS S 30</span>.</li>
+    <li>The court or Magistrate where there is a dispute, or where a guardian's refusal endangers the child's life.</li>
+  </ol>
+  <div class="box">
+    <span class="lbl">Two rules that are always asked</span>
+    <p>A <strong>husband's consent is not required</strong> for his wife's treatment, MTP or sterilisation, nor a wife's for her husband's. And a relative's consent cannot override the refusal of a competent adult patient.</p>
+  </div>
+</section>
+
+<!-- ================= 6 ================= -->
+<section id="s6">
+  <h2><span class="sn">Section 6</span>BNS 2023 — consent as a general exception</h2>
+  <p class="sub">Chapter III, Sections 25 to 33. These are the provisions that make lawful surgery possible. Learn them by their illustrations.</p>
+
+  <div class="box">
+    <span class="lbl">Conversion trick</span>
+    <p>For this block of sections, <strong>BNS number = IPC number minus 62</strong>. IPC 87 → BNS 25, 88 → 26, 89 → 27, 90 → 28, 91 → 29, 92 → 30, 93 → 31, 94 → 32, 95 → 33.</p>
+  </div>
+
+  <h3><span class="hn">6.1</span><span class="ref">BNS S 25</span> — harm suffered by consent <span class="old">(IPC 87)</span></h3>
+  <p>Nothing which is <strong>not intended to cause death or grievous hurt</strong>, and which is not known by the doer to be likely to cause death or grievous hurt, is an offence by reason of any harm it may cause to a person <strong>above eighteen years</strong> who has consented, expressly or impliedly, to suffer that harm or to take the risk of it.</p>
+  <ul>
+    <li><strong>Illustration.</strong> A and Z agree to fence with each other for amusement. If A, playing fairly, hurts Z, A commits no offence.</li>
+    <li><strong>Application.</strong> Contact sports, boxing, wrestling, ear piercing, tattooing, cosmetic minor procedures.</li>
+    <li><strong>Limits.</strong> Age is fixed at 18. Death and grievous hurt are outside it.</li>
+  </ul>
+
+  <h3><span class="hn">6.2</span><span class="ref">BNS S 26</span> — the doctor's section <span class="old">(IPC 88)</span></h3>
+  <p>Nothing which is <strong>not intended to cause death</strong> is an offence by reason of any harm it may cause, or be intended or known to be likely to cause, to a person <strong>for whose benefit it is done in good faith</strong>, and who has given consent, express or implied, to suffer that harm or take the risk of it.</p>
+  <ul>
+    <li><strong>Illustration.</strong> A, a surgeon, knowing that a particular operation is likely to cause the death of Z, who suffers from a painful complaint, but not intending Z's death and intending in good faith Z's benefit, performs the operation with Z's consent. A commits no offence.</li>
+    <li><strong>Note the contrast with S 25.</strong> Here there is <strong>no age limit</strong> in the section itself, and <strong>grievous hurt is covered</strong>; only intentional causing of death is excluded.</li>
+    <li><strong>Application.</strong> Every surgical operation, amputation, chemotherapy, high-risk anaesthesia.</li>
+  </ul>
+
+  <h3><span class="hn">6.3</span><span class="ref">BNS S 27</span> — child under twelve or person with mental illness <span class="old">(IPC 89)</span></h3>
+  <p>Nothing done <strong>in good faith for the benefit</strong> of a person <strong>under twelve years of age</strong>, or a person with mental illness, by or with the consent, express or implied, of the <strong>guardian</strong> or other person having lawful charge, is an offence by reason of harm caused to that person.</p>
+  <h4>Four provisos — the exception does <strong>not</strong> extend to</h4>
+  <ol>
+    <li>Intentional causing of death, or attempting to cause death.</li>
+    <li>Anything the doer knows to be likely to cause death, for any purpose <strong>other than</strong> preventing death or grievous hurt, or curing a grievous disease or infirmity.</li>
+    <li>Voluntarily causing grievous hurt, or attempting it, unless for those same purposes.</li>
+    <li>Abetment of any offence to which the exception would not itself extend.</li>
+  </ol>
+  <p><strong>Illustration.</strong> A, in good faith and for his child's benefit but without the child's consent, has the child cut for the stone by a surgeon, knowing the operation may cause death but not intending it. A is within the exception, because his object was the cure of the child.</p>
+
+  <h3><span class="hn">6.4</span><span class="ref">BNS S 28</span> — when consent is not consent <span class="old">(IPC 90)</span></h3>
+  <p>A consent is <strong>not</strong> the consent intended by any section of the Sanhita —</p>
+  <ol>
+    <li>if given under <strong>fear of injury</strong>, or under a <strong>misconception of fact</strong>, and the person doing the act knows, or has reason to believe, that it was given in consequence of that fear or misconception; or</li>
+    <li>if given by a person who, from <strong>mental illness or intoxication</strong>, is unable to understand the nature and consequence of that to which he consents; or</li>
+    <li>unless the contrary appears from the context, if given by a person <strong>under twelve years of age</strong>.</li>
+  </ol>
+  <div class="box">
+    <span class="lbl">Examination value</span>
+    <p>S 28 is the single most quoted consent provision. It does not define consent — it tells you the three circumstances in which apparent consent counts for nothing.</p>
+  </div>
+
+  <h3><span class="hn">6.5</span><span class="ref">BNS S 29</span> — acts that are offences independently of harm <span class="old">(IPC 91)</span></h3>
+  <p>The consent exceptions do not extend to acts which are offences <strong>independently of any harm</strong> they may cause to the person giving the consent.</p>
+  <p><strong>Illustration.</strong> Causing miscarriage, unless done in good faith to save the woman's life, is an offence independently of any harm to her; the consent of the woman or of her guardian does not justify it.</p>
+
+  <h3><span class="hn">6.6</span><span class="ref">BNS S 30</span> — acting in good faith without consent <span class="old">(IPC 92)</span></h3>
+  <p>Nothing is an offence by reason of harm caused to a person for whose benefit it is done <strong>in good faith, even without that person's consent</strong>, if the circumstances are such that it is impossible for that person to signify consent, or he is incapable of giving consent and has no guardian or other person in lawful charge from whom consent can be obtained in time for the act to be done with benefit.</p>
+  <p>The same four provisos apply, except that the third proviso reads <strong>hurt</strong> rather than grievous hurt.</p>
+  <h4>The four illustrations — learn at least two</h4>
+  <ul>
+    <li>Z is thrown from his horse and is insensible. A, a surgeon, finds Z needs to be trepanned and performs it before Z can judge for himself. No offence.</li>
+    <li>Z is carried off by a tiger. A fires at the tiger, knowing the shot may kill Z but not intending it, in good faith for Z's benefit. No offence.</li>
+    <li>A surgeon sees a child suffer an accident likely to prove fatal unless operated on immediately. There is no time to reach the guardian. He operates despite the child's entreaties. No offence.</li>
+    <li>A is in a burning house with a child. People below hold out a blanket. A drops the child, knowing the fall may kill him but intending his benefit. No offence.</li>
+  </ul>
+  <p><strong>Explanation.</strong> Mere <strong>pecuniary</strong> benefit is not benefit within the meaning of these sections.</p>
+
+  <div class="cl">
+    <span class="lbl">Checklist 6A — Am I protected when I treat without consent?</span>
+    <ul>
+      <li><input type="checkbox" id="c6a1"><label for="c6a1">The patient genuinely <strong>cannot</strong> signify consent — unconscious, in shock, incapable</label></li>
+      <li><input type="checkbox" id="c6a2"><label for="c6a2">No guardian or lawful representative can be reached <strong>in time for the treatment to still benefit</strong></label></li>
+      <li><input type="checkbox" id="c6a3"><label for="c6a3">The act is done <strong>in good faith</strong> — with due care and attention, <span class="ref">BNS S 2(11)</span></label></li>
+      <li><input type="checkbox" id="c6a4"><label for="c6a4">The act is done <strong>for the patient's benefit</strong>, not for convenience, teaching or financial gain</label></li>
+      <li><input type="checkbox" id="c6a5"><label for="c6a5">There is no intention to cause death</label></li>
+      <li><input type="checkbox" id="c6a6"><label for="c6a6">Treatment is limited to what cannot safely wait; elective components are deferred</label></li>
+      <li><input type="checkbox" id="c6a7"><label for="c6a7">A second doctor's opinion is recorded where circumstances allow</label></li>
+      <li><input type="checkbox" id="c6a8"><label for="c6a8">The emergency, the reasoning and the attempts to contact relatives are written in the notes <strong>at the time</strong></label></li>
+      <li><input type="checkbox" id="c6a9"><label for="c6a9">Consent is obtained as soon as the patient or a guardian becomes available</label></li>
+    </ul>
+  </div>
+
+  <h3><span class="hn">6.7</span><span class="ref">BNS S 31</span> — communication made in good faith <span class="old">(IPC 93)</span></h3>
+  <p>No communication made in good faith is an offence by reason of harm to the person to whom it is made, if it is made for that person's benefit.</p>
+  <p><strong>Illustration.</strong> A surgeon, in good faith, tells a patient that he cannot live. The patient dies of the shock. The surgeon has committed no offence, though he knew the communication might have that effect.</p>
+  <div class="box">
+    <span class="lbl">Why this matters clinically</span>
+    <p>This is the <strong>breaking-bad-news</strong> section. It protects honest prognostication, provided it is done in good faith and for the patient's benefit — which in practice means with due care, in the right setting, and with support offered.</p>
+  </div>
+
+  <h3><span class="hn">6.8</span>The neighbouring exceptions</h3>
+  <ul>
+    <li><span class="ref">BNS S 32</span> <span class="old">(IPC 94)</span> — act done under threat of instant death. Not available for murder or offences against the State punishable with death.</li>
+    <li><span class="ref">BNS S 33</span> <span class="old">(IPC 95)</span> — harm so slight that no person of ordinary sense and temper would complain of it (<em>de minimis non curat lex</em>).</li>
+    <li><span class="ref">BNS S 19</span> <span class="old">(IPC 81)</span> — act likely to cause harm, done in good faith to prevent greater harm.</li>
+  </ul>
+
+  <h3><span class="hn">6.9</span>"Good faith" — the hinge of the whole chapter</h3>
+  <p><span class="ref">BNS S 2(11)</span> — nothing is said to be done or believed in good faith which is done or believed <strong>without due care and attention</strong>.</p>
+  <div class="warn">
+    <span class="lbl">The link students miss</span>
+    <p>Every medical exception in Chapter III turns on two expressions: <strong>good faith</strong> and <strong>for the person's benefit</strong>. Strip away due care and attention and good faith fails, the exception collapses, and consent stops protecting you. That is the bridge from the law of consent straight into the law of negligence.</p>
+  </div>
+</section>
+
+<!-- ================= 7 ================= -->
+<section id="s7">
+  <h2><span class="sn">Section 7</span>Consent inside the BNS offence sections</h2>
+  <p class="sub">Where consent is defined, where it is vitiated, and where it is simply irrelevant.</p>
+
+  <h3><span class="hn">7.1</span><span class="ref">BNS S 63</span> — rape, and the statutory definition of consent <span class="old">(IPC 375)</span></h3>
+  <p>The section covers penile penetration, to any extent, of the vagina, mouth, urethra or anus; insertion of any object or body part; making the woman do so with him or another; and application of the mouth to those parts. It is committed under seven descriptions — against her will, without her consent, with consent obtained by putting her or someone she cares for in fear of death or hurt, by impersonating her husband, with consent obtained when she was of unsound mind or intoxicated and unable to understand, and with or without her consent when she is under eighteen.</p>
+  <div class="box">
+    <span class="lbl">Explanation 2 — the only statutory definition of consent in the BNS</span>
+    <p>Consent means an <strong>unequivocal voluntary agreement</strong> when the woman, by words, gestures, or any form of verbal or non-verbal communication, communicates willingness to participate in <strong>the specific sexual act</strong>. A woman who does not physically resist is not, by that fact alone, to be regarded as consenting.</p>
+  </div>
+  <ul>
+    <li><strong>Exception 1</strong> — a medical procedure or intervention does not constitute rape.</li>
+    <li><strong>Exception 2</strong> — the marital exception; the wife must not be under <strong>eighteen</strong> (raised from fifteen under the IPC).</li>
+    <li>Punishment <span class="ref">BNS S 64</span>; survivor under 16 and under 12 <span class="ref">BNS S 65</span>; gang rape <span class="ref">BNS S 70</span>; disclosure of identity <span class="ref">BNS S 72</span>.</li>
+  </ul>
+
+  <h3><span class="hn">7.2</span><span class="ref">BNS S 69</span> — sexual intercourse by deceitful means</h3>
+  <p>A <strong>new offence with no IPC equivalent</strong>. Sexual intercourse obtained by employing deceitful means, or by making a promise to marry without any intention of fulfilling it, or by a false promise of employment or promotion, or by concealing identity. Punishable with imprisonment up to ten years and fine. It is distinct from rape.</p>
+
+  <h3><span class="hn">7.3</span>Offences against a woman where consent is the issue</h3>
+  <ul>
+    <li><span class="ref">BNS S 74</span> <span class="old">(IPC 354)</span> — assault or criminal force to a woman with intent to outrage her modesty.</li>
+    <li><span class="ref">BNS S 75</span> sexual harassment · <span class="ref">BNS S 76</span> assault with intent to disrobe · <span class="ref">BNS S 77</span> voyeurism · <span class="ref">BNS S 78</span> stalking.</li>
+    <li><strong>POCSO Act 2012</strong> — below 18, consent is legally irrelevant, and reporting under S 19 is mandatory whatever the family wishes.</li>
+  </ul>
+
+  <h3><span class="hn">7.4</span>Miscarriage — consent does not make it lawful</h3>
+  <ul>
+    <li><span class="ref">BNS S 88</span> <span class="old">(IPC 312)</span> — causing miscarriage. The woman's own consent does not make it lawful unless it is done in good faith to save her life.</li>
+    <li><span class="ref">BNS S 89</span> <span class="old">(IPC 313)</span> — causing miscarriage <strong>without</strong> the woman's consent; punishable up to imprisonment for life.</li>
+    <li><span class="ref">BNS S 90</span> <span class="old">(IPC 314)</span> — death caused by an act done with intent to cause miscarriage.</li>
+    <li>The lawful route is the <strong>MTP Act 1971 as amended in 2021</strong>, not consent standing alone.</li>
+  </ul>
+
+  <h3><span class="hn">7.5</span>Consent and death</h3>
+  <ul>
+    <li>Consent is <strong>no defence to murder</strong>.</li>
+    <li>Death caused with the consent of a person <strong>above eighteen</strong> is culpable homicide not amounting to murder — Exception 5 to <span class="ref">BNS S 101</span> <span class="old">(IPC 300, Exception 5)</span>.</li>
+    <li>Active euthanasia and assisted suicide remain offences. Passive euthanasia with safeguards is lawful — <em>Common Cause v Union of India</em> (2018).</li>
+  </ul>
+
+  <h3><span class="hn">7.6</span>Where consent is simply irrelevant</h3>
+  <ul>
+    <li>Sex determination — PCPNDT Act 1994. The woman's request is no defence.</li>
+    <li>Commercial dealing in organs — THOTA 1994 as amended 2011. A paid donor's consent is void.</li>
+    <li>Ragging, duelling, self-mutilation and other acts barred on grounds of public policy.</li>
+  </ul>
+</section>
+
+<!-- ================= 8 ================= -->
+<section id="s8">
+  <h2><span class="sn">Section 8</span>Consent under special statutes</h2>
+  <p class="sub">Eight Acts that write their own consent rule. Each is a favourite short-note question.</p>
+
+  <h3><span class="hn">8.1</span>Medical Termination of Pregnancy Act 1971, amended 2021</h3>
+  <div class="cl">
+    <span class="lbl">Checklist 8A — Consent before an MTP</span>
+    <ul>
+      <li><input type="checkbox" id="c8a1"><label for="c8a1">Written consent of the <strong>woman herself</strong> if she is 18 or above and of sound mind</label></li>
+      <li><input type="checkbox" id="c8a2"><label for="c8a2">Written consent of the <strong>guardian</strong> if she is under 18 or has mental illness</label></li>
+      <li><input type="checkbox" id="c8a3"><label for="c8a3">The <strong>husband's consent has not been asked for</strong> — it is not required in law</label></li>
+      <li><input type="checkbox" id="c8a4"><label for="c8a4">Gestation and the opinion requirement match<span class="note">Up to 20 weeks — one RMP. 20 to 24 weeks — two RMPs, for the categories specified in the Rules. Beyond 24 weeks — State Medical Board, for substantial foetal abnormality</span></label></li>
+      <li><input type="checkbox" id="c8a5"><label for="c8a5">The place is an approved institution and the RMP is qualified under the Act</label></li>
+      <li><input type="checkbox" id="c8a6"><label for="c8a6">The woman's identity is protected — S 5A; disclosure only to a person authorised by law</label></li>
+      <li><input type="checkbox" id="c8a7"><label for="c8a7">If she is under 18, POCSO reporting has been considered and complied with</label></li>
+    </ul>
+  </div>
+
+  <h3><span class="hn">8.2</span>Transplantation of Human Organs and Tissues Act 1994, amended 2011</h3>
+  <div class="cl">
+    <span class="lbl">Checklist 8B — Consent in organ donation</span>
+    <ul>
+      <li><input type="checkbox" id="c8b1"><label for="c8b1">Living donor's <strong>written consent before two witnesses</strong>, one of whom is a near relative</label></li>
+      <li><input type="checkbox" id="c8b2"><label for="c8b2">The donor has been told of all consequences and complications, and consent may be withdrawn at any time</label></li>
+      <li><input type="checkbox" id="c8b3"><label for="c8b3">Donor is 18 or above; relationship documented</label></li>
+      <li><input type="checkbox" id="c8b4"><label for="c8b4">Where the donor is not a near relative, <strong>Authorisation Committee</strong> approval obtained</label></li>
+      <li><input type="checkbox" id="c8b5"><label for="c8b5">No commercial dealing — any payment makes the consent void and the act an offence</label></li>
+      <li><input type="checkbox" id="c8b6"><label for="c8b6">For a deceased donor, brain-stem death certified by the prescribed <strong>board of medical experts</strong></label></li>
+      <li><input type="checkbox" id="c8b7"><label for="c8b7">For a deceased donor, consent given in life, or that of the person in lawful possession of the body<span class="note">In a medico-legal case, retrieval also needs the authority handling the inquest to be satisfied</span></label></li>
+    </ul>
+  </div>
+
+  <h3><span class="hn">8.3</span>Mental Healthcare Act 2017</h3>
+  <p>The Mental Healthcare Act 2017 is dealt with in full at <a href="#s5"><strong>Section 5.2</strong></a>, where consent turns on capacity: the presumption of capacity and the functional test of Section 4, the advance directive of Section 5, the nominated representative of Section 14, independent and supported admission, and the role of the Mental Health Review Board. In brief: a person with mental illness is presumed capable and consents for themselves; only where capacity is absent does an advance directive take effect or a nominated representative consent on their behalf, and supported admission with its periodic capacity review applies.</p>
+
+  <h3><span class="hn">8.4</span>HIV and AIDS (Prevention and Control) Act 2017</h3>
+  <ul>
+    <li>Informed consent is required for <strong>HIV testing, treatment and research</strong>, with pre-test and post-test counselling.</li>
+    <li>Exceptions where consent is not required: a court order; screening of blood, blood products, organs, tissue or semen; and anonymised epidemiological studies.</li>
+    <li>No person may be compelled to disclose HIV status except by order of a court. Confidentiality is statutory.</li>
+  </ul>
+
+  <h3><span class="hn">8.5</span>PCPNDT Act 1994</h3>
+  <ul>
+    <li>Written consent of the pregnant woman, in the prescribed form and in a language she understands, before any prenatal diagnostic procedure.</li>
+    <li>Communicating the sex of the foetus is prohibited, whatever the woman or family requests.</li>
+  </ul>
+
+  <h3><span class="hn">8.6</span>Research — New Drugs and Clinical Trials Rules 2019</h3>
+  <ul>
+    <li>Written informed consent from every participant, on an Ethics Committee-approved form, in a language the participant understands.</li>
+    <li>An impartial witness signs where the participant cannot read.</li>
+    <li><strong>Audio-video recording</strong> of the consent process where required by the Rules.</li>
+    <li>Right to withdraw at any time without loss of benefit; compensation provisions for trial-related injury.</li>
+    <li>Read with the ICMR National Ethical Guidelines 2017 and the Declaration of Helsinki.</li>
+  </ul>
+
+  <h3><span class="hn">8.7</span>Telemedicine Practice Guidelines 2020</h3>
+  <ul>
+    <li>Consent is <strong>implied</strong> when the patient initiates the consultation.</li>
+    <li>Consent must be <strong>explicit and recorded</strong> when a health worker, caregiver or the practitioner initiates it.</li>
+  </ul>
+
+  <h3><span class="hn">8.8</span>POCSO Act 2012</h3>
+  <ul>
+    <li>Below 18, consent to a sexual act has no legal existence.</li>
+    <li>Reporting under S 19 is <strong>mandatory</strong>; failure to report is itself an offence.</li>
+    <li>Medical examination of the child under S 27, in the presence of a parent or a person the child trusts; for a girl, by a woman doctor.</li>
+  </ul>
+</section>
+
+<!-- ================= 9 ================= -->
+<section id="s9">
+  <h2><span class="sn">Section 9</span>Consent in medico-legal examination</h2>
+  <p class="sub">The survivor, the accused, the dead — three completely different rules.</p>
+
+  <h3><span class="hn">9.1</span>Examination of a survivor of sexual assault</h3>
+  <p><span class="ref">BNSS S 184</span> <span class="old">(CrPC 164A)</span> — the examination is conducted by a registered medical practitioner in a government or local-authority hospital, or by any RMP where none is available, <strong>only with her consent</strong> or the consent of a person competent to give it on her behalf. She must be sent for examination within <strong>24 hours</strong> of receipt of the information. The report goes to the investigating officer and through him to the Magistrate.</p>
+  <div class="cl">
+    <span class="lbl">Checklist 9A — Layered consent for the survivor</span>
+    <ul>
+      <li><input type="checkbox" id="c9a1"><label for="c9a1">Separate written consent taken for the <strong>examination</strong></label></li>
+      <li><input type="checkbox" id="c9a2"><label for="c9a2">Separate written consent taken for <strong>collection of samples</strong></label></li>
+      <li><input type="checkbox" id="c9a3"><label for="c9a3">Separate written consent taken for <strong>intimation to the police</strong></label></li>
+      <li><input type="checkbox" id="c9a4"><label for="c9a4">She has been told that each of the three may be declined independently, and that <strong>treatment continues regardless</strong></label></li>
+      <li><input type="checkbox" id="c9a5"><label for="c9a5">Guardian's consent obtained where she is under 18 or unable to consent</label></li>
+      <li><input type="checkbox" id="c9a6"><label for="c9a6">Treatment has not been delayed for want of an FIR<span class="note"><em>State of Karnataka v Manjanna</em> (2000); free emergency care under <span class="ref">BNSS S 397</span></span></label></li>
+      <li><input type="checkbox" id="c9a7"><label for="c9a7">Examination conducted in privacy, with a female attendant; police not present in the room</label></li>
+      <li><input type="checkbox" id="c9a8"><label for="c9a8">No two-finger test, no comment on "habituation to sexual intercourse" or "virginity"<span class="note"><em>State of Jharkhand v Shailendra Kumar Rai</em> (2022)</span></label></li>
+      <li><input type="checkbox" id="c9a9"><label for="c9a9">Identity protected — <span class="ref">BNS S 72</span>; <em>Nipun Saxena v Union of India</em> (2018)</label></li>
+      <li><input type="checkbox" id="c9a10"><label for="c9a10">For a survivor under 18, POCSO S 19 reporting complied with irrespective of the family's wishes</label></li>
+    </ul>
+  </div>
+
+  <h3><span class="hn">9.2</span>Examination of an accused</h3>
+  <ul>
+    <li><span class="ref">BNSS S 51</span> <span class="old">(CrPC 53)</span> — examination of an arrested person at the request of a police officer not below the rank of sub-inspector, when there are reasonable grounds to believe the examination will afford evidence. <strong>Reasonable force may be used.</strong></li>
+    <li><span class="ref">BNSS S 52</span> <span class="old">(CrPC 53A)</span> — examination of a person accused of rape, by a government or local-authority RMP, without delay.</li>
+    <li><span class="ref">BNSS S 53</span> <span class="old">(CrPC 54)</span> — examination at the <strong>arrested person's own request</strong>, to collect evidence in his favour.</li>
+  </ul>
+  <div class="cl">
+    <span class="lbl">Checklist 9B — Before examining an accused</span>
+    <ul>
+      <li><input type="checkbox" id="c9b1"><label for="c9b1">Written requisition from a police officer of the required rank is on file</label></li>
+      <li><input type="checkbox" id="c9b2"><label for="c9b2">Identity of the accused confirmed and recorded, with identification marks</label></li>
+      <li><input type="checkbox" id="c9b3"><label for="c9b3">Consent explained and sought, and the response recorded<span class="note">Refusal does not bar the examination, and an adverse inference may be drawn — but it must appear in the report</span></label></li>
+      <li><input type="checkbox" id="c9b4"><label for="c9b4">Force, if any, applied by the police and never by the doctor; what was done is recorded</label></li>
+      <li><input type="checkbox" id="c9b5"><label for="c9b5">Female accused examined only by or under the supervision of a female practitioner</label></li>
+      <li><input type="checkbox" id="c9b6"><label for="c9b6">Samples labelled, sealed and handed over with the seal impression and chain of custody documented</label></li>
+      <li><input type="checkbox" id="c9b7"><label for="c9b7">Report gives reasons for each conclusion and is sent to the investigating officer without delay</label></li>
+    </ul>
+  </div>
+
+  <h3><span class="hn">9.3</span>Other medico-legal examinations</h3>
+  <ul>
+    <li><strong>Age estimation, drunkenness, potency, insanity</strong> — consent is taken from the person; if the examination is at police request under <span class="ref">BNSS S 51</span>, refusal does not bar it, but always record what was said.</li>
+    <li><strong>Dying declaration</strong> — consent is not the issue; the doctor's duty is to certify that the person is conscious, oriented and fit to make the statement, before and after it is recorded.</li>
+    <li><strong>Examination for insurance or employment</strong> — the person's consent, plus consent for release of the findings to the third party. These are two separate permissions.</li>
+  </ul>
+
+  <h3><span class="hn">9.4</span>The body after death</h3>
+  <div class="tw">
+  <table>
+    <caption>Table 9.1 — Consent and the dead body</caption>
+    <thead><tr><th style="width:30%">Situation</th><th style="width:26%">Whose consent</th><th>Authority</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Medico-legal autopsy</strong></td><td><strong>Nobody's.</strong> Relatives' consent is neither required nor to be sought</td><td>Police or magistrate requisition — <span class="ref">BNSS S 194</span> <span class="old">(CrPC 174)</span></td></tr>
+      <tr><td>Clinical or pathological autopsy</td><td>Written consent of the next of kin</td><td>Hospital policy; no statutory compulsion</td></tr>
+      <tr><td>Organ or tissue retrieval</td><td>Consent given in life, or of the person in lawful possession of the body</td><td>THOTA 1994, amended 2011</td></tr>
+      <tr><td>Body donation for anatomy</td><td>The person in life, and the family at the time</td><td>State Anatomy Acts</td></tr>
+      <tr><td>Photography, teaching use, publication</td><td>Separate consent, from the family</td><td>Ethical requirement; NMC regulations</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="warn">
+    <span class="lbl">Frequently asked, frequently wrong</span>
+    <p>Asking relatives for permission to conduct a <strong>medico-legal</strong> autopsy is an error. The autopsy is done on the authority of the investigating agency; putting the question to the family creates a false impression that they may refuse.</p>
+  </div>
+</section>
+
+<!-- ================= 10 ================= -->
+<section id="s10">
+  <h2><span class="sn">Section 10</span>Documentation and the consent form</h2>
+  <p class="sub">What the form must contain, and a skeleton you can adapt.</p>
+
+  <div class="cl">
+    <span class="lbl">Checklist 10A — What a consent form must contain</span>
+    <ul>
+      <li><input type="checkbox" id="c10a1"><label for="c10a1">Name, age, sex and identification of the patient, and the hospital registration number</label></li>
+      <li><input type="checkbox" id="c10a2"><label for="c10a2"><strong>Date and time</strong> the consent was taken</label></li>
+      <li><input type="checkbox" id="c10a3"><label for="c10a3">Diagnosis stated in plain language</label></li>
+      <li><input type="checkbox" id="c10a4"><label for="c10a4">The procedure <strong>named in full</strong>, with the side and site written out — no abbreviations, no symbols</label></li>
+      <li><input type="checkbox" id="c10a5"><label for="c10a5">Type of anaesthesia, and a separate anaesthesia consent where required</label></li>
+      <li><input type="checkbox" id="c10a6"><label for="c10a6">Risks and complications actually discussed, written in — not a printed blanket list</label></li>
+      <li><input type="checkbox" id="c10a7"><label for="c10a7">Alternatives offered and the consequence of refusing</label></li>
+      <li><input type="checkbox" id="c10a8"><label for="c10a8">Name of the practitioner who will perform the procedure</label></li>
+      <li><input type="checkbox" id="c10a9"><label for="c10a9">Language used, and the interpreter's name if one was needed</label></li>
+      <li><input type="checkbox" id="c10a10"><label for="c10a10">Signature or thumb impression of the patient or guardian, with the relationship stated</label></li>
+      <li><input type="checkbox" id="c10a11"><label for="c10a11">Signature of the doctor who explained, with name and registration number</label></li>
+      <li><input type="checkbox" id="c10a12"><label for="c10a12">Signature of a <strong>disinterested witness</strong>, with name and address</label></li>
+      <li><input type="checkbox" id="c10a13"><label for="c10a13">No blanks left anywhere on the form; unused sections struck through</label></li>
+      <li><input type="checkbox" id="c10a14"><label for="c10a14">The completed form filed in the case record and retrievable</label></li>
+    </ul>
+  </div>
+
+  <div class="proforma">
+    <h5>Model consent for a surgical procedure</h5>
+    <p class="cen">A teaching skeleton. Adapt to your institution's approved format.</p>
+    <p>I, <span class="fill" style="min-width:200px"></span>, aged <span class="fill" style="min-width:50px"></span> years, resident of <span class="fill" style="min-width:200px"></span>, hereby state that:</p>
+    <p>1. Dr <span class="fill" style="min-width:170px"></span> has explained to me, in <span class="fill" style="min-width:110px"></span> language, that I am suffering from <span class="fill" style="min-width:200px"></span>.</p>
+    <p>2. The procedure advised is <span class="fill" style="min-width:280px"></span>, to be performed on the <span class="fill" style="min-width:60px"></span> side, under <span class="fill" style="min-width:120px"></span> anaesthesia.</p>
+    <p>3. The following risks and complications have been explained to me: <span class="fill" style="min-width:100%"></span></p>
+    <p>4. The alternatives, including not undergoing the procedure, and their consequences, have been explained to me.</p>
+    <p>5. I have been given the opportunity to ask questions, and my questions have been answered to my satisfaction.</p>
+    <p>6. I understand that no guarantee of result has been given, and that I may withdraw this consent at any time before the procedure begins.</p>
+    <p>7. I give my free and informed consent to the above procedure.</p>
+    <p style="margin-top:12px">Date: <span class="fill" style="min-width:110px"></span> &nbsp;&nbsp; Time: <span class="fill" style="min-width:80px"></span></p>
+    <div class="sigrow">
+      <div>Signature / thumb impression of patient<br>(or guardian — state relationship)</div>
+      <div>Signature of doctor who explained<br>Name, designation, registration no.</div>
+      <div>Signature of witness<br>Name and address</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 11 ================= -->
+<section id="s11">
+  <h2><span class="sn">Section 11</span>Refusal of consent</h2>
+  <p class="sub">A competent adult may refuse treatment for a good reason, a bad reason, or no reason at all.</p>
+
+  <h3><span class="hn">11.1</span>The rule</h3>
+  <p>A competent adult's refusal is binding, even if the doctor and the family consider it unwise, and even if it will lead to death. The doctor's duty is to make sure the refusal is <strong>informed</strong> and <strong>free</strong>, and then to record it.</p>
+  <ul>
+    <li>Refusal by a <strong>guardian</strong> on behalf of a child, where it endangers the child's life, may be overridden by approaching the court or the child welfare authority.</li>
+    <li>A valid and applicable <strong>advance refusal</strong> made while competent binds the doctor — the living will, or a card carried by a Jehovah's Witness refusing transfusion (<em>Malette v Shulman</em>, 1990).</li>
+    <li>Refusal of one treatment is not refusal of all. Offer what remains acceptable.</li>
+  </ul>
+
+  <div class="cl">
+    <span class="lbl">Checklist 11A — Documenting a refusal or discharge against medical advice</span>
+    <ul>
+      <li><input type="checkbox" id="c11a1"><label for="c11a1">Capacity assessed and recorded at the time of refusal</label></li>
+      <li><input type="checkbox" id="c11a2"><label for="c11a2">Diagnosis, proposed treatment and the <strong>specific consequences of refusing</strong> explained, including the risk of death where that is real</label></li>
+      <li><input type="checkbox" id="c11a3"><label for="c11a3">Explanation given in a language the patient understands</label></li>
+      <li><input type="checkbox" id="c11a4"><label for="c11a4">Alternatives offered, including partial or symptomatic treatment</label></li>
+      <li><input type="checkbox" id="c11a5"><label for="c11a5">Reason for refusal recorded in the patient's own words where possible</label></li>
+      <li><input type="checkbox" id="c11a6"><label for="c11a6">Signed by the patient or guardian, and by a witness; thumb impression if the patient cannot sign</label></li>
+      <li><input type="checkbox" id="c11a7"><label for="c11a7">Date and time entered</label></li>
+      <li><input type="checkbox" id="c11a8"><label for="c11a8">The patient told they may return at any time, and how</label></li>
+      <li><input type="checkbox" id="c11a9"><label for="c11a9">Where the case is medico-legal, the police intimation still made as required</label></li>
+    </ul>
+  </div>
+
+  <h3><span class="hn">11.2</span>Refusal at the end of life</h3>
+  <ul>
+    <li><em>Aruna Ramchandra Shanbaug v Union of India</em> (2011) — permitted passive euthanasia with High Court supervision.</li>
+    <li><em>Common Cause v Union of India</em> (2018) — recognised the right to die with dignity, and the validity of advance directives and living wills. The procedure was simplified by the Supreme Court in 2023.</li>
+    <li><em>Airedale NHS Trust v Bland</em> (1993) — withdrawal of futile treatment.</li>
+    <li>Active euthanasia and assisted suicide remain offences in India.</li>
+  </ul>
+</section>
+
+<!-- ================= 12 ================= -->
+<section id="s12">
+  <h2><span class="sn">Section 12</span>Pitfalls that lose cases</h2>
+  <p class="sub">Every item below has been the ground on which a real claim succeeded.</p>
+  <div class="cl">
+    <span class="lbl">Checklist 12A — Audit your own practice</span>
+    <ul>
+      <li><input type="checkbox" id="c12a1"><label for="c12a1">A blanket admission-form line produced in court as consent for a specific operation</label></li>
+      <li><input type="checkbox" id="c12a2"><label for="c12a2">Consent signed after premedication, or on the operating table</label></li>
+      <li><input type="checkbox" id="c12a3"><label for="c12a3">Consent taken from a relative while a competent adult patient was available — <em>Samira Kohli</em></label></li>
+      <li><input type="checkbox" id="c12a4"><label for="c12a4">The operation extended beyond what was consented to, for convenience rather than survival</label></li>
+      <li><input type="checkbox" id="c12a5"><label for="c12a5">Risk column on the form left blank, or a printed list nobody read out</label></li>
+      <li><input type="checkbox" id="c12a6"><label for="c12a6">Consent form in English for a patient who does not read English, with no interpreter recorded</label></li>
+      <li><input type="checkbox" id="c12a7"><label for="c12a7">Abbreviation or unmarked side on the form, ending in wrong-site surgery</label></li>
+      <li><input type="checkbox" id="c12a8"><label for="c12a8">Discharge against medical advice with no documented explanation of the risks</label></li>
+      <li><input type="checkbox" id="c12a9"><label for="c12a9">Female patient examined without a female attendant present, and without recording her name</label></li>
+      <li><input type="checkbox" id="c12a10"><label for="c12a10">Relatives asked for permission for a medico-legal autopsy</label></li>
+      <li><input type="checkbox" id="c12a11"><label for="c12a11">Husband's consent taken for MTP or sterilisation as though it were legally necessary</label></li>
+      <li><input type="checkbox" id="c12a12"><label for="c12a12">Consent form not traceable in the record when the notice arrives two years later</label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 13 ================= -->
+<section id="s13">
+  <h2><span class="sn">Section 13</span>Rapid revision</h2>
+  <p class="sub">The last page to read before the paper.</p>
+
+  <h4>Numbers</h4>
+  <ul>
+    <li><strong>12</strong> — below this age consent has no value; guardian consents.</li>
+    <li><strong>18</strong> — consent to suffer harm; consent to any sexual act; consent to one's own MTP.</li>
+    <li><strong>7 and 12</strong> — criminal responsibility, not consent.</li>
+    <li><strong>24 hours</strong> — a survivor must be sent for examination under <span class="ref">BNSS S 184</span>.</li>
+    <li><strong>20 / 24 weeks</strong> — MTP opinion thresholds.</li>
+  </ul>
+
+  <h4>Sections in one line each</h4>
+  <ul>
+    <li><span class="ref">BNS S 25</span> harm by consent, above 18 · <span class="ref">BNS S 26</span> the surgeon's section · <span class="ref">BNS S 27</span> guardian for a child under 12 or a person with mental illness</li>
+    <li><span class="ref">BNS S 28</span> when consent is not consent · <span class="ref">BNS S 29</span> offences independent of harm · <span class="ref">BNS S 30</span> emergency without consent · <span class="ref">BNS S 31</span> breaking bad news</li>
+    <li><span class="ref">BNS S 63</span> Explanation 2 — the statutory definition of consent · <span class="ref">BNS S 69</span> deceitful means · <span class="ref">BNS S 89</span> miscarriage without consent</li>
+    <li><span class="ref">BNSS S 51</span> accused · <span class="ref">BNSS S 184</span> survivor · <span class="ref">BNSS S 194</span> inquest and autopsy · <span class="ref">BNSS S 397</span> free treatment of victims</li>
+    <li><span class="ref">BNS S 2(11)</span> good faith = due care and attention</li>
+  </ul>
+
+  <h4>Cases in one line each</h4>
+  <ul>
+    <li><em>Samira Kohli</em> (2008) — consent for diagnosis is not consent for surgery; India follows the Bolam standard.</li>
+    <li><em>Bolam</em> (1957) / <em>Bolitho</em> (1997) — professional standard, logically defensible.</li>
+    <li><em>Canterbury v Spence</em> (1972) / <em>Montgomery</em> (2015) — patient-centred standards, not adopted in India.</li>
+    <li><em>Chatterton v Gerson</em> (1981) — non-disclosure is negligence, not battery.</li>
+    <li><em>Common Cause</em> (2018) — advance directive, passive euthanasia.</li>
+    <li><em>Suchita Srivastava</em> (2009) — reproductive autonomy and capacity.</li>
+    <li><em>State of Karnataka v Manjanna</em> (2000) — no FIR needed before treating a survivor.</li>
+  </ul>
+
+  <h4>Likely questions</h4>
+  <ol>
+    <li>Define consent. Enumerate the essentials of a valid consent. <em>(Long answer — Sections 1 and 3)</em></li>
+    <li>Informed consent — write a short note. <em>(Section 4)</em></li>
+    <li>Discuss the provisions relating to consent under the BNS, 2023. <em>(Section 6)</em></li>
+    <li>Age of consent in India for various purposes. <em>(Table 5.1)</em></li>
+    <li>Consent in an emergency; consent of a minor; proxy consent; blanket consent. <em>(Short notes)</em></li>
+    <li>Whose consent would you take before a medico-legal autopsy, an MTP in a 17-year-old, and the examination of an accused? <em>(Viva favourite)</em></li>
+  </ol>
+
+  <div class="box">
+    <span class="lbl">One line that carries the whole topic</span>
+    <p>Consent is a voluntary, informed agreement by a competent person to a specific act — taken before it, documented at the time, and revocable at any moment. It protects the patient's autonomy first and the doctor's position second, and only in that order does it work.</p>
+  </div>
+</section>
+
+<!-- ================= 14 ================= -->
+<section id="s14">
+  <h2><span class="sn">Section 14</span>Conversion and case tables</h2>
+  <p class="sub">For quick reference while writing answers.</p>
+
+  <div class="tw">
+  <table>
+    <caption>Table 14.1 — IPC and CrPC to BNS and BNSS, consent-related provisions</caption>
+    <thead><tr><th style="width:32%">Subject</th><th style="width:22%">Old</th><th style="width:22%">Current</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Harm by consent, above 18</td><td>IPC 87</td><td><span class="ref">BNS S 25</span></td><td rowspan="9" style="vertical-align:middle">Subtract <strong>62</strong> throughout this block</td></tr>
+      <tr><td>Act in good faith for benefit, with consent</td><td>IPC 88</td><td><span class="ref">BNS S 26</span></td></tr>
+      <tr><td>Child under 12 / mental illness, guardian</td><td>IPC 89</td><td><span class="ref">BNS S 27</span></td></tr>
+      <tr><td>Consent under fear or misconception</td><td>IPC 90</td><td><span class="ref">BNS S 28</span></td></tr>
+      <tr><td>Offences independent of harm</td><td>IPC 91</td><td><span class="ref">BNS S 29</span></td></tr>
+      <tr><td>Good faith, without consent</td><td>IPC 92</td><td><span class="ref">BNS S 30</span></td></tr>
+      <tr><td>Communication in good faith</td><td>IPC 93</td><td><span class="ref">BNS S 31</span></td></tr>
+      <tr><td>Act under threat of instant death</td><td>IPC 94</td><td><span class="ref">BNS S 32</span></td></tr>
+      <tr><td>Slight harm</td><td>IPC 95</td><td><span class="ref">BNS S 33</span></td></tr>
+      <tr><td>Good faith, definition</td><td>IPC 52</td><td><span class="ref">BNS S 2(11)</span></td><td>Due care and attention</td></tr>
+      <tr><td>Rape</td><td>IPC 375 / 376</td><td><span class="ref">BNS S 63</span> / <span class="ref">BNS S 64</span></td><td>Consent defined in Explanation 2</td></tr>
+      <tr><td>Sexual intercourse by deceitful means</td><td>—</td><td><span class="ref">BNS S 69</span></td><td>New offence</td></tr>
+      <tr><td>Outraging modesty</td><td>IPC 354</td><td><span class="ref">BNS S 74</span></td><td></td></tr>
+      <tr><td>Causing miscarriage</td><td>IPC 312 / 313</td><td><span class="ref">BNS S 88</span> / <span class="ref">BNS S 89</span></td><td>Without consent — up to life</td></tr>
+      <tr><td>Murder, consent exception</td><td>IPC 300 Exc 5</td><td><span class="ref">BNS S 101</span> Exc 5</td><td>Above 18</td></tr>
+      <tr><td>Criminal force / assault</td><td>IPC 350 / 351</td><td><span class="ref">BNS S 129</span> / <span class="ref">BNS S 130</span></td><td></td></tr>
+      <tr><td>Examination of accused</td><td>CrPC 53</td><td><span class="ref">BNSS S 51</span></td><td>Reasonable force permitted</td></tr>
+      <tr><td>Examination of accused of rape</td><td>CrPC 53A</td><td><span class="ref">BNSS S 52</span></td><td></td></tr>
+      <tr><td>Examination at arrested person's request</td><td>CrPC 54</td><td><span class="ref">BNSS S 53</span></td><td></td></tr>
+      <tr><td>Examination of a rape survivor</td><td>CrPC 164A</td><td><span class="ref">BNSS S 184</span></td><td>Consent mandatory</td></tr>
+      <tr><td>Inquest and autopsy</td><td>CrPC 174</td><td><span class="ref">BNSS S 194</span></td><td>No family consent needed</td></tr>
+      <tr><td>Free treatment of victims</td><td>CrPC 357C</td><td><span class="ref">BNSS S 397</span></td><td></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tw">
+  <table>
+    <caption>Table 14.2 — Landmark cases on consent</caption>
+    <thead><tr><th style="width:34%">Case</th><th style="width:12%">Year</th><th>Proposition</th></tr></thead>
+    <tbody>
+      <tr><td><em>Schloendorff v Society of New York Hospital</em></td><td>1914</td><td>Every adult of sound mind decides what is done with his own body</td></tr>
+      <tr><td><em>Bolam v Friern Hospital</em></td><td>1957</td><td>Professional standard of disclosure and of care</td></tr>
+      <tr><td><em>Canterbury v Spence</em></td><td>1972</td><td>Prudent-patient standard of disclosure</td></tr>
+      <tr><td><em>Chatterton v Gerson</em></td><td>1981</td><td>Non-disclosure of risk sounds in negligence, not battery</td></tr>
+      <tr><td><em>Sidaway v Bethlem Royal Hospital</em></td><td>1985</td><td>Applied the professional standard in the UK</td></tr>
+      <tr><td><em>Malette v Shulman</em></td><td>1990</td><td>Advance refusal card binds; transfusion given despite it was battery</td></tr>
+      <tr><td><em>Airedale NHS Trust v Bland</em></td><td>1993</td><td>Withdrawal of futile treatment lawful</td></tr>
+      <tr><td><em>Bolitho v City and Hackney HA</em></td><td>1997</td><td>The professional body's practice must be logically defensible</td></tr>
+      <tr><td><em>State of Karnataka v Manjanna</em></td><td>2000</td><td>Free examination and treatment of a survivor without an FIR</td></tr>
+      <tr><td><strong><em>Samira Kohli v Dr Prabha Manchanda</em></strong></td><td><strong>2008</strong></td><td><strong>Real and valid consent; consent for diagnosis is not consent for surgery; India follows Bolam</strong></td></tr>
+      <tr><td><em>Suchita Srivastava v Chandigarh Administration</em></td><td>2009</td><td>Reproductive autonomy; capacity is not negated by intellectual disability</td></tr>
+      <tr><td><em>Aruna Ramchandra Shanbaug v Union of India</em></td><td>2011</td><td>Passive euthanasia permitted with safeguards</td></tr>
+      <tr><td><em>Montgomery v Lanarkshire Health Board</em></td><td>2015</td><td>Material-risk standard in the UK; persuasive in India</td></tr>
+      <tr><td><em>K S Puttaswamy v Union of India</em></td><td>2017</td><td>Privacy includes bodily autonomy and medical self-determination</td></tr>
+      <tr><td><em>Common Cause v Union of India</em></td><td>2018</td><td>Right to die with dignity; advance directives recognised</td></tr>
+      <tr><td><em>Nipun Saxena v Union of India</em></td><td>2018</td><td>Protection of the identity of a survivor</td></tr>
+      <tr><td><em>State of Jharkhand v Shailendra Kumar Rai</em></td><td>2022</td><td>Two-finger test prohibited; misconduct to conduct it</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="foot">
+    <span class="cc">CC BY-NC-ND 4.0</span>
+    <p><strong>Consent in Medical and Medico-legal Practice</strong> © 2026 <strong>Dr Harvinder Singh Chhabra</strong>. Released under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International</a> licence — free to use, share and print for teaching and other non-commercial purposes with attribution, without modification. Commercial use or adaptation requires permission.</p>
+    <p>A study aid, not a legal authority, and not a substitute for the approved consent forms of your institution. Statutory references follow the Bharatiya Nyaya Sanhita, Bharatiya Nagarik Suraksha Sanhita and Bharatiya Sakshya Adhiniyam, 2023, in force from 1 July 2024, with the corresponding IPC and CrPC numbers alongside. Verify every section against the current bare Act and your department's syllabus before examination or clinical use. Ticks are saved on this device only.</p>
+        <p class="lic-cite"><span>How to cite (Vancouver)</span>Chhabra HS. Consent in medical and medico-legal practice [Internet]. 2026 [cited YYYY Mon DD]. Available from: https://drfmthsc.github.io/Website/consent-study-notes.html</p>
+    </footer>
+
+</div>
+
+<script>
+(function(){
+  var KEY = "consentnotes.ticks.v1";
+  var boxes = document.querySelectorAll('.cl input[type=checkbox]');
+  var saved = {};
+  try{ saved = JSON.parse(localStorage.getItem(KEY) || "{}"); }catch(e){ saved = {}; }
+
+  function persist(){
+    try{ localStorage.setItem(KEY, JSON.stringify(saved)); }catch(e){}
+  }
+
+  boxes.forEach(function(b){
+    if(saved[b.id]) b.checked = true;
+    b.addEventListener("change", function(){
+      if(b.checked) saved[b.id] = 1; else delete saved[b.id];
+      persist();
+    });
+  });
+
+  var reset = document.getElementById("resetBtn");
+  if(reset) reset.addEventListener("click", function(){
+    boxes.forEach(function(b){ b.checked = false; });
+    saved = {};
+    persist();
+  });
+
+  var pb = document.getElementById("printBtn");
+  if(pb) pb.addEventListener("click", function(){ window.print(); });
+
+  // contents highlighting
+  var links = Array.prototype.slice.call(document.querySelectorAll("#toc a"));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+  if("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var i = secs.indexOf(en.target);
+        if(i < 0) return;
+        links.forEach(function(l){ l.classList.remove("on"); });
+        links[i].classList.add("on");
+      });
+    }, {rootMargin:"-15% 0px -70% 0px", threshold:0});
+    secs.forEach(function(s){ if(s) io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
