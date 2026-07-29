@@ -220,12 +220,20 @@
   }
 
   @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+
+  .wb-logo{display:block;position:absolute;right:24px;top:22px;width:80px;line-height:0;opacity:.9;transition:opacity .18s ease;z-index:2;}
+  .wb-logo:hover{opacity:1;}
+  .wb-logo img{width:100%;height:auto;display:block;}
+  .wb-logo:focus-visible{outline:2px solid var(--teal,#0e6b6b);outline-offset:4px;border-radius:50%;}
+  @media(max-width:760px){.wb-logo{display:block;position:static;width:62px;margin-bottom:16px;}}
+  @media print{.wb-logo{display:none;}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header class="masthead">
+    <a class="wb-logo" href="index.html" title="Forensic Medicine Workbench"><img src="seal.png" alt="Forensic Medicine Workbench — back to the register" width="640" height="640" decoding="async"></a>
     <p class="eyebrow">Forensic Medicine · SAFE protocol trainer</p>
     <h1>Evidence Collection Sequencer</h1>
     <p class="sub">Choose a case, order the steps of the medico-legal examination into the correct protocol sequence, and set aside anything that is prohibited or not indicated for that case. Which samples are relevant changes with the scenario.</p>

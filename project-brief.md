@@ -35,9 +35,14 @@ index.html                                      the register / landing page
 licence.html                                    copyright, licence, citation formats
 medico-legal-care-sexual-violence-survivor.html resource FMT-01
 safe-evidence-sequencer.html                    resource FMT-02
+seal.png                                        emblem, transparent (masthead + logo)
+seal-card.jpg                                   emblem on parchment, for og:image only
 README.md
 LICENSE.md
 ```
+
+`seal.png` appears on all three pages — as the masthead emblem on `index.html` and as a
+small logo, linked back to the register, at the top right of each resource.
 
 If a folder is ever introduced, the `href` values in `index.html` and the `path` values in
 `licence.html` must be updated together, or every link breaks.
@@ -146,9 +151,6 @@ file, and the `<meta name="license">` tag in every file.
    Renaming the repo to something like `workbench` would improve it, but the URL is baked into
    `SITE_URL` for citations, so it should be settled before the site is shared widely.
 4. **Copyright year is 2026** throughout. Should be the year of first publication if earlier.
-5. **No back-link from the resources to the register.** Someone landing on a resource from a
-   search result or a shared link has no way back to the homepage. Adding one means editing
-   inside the two finished resource files.
 6. **Institutional IP not checked.** Work produced in the course of university employment may
    carry an employer claim to copyright. The author's institutional policy should be checked
    before the open licence is relied on.

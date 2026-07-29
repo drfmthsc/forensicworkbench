@@ -80,7 +80,11 @@ the drill's scoring and certificate, runs offline in the browser.
 - Design tokens (the `:root` block) are duplicated in `index.html` and `licence.html`. Each
   page is self-contained, like the modules. Change a colour in one, change it in both.
 - `seal.png` is the emblem with its parchment background keyed out, so it tints against the
-  page rather than sitting on a beige square. Its visibility is set by `opacity` on the
-  `.seal` rule in `index.html` — currently `.20`, dropping to `.14` on small screens.
+  page rather than sitting on a beige square. It is used twice over:
+  - On `index.html` as the masthead emblem, in its own grid column so no text can cross it.
+    Size and strength are the `.mast-grid` column width and the `opacity` on `.seal`
+    (currently `.46`; `.72` at 92px on phones, where it sits above the title).
+  - On both resources as a small logo top-right (`.wb-logo`), linked back to `index.html`.
+    Below 760px it drops above the heading instead. Hidden when printing.
 - `seal-card.jpg` is the original emblem on its parchment, used only by the `og:image` tag.
   It is what appears when the site link is shared on WhatsApp, Slack or social media.

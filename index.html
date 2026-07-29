@@ -80,9 +80,13 @@
   }
 
   /* Signature: the file stamp */
+  .mast-grid{
+    display:grid;grid-template-columns:minmax(0,1fr) clamp(146px,19vw,208px);
+    gap:clamp(22px,4vw,40px);align-items:center;
+  }
   .seal{
-    position:absolute;z-index:-1;right:-46px;top:22px;width:296px;height:296px;
-    opacity:.20;transform:rotate(-5deg);pointer-events:none;user-select:none;
+    width:100%;height:auto;justify-self:end;opacity:.46;
+    transform:rotate(-4deg);pointer-events:none;user-select:none;
   }
 
   /* ---------- Register ---------- */
@@ -193,7 +197,8 @@
   /* ---------- Motion ---------- */
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
   @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-  .masthead .wrap > *{animation:rise .62s cubic-bezier(.2,.7,.3,1) both}
+  .masthead .mast-text > *, .masthead .seal{animation:rise .62s cubic-bezier(.2,.7,.3,1) both}
+  .masthead .seal{animation-delay:.1s}
   .masthead h1{animation-delay:.04s}
   .masthead .subtitle{animation-delay:.13s}
   .masthead .lede{animation-delay:.21s}
@@ -209,7 +214,8 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width:720px){
-    .seal{width:196px;height:196px;right:-40px;top:8px;opacity:.14}
+    .mast-grid{grid-template-columns:1fr;gap:0}
+    .seal{width:92px;justify-self:start;order:-1;margin-bottom:24px;opacity:.72;transform:rotate(-3deg)}
     .masthead .wrap{padding-top:44px;padding-bottom:40px}
     .entry,.slot{grid-template-columns:1fr}
     .docket{
@@ -240,7 +246,8 @@
 
 <header class="masthead">
   <div class="wrap">
-    <img class="seal" src="seal.png" alt="" aria-hidden="true" decoding="async" width="640" height="640">
+   <div class="mast-grid">
+    <div class="mast-text">
     <h1>Forensic Medicine Workbench</h1>
     <p class="subtitle">Medico-legal practice, step by step</p>
     <p class="lede">Working tools for the doctor on duty when a survivor arrives — what to do, in what order, and how to record it so that it holds in court.</p>
@@ -250,6 +257,9 @@
       Aligned with BNS, BNSS and BSA, 2023 (in force 1 July 2024)<br>
       MoHFW Guidelines &amp; Protocols for medico-legal care of survivors of sexual violence, 2014
     </p>
+    </div>
+    <img class="seal" src="seal.png" alt="" aria-hidden="true" decoding="async" width="640" height="640">
+   </div>
   </div>
 </header>
 

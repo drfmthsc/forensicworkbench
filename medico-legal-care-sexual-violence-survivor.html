@@ -71,7 +71,7 @@
   .step.hero .step-head h2{font-size:1.85rem;}
   @media print{.step.hero{background:none;}.hero-ribbon{background:#fff;color:var(--clay);border:1px solid var(--clay);}}
 
-  .mast{padding:54px 0 30px;border-bottom:2px solid var(--ink);margin-bottom:6px;}
+  .mast{padding:54px 0 30px;border-bottom:2px solid var(--ink);margin-bottom:6px;position:relative;}
   .mast .over{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);font-weight:600;margin-bottom:20px;}
   .mast h1{font-size:clamp(2.1rem,5.5vw,3.3rem);font-weight:600;letter-spacing:-.015em;max-width:17ch;}
   .mast h1 em{font-style:italic;color:var(--slate);}
@@ -353,6 +353,13 @@
     .step,.op,.juris,.tier,.engine,.forbid,.ceiling,.necessity,.fc-branches,.fc-branch,.proforma,.pf-row{page-break-inside:avoid;}
     .runcredit{display:block;position:fixed;bottom:5mm;left:0;right:0;text-align:center;font-family:"IBM Plex Mono",monospace;font-size:7pt;letter-spacing:.04em;color:#555;}
   }
+
+  .wb-logo{display:block;position:absolute;right:0;top:46px;width:96px;line-height:0;opacity:.9;transition:opacity .18s ease;}
+  .wb-logo:hover{opacity:1;}
+  .wb-logo img{width:100%;height:auto;display:block;}
+  .wb-logo:focus-visible{outline:2px solid var(--slate-deep,#22383D);outline-offset:4px;border-radius:50%;}
+  @media(max-width:760px){.wb-logo{display:block;position:static;width:66px;margin-bottom:22px;}}
+  @media print{.wb-logo{display:none;}}
 </style>
 </head>
 <body>
@@ -370,6 +377,7 @@
 <div class="wrap">
 
   <header class="mast">
+    <a class="wb-logo" href="index.html" title="Forensic Medicine Workbench"><img src="seal.png" alt="Forensic Medicine Workbench — back to the register" width="640" height="640" decoding="async"></a>
     <div class="over">Forensic Medicine &amp; Toxicology · Clinical Reference</div>
     <h1>Medico-legal Care of the <em>Sexual Violence</em> Survivor</h1>
     <p class="lede">A plain-language, step-by-step guide for the examining doctor — from consent to court — written so any MBBS student or non-specialist can follow it. Aligned with the new criminal codes (BNS, BNSS, BSA), in force 1 July 2024. Its focus is the skill exams and courts test hardest: <strong>writing a reasoned medical opinion</strong>.</p>
