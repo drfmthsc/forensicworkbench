@@ -128,14 +128,14 @@ prints cleanly. Keep all four.
 
 ## Licence
 
-**The two resources are under different licences**, which is deliberate but worth knowing:
+Both resources are under **CC BY-NC-ND 4.0** — share and print freely with credit, no
+commercial use, no altered versions redistributed. The reasoning for NoDerivatives: if someone
+excerpts a resource, changes a statutory section number incorrectly, and redistributes it under
+the author's name, that error could reach a real case.
 
-- FMT-01 (the guide) — **CC BY-NC-ND 4.0**. No adaptations may be redistributed.
-- FMT-02 (the drill) — **CC BY-NC 4.0**. Adaptation is permitted with attribution.
-
-`licence.html` shows both, one panel each. If they are ever unified, the change must be made in
-`LICENSE.md`, both `.panel` blocks in `licence.html`, the `.licence-line` in `index.html`, the
-footer notice inside each resource file, and the `<meta name="license">` tag in every file.
+If the licence is ever changed, it must be updated in `LICENSE.md`, the `.panel` block in
+`licence.html`, the `.licence-line` in `index.html`, the footer notice inside each resource
+file, and the `<meta name="license">` tag in every file.
 
 ## Open items
 

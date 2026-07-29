@@ -50,8 +50,8 @@ Two things to set:
 
 1. **`licence.html`** — `SITE_URL` is set to `https://drfmthsc.github.io/Website`. Update it
    if you rename the repo. Set `YEAR` too if the year of publication is not the current year.
-2. Decide whether the two resources should share one licence — FMT-01 is CC BY-NC-ND 4.0
-   and FMT-02 is CC BY-NC 4.0. See `LICENSE.md`.
+2. Nothing else — the licence is **CC BY-NC-ND 4.0** across both resources. See `LICENSE.md`
+   for the places to edit if you ever change it.
 
 ## Publishing
 

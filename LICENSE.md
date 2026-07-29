@@ -9,25 +9,24 @@ The author asserts the moral right to be identified as the author of this work.
 
 ---
 
-## Licences
+## Licence
 
-Each resource carries its own licence.
+Both resources are released under **CC BY-NC-ND 4.0** — Creative Commons
+Attribution–NonCommercial–NoDerivatives 4.0 International.
 
-### FMT-01 — Medico-legal Care of the Sexual Violence Survivor
-**CC BY-NC-ND 4.0** — Attribution–NonCommercial–NoDerivatives 4.0 International.
-Share it freely; credit the author; no commercial use; do not distribute altered versions.
-<https://creativecommons.org/licenses/by-nc-nd/4.0/>
+You are free to **share** — copy and redistribute the material in any medium or format —
+under the following terms:
 
-### FMT-02 — SAFE Evidence Sequencer
-**CC BY-NC 4.0** — Attribution–NonCommercial 4.0 International.
-As above, but adaptation *is* permitted: credit the author, indicate what you changed,
-retain the licence notice, and keep it non-commercial.
-<https://creativecommons.org/licenses/by-nc/4.0/>
+- **Attribution** — credit the author, link to the licence, and indicate the source.
+- **NonCommercial** — not for commercial purposes.
+- **NoDerivatives** — if you remix, transform or build on the material, you may not
+  distribute the modified version.
 
 No warranties are given. The licence may not give you all of the permissions necessary
 for your intended use.
 
-For commercial use, or anything else outside these terms, contact the author at dr.fmt.hsc@gmail.com.
+Full legal code: <https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode>
+Plain-language summary: <https://creativecommons.org/licenses/by-nc-nd/4.0/>
 
 ---
 
@@ -66,7 +65,7 @@ The licence appears in four places. Change all four together:
 | File | What to change |
 |---|---|
 | `LICENSE.md` | this file |
-| `licence.html` | the two `.panel` blocks — tag, name, terms, link |
+| `licence.html` | the `.panel` block — tag, name, terms, link |
 | `index.html` | the `.licence-line` paragraph in the About section |
 | each resource file | its own footer notice, near the bottom of the file |
 | every HTML file | the `<meta name="license">` tag |
