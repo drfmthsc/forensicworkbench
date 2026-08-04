@@ -146,6 +146,31 @@
   @media (max-width:520px){.brand h1{font-size:24px}.concept{font-size:25px}.quiz-q{font-size:21px}.rate{grid-template-columns:repeat(2,1fr)}.mastery{text-align:left}}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card.revealed .strike-line{transform:scaleX(1)}.card.revealed .stamp{opacity:.92;transform:rotate(-11deg) scale(1)}}
   .credit{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.03em;color:var(--gold);margin:10px 0 0;line-height:1.5}
+
+  /* ---------- static mapping table ---------- */
+  .static-map{margin-top:34px;padding-top:22px;border-top:1px solid var(--line)}
+  .static-map h2{font-family:"IBM Plex Serif",Georgia,serif;font-size:19px;font-weight:600;color:var(--paper);margin:0 0 8px;letter-spacing:-.01em}
+  .static-map .sm-lede{font-size:13px;color:var(--muted);margin:0 0 16px;max-width:74ch;line-height:1.65}
+  .static-map .sm-note{font-size:11.5px;color:var(--muted-2);margin:14px 0 0;line-height:1.6}
+  .sm-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+  .static-map table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:620px}
+  .static-map thead th{position:sticky;top:0;background:var(--ink-2);color:var(--muted);font-family:"IBM Plex Mono",monospace;
+    font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+  .static-map tbody td{padding:9px 12px;border-bottom:1px solid rgba(44,63,77,.55);vertical-align:top;color:var(--paper);line-height:1.55}
+  .static-map tr.grp th{background:rgba(199,154,78,.10);color:var(--gold);text-align:left;padding:9px 12px;
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .static-map tr.grp .n{color:var(--muted-2);letter-spacing:.06em;margin-left:8px;text-transform:none}
+  .static-map td.old{font-family:"IBM Plex Mono",monospace;white-space:nowrap;color:var(--muted)}
+  .static-map td.old .lw{color:var(--repeal);font-weight:600}
+  .static-map td.new{font-family:"IBM Plex Mono",monospace;white-space:nowrap;font-weight:600}
+  .static-map td.new .lw{color:var(--verdict-soft)}
+  .static-map td.sub{color:var(--paper);min-width:150px}
+  .static-map td.prov{color:var(--muted);max-width:60ch}
+  .static-map .chg{display:block;margin-top:5px;font-size:11.5px;color:var(--gold);line-height:1.5}
+  .static-map .chg b{color:var(--gold)}
+  @media (max-width:640px){.static-map table{font-size:12px}}
+  @media print{.sm-scroll{overflow:visible;border:none}.static-map thead th{position:static}}
   .site-credit{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);text-align:center}
   .site-credit .who{font-family:"Fraunces",serif;font-size:15px;color:#DCE6EC;font-weight:600}
   .site-credit .role{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.03em;margin-top:5px;line-height:1.5}
@@ -166,6 +191,126 @@
   @media(max-width:760px){.wb-logo{position:static;width:56px;margin-bottom:14px;}header .mastery{margin-top:0;}}
   @media print{.wb-logo{display:none;}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://forensicworkbench.com/#author",
+      "name": "Harvinder Singh Chhabra",
+      "honorificPrefix": "Dr",
+      "email": "dr.fmt.hsc@gmail.com",
+      "url": "https://forensicworkbench.com/",
+      "jobTitle": "Forensic medicine educator",
+      "knowsAbout": [
+        "Forensic Medicine",
+        "Toxicology",
+        "Medical jurisprudence",
+        "Medico-legal practice"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://forensicworkbench.com/#website",
+      "name": "Forensic Medicine Workbench",
+      "alternateName": "Forensic Medicine Workbench — medico-legal practice, step by step",
+      "url": "https://forensicworkbench.com/",
+      "inLanguage": "en-IN",
+      "description": "Open teaching resources in forensic medicine and toxicology — reference guides, interactive drills and a recall trainer for the examining doctor, aligned with the BNS, BNSS and BSA, 2023.",
+      "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "author": {
+        "@id": "https://forensicworkbench.com/#author"
+      },
+      "publisher": {
+        "@id": "https://forensicworkbench.com/#author"
+      },
+      "datePublished": "2026-07-29",
+      "dateModified": "2026-08-05"
+    },
+    {
+      "@type": [
+        "LearningResource",
+        "WebPage"
+      ],
+      "@id": "https://forensicworkbench.com/mlr-recall.html#resource",
+      "url": "https://forensicworkbench.com/mlr-recall.html",
+      "name": "MLR-Recall — IPC to BNS, BNSS and BSA section mapping",
+      "headline": "MLR-Recall — IPC to BNS, BNSS and BSA section mapping",
+      "description": "119 sections of the Indian Penal Code, Code of Criminal Procedure and Indian Evidence Act mapped to the corresponding provisions of the Bharatiya Nyaya Sanhita, Bharatiya Nagarik Suraksha Sanhita and Bharatiya Sakshya Adhiniyam, 2023, with the provision on every card, learn and quiz modes, and the full mapping table in one printable list.",
+      "learningResourceType": "recall trainer",
+      "educationalUse": [
+        "professional development",
+        "self study",
+        "assessment"
+      ],
+      "audience": [
+        {
+          "@type": "EducationalAudience",
+          "educationalRole": "student"
+        },
+        {
+          "@type": "EducationalAudience",
+          "educationalRole": "teacher"
+        },
+        {
+          "@type": "MedicalAudience",
+          "audienceType": "Physician"
+        }
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Bharatiya Nyaya Sanhita"
+        },
+        {
+          "@type": "Thing",
+          "name": "Bharatiya Nagarik Suraksha Sanhita"
+        },
+        {
+          "@type": "Thing",
+          "name": "Bharatiya Sakshya Adhiniyam"
+        },
+        {
+          "@type": "Thing",
+          "name": "Indian Penal Code"
+        },
+        {
+          "@type": "Thing",
+          "name": "Code of Criminal Procedure"
+        },
+        {
+          "@type": "Thing",
+          "name": "Indian Evidence Act"
+        },
+        {
+          "@type": "Thing",
+          "name": "Section mapping"
+        },
+        {
+          "@type": "Thing",
+          "name": "Forensic medicine"
+        }
+      ],
+      "inLanguage": "en-IN",
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+      "creativeWorkStatus": "Published",
+      "author": {
+        "@id": "https://forensicworkbench.com/#author"
+      },
+      "publisher": {
+        "@id": "https://forensicworkbench.com/#author"
+      },
+      "isPartOf": {
+        "@id": "https://forensicworkbench.com/#website"
+      },
+      "datePublished": "2026-07-29",
+      "dateModified": "2026-08-05"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div id="watermark"></div>
@@ -227,6 +372,156 @@
       </div>
     </div>
   </div>
+
+  <!-- STATIC MAPPING TABLE — readable without JavaScript; indexable -->
+  <section class="static-map" id="mapping-table">
+    <h2>The full mapping table — IPC, CrPC and IEA to BNS, BNSS and BSA</h2>
+    <p class="sm-lede">All 119 sections in one printable list, grouped as the cards are grouped. The three statutes replaced
+    the Indian Penal Code, the Code of Criminal Procedure and the Indian Evidence Act with effect from 1 July 2024. Where the
+    new provision differs in substance and not only in numbering, the difference is noted against the row.</p>
+    <div class="sm-scroll">
+      <table>
+        <thead><tr><th scope="col">Old</th><th scope="col">New</th><th scope="col">Subject</th><th scope="col">The provision</th></tr></thead>
+        <tbody>
+        <tr class="grp"><th colspan="4" scope="colgroup">Definitions <span class="n">5 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 40</td><td class="new"><span class="lw">BNS</span> S 2(24)</td><td class="sub">‘Offence’ defined</td><td class="prov">An act or omission made punishable by any law for the time being in force.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 44</td><td class="new"><span class="lw">BNS</span> S 2(14)</td><td class="sub">‘Injury’ defined</td><td class="prov">Any harm illegally caused to a person in body, mind, reputation or property.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 46</td><td class="new"><span class="lw">BNS</span> S 2(6)</td><td class="sub">‘Death’ defined</td><td class="prov">Death of a human being, unless the contrary appears from the context.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 51</td><td class="new"><span class="lw">BNS</span> S 2(23)</td><td class="sub">‘Oath’ defined</td><td class="prov">Includes a solemn affirmation substituted by law, and any declaration required or authorised by law.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 52</td><td class="new"><span class="lw">BNS</span> S 2(11)</td><td class="sub">‘Good faith’ defined</td><td class="prov">Nothing is done in good faith which is done without due care and attention.</td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Criminal responsibility <span class="n">5 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 82</td><td class="new"><span class="lw">BNS</span> S 20</td><td class="sub">Act of a child under 7 (doli incapax)</td><td class="prov">Nothing is an offence done by a child under seven years of age.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 83</td><td class="new"><span class="lw">BNS</span> S 21</td><td class="sub">Act of a child 7–12 of immature understanding</td><td class="prov">No offence by a child above 7 and under 12 who has not attained maturity to judge the nature and consequences of the act.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 84</td><td class="new"><span class="lw">BNS</span> S 22</td><td class="sub">Act of a person of unsound mind (insanity)</td><td class="prov">No offence if, from unsoundness of mind, the person is incapable of knowing the nature of the act, or that it is wrong or contrary to law.<span class="chg">What changed: Burden of proving the exception is on the accused, on balance of probabilities.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 85</td><td class="new"><span class="lw">BNS</span> S 23</td><td class="sub">Intoxication caused against one's will</td><td class="prov">No offence by a person incapable of judgment due to intoxication administered without his knowledge or against his will.<span class="chg">What changed: Covers <b>involuntary</b> intoxication only.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 86</td><td class="new"><span class="lw">BNS</span> S 24</td><td class="sub">Intoxicated person — offence needing intent/knowledge</td><td class="prov">A voluntarily intoxicated person is presumed to have the same knowledge as if not intoxicated.</td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Consent <span class="n">6 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 87</td><td class="new"><span class="lw">BNS</span> S 25</td><td class="sub">Consent — act not likely to cause death/grievous hurt</td><td class="prov">Harm not intended or known to be likely to cause death/grievous hurt, done with the consent of a person above 18, is not an offence.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 88</td><td class="new"><span class="lw">BNS</span> S 26</td><td class="sub">Good faith for benefit, with consent, not to cause death</td><td class="prov">Harm done in good faith for a person's benefit, with consent, not intended to cause death, is not an offence.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 89</td><td class="new"><span class="lw">BNS</span> S 27</td><td class="sub">Benefit of child/unsound mind by guardian's consent</td><td class="prov">Act in good faith for a child under 12 or a person of unsound mind, by or with the guardian's consent (subject to provisos on death/grievous hurt).</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 90</td><td class="new"><span class="lw">BNS</span> S 28</td><td class="sub">Consent given under fear or misconception</td><td class="prov">Consent given under fear of injury or misconception, or by a person of unsound mind / intoxicated / under 12, is not valid consent.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 92</td><td class="new"><span class="lw">BNS</span> S 30</td><td class="sub">Good faith for benefit — without consent (emergency)</td><td class="prov">Act in good faith for a person's benefit even without consent, where it is impossible to obtain consent in time to save life/health.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 166B</td><td class="new"><span class="lw">BNS</span> S 200</td><td class="sub">Non-treatment of a victim (by hospital)</td><td class="prov">Failure to treat a victim as required — up to 1 year, or fine, or both.</td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Injuries (hurt) <span class="n">13 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 319</td><td class="new"><span class="lw">BNS</span> S 114</td><td class="sub">Hurt (definition)</td><td class="prov">Whoever causes bodily pain, disease or infirmity to any person causes hurt.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 320</td><td class="new"><span class="lw">BNS</span> S 116</td><td class="sub">Grievous hurt (definition — 8 kinds)</td><td class="prov">Eight kinds: emasculation; loss of sight/hearing; loss of a limb/joint; disfiguration of head or face; fracture/dislocation; and hurt causing 15-day incapacity.<span class="chg">What changed: 8th kind now needs incapacity/severe pain for <b>15 days</b> (reduced from 20 in IPC 320).</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 323</td><td class="new"><span class="lw">BNS</span> S 115</td><td class="sub">Voluntarily causing hurt (punishment)</td><td class="prov">Voluntarily causing hurt — up to 1 year, or fine up to ₹10,000, or both.<span class="chg">What changed: Fine raised ₹1,000 → ₹10,000.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 324</td><td class="new"><span class="lw">BNS</span> S 118(1)</td><td class="sub">Voluntarily causing hurt by dangerous weapons</td><td class="prov">Hurt by any instrument for shooting/stabbing/cutting, fire, poison, explosive, corrosive, etc. — up to 3 years, or fine, or both.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 325</td><td class="new"><span class="lw">BNS</span> S 117</td><td class="sub">Voluntarily causing grievous hurt (punishment)</td><td class="prov">Grievous hurt — up to 7 years + fine. If it causes PVS — 10 years to life. By a group of 5+ on grounds of race/caste/sex/etc. — up to 7 years + fine.<span class="chg">What changed: Now subcategorised; adds PVS and mob-grounds variants.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 326</td><td class="new"><span class="lw">BNS</span> S 118(2)</td><td class="sub">Voluntarily causing grievous hurt by dangerous weapons</td><td class="prov">Grievous hurt by dangerous weapons or means — up to 10 years + fine (extendable to life).</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 326A</td><td class="new"><span class="lw">BNS</span> S 124(1)</td><td class="sub">Grievous hurt by acid</td><td class="prov">Grievous hurt by acid, or causing PVS — 10 years to life + fine paid to the victim for treatment.<span class="chg">What changed: Now expressly includes PVS; damage need not be irreversible.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 326B</td><td class="new"><span class="lw">BNS</span> S 124(2)</td><td class="sub">Throwing / attempting to throw acid</td><td class="prov">Throwing or attempting to throw acid with intent to cause harm — 5 to 7 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 328</td><td class="new"><span class="lw">BNS</span> S 123</td><td class="sub">Causing hurt by means of poison</td><td class="prov">Administering poison/stupefying/intoxicating/unwholesome drug with intent to commit an offence — up to 10 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 337</td><td class="new"><span class="lw">BNS</span> S 125(a)</td><td class="sub">Hurt by a rash / negligent act endangering life</td><td class="prov">Hurt by an act so rash/negligent as to endanger life or personal safety — up to 6 months, or fine up to ₹5,000, or both.<span class="chg">What changed: Fine raised ₹500 → ₹5,000.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 338</td><td class="new"><span class="lw">BNS</span> S 125(b)</td><td class="sub">Grievous hurt by a rash / negligent act endangering life</td><td class="prov">Grievous hurt by such an act — up to 3 years, or fine up to ₹10,000, or both.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 351</td><td class="new"><span class="lw">BNS</span> S 130</td><td class="sub">Assault (definition)</td><td class="prov">Making a gesture or preparation causing apprehension that criminal force is about to be used.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 352</td><td class="new"><span class="lw">BNS</span> S 131</td><td class="sub">Assault or criminal force (punishment)</td><td class="prov">Assault/criminal force otherwise than on grave provocation — up to 3 months, or fine, or both.</td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Homicide &amp; negligence <span class="n">11 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 299</td><td class="new"><span class="lw">BNS</span> S 100</td><td class="sub">Culpable homicide (definition)</td><td class="prov">Causing death by an act with intent to cause death / such bodily injury as is likely to cause death / with knowledge it is likely to cause death.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 300</td><td class="new"><span class="lw">BNS</span> S 101</td><td class="sub">Murder (definition)</td><td class="prov">Culpable homicide is murder in the four specified situations (subject to five exceptions).</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 302</td><td class="new"><span class="lw">BNS</span> S 103</td><td class="sub">Punishment for murder</td><td class="prov">Death or imprisonment for life + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 303</td><td class="new"><span class="lw">BNS</span> S 104</td><td class="sub">Punishment for murder by a life-convict</td><td class="prov">Murder by a person already serving life imprisonment — death or life.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 304</td><td class="new"><span class="lw">BNS</span> S 105</td><td class="sub">Culpable homicide not amounting to murder (punishment)</td><td class="prov">Up to 10 years to life imprisonment + fine, depending on intent/knowledge.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 304A</td><td class="new"><span class="lw">BNS</span> S 106</td><td class="sub">Death by a rash or negligent act</td><td class="prov">Death by rash/negligent act not amounting to CH — up to 5 years + fine; a registered medical practitioner's medical negligence — up to 2 years + fine. Hit-and-run (fleeing without reporting) — up to 10 years + fine.<span class="chg">What changed: RMP negligence stays 2 yrs, but now imprisonment <b>and</b> fine (was 'or' in IPC). New hit-and-run limb, 106(2).</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 304B</td><td class="new"><span class="lw">BNS</span> S 80</td><td class="sub">Dowry death</td><td class="prov">Death of a woman by burns/injury within 7 years of marriage linked to dowry cruelty — 7 years to life.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 305</td><td class="new"><span class="lw">BNS</span> S 107</td><td class="sub">Abetment of suicide of a child / person of unsound mind</td><td class="prov">Abetting the suicide of a child or a person of unsound mind — life imprisonment or death + fine.<span class="chg">What changed: ‘Insane’ → ‘person of unsound mind’; punishment raised from 10 yrs to life/death.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 306</td><td class="new"><span class="lw">BNS</span> S 108</td><td class="sub">Abetment of suicide</td><td class="prov">Abetting the suicide of any person — up to 10 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 307</td><td class="new"><span class="lw">BNS</span> S 109</td><td class="sub">Attempt to commit murder</td><td class="prov">Up to 10 years + fine; if hurt is caused, up to life.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 309*</td><td class="new"><span class="lw">BNS</span> S 226</td><td class="sub">Attempt to suicide to compel a public servant</td><td class="prov">Attempt to commit suicide to compel or restrain a public servant from duty — up to 1 year, or fine, or community service.<span class="chg">What changed: General attempt-to-suicide (IPC 309) is <b>deleted</b>; only this narrow context survives (MHCA 2017 s.115 also applies).</span></td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Criminal abortion <span class="n">7 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 312</td><td class="new"><span class="lw">BNS</span> S 88</td><td class="sub">Causing miscarriage</td><td class="prov">Voluntarily causing miscarriage (not in good faith to save the woman) — up to 3 years, or fine, or both; up to 7 years + fine if the woman is quick with child. A woman who causes her own miscarriage is liable.<span class="chg">What changed: MTP Act 1971/2021 is the lawful gateway; BNS keeps the default criminal status.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 313</td><td class="new"><span class="lw">BNS</span> S 89</td><td class="sub">Miscarriage without the woman's consent</td><td class="prov">Causing miscarriage without consent — 10 years to life + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 314</td><td class="new"><span class="lw">BNS</span> S 90</td><td class="sub">Death caused by an act to cause miscarriage</td><td class="prov">If the act to cause miscarriage causes death — up to 10 years + fine; up to life if done without consent.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 315</td><td class="new"><span class="lw">BNS</span> S 91</td><td class="sub">Act to prevent a child being born alive / to kill after birth</td><td class="prov">Act with intent to prevent a child from being born alive or to cause it to die after birth — up to 10 years, or fine, or both.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 316</td><td class="new"><span class="lw">BNS</span> S 92</td><td class="sub">Death of a quick unborn child by an act amounting to CH</td><td class="prov">Causing death of a quick unborn child by an act that would be culpable homicide — up to 10 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 317</td><td class="new"><span class="lw">BNS</span> S 93</td><td class="sub">Exposure &amp; abandonment of a child under 12</td><td class="prov">Parent/guardian exposing or abandoning a child under 12 — up to 7 years, or fine, or both.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 318</td><td class="new"><span class="lw">BNS</span> S 94</td><td class="sub">Concealment of birth by secret disposal of the body</td><td class="prov">Secret disposal of a dead body to conceal birth — up to 2 years, or fine, or both.</td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Sexual offences <span class="n">21 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 375</td><td class="new"><span class="lw">BNS</span> S 63</td><td class="sub">Rape (definition)</td><td class="prov">Defines the acts and seven circumstances constituting rape.<span class="chg">What changed: Age of consent within marriage raised 15 → 18 for the purpose of rape.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 376(1)/(2)</td><td class="new"><span class="lw">BNS</span> S 64</td><td class="sub">Punishment for rape / custodial rape</td><td class="prov">Rape — 10 years to life + fine; custodial and other aggravated forms — rigorous 10 years to life + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 376(3)</td><td class="new"><span class="lw">BNS</span> S 65(1)</td><td class="sub">Rape of a girl under 16</td><td class="prov">Rape of a girl under 16 — 20 years to life + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 376AB</td><td class="new"><span class="lw">BNS</span> S 65(2)</td><td class="sub">Rape of a girl under 12</td><td class="prov">Rape of a girl under 12 — 20 years to life + fine, or death.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 376A</td><td class="new"><span class="lw">BNS</span> S 66</td><td class="sub">Rape causing death or persistent vegetative state</td><td class="prov">Rape causing death or PVS of the victim — 20 years to life, or death.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 376B</td><td class="new"><span class="lw">BNS</span> S 67</td><td class="sub">Intercourse by husband during separation</td><td class="prov">Sexual intercourse by a husband upon his wife during separation — 2 to 7 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 376C</td><td class="new"><span class="lw">BNS</span> S 68</td><td class="sub">Intercourse by a person in authority (not rape)</td><td class="prov">Sexual intercourse by a person in authority not amounting to rape — 5 to 10 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">—</span> S new</td><td class="new"><span class="lw">BNS</span> S 69</td><td class="sub">Sexual act on a false promise of marriage / deceit</td><td class="prov">Sexual intercourse by deceitful means (false promise of marriage/employment/promotion, etc.) — up to 10 years + fine.<span class="chg">What changed: <b>Newly added</b> in BNS.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 376D</td><td class="new"><span class="lw">BNS</span> S 70(1)</td><td class="sub">Gang rape</td><td class="prov">Gang rape — 20 years to life imprisonment (for the remainder of natural life) + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 376DA/DB</td><td class="new"><span class="lw">BNS</span> S 70(2)</td><td class="sub">Gang rape of a girl under 18</td><td class="prov">Gang rape of a girl under 18 — life imprisonment + fine, or death.<span class="chg">What changed: Merges the old &lt;16 / &lt;12 gang-rape provisions; no separate 12/16 age split.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 376E</td><td class="new"><span class="lw">BNS</span> S 71</td><td class="sub">Repeat offenders of rape</td><td class="prov">Repeat rape offenders — life imprisonment, or death.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 228A</td><td class="new"><span class="lw">BNS</span> S 72</td><td class="sub">Disclosure of a victim's identity (rape, etc.)</td><td class="prov">Disclosing the identity of a victim of rape/certain offences — up to 2 years + fine.<span class="chg">What changed: IPC 228A is split into BNS 72 &amp; 73.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 228A*</td><td class="new"><span class="lw">BNS</span> S 73</td><td class="sub">Publishing court proceedings without permission</td><td class="prov">Printing/publishing any matter about such court proceedings without permission — up to 2 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 354</td><td class="new"><span class="lw">BNS</span> S 74</td><td class="sub">Assault to outrage a woman's modesty</td><td class="prov">Assault or criminal force to a woman intending to outrage her modesty — 1 to 5 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 354A</td><td class="new"><span class="lw">BNS</span> S 75</td><td class="sub">Sexual harassment</td><td class="prov">Physical advances, demand for sexual favours, showing pornography, sexual remarks — up to 3 years, or fine, or both.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 354B</td><td class="new"><span class="lw">BNS</span> S 76</td><td class="sub">Assault with intent to disrobe a woman</td><td class="prov">Assault/criminal force to disrobe a woman — 3 to 7 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 354C</td><td class="new"><span class="lw">BNS</span> S 77</td><td class="sub">Voyeurism</td><td class="prov">Watching/capturing the image of a woman in a private act — up to 3 years (first offence) + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 354D</td><td class="new"><span class="lw">BNS</span> S 78</td><td class="sub">Stalking</td><td class="prov">Following/contacting a woman despite disinterest, or monitoring her internet use — up to 3 years (first offence) + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 509</td><td class="new"><span class="lw">BNS</span> S 79</td><td class="sub">Word/gesture/act to insult a woman's modesty</td><td class="prov">Word, gesture or act intended to insult the modesty of a woman — up to 3 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 498</td><td class="new"><span class="lw">BNS</span> S 84</td><td class="sub">Enticing/detaining a married woman</td><td class="prov">Enticing, taking away or detaining a married woman with criminal intent — up to 2 years, or fine, or both.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 498A</td><td class="new"><span class="lw">BNS</span> S 85</td><td class="sub">Cruelty by husband or his relatives</td><td class="prov">Cruelty by a husband or his relative — up to 3 years + fine.</td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Kidnapping &amp; abduction <span class="n">8 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 361</td><td class="new"><span class="lw">BNS</span> S 137(1)</td><td class="sub">Kidnapping (definition)</td><td class="prov">Taking a minor (boy &lt;16, girl &lt;18) or a person of unsound mind out of lawful guardianship without consent.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 362</td><td class="new"><span class="lw">BNS</span> S 138</td><td class="sub">Abduction (definition)</td><td class="prov">By force or deceitful means, compelling or inducing a person to go from any place.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 363</td><td class="new"><span class="lw">BNS</span> S 137(2)</td><td class="sub">Punishment for kidnapping</td><td class="prov">Up to 7 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 364</td><td class="new"><span class="lw">BNS</span> S 140(1)</td><td class="sub">Kidnapping/abducting in order to murder</td><td class="prov">10 years to life + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 364A</td><td class="new"><span class="lw">BNS</span> S 140(2)</td><td class="sub">Kidnapping for ransom</td><td class="prov">Life imprisonment or death + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 366</td><td class="new"><span class="lw">BNS</span> S 87</td><td class="sub">Kidnapping/abducting a woman to compel marriage</td><td class="prov">Up to 10 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 366A</td><td class="new"><span class="lw">BNS</span> S 96</td><td class="sub">Procuration of a minor girl (&lt;18)</td><td class="prov">Inducing a girl under 18 to illicit intercourse — up to 10 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 366B</td><td class="new"><span class="lw">BNS</span> S 141</td><td class="sub">Importation of a boy (&lt;16) / girl (&lt;18) from abroad</td><td class="prov">Importing a minor from a foreign country for illicit intercourse — up to 10 years + fine.</td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Public decency &amp; the dead <span class="n">4 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 510</td><td class="new"><span class="lw">BNS</span> S 355</td><td class="sub">Misconduct in public by a drunken person</td><td class="prov">Misconduct in public by a drunken person — up to 24 hours, or fine, or both.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 290</td><td class="new"><span class="lw">BNS</span> S 292</td><td class="sub">Public nuisance (e.g. frotteurism)</td><td class="prov">Public nuisance not otherwise punishable — fine up to ₹1,000.<span class="chg">What changed: Fine raised ₹200 → ₹1,000.</span></td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 294</td><td class="new"><span class="lw">BNS</span> S 296</td><td class="sub">Obscene acts and songs (e.g. exhibitionism)</td><td class="prov">Obscene acts/songs in a public place to another's annoyance — up to 3 months, or fine, or both.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 297</td><td class="new"><span class="lw">BNS</span> S 301</td><td class="sub">Trespass on burial places (necrophilia / necrophagia)</td><td class="prov">Trespass on a place of worship/sepulture/funeral rites with intent to wound feelings — up to 1 year, or fine, or both.</td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Poisons <span class="n">1 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 284</td><td class="new"><span class="lw">BNS</span> S 286</td><td class="sub">Negligent conduct with a poisonous substance</td><td class="prov">Negligent handling of poison endangering human life — up to 6 months, or fine up to ₹5,000, or both.<span class="chg">What changed: Fine raised ₹1,000 → ₹5,000.</span></td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">False evidence &amp; documents <span class="n">7 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 191</td><td class="new"><span class="lw">BNS</span> S 227</td><td class="sub">Giving false evidence (perjury)</td><td class="prov">Being legally bound by oath to state the truth, making a statement one knows to be false.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 192</td><td class="new"><span class="lw">BNS</span> S 228</td><td class="sub">Fabricating false evidence</td><td class="prov">Causing any circumstance to exist / making a false document, intending it to appear in evidence.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 193</td><td class="new"><span class="lw">BNS</span> S 229</td><td class="sub">Punishment for false evidence</td><td class="prov">In a judicial proceeding — up to 7 years + fine; in any other case — up to 3 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 197</td><td class="new"><span class="lw">BNS</span> S 234</td><td class="sub">Issuing or signing a false certificate</td><td class="prov">Issuing/signing a certificate (e.g. medical) known to be false in a material point — up to 7 years + fine.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 201</td><td class="new"><span class="lw">BNS</span> S 238</td><td class="sub">Causing disappearance of evidence / screening an offender</td><td class="prov">Causing evidence of an offence to disappear, or giving false information to screen the offender — up to 7 years (graded by the offence).</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 202</td><td class="new"><span class="lw">BNS</span> S 239</td><td class="sub">Omission to give information of an offence</td><td class="prov">Intentional omission by a person legally bound to inform — up to 6 months, or fine, or both.</td></tr>
+        <tr><td class="old"><span class="lw">IPC</span> S 204</td><td class="new"><span class="lw">BNS</span> S 241</td><td class="sub">Destruction of a document / electronic record</td><td class="prov">Destroying a document/electronic record to prevent its production as evidence — up to 3 years, or fine, or both.<span class="chg">What changed: Punishment enhanced (was up to 2 years).</span></td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Death investigation (BNSS) <span class="n">5 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 2(c)</td><td class="new"><span class="lw">BNSS</span> S 2(1)</td><td class="sub">‘Cognizable offence’ defined</td><td class="prov">An offence for which a police officer may arrest without warrant.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 39</td><td class="new"><span class="lw">BNSS</span> S 33</td><td class="sub">Public to give information of certain offences</td><td class="prov">Every person aware of the commission of certain offences must forthwith inform the nearest Magistrate/police.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 174(1)</td><td class="new"><span class="lw">BNSS</span> S 194</td><td class="sub">Police inquest into cause of death</td><td class="prov">Police inquiry into the apparent cause of an unnatural/suspicious/sudden death; report forwarded to the District/Sub-divisional Magistrate.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 174(3)</td><td class="new"><span class="lw">BNSS</span> S 194</td><td class="sub">Compulsory autopsy — death of a woman within 7 yrs of marriage</td><td class="prov">Post-mortem examination is compulsory where a woman dies within 7 years of marriage in suspicious circumstances.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 176</td><td class="new"><span class="lw">BNSS</span> S 196</td><td class="sub">Magistrate's inquiry into cause of death</td><td class="prov">Magisterial inquiry in custodial death/disappearance/rape and in matrimonial death within 7 years.<span class="chg">What changed: Inquiry can now be by any Magistrate (judicial or executive), not only JM-I/Metropolitan.</span></td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Medical examination (BNSS) <span class="n">9 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 53(1)</td><td class="new"><span class="lw">BNSS</span> S 51(1)</td><td class="sub">Examination of the accused (at police request)</td><td class="prov">A registered medical practitioner examines an arrested person at a police officer's request when there are reasonable grounds it will yield evidence.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 53(2)</td><td class="new"><span class="lw">BNSS</span> S 51(2)</td><td class="sub">Female accused examined only by a female doctor</td><td class="prov">Examination of a female accused is done only by, or under the supervision of, a female registered medical practitioner.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 53A</td><td class="new"><span class="lw">BNSS</span> S 52</td><td class="sub">Examination of a rape accused</td><td class="prov">Detailed medical examination of a person accused of rape by a registered medical practitioner, with a reasoned report.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 54</td><td class="new"><span class="lw">BNSS</span> S 53</td><td class="sub">Examination of an arrested person (at his own request)</td><td class="prov">An arrested person may request a medical examination to detect evidence in his favour.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 164A</td><td class="new"><span class="lw">BNSS</span> S 184</td><td class="sub">Medical examination of a rape victim</td><td class="prov">Examination of a rape survivor by a registered medical practitioner, with consent; victim sent within 24 hours of information, report forwarded within 7 days.<span class="chg">What changed: 184(6) adds a <b>7-day</b> limit to forward the report (old 164A said 'without delay'). The 24-hour limit to send the victim already existed in 164A.</span></td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 327</td><td class="new"><span class="lw">BNSS</span> S 366</td><td class="sub">Examination of a sexual-assault survivor — in camera</td><td class="prov">Trial/examination of a survivor of sexual assault must be conducted in camera.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 291</td><td class="new"><span class="lw">BNSS</span> S 326</td><td class="sub">Deposition of a medical witness</td><td class="prov">A civil surgeon's/medical witness's deposition may be given in evidence though the witness is not called.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 357C</td><td class="new"><span class="lw">BNSS</span> S 397</td><td class="sub">Free treatment of rape/acid victims + info to police</td><td class="prov">All hospitals must provide free first-aid/medical treatment to victims of rape and acid attacks and inform the police.</td></tr>
+        <tr><td class="old"><span class="lw">CrPC</span> S 416</td><td class="new"><span class="lw">BNSS</span> S 456</td><td class="sub">Commutation of a death sentence on a pregnant woman</td><td class="prov">Where a woman sentenced to death is pregnant, the sentence is commuted to life imprisonment.<span class="chg">What changed: Now compulsory commutation (earlier only postponement).</span></td></tr>
+        <tr class="grp"><th colspan="4" scope="colgroup">Court &amp; witness (BSA) <span class="n">17 sections</span></th></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 3</td><td class="new"><span class="lw">BSA</span> S 2(1)</td><td class="sub">‘Evidence’ defined</td><td class="prov">Includes oral/documentary and electronic/digital records produced for the court's inspection.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 32(1)</td><td class="new"><span class="lw">BSA</span> S 26</td><td class="sub">Dying declaration</td><td class="prov">A statement by a person as to the cause of death, or the circumstances of the transaction resulting in death, is relevant.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 45</td><td class="new"><span class="lw">BSA</span> S 39(1)</td><td class="sub">Opinion of experts</td><td class="prov">On a point of foreign law, science, art, handwriting or finger impressions, the opinions of specially skilled persons are relevant.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 107</td><td class="new"><span class="lw">BSA</span> S 110</td><td class="sub">Presumption of being alive (within 30 years)</td><td class="prov">A person alive within 30 years is presumed alive; the burden of proving death lies on the one who asserts it.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 108</td><td class="new"><span class="lw">BSA</span> S 111</td><td class="sub">Presumption of death (not heard of for 7 years)</td><td class="prov">A person not heard of for 7 years by those who would have heard is presumed dead; burden of proving alive shifts.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 114A</td><td class="new"><span class="lw">BSA</span> S 120</td><td class="sub">Presumption of absence of consent in rape</td><td class="prov">Where intercourse is proved and the woman states she did not consent, the court presumes absence of consent.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 137</td><td class="new"><span class="lw">BSA</span> S 142</td><td class="sub">Examination-in-chief (procedure)</td><td class="prov">The examination of a witness by the party who calls him.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 138</td><td class="new"><span class="lw">BSA</span> S 143</td><td class="sub">Order of examinations</td><td class="prov">Witnesses are examined-in-chief, then cross-examined, then re-examined.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 141</td><td class="new"><span class="lw">BSA</span> S 146(1)</td><td class="sub">Leading questions (definition)</td><td class="prov">A question suggesting the answer the questioner wishes to receive.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 142</td><td class="new"><span class="lw">BSA</span> S 146(2)</td><td class="sub">When leading questions must not be asked</td><td class="prov">Not allowed in examination-in-chief or re-examination without the court's permission.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 143</td><td class="new"><span class="lw">BSA</span> S 146(4)</td><td class="sub">When leading questions may be asked</td><td class="prov">Allowed in cross-examination.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 146</td><td class="new"><span class="lw">BSA</span> S 149</td><td class="sub">Questions lawful in cross-examination</td><td class="prov">A witness may be asked questions to test veracity, discover identity/position, or shake credit.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 148</td><td class="new"><span class="lw">BSA</span> S 151</td><td class="sub">Court to decide when a witness is compelled to answer</td><td class="prov">The court decides whether a witness must answer a question going only to credit.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 151</td><td class="new"><span class="lw">BSA</span> S 154</td><td class="sub">Indecent and scandalous questions</td><td class="prov">The court may forbid indecent or scandalous questions unless they relate to facts in issue.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 154</td><td class="new"><span class="lw">BSA</span> S 157</td><td class="sub">Hostile witness (party questioning own witness)</td><td class="prov">The court may permit a party to put cross-examination-type questions to its own (hostile) witness.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 159</td><td class="new"><span class="lw">BSA</span> S 162</td><td class="sub">Refreshing memory</td><td class="prov">A witness may refresh memory by referring to a writing made at the time of the transaction.</td></tr>
+        <tr><td class="old"><span class="lw">IEA</span> S 162</td><td class="new"><span class="lw">BSA</span> S 165</td><td class="sub">Production of documents</td><td class="prov">A witness summoned to produce a document must do so; the court decides admissibility/validity of objections.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sm-note">Provisions are paraphrased summaries with the punishment where it matters, not the bare text.
+    Verify against the official Act at indiacode.nic.in before any of it goes into a report or a certificate.</p>
+  </section>
   <footer class="site-credit">
     <div class="who">Dr Harvinder Singh Chhabra</div>
     <div class="role"><a href="mailto:dr.fmt.hsc@gmail.com">dr.fmt.hsc@gmail.com</a></div>
