@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accommodation Interest — FORENSIC MEDICON 2027</title>
+<meta name="description" content="Tell us what accommodation you need for FORENSIC MEDICON 2027, 2–6 February 2027, Swami Rama Himalayan University, Dehradun. Non-binding, no payment.">
+<style>
+:root{
+  --ink:#111c28; --ink2:#2c3d4f; --slate:#5a6b7d; --mute:#7e8b98;
+  --paper:#e7ecf0; --card:#fff; --rule:#c9d3dd; --rule2:#e3e9ee;
+  --brass:#8a6d1f; --brassbg:#fbf4e2;
+  --ox:#9d2b2b; --oxbg:#fbeeee;
+  --forest:#1f5c46; --forestbg:#ecf5f1;
+  --blue:#1d4e79; --bluebg:#eaf1f8;
+  --disp:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --body:Charter,"Bitstream Charter",Georgia,"Times New Roman",serif;
+  --ui:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px 72px}
+
+header.mast{padding:26px 0 16px;border-bottom:2px solid var(--ink);text-align:center}
+.eyebrow{font-family:var(--ui);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+h1{font-family:var(--disp);font-weight:600;font-size:clamp(23px,4.4vw,34px);line-height:1.12;margin:8px 0 6px}
+.mast .meta{font-family:var(--ui);font-size:13px;color:var(--ink2);margin:0}
+.official{display:inline-block;margin-top:12px;font-family:var(--ui);font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;background:var(--brassbg);color:var(--brass);border:1px solid var(--brass);
+  padding:4px 11px;border-radius:3px}
+
+.note{background:var(--bluebg);border-left:3px solid var(--blue);padding:14px 16px;margin:22px 0;border-radius:0 6px 6px 0}
+.note h4{font-family:var(--ui);font-size:13px;margin:0 0 6px;color:var(--blue);letter-spacing:.04em;text-transform:uppercase}
+.note p{margin:0 0 7px;font-size:14.5px;color:var(--ink2)}
+.note p:last-child{margin-bottom:0}
+
+fieldset{border:1px solid var(--rule);background:var(--card);border-radius:9px;padding:18px;margin:0 0 18px}
+legend{font-family:var(--disp);font-size:18px;font-weight:600;padding:0 9px}
+label.f{display:block;margin:14px 0 0}
+label.f:first-of-type{margin-top:0}
+.lab{display:block;font-family:var(--ui);font-size:13px;font-weight:600;color:var(--ink2);margin-bottom:5px}
+.hint{display:block;font-family:var(--ui);font-size:12px;color:var(--mute);margin:3px 0 0;font-weight:400}
+.req{color:var(--ox)}
+input[type=text],input[type=tel],input[type=email],input[type=date],input[type=number],select,textarea{
+  width:100%;padding:9px 11px;font-family:var(--ui);font-size:15px;color:var(--ink);
+  background:#fff;border:1px solid var(--rule);border-radius:6px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:-1px;border-color:var(--blue)}
+textarea{min-height:66px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.two{grid-template-columns:1fr}}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:0;height:0}
+.chip span{display:block;font-family:var(--ui);font-size:13.5px;padding:8px 13px;border:1px solid var(--rule);
+  border-radius:20px;cursor:pointer;background:#fff;user-select:none}
+.chip input:checked+span{background:var(--forestbg);border-color:var(--forest);color:var(--forest);font-weight:600}
+.chip input:focus-visible+span{outline:2px solid var(--blue)}
+
+.tick{display:flex;gap:9px;align-items:flex-start;margin-top:12px;font-family:var(--ui);font-size:14px;color:var(--ink2)}
+.tick input{margin-top:3px;flex:none;width:17px;height:17px}
+
+.hide{display:none}
+
+button.go{width:100%;padding:14px;font-family:var(--ui);font-size:16px;font-weight:600;color:#fff;
+  background:var(--forest);border:none;border-radius:7px;cursor:pointer;margin-top:6px}
+button.go:hover{background:#174a37}
+button.go:disabled{background:var(--mute);cursor:not-allowed}
+.linkish{background:none;border:none;color:var(--blue);font-family:var(--ui);font-size:13.5px;
+  text-decoration:underline;cursor:pointer;padding:0}
+
+#msg{font-family:var(--ui);font-size:14px;padding:12px 15px;border-radius:7px;margin:16px 0}
+#msg.err{background:var(--oxbg);color:var(--ox);border:1px solid var(--ox)}
+#msg.warn{background:var(--brassbg);color:var(--brass);border:1px solid var(--brass)}
+
+#done{display:none;text-align:center;background:var(--card);border:1px solid var(--forest);
+  border-radius:9px;padding:30px 22px;margin-top:22px}
+#done h2{font-family:var(--disp);font-size:24px;margin:0 0 10px;color:var(--forest)}
+.refbox{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:26px;letter-spacing:.06em;
+  background:var(--forestbg);color:var(--forest);border:1px dashed var(--forest);
+  padding:13px;border-radius:7px;margin:16px 0;font-weight:700}
+footer{margin-top:28px;padding-top:16px;border-top:1px solid var(--rule);
+  font-family:var(--ui);font-size:12.5px;color:var(--mute);text-align:center}
+footer a{color:var(--blue)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <div class="eyebrow">48th Annual Conference of the Indian Academy of Forensic Medicine</div>
+  <h1>FORENSIC MEDICON 2027</h1>
+  <p class="meta">2–6 February 2027 · Swami Rama Himalayan University, Jolly Grant, Dehradun</p>
+  <div class="official">Official Accommodation &amp; Travel Desk</div>
+</header>
+
+<div class="note">
+  <h4>Before you begin</h4>
+  <p><b>This is not a booking, and there is nothing to pay.</b> We are collecting numbers so we can negotiate conference rates with hotels, homestays and guest houses near the venue.</p>
+  <p>Once rates are agreed, we will email you the confirmed list and you book directly with the property. Takes about two minutes.</p>
+  <p style="font-size:13.5px;color:var(--slate)">Run by the Organising Committee. Questions: <b>2027forensicmedicon@gmail.com</b></p>
+</div>
+
+<div id="msg" class="warn" style="display:none"></div>
+
+<form id="eoi" novalidate>
+
+  <fieldset>
+    <legend>About you</legend>
+    <label class="f"><span class="lab">Full name <span class="req">*</span></span>
+      <input type="text" name="name" required autocomplete="name"></label>
+    <div class="two">
+      <label class="f"><span class="lab">Mobile <span class="req">*</span></span>
+        <input type="tel" name="mobile" required inputmode="numeric" autocomplete="tel"
+               placeholder="10 digits">
+        <span class="hint">We will use WhatsApp for shuttle updates.</span></label>
+      <label class="f"><span class="lab">Email <span class="req">*</span></span>
+        <input type="email" name="email" required autocomplete="email"></label>
+    </div>
+    <label class="f"><span class="lab">Institution / Organisation <span class="req">*</span></span>
+      <input type="text" name="institution" required></label>
+    <div class="two">
+      <label class="f"><span class="lab">City</span><input type="text" name="city"></label>
+      <label class="f"><span class="lab">State</span><input type="text" name="state"></label>
+    </div>
+    <label class="f"><span class="lab">You are attending as <span class="req">*</span></span>
+      <select name="delegate_type" required>
+        <option value="">Select…</option>
+        <option>Faculty / Consultant</option>
+        <option>PG student / Resident</option>
+        <option>Undergraduate student</option>
+        <option>Nursing / Allied health</option>
+        <option>Police / Judiciary / Legal</option>
+        <option>Scientist / Laboratory</option>
+        <option>Accompanying person only</option>
+        <option>Other</option>
+      </select></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Accommodation</legend>
+    <label class="f"><span class="lab">Category you are looking for <span class="req">*</span></span>
+      <select name="category" id="category" required><option value="">Loading…</option></select>
+      <span class="hint" id="catHint">Prices are indicative only and will be negotiated.</span></label>
+
+    <label class="f"><span class="lab">Room type <span class="req">*</span></span>
+      <select name="occupancy" id="occupancy" required>
+        <option value="">Select…</option>
+        <option value="single">Single — room to myself</option>
+        <option value="twin-named">Twin sharing — I know who with</option>
+        <option value="twin-match">Twin sharing — please help me find someone</option>
+        <option value="triple">Triple sharing</option>
+        <option value="dorm">Dormitory bed</option>
+        <option value="family">Family room (with spouse / children)</option>
+      </select></label>
+
+    <label class="f hide" id="partnerWrap"><span class="lab">Name of the person you will share with</span>
+      <input type="text" name="share_partner">
+      <span class="hint">Ask them to fill this form too, naming you.</span></label>
+
+    <div class="hide" id="matchWrap">
+      <div class="note" style="margin:14px 0 0">
+        <h4>Room-share matching</h4>
+        <p>We will try to pair you with another delegate. You will be told who before anything is confirmed.</p>
+        <label class="f"><span class="lab">Match me with <span class="req">*</span></span>
+          <select name="gender" id="gender">
+            <option value="">Select…</option>
+            <option>Male delegates only</option>
+            <option>Female delegates only</option>
+            <option>No preference</option>
+          </select></label>
+        <label class="f"><span class="lab">Anything that would help us match you</span>
+          <input type="text" name="share_notes" placeholder="e.g. same institution, non-smoker, early sleeper"></label>
+      </div>
+    </div>
+
+    <label class="f"><span class="lab">Nights you need <span class="req">*</span></span>
+      <div class="chips" id="nights">
+        <label class="chip"><input type="checkbox" name="nights" value="1 Feb"><span>1 Feb</span></label>
+        <label class="chip"><input type="checkbox" name="nights" value="2 Feb"><span>2 Feb</span></label>
+        <label class="chip"><input type="checkbox" name="nights" value="3 Feb"><span>3 Feb</span></label>
+        <label class="chip"><input type="checkbox" name="nights" value="4 Feb"><span>4 Feb</span></label>
+        <label class="chip"><input type="checkbox" name="nights" value="5 Feb"><span>5 Feb</span></label>
+        <label class="chip"><input type="checkbox" name="nights" value="6 Feb"><span>6 Feb</span></label>
+      </div>
+      <span class="hint">Tick the night you sleep there. Arriving 1 Feb evening = tick 1 Feb.</span></label>
+
+    <label class="f"><span class="lab">Accompanying persons</span>
+      <input type="number" name="accompanying" min="0" max="6" value="0">
+      <span class="hint">Family or guests staying with you, not counting yourself.</span></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Travel</legend>
+    <label class="f"><span class="lab">How will you reach Dehradun? <span class="req">*</span></span>
+      <select name="arrival_point" id="arrival_point" required>
+        <option value="">Select…</option>
+        <option value="air">By air — Jolly Grant Airport (DED)</option>
+        <option value="haridwar">By train — Haridwar Junction</option>
+        <option value="doiwala">By train — Doiwala (DWO)</option>
+        <option value="dehradun">By train — Dehradun (DDN)</option>
+        <option value="rishikesh">By train — Rishikesh / Yog Nagari</option>
+        <option value="road">By road — bus or own vehicle</option>
+        <option value="undecided">Not decided yet</option>
+      </select></label>
+
+    <div class="note hide" id="railNote" style="margin-top:12px">
+      <h4>Please read</h4>
+      <p id="railText"></p>
+    </div>
+
+    <div class="two">
+      <label class="f"><span class="lab">Arrival date</span>
+        <input type="date" name="arrival_date" min="2027-01-30" max="2027-02-06"></label>
+      <label class="f"><span class="lab">Arrival time, roughly</span>
+        <select name="arrival_window">
+          <option value="">Not sure yet</option>
+          <option>Early morning (before 8am)</option>
+          <option>Morning (8am–12pm)</option>
+          <option>Afternoon (12–5pm)</option>
+          <option>Evening (5–9pm)</option>
+          <option>Night (after 9pm)</option>
+        </select></label>
+    </div>
+
+    <div class="two">
+      <label class="f"><span class="lab">Departure date</span>
+        <input type="date" name="departure_date" min="2027-02-04" max="2027-02-10"></label>
+      <label class="f"><span class="lab">Departure time, roughly</span>
+        <select name="departure_window">
+          <option value="">Not sure yet</option>
+          <option>Early morning (before 8am)</option>
+          <option>Morning (8am–12pm)</option>
+          <option>Afternoon (12–5pm)</option>
+          <option>Evening (5–9pm)</option>
+          <option>Night (after 9pm)</option>
+        </select></label>
+    </div>
+
+    <label class="f"><span class="lab">Do you need the conference transfer on arrival?</span>
+      <select name="airport_shuttle">
+        <option value="">Select…</option>
+        <option>Yes, please</option>
+        <option>No, I will arrange my own</option>
+        <option>Not sure yet</option>
+      </select>
+      <span class="hint">Buses run from Haridwar and Doiwala; an hourly loop runs from the airport.
+      There is <b>no departure shuttle to the airport</b> — it is a short drive and taxis are available at the venue.</span></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Anything else</legend>
+    <label class="f"><span class="lab">Accessibility or mobility needs</span>
+      <input type="text" name="accessibility" placeholder="e.g. ground floor room, wheelchair access"></label>
+    <label class="f"><span class="lab">Dietary requirements</span>
+      <input type="text" name="dietary" placeholder="e.g. pure vegetarian, Jain, diabetic"></label>
+    <label class="f"><span class="lab">Notes for the organising committee</span>
+      <textarea name="notes"></textarea></label>
+
+    <label class="tick"><input type="checkbox" name="consent" required>
+      <span>I agree that the Organising Committee may use these details to arrange accommodation and
+      transport, and may contact me by email, phone or WhatsApp about this conference. Data will be
+      deleted within three months after the conference. <span class="req">*</span></span></label>
+  </fieldset>
+
+  <button type="submit" class="go" id="submit">Submit interest</button>
+  <p style="text-align:center;margin:14px 0 0">
+    <button type="button" class="linkish" id="lookupBtn">Already submitted? Update your entry</button></p>
+</form>
+
+<div id="recover" class="hide">
+  <fieldset style="margin-top:18px">
+    <legend>Find your entry</legend>
+    <p style="margin:0 0 4px;font-size:14.5px;color:var(--ink2)">
+      Enter your reference code — or, if you have lost it, your mobile number and email.</p>
+    <label class="f"><span class="lab">Reference code</span>
+      <input type="text" id="rcRef" placeholder="FM27-XXXXXX" autocomplete="off"></label>
+    <p style="text-align:center;font-family:var(--ui);font-size:12px;color:var(--mute);margin:14px 0 0">— or —</p>
+    <div class="two">
+      <label class="f"><span class="lab">Mobile number</span>
+        <input type="tel" id="rcMobile" inputmode="numeric" placeholder="10 digits"></label>
+      <label class="f"><span class="lab">Email</span>
+        <input type="email" id="rcEmail"></label>
+    </div>
+    <span class="hint">Both must match what you entered originally.</span>
+    <button type="button" class="go" id="rcGo" style="margin-top:16px">Find my entry</button>
+    <p style="text-align:center;margin:12px 0 0">
+      <button type="button" class="linkish" id="rcCancel">Cancel</button></p>
+    <p style="font-family:var(--ui);font-size:12.5px;color:var(--mute);margin:14px 0 0;text-align:center">
+      Still stuck? Email <b>2027forensicmedicon@gmail.com</b> and we will look it up for you.</p>
+  </fieldset>
+</div>
+
+<div id="done">
+  <h2>Thank you</h2>
+  <p style="margin:0;color:var(--ink2)">Your interest has been recorded. Keep this reference — you will need it to change your entry later.</p>
+  <div class="refbox" id="refOut">—</div>
+  <p style="font-family:var(--ui);font-size:14px;color:var(--slate);margin:0">
+    We have emailed this code to you as well. We will be in touch once conference rates
+    are confirmed &mdash; nothing to pay now.<br>
+    <span style="font-size:13px">Lost the code later? You can find your entry using your
+    mobile number and email.</span></p>
+  <p style="margin-top:16px"><button type="button" class="linkish" id="againBtn">Submit another entry</button></p>
+</div>
+
+<footer>
+  Organising Committee, FORENSIC MEDICON 2027 · Department of Forensic Medicine, HIMS, SRHU<br>
+  <a href="https://forensicworkbench.com">Other forensic tools by Dr Chhabra →</a>
+</footer>
+</div>
+
+<script type="module">
+/* ---- CONFIG: paste your Apps Script Web App URL between the quotes ---- */
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbwa7UEe7Uj6a9fvOPc62nL-FbmzXK5kfM7RWaMc45tOhlgIti0vSVNNdB7GzROjrENvkw/exec";
+/* --------------------------------------------------------------------- */
+
+import { loadHotels } from './loader.js';
+
+const $ = s => document.querySelector(s);
+const form = $('#eoi'), msg = $('#msg');
+
+function say(text, kind){
+  if(!text){ msg.style.display='none'; return; }
+  msg.className = kind || 'warn';
+  msg.textContent = text;
+  msg.style.display = 'block';
+  msg.scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+/* Category dropdown, driven by the same Google Sheet as the hotel list */
+try {
+  const { categories } = await loadHotels();
+  $('#category').innerHTML = '<option value="">Select…</option>' + categories.map(c =>
+    `<option value="${c.id}">${c.name}${c.indicative_inr ? ' — ₹' + c.indicative_inr + ' per night' : ''}</option>`
+  ).join('');
+} catch (e) {
+  $('#category').innerHTML = '<option value="">Select…</option>' +
+    ['A|Resort / Premium','B|Standard Hotel','C|Budget Hotel','D|Homestay',
+     'E|Hostel / Dormitory','F|Own arrangement']
+    .map(x => { const [id,n] = x.split('|'); return `<option value="${id}">${n}</option>`; }).join('');
+}
+
+/* Conditional blocks */
+$('#occupancy').addEventListener('change', e => {
+  const v = e.target.value;
+  $('#partnerWrap').classList.toggle('hide', v !== 'twin-named');
+  $('#matchWrap').classList.toggle('hide', v !== 'twin-match');
+  $('#gender').required = (v === 'twin-match');
+});
+
+const RAIL = {
+  haridwar: 'Good choice. Conference buses run from Haridwar Junction. Shatabdi and Vande Bharat services stop here on the way to Dehradun — <b>get down at Haridwar, do not continue to Dehradun.</b>',
+  doiwala:  'Doiwala is our nearest station, about 10 km away, and buses run from here. Note that only a few trains stop at Doiwala, so check availability before booking.',
+  dehradun: '<b>There is no conference transport from Dehradun station</b> — it is about 25 km from the venue. If your train passes through Haridwar, please get down there instead.',
+  rishikesh:'<b>There is no conference transport from Rishikesh.</b> Please arrange your own taxi, or travel via Haridwar where our buses run.',
+  air:      'The venue is right beside Jolly Grant Airport and an hourly shuttle runs on arrival days. Please note it is a daytime-only airport and February mornings are often foggy — an afternoon flight is the safer booking.'
+};
+$('#arrival_point').addEventListener('change', e => {
+  const t = RAIL[e.target.value];
+  $('#railNote').classList.toggle('hide', !t);
+  if (t) $('#railText').innerHTML = t;
+});
+
+/* Reference code generated here, so it works even if the response is opaque */
+function makeRef(){
+  const a = Date.now().toString(36).slice(-4).toUpperCase();
+  const b = Math.random().toString(36).slice(2,5).toUpperCase();
+  return 'FM27-' + a + b;
+}
+
+function collect(){
+  const fd = new FormData(form);
+  const o = Object.fromEntries(fd.entries());
+  o.nights = fd.getAll('nights');
+  o.consent = !!fd.get('consent');
+  o.share_optin = (o.occupancy === 'twin-match') ? 'YES' : 'NO';
+  o.ua = navigator.userAgent.slice(0,120);
+  return o;
+}
+
+async function send(payload){
+  // text/plain avoids a CORS preflight; Apps Script accepts it
+  try {
+    const r = await fetch(ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload)
+    });
+    if (r.ok) return true;
+    throw new Error('HTTP ' + r.status);
+  } catch (err) {
+    // Opaque fallback — the write still happens, we just cannot read the reply
+    await fetch(ENDPOINT, { method:'POST', mode:'no-cors', body: JSON.stringify(payload) });
+    return true;
+  }
+}
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  say('');
+
+  if (!form.checkValidity()){
+    form.reportValidity();
+    return;
+  }
+  const data = collect();
+  if (!data.nights.length && data.category !== 'F'){
+    say('Please tick at least one night, or choose “Own arrangement” as your category.', 'err');
+    return;
+  }
+  if (!/^\d{10}$/.test(String(data.mobile).replace(/\D/g,'').slice(-10))){
+    say('Please enter a valid 10-digit mobile number.', 'err');
+    return;
+  }
+
+  const btn = $('#submit');
+  btn.disabled = true; btn.textContent = 'Sending…';
+
+  data.ref = form.dataset.ref || makeRef();
+
+  try {
+    await send(data);
+    try { localStorage.setItem('fm27_ref', data.ref); } catch(e){}
+    $('#refOut').textContent = data.ref;
+    form.style.display = 'none';
+    $('#done').style.display = 'block';
+    $('#done').scrollIntoView({behavior:'smooth', block:'center'});
+  } catch (err) {
+    say('Could not send just now. Please check your connection and try again, or email 2027forensicmedicon@gmail.com', 'err');
+    btn.disabled = false; btn.textContent = 'Submit interest';
+  }
+});
+
+/* ---- Recovery: by reference code, or by mobile + email ---- */
+const rc = $('#recover');
+
+function showRecover(on){
+  rc.classList.toggle('hide', !on);
+  form.style.display = on ? 'none' : '';
+  if (on) {
+    const saved = localStorage.getItem('fm27_ref');
+    if (saved) $('#rcRef').value = saved;
+    rc.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+}
+
+$('#lookupBtn').addEventListener('click', () => { say(''); showRecover(true); });
+$('#rcCancel').addEventListener('click', () => { say(''); showRecover(false); });
+
+function fillForm(rec, ref){
+  for (const [k,v] of Object.entries(rec)){
+    const el = form.elements[k];
+    if (!el || k === 'nights') continue;
+    if (el.type === 'checkbox') el.checked = (String(v).toUpperCase() === 'YES');
+    else if (el.value !== undefined) el.value = v;
+  }
+  const nights = String(rec.nights||'').split(',').map(x=>x.trim()).filter(Boolean);
+  form.querySelectorAll('input[name=nights]').forEach(c => c.checked = nights.includes(c.value));
+  $('#occupancy').dispatchEvent(new Event('change'));
+  $('#arrival_point').dispatchEvent(new Event('change'));
+  form.dataset.ref = ref;
+  $('#submit').textContent = 'Update my entry';
+}
+
+$('#rcGo').addEventListener('click', async () => {
+  const ref = $('#rcRef').value.trim().toUpperCase();
+  const mob = $('#rcMobile').value.replace(/\D/g,'').slice(-10);
+  const eml = $('#rcEmail').value.trim();
+
+  if (!ref && !(mob && eml)){
+    say('Enter your reference code, or both your mobile number and email.', 'err');
+    return;
+  }
+
+  const btn = $('#rcGo');
+  btn.disabled = true; btn.textContent = 'Searching…';
+
+  const q = ref ? 'ref=' + encodeURIComponent(ref)
+                : 'mobile=' + encodeURIComponent(mob) + '&email=' + encodeURIComponent(eml);
+  try {
+    const r = await fetch(ENDPOINT + '?' + q);
+    const j = await r.json();
+    if (!j.found){
+      say(ref ? 'No entry found for that code. Check it, or try your mobile and email instead.'
+              : 'No entry found with that mobile and email. Both must match your original entry.', 'err');
+      return;
+    }
+    const found = String(j.record.ref);
+    localStorage.setItem('fm27_ref', found);
+    fillForm(j.record, found);
+    showRecover(false);
+    say('Found entry ' + found + '. Make your changes, then press Update.', 'warn');
+  } catch (err) {
+    say('Could not search just now. Please try again, or email 2027forensicmedicon@gmail.com', 'err');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Find my entry';
+  }
+});
+
+$('#againBtn').addEventListener('click', () => {
+  form.reset(); delete form.dataset.ref; showRecover(false);
+  $('#submit').disabled = false; $('#submit').textContent = 'Submit interest';
+  form.style.display = ''; $('#done').style.display = 'none';
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+</script>
+</body>
+</html>
