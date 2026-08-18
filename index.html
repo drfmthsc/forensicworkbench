@@ -234,6 +234,36 @@
     body{background:#fff}
     .entry{box-shadow:none;break-inside:avoid}
   }
+
+  /* ---- Conference notice (time-bound; delete after Feb 2027) ---- */
+  .notice{
+    position:relative;margin:0 0 8px;padding:26px 30px 24px 34px;
+    background:var(--card);border:1px solid var(--line);border-radius:3px;
+    box-shadow:var(--shadow);
+    animation:rise .55s cubic-bezier(.2,.7,.3,1) both;
+  }
+  .notice::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+    background:var(--gold);border-radius:3px 0 0 3px;transition:width .18s ease;
+  }
+  .notice:hover::before{width:9px}
+  .notice .kicker{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--gold);margin:0 0 10px;
+  }
+  .notice h2{font-size:clamp(21px,3vw,27px);color:var(--slate-deep);margin:0 0 4px}
+  .notice .conf-sub{
+    font-family:"Newsreader",Georgia,serif;font-style:italic;font-weight:400;
+    font-size:16px;color:var(--ink-soft);margin:0 0 14px;
+  }
+  .notice .conf-meta{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.9;
+    color:var(--ink-soft);margin:0;
+  }
+  .notice .conf-meta span{color:var(--ink-faint)}
+  .notice p.conf-body{margin:16px 0 0;font-size:15px;color:var(--ink-soft);max-width:56ch}
+  .notice .go{color:var(--gold)}
+  @media (max-width:640px){ .notice{padding:22px 22px 20px 26px} }
 </style>
 <script type="application/ld+json">
 {
@@ -359,6 +389,23 @@
 </header>
 
 <main class="wrap">
+
+
+  <section class="notice" aria-labelledby="conf-h">
+    <p class="kicker">Hosted here for delegates</p>
+    <h2 id="conf-h">FORENSIC MEDICON 2027</h2>
+    <p class="conf-sub">48th Annual Conference of the Indian Academy of Forensic Medicine</p>
+    <p class="conf-meta">
+      2&ndash;6 February 2027<br>
+      Swami Rama Himalayan University, Jolly Grant, Dehradun<br>
+      <span>Theme &middot; Translational Forensics</span>
+    </p>
+    <p class="conf-body">
+      The accommodation and travel desk for delegates &mdash; hotels, homestays and guest houses
+      near the venue, shuttle and station transfers, and the form to register what you need.
+    </p>
+    <a class="go" href="/medicon2027/">Open the travel desk &rarr;</a>
+  </section>
 
   <section class="register" aria-labelledby="reg-h">
     <div class="sec-head">
