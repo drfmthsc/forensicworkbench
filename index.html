@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forensic Medicine Workbench · Medico-legal practice, step by step</title>
-<meta name="description" content="Forensic Medicine Workbench — medico-legal practice, step by step. Reference guides and interactive drills for the examining doctor, aligned with BNS, BNSS and BSA, 2023. Dr Harvinder Singh Chhabra.">
+<meta name="description" content="Forensic Medicine Workbench — medico-legal practice, step by step. Reference guides and interactive drills for the examining doctor, aligned with BNS, BNSS and BSA, 2023. Hosting the FORENSIC MEDICON 2027 conference links, accommodation and travel desk. Dr Harvinder Singh Chhabra.">
 <meta name="author" content="Dr Harvinder Singh Chhabra">
 <meta name="copyright" content="© 2026 Dr Harvinder Singh Chhabra">
 <meta name="license" content="https://creativecommons.org/licenses/by-nc-nd/4.0/">
@@ -262,6 +262,24 @@
   }
   .notice .conf-meta span{color:var(--ink-faint)}
   .notice p.conf-body{margin:16px 0 0;font-size:15px;color:var(--ink-soft);max-width:56ch}
+  .notice .conf-facts{
+    list-style:none;margin:18px 0 0;padding:0;max-width:56ch;
+    font-size:14px;line-height:1.5;color:var(--ink-soft);
+  }
+  .notice .conf-facts li{
+    padding:6px 0;border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:64px 1fr;gap:12px;
+  }
+  .notice .conf-facts li:last-child{border-bottom:none}
+  .notice .conf-facts b{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
+    padding-top:3px;
+  }
+  @media (max-width:640px){
+    .notice .conf-facts li{grid-template-columns:1fr;gap:1px}
+    .notice .conf-facts b{padding-top:0}
+  }
   .notice .go{color:var(--gold)}
   .notice .conf-actions{
     display:grid;grid-template-columns:1fr 1fr;gap:14px;
@@ -329,6 +347,33 @@
       },
       "datePublished": "2026-07-29",
       "dateModified": "2026-08-05"
+    },
+    {
+      "@type": "Event",
+      "@id": "https://forensicworkbench.com/#medicon2027",
+      "name": "FORENSIC MEDICON 2027",
+      "alternateName": "48th Annual Conference of the Indian Academy of Forensic Medicine",
+      "startDate": "2027-02-02",
+      "endDate": "2027-02-06",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "description": "The 48th Annual Conference of the Indian Academy of Forensic Medicine, on the theme Translational Forensics.",
+      "location": {
+        "@type": "Place",
+        "name": "Swami Rama Himalayan University",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jolly Grant, Dehradun",
+          "addressRegion": "Uttarakhand",
+          "addressCountry": "IN"
+        }
+      },
+      "url": "https://forms.srhu.edu.in/forensic-medicon-2027/",
+      "subjectOf": {
+        "@type": "WebPage",
+        "url": "https://forensicworkbench.com/medicon2027/",
+        "name": "FORENSIC MEDICON 2027 — Accommodation & Travel"
+      }
     },
     {
       "@type": "CollectionPage",
@@ -428,9 +473,17 @@
       Swami Rama Himalayan University, Jolly Grant, Dehradun<br>
       <span>Theme &middot; Translational Forensics</span>
     </p>
+    <ul class="conf-facts">
+      <li><b>Host</b> Indian Academy of Forensic Medicine &middot; 48th annual conference</li>
+      <li><b>Dates</b> 2&ndash;6 February 2027</li>
+      <li><b>Venue</b> Swami Rama Himalayan University, Jolly Grant, Dehradun</li>
+      <li><b>Theme</b> Translational Forensics</li>
+      <li><b>Rail</b> Haridwar Junction &middot; Doiwala &middot; conference buses from both</li>
+      <li><b>Air</b> Jolly Grant Airport, beside the campus &middot; shuttle on arrival days</li>
+    </ul>
     <p class="conf-body">
-      The accommodation and travel desk for delegates &mdash; hotels, homestays and guest houses
-      near the venue, shuttle and station transfers, and the form to register what you need.
+      Registration and programme &mdash; official site. Accommodation, conference rates and
+      transfers &mdash; travel desk below.
     </p>
     <div class="conf-actions">
       <a class="cbtn cbtn-primary" href="https://forms.srhu.edu.in/forensic-medicon-2027/" rel="noopener">
@@ -438,8 +491,8 @@
         <span class="cbtn-sub">Registration &middot; Abstracts &middot; Programme</span>
       </a>
       <a class="cbtn cbtn-second" href="/medicon2027/">
-        <span class="cbtn-lab">Accommodation &amp; travel desk &rarr;</span>
-        <span class="cbtn-sub">Hotels &middot; Shuttles &middot; Transfers</span>
+        <span class="cbtn-lab">MEDICON 2027 conference links &rarr;</span>
+        <span class="cbtn-sub">Accommodation &middot; Hotels &middot; Shuttles &middot; Transfers</span>
       </a>
     </div>
   </section>
