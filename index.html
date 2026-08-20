@@ -263,7 +263,35 @@
   .notice .conf-meta span{color:var(--ink-faint)}
   .notice p.conf-body{margin:16px 0 0;font-size:15px;color:var(--ink-soft);max-width:56ch}
   .notice .go{color:var(--gold)}
-  @media (max-width:640px){ .notice{padding:22px 22px 20px 26px} }
+  .notice .conf-actions{
+    display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    margin-top:24px;max-width:60ch;
+  }
+  .notice .cbtn{
+    display:flex;flex-direction:column;gap:4px;padding:15px 18px;
+    border-radius:3px;text-decoration:none;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .notice .cbtn:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(34,56,61,.17)}
+  .notice .cbtn-lab{
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    font-size:14.5px;font-weight:600;line-height:1.3;
+  }
+  .notice .cbtn-sub{
+    font-family:"IBM Plex Mono",monospace;font-size:10px;
+    letter-spacing:.11em;text-transform:uppercase;line-height:1.5;
+  }
+  .notice .cbtn-primary{background:var(--slate-deep);color:#FFFFFF}
+  .notice .cbtn-primary .cbtn-sub{color:#C3D2D0}
+  .notice .cbtn-second{
+    background:var(--card);color:var(--slate-deep);
+    border:1px solid var(--line-strong);
+  }
+  .notice .cbtn-second .cbtn-sub{color:var(--ink-faint)}
+  @media (max-width:640px){
+    .notice{padding:22px 22px 20px 26px}
+    .notice .conf-actions{grid-template-columns:1fr;gap:11px}
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -404,7 +432,16 @@
       The accommodation and travel desk for delegates &mdash; hotels, homestays and guest houses
       near the venue, shuttle and station transfers, and the form to register what you need.
     </p>
-    <a class="go" href="/medicon2027/">Open the travel desk &rarr;</a>
+    <div class="conf-actions">
+      <a class="cbtn cbtn-primary" href="https://forms.srhu.edu.in/forensic-medicon-2027/" rel="noopener">
+        <span class="cbtn-lab">Official conference site &rarr;</span>
+        <span class="cbtn-sub">Registration &middot; Abstracts &middot; Programme</span>
+      </a>
+      <a class="cbtn cbtn-second" href="/medicon2027/">
+        <span class="cbtn-lab">Accommodation &amp; travel desk &rarr;</span>
+        <span class="cbtn-sub">Hotels &middot; Shuttles &middot; Transfers</span>
+      </a>
+    </div>
   </section>
 
   <section class="register" aria-labelledby="reg-h">
