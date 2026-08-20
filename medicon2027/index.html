@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Accommodation Interest — FORENSIC MEDICON 2027</title>
 <meta name="description" content="Tell us what accommodation you need for FORENSIC MEDICON 2027, 2–6 February 2027, Swami Rama Himalayan University, Dehradun. Non-binding, no payment.">
+<link rel="canonical" href="https://forensicworkbench.com/medicon2027/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Forensic Medicine Workbench">
+<meta property="og:title" content="Accommodation &amp; Travel Desk — FORENSIC MEDICON 2027">
+<meta property="og:description" content="Register what accommodation you need for FORENSIC MEDICON 2027, 2–6 February 2027, Swami Rama Himalayan University, Dehradun. Non-binding, no payment.">
+<meta property="og:url" content="https://forensicworkbench.com/medicon2027/">
+<meta name="twitter:card" content="summary">
 <style>
 :root{
   --ink:#111c28; --ink2:#2c3d4f; --slate:#5a6b7d; --mute:#7e8b98;
@@ -99,6 +106,27 @@ footer a{color:var(--blue)}
   <p><b>This is not a booking, and there is nothing to pay.</b> We are collecting numbers so we can negotiate conference rates with hotels, homestays and guest houses near the venue.</p>
   <p>Once rates are agreed, we will email you the confirmed list and you book directly with the property. Takes about two minutes.</p>
   <p style="font-size:13.5px;color:var(--slate)">Run by the Organising Committee. Questions: <b>2027forensicmedicon@gmail.com</b></p>
+  <p style="font-size:13.5px;color:var(--slate)">Registration, abstracts and the scientific programme are handled separately &mdash;
+    <a href="https://forms.srhu.edu.in/forensic-medicon-2027/" rel="noopener">official conference site</a>.</p>
+</div>
+
+<div class="note">
+  <h4>What happens to your details</h4>
+  <p><b>Who holds this.</b> The Organising Committee, FORENSIC MEDICON 2027.
+     Contact: <b>Dr Harvinder Singh Chhabra</b> &mdash; 2027forensicmedicon@gmail.com</p>
+  <p><b>What we collect.</b> Your name, mobile, email, institution, city and state,
+     and the accommodation and travel preferences you enter below.</p>
+  <p><b>Why.</b> Solely to estimate delegate numbers, negotiate conference rates with
+     properties near the venue, arrange shuttles, and email you the confirmed list.</p>
+  <p><b>Who sees it.</b> Only the Organising Committee. <b>We do not pass your details
+     to hotels</b> &mdash; you contact the property yourself. If you ask us to match you
+     with a room-mate, we will share your name, city and contact details with that one
+     delegate so you can arrange it between yourselves. Entries are held in Google
+     Sheets; Google processes the data as our service provider.</p>
+  <p><b>How long.</b> Deleted by <b>31 March 2027</b>. Not used for any other conference,
+     mailing list or purpose.</p>
+  <p><b>Changing or removing your entry.</b> Use your reference code to edit it here at
+     any time, or email us to have it deleted.</p>
 </div>
 
 <div id="msg" class="warn" style="display:none"></div>
@@ -257,10 +285,11 @@ footer a{color:var(--blue)}
     <label class="f"><span class="lab">Notes for the organising committee</span>
       <textarea name="notes"></textarea></label>
 
-    <label class="tick"><input type="checkbox" name="consent" required>
-      <span>I agree that the Organising Committee may use these details to arrange accommodation and
-      transport, and may contact me by email, phone or WhatsApp about this conference. Data will be
-      deleted within three months after the conference. <span class="req">*</span></span></label>
+    <label class="tick"><input type="checkbox" name="consent" id="consent" required>
+      <span>I have read <b>What happens to your details</b> above. I agree that the Organising
+      Committee may use these details to arrange accommodation and transport, and may contact me
+      by email, phone or WhatsApp about this conference. My entry will be deleted by
+      <b>31 March 2027</b>. <span class="req">*</span></span></label>
   </fieldset>
 
   <button type="submit" class="go" id="submit">Submit interest</button>
@@ -274,7 +303,7 @@ footer a{color:var(--blue)}
     <p style="margin:0 0 4px;font-size:14.5px;color:var(--ink2)">
       Enter your reference code — or, if you have lost it, your mobile number and email.</p>
     <label class="f"><span class="lab">Reference code</span>
-      <input type="text" id="rcRef" placeholder="FM27-XXXXXX" autocomplete="off"></label>
+      <input type="text" id="rcRef" placeholder="FM27-XXXXXXXX" autocomplete="off"></label>
     <p style="text-align:center;font-family:var(--ui);font-size:12px;color:var(--mute);margin:14px 0 0">— or —</p>
     <div class="two">
       <label class="f"><span class="lab">Mobile number</span>
@@ -361,11 +390,17 @@ $('#arrival_point').addEventListener('change', e => {
   if (t) $('#railText').innerHTML = t;
 });
 
-/* Reference code generated here, so it works even if the response is opaque */
+/* Reference code generated here, so it works even if the response is opaque.
+   The code is a bearer credential — anyone holding it can read the full entry —
+   so it is drawn from crypto.getRandomValues, not Math.random. The alphabet
+   omits O/0 and I/1 so codes can be read out over the phone without ambiguity. */
 function makeRef(){
-  const a = Date.now().toString(36).slice(-4).toUpperCase();
-  const b = Math.random().toString(36).slice(2,5).toUpperCase();
-  return 'FM27-' + a + b;
+  const A = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // 32 chars, no confusables
+  const r = new Uint8Array(8);
+  crypto.getRandomValues(r);
+  let s = '';
+  for (const b of r) s += A[b & 31];
+  return 'FM27-' + s;
 }
 
 function collect(){
@@ -374,7 +409,6 @@ function collect(){
   o.nights = fd.getAll('nights');
   o.consent = !!fd.get('consent');
   o.share_optin = (o.occupancy === 'twin-match') ? 'YES' : 'NO';
-  o.ua = navigator.userAgent.slice(0,120);
   return o;
 }
 
