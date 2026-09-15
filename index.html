@@ -15,302 +15,489 @@
 <meta property="og:image" content="https://forensicworkbench.com/seal-card.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://forensicworkbench.com/">
-<meta name="theme-color" content="#22383D">
+<meta name="theme-color" content="#0D1719">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Workbench">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2322383D'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-weight='bold' fill='%23fff' text-anchor='middle'%3E%C2%A7%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230D1719'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='54' font-weight='bold' fill='%23fff' text-anchor='middle'%3E%C2%A7%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#1A2A2E; --ink-soft:#48595D; --ink-faint:#7A8689;
-    --paper:#F0EDE6; --card:#FFFFFF;
-    --slate:#365158; --slate-deep:#22383D;
-    --clay:#9C5B3B; --seal:#7C2A2E; --moss:#4A6B52; --gold:#9A7524; --teal:#0E6B6B;
-    --line:#D8D2C6; --line-strong:#BEB6A6;
-    --shadow:0 1px 0 rgba(26,42,46,.03), 0 18px 40px -32px rgba(26,42,46,.55);
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;background:var(--paper);color:var(--ink);
-    font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.62;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:600;line-height:1.12;margin:0}
-  a{color:inherit}
-  .mono{font-family:"IBM Plex Mono",monospace}
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+/* ============================================================================
+   FORENSIC MEDICINE WORKBENCH — the register
+   Design concept: the measuring rule. In forensic practice nothing counts
+   unless there is a scale beside it, so the register is registered against one.
+   Ground is lab-bench grey-green, not cream. Spine colours are carried over
+   unchanged from the tool pages so the two halves of the site stay related.
+   ========================================================================= */
 
-  /* ---------- Top bar ---------- */
-  .topbar{background:var(--slate-deep);color:#DCE5E4}
-  .topbar .wrap{
-    display:flex;justify-content:space-between;align-items:center;gap:16px;
-    padding-top:9px;padding-bottom:9px;
-    font-family:"IBM Plex Mono",monospace;font-size:11px;
-    letter-spacing:.14em;text-transform:uppercase;
-  }
-  .topbar span:last-child{color:#9DB2B0;text-align:right}
-  .topbar a{color:inherit;text-decoration:none}
-  .topbar a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+:root{
+  /* ground */
+  --field:#0D1719;          /* the darkened reading room: hero and footer */
+  --field-2:#14252A;
+  --bench:#E9EEEC;          /* cool bench grey-green */
+  --bench-2:#DFE6E3;
+  --card:#FFFFFF;
+  --ink:#111D1F;
+  --ink-2:#3C4E50;
+  --muted:#65777A;
+  --rule:#C5D2CF;
+  --rule-2:#AEBEBB;
+  --lume:#9FC7BD;
 
-  /* ---------- Masthead ---------- */
-  .masthead{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-  .masthead .wrap{padding-top:62px;padding-bottom:52px;position:relative;z-index:2}
-  .masthead h1{font-size:clamp(34px,5.6vw,56px);letter-spacing:-.02em}
-  .subtitle{
-    font-family:"Newsreader",Georgia,serif;font-style:italic;font-weight:400;
-    font-size:clamp(20px,2.7vw,27px);line-height:1.3;letter-spacing:-.005em;
-    color:var(--clay);margin:13px 0 0;
-  }
-  .lede{
-    margin:26px 0 0;max-width:54ch;font-size:17.5px;color:var(--ink-soft);
-  }
-  .rule{
-    height:2px;background:var(--slate-deep);margin:34px 0 16px;max-width:100%;
-    transform-origin:left center;
-  }
-  .credit{margin:0;font-size:15px}
-  .credit strong{font-weight:600}
-  .credit .role{color:var(--ink-soft)}
-  .credit .role a{color:var(--clay);text-underline-offset:3px}
-  .refline{
-    margin:14px 0 0;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
-    line-height:1.75;color:var(--ink-faint);max-width:62ch;
-  }
+  /* spines — unchanged from the tool pages */
+  --clay:#9C5B3B; --teal:#0E6B6B; --moss:#4A6B52;
+  --seal:#7C2A2E; --gold:#9A7524; --slate:#365158;
 
-  /* Signature: the file stamp */
-  .mast-grid{
-    display:grid;grid-template-columns:minmax(0,1fr) clamp(146px,19vw,208px);
-    gap:clamp(22px,4vw,40px);align-items:center;
-  }
-  .seal{
-    width:100%;height:auto;justify-self:end;opacity:.46;
-    transform:rotate(-4deg);pointer-events:none;user-select:none;
-  }
+  --display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 
-  /* ---------- Register ---------- */
-  .register{padding:56px 0 8px}
-  .sec-head{
-    display:flex;align-items:baseline;justify-content:space-between;gap:20px;
-    padding-bottom:12px;border-bottom:1px solid var(--line-strong);margin-bottom:4px;
-  }
-  .sec-head h2{
-    font-size:13px;font-family:"IBM Plex Mono",monospace;font-weight:600;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--slate-deep);
-  }
-  .count{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.06em;white-space:nowrap}
+  --lift:0 1px 0 rgba(17,29,31,.04), 0 24px 48px -34px rgba(17,29,31,.5);
+  --lift-hi:0 1px 0 rgba(17,29,31,.04), 0 34px 60px -32px rgba(17,29,31,.58);
+  --ease:cubic-bezier(.22,.68,.28,1);
+}
 
-  .entry{
-    position:relative;background:var(--card);border:1px solid var(--line);
-    border-radius:3px;margin-top:20px;box-shadow:var(--shadow);
-    display:grid;grid-template-columns:172px 1fr;
-    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-  }
-  .entry::before{
-    content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
-    background:var(--accent);border-radius:3px 0 0 3px;
-    transition:width .18s ease;
-  }
-  .entry:hover{transform:translateY(-2px);border-color:var(--line-strong);box-shadow:0 1px 0 rgba(26,42,46,.03), 0 26px 46px -30px rgba(26,42,46,.6)}
-  .entry:hover::before{width:9px}
-  .entry:focus-within{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:3px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bench);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--lume);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 28px}
 
-  .docket{
-    padding:26px 20px 26px 30px;border-right:1px dashed var(--line);
-    display:flex;flex-direction:column;gap:14px;
-  }
-  .docket .k{
-    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--ink-faint);display:block;margin-bottom:3px;
-  }
-  .docket .ref{font-family:"IBM Plex Mono",monospace;font-size:19px;font-weight:600;color:var(--slate-deep);letter-spacing:-.01em}
-  .docket .type{font-size:13.5px;font-weight:600;color:var(--accent)}
-  .docket .scope{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+/* ---------------------------------------------------------------- hero --- */
+.hero{
+  position:relative;background:var(--field);color:#E4EDEA;overflow:hidden;
+  padding:0 0 0;
+}
+.hero::after{           /* a slow wash of light across the dark field */
+  content:"";position:absolute;inset:-40% -20% auto -20%;height:150%;
+  background:radial-gradient(60% 55% at 22% 12%, rgba(159,199,189,.16), transparent 70%);
+  pointer-events:none;
+}
+.hero .wrap{position:relative;z-index:2;padding-top:26px;padding-bottom:46px}
 
-  .body{padding:26px 30px 26px 28px}
-  .body h3{font-size:25px;letter-spacing:-.012em;margin-bottom:10px}
-  .body h3 a{text-decoration:none}
-  .body h3 a::after{content:"";position:absolute;inset:0;border-radius:3px}
-  .body p{margin:0;color:var(--ink-soft);font-size:15.5px;max-width:58ch}
-  .chips{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0;padding:0}
-  .chips li{
-    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;
-    color:var(--ink-soft);background:#F6F4EF;border:1px solid var(--line);
-    border-radius:2px;padding:3px 8px;
-  }
-  .go{
-    display:inline-flex;align-items:center;gap:8px;margin-top:20px;
-    font-size:14px;font-weight:600;color:var(--accent);letter-spacing:.005em;
-  }
-  .go svg{transition:transform .18s ease}
-  .entry:hover .go svg{transform:translateX(4px)}
+.hero-top{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.15em;
+  color:#7F9A95;padding-bottom:54px;
+}
+.hero-top a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(159,199,189,.3)}
+.hero-top a:hover{color:#CFE3DE;border-bottom-color:var(--lume)}
 
-  /* Placeholder slot */
-  .slot{
-    margin-top:20px;border:1px dashed var(--line-strong);border-radius:3px;
-    padding:24px 30px;display:grid;grid-template-columns:172px 1fr;gap:0;
-    color:var(--ink-faint);background:transparent;
-  }
-  .slot .ref{font-family:"IBM Plex Mono",monospace;font-size:19px;font-weight:600;color:var(--line-strong)}
-  .slot p{margin:0;font-size:14.5px;max-width:52ch}
-  .slot strong{color:var(--ink-soft);font-weight:600;display:block;font-size:15px;margin-bottom:4px;font-family:"Newsreader",Georgia,serif}
+.hero-grid{
+  display:grid;grid-template-columns:minmax(0,1fr) clamp(120px,16vw,182px);
+  gap:clamp(20px,4vw,48px);align-items:start;
+}
+.hero h1{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(46px,9.2vw,104px);line-height:.94;letter-spacing:-.022em;
+  margin:0;color:#F2F7F5;
+}
+/* each word masked, so the title wipes up rather than fading in */
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em}
+.hero h1 .w > i{display:inline-block;font-style:normal}
+.hero .said{
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:clamp(21px,3.2vw,32px);line-height:1.22;color:var(--lume);
+  margin:20px 0 0;letter-spacing:-.005em;
+}
+.hero .lede{
+  margin:26px 0 0;max-width:50ch;font-size:17px;line-height:1.66;color:#B6C9C5;
+}
+.hero .by{
+  margin:30px 0 0;font-family:var(--mono);font-size:12px;line-height:1.9;color:#7F9A95;
+}
+.hero .by strong{color:#DCE8E5;font-weight:500;letter-spacing:.02em}
+.hero .by a{color:var(--lume);text-decoration:none;border-bottom:1px solid rgba(159,199,189,.35)}
+.hero .by a:hover{border-bottom-color:var(--lume)}
 
-  /* ---------- About ---------- */
-  .about{padding:64px 0 0}
-  .about h2{
-    font-size:13px;font-family:"IBM Plex Mono",monospace;font-weight:600;
-    letter-spacing:.2em;text-transform:uppercase;color:var(--slate-deep);
-    padding-bottom:12px;border-bottom:1px solid var(--line-strong);margin-bottom:26px;
-  }
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:36px}
-  .cols h3{font-size:19px;margin-bottom:8px}
-  .cols p{margin:0;font-size:15px;color:var(--ink-soft)}
-  .notice{
-    margin-top:36px;border-left:3px solid var(--seal);background:#FAF6F2;
-    border-radius:0 3px 3px 0;padding:18px 22px;
-  }
-  .notice p{margin:0;font-size:14.5px;color:var(--ink-soft)}
-  .notice p + p{margin-top:9px}
-  .notice strong{color:var(--seal);font-weight:600}
-  .licence-line{
-    margin:22px 0 0;font-size:14.5px;color:var(--ink-soft);
-    display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;
-  }
-  .licence-line a{color:var(--clay);text-underline-offset:3px}
-  .cite-link{font-weight:600;text-decoration:none;white-space:nowrap}
-  .cite-link:hover{text-decoration:underline}
+.stamp{
+  width:100%;height:auto;justify-self:end;margin-top:6px;
+  opacity:.62;
+  transform:rotate(-5deg);pointer-events:none;user-select:none;
+}
 
-  /* ---------- Footer ---------- */
-  footer{margin-top:72px;border-top:1px solid var(--line);background:#EAE6DD}
-  footer .wrap{
-    padding-top:26px;padding-bottom:46px;
-    display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
-    font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);
-    letter-spacing:.04em;
-  }
-  footer a{color:var(--ink-soft);text-underline-offset:3px}
-  footer a:hover{color:var(--slate-deep)}
+/* the measuring rule that closes the hero */
+.scale{display:block;width:100%;height:46px;margin-top:52px}
+.scale line{stroke:#31494B;stroke-width:1}
+.scale line.major{stroke:#5E7D7A}
+.scale .base{stroke:#5E7D7A;stroke-width:1.5}
 
-  a:focus-visible{outline:2px solid var(--slate-deep);outline-offset:3px;border-radius:2px}
+/* --------------------------------------------------------- conference --- */
+.conf{
+  position:relative;background:var(--card);border:1px solid var(--rule);
+  border-radius:4px;box-shadow:var(--lift);
+  margin:-26px 0 0;padding:30px 34px 30px 38px;overflow:hidden;z-index:3;
+}
+.conf::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--gold);
+  transition:width .22s var(--ease);
+}
+.conf:hover::before{width:11px}
+.conf .tag{
+  font-family:var(--mono);font-size:10px;letter-spacing:.17em;color:var(--gold);
+  margin:0 0 12px;
+}
+.conf h2{
+  font-family:var(--display);font-weight:400;font-size:clamp(28px,4.4vw,42px);
+  line-height:1.04;letter-spacing:-.018em;margin:0 0 6px;color:var(--ink);
+}
+.conf .sub{
+  font-family:var(--display);font-style:italic;font-size:18px;color:var(--muted);
+  margin:0 0 18px;
+}
+.conf-facts{
+  list-style:none;margin:18px 0 0;padding:0;max-width:60ch;
+  font-size:14.5px;line-height:1.5;color:var(--ink-2);
+}
+.conf-facts li{
+  padding:8px 0;border-bottom:1px solid var(--rule);
+  display:grid;grid-template-columns:62px 1fr;gap:14px;
+}
+.conf-facts li:last-child{border-bottom:none}
+.conf-facts b{
+  font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.13em;
+  color:var(--muted);padding-top:3px;
+}
+.conf .body{margin:18px 0 0;font-size:15px;color:var(--ink-2);max-width:58ch}
+.conf-actions{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;max-width:62ch}
+.cbtn{
+  display:flex;flex-direction:column;gap:5px;padding:16px 19px;border-radius:3px;
+  text-decoration:none;transition:transform .2s var(--ease),box-shadow .2s var(--ease);
+}
+.cbtn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(13,23,25,.18)}
+.cbtn .lab{font-size:14.5px;font-weight:600;line-height:1.3}
+.cbtn .s{font-family:var(--mono);font-size:10px;letter-spacing:.11em;line-height:1.5}
+.cbtn-a{background:var(--field);color:#fff}
+.cbtn-a .s{color:#9FB6B2}
+.cbtn-b{background:var(--card);color:var(--field);border:1px solid var(--rule-2)}
+.cbtn-b .s{color:var(--muted)}
 
-  /* ---------- Motion ---------- */
-  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-  @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-  .masthead .mast-text > *, .masthead .seal{animation:rise .62s cubic-bezier(.2,.7,.3,1) both}
-  .masthead .seal{animation-delay:.1s}
-  .masthead h1{animation-delay:.04s}
-  .masthead .subtitle{animation-delay:.13s}
-  .masthead .lede{animation-delay:.21s}
-  .masthead .rule{animation:draw .8s cubic-bezier(.2,.7,.3,1) .3s both}
-  .masthead .credit{animation-delay:.4s}
-  .masthead .refline{animation-delay:.46s}
-  .entry, .slot{animation:rise .55s cubic-bezier(.2,.7,.3,1) both}
+/* ----------------------------------------------------------- register --- */
+.register{padding:76px 0 0}
+.reg-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:20px;
+  border-bottom:1px solid var(--rule-2);padding-bottom:12px;
+}
+.reg-head h2{
+  font-family:var(--display);font-weight:400;font-size:30px;letter-spacing:-.015em;
+  margin:0;color:var(--ink);
+}
+.reg-head .count{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.08em;white-space:nowrap}
 
-  @media (prefers-reduced-motion: reduce){
-    *,*::before,*::after{animation:none !important;transition:none !important}
-    html{scroll-behavior:auto}
-  }
+/* the rule the entries are registered against */
+.rail{position:relative;padding-left:76px;margin-top:8px}
+.rail::before{
+  content:"";position:absolute;left:31px;top:0;bottom:64px;width:1px;
+  background:linear-gradient(180deg,var(--rule-2),var(--rule) 70%,transparent);
+  transform-origin:top;
+}
 
-  /* ---------- Responsive ---------- */
-  @media (max-width:720px){
-    .mast-grid{grid-template-columns:1fr;gap:0}
-    .seal{width:92px;justify-self:start;order:-1;margin-bottom:24px;opacity:.72;transform:rotate(-3deg)}
-    .masthead .wrap{padding-top:44px;padding-bottom:40px}
-    .entry,.slot{grid-template-columns:1fr}
-    .docket{
-      border-right:none;border-bottom:1px dashed var(--line);
-      flex-direction:row;flex-wrap:wrap;gap:20px;padding:20px 22px 18px 26px;
-    }
-    .body{padding:22px 22px 24px 26px}
-    .body h3{font-size:22px}
-    .slot{padding:22px 26px}
-    .slot .ref{margin-bottom:10px}
-    .cols{grid-template-columns:1fr;gap:26px}
-  }
-  @media print{
-    .seal{display:none}
-    body{background:#fff}
-    .entry{box-shadow:none;break-inside:avoid}
-  }
+.entry{
+  position:relative;background:var(--card);border:1px solid var(--rule);
+  border-radius:4px;margin-top:22px;box-shadow:var(--lift);
+  transition:transform .24s var(--ease),box-shadow .24s var(--ease),border-color .24s var(--ease);
+}
+.entry::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:6px;
+  background:var(--accent);border-radius:4px 0 0 4px;transition:width .22s var(--ease);
+}
+.entry:hover{transform:translateY(-3px);box-shadow:var(--lift-hi);border-color:var(--rule-2)}
+.entry:hover::before{width:11px}
+.entry:focus-within{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:3px}
 
-  /* ---- Conference notice (time-bound; delete after Feb 2027) ---- */
-  .notice{
-    position:relative;margin:0 0 8px;padding:26px 30px 24px 34px;
-    background:var(--card);border:1px solid var(--line);border-radius:3px;
-    box-shadow:var(--shadow);
-    animation:rise .55s cubic-bezier(.2,.7,.3,1) both;
+/* the tick and catalogue number out on the rule */
+.entry .tick{
+  position:absolute;left:-76px;top:26px;width:76px;
+  display:flex;align-items:center;gap:0;pointer-events:none;
+}
+.entry .tick .num{
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.04em;
+  color:var(--muted);width:45px;text-align:left;
+}
+.entry .tick .dash{flex:1;height:1px;background:var(--rule-2)}
+.entry:hover .tick .num{color:var(--accent)}
+
+.entry .in{padding:26px 32px 28px 30px}
+.entry .meta{
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:12px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.09em;color:var(--muted);
+}
+.entry .meta .kind{color:var(--accent);font-weight:600}
+.entry .meta .dot{color:var(--rule-2)}
+.entry h3{
+  font-family:var(--display);font-weight:400;font-size:clamp(24px,3.2vw,31px);
+  line-height:1.1;letter-spacing:-.016em;margin:0 0 10px;color:var(--ink);
+}
+.entry h3 a{text-decoration:none}
+.entry h3 a::after{content:"";position:absolute;inset:0;border-radius:4px}
+.entry p{margin:0;color:var(--ink-2);font-size:15.5px;max-width:62ch}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0;padding:0}
+.chips li{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;color:var(--muted);
+  background:var(--bench);border:1px solid var(--rule);border-radius:2px;padding:4px 9px;
+}
+.go{
+  display:inline-flex;align-items:center;gap:9px;margin-top:22px;
+  font-size:14.5px;font-weight:600;color:var(--accent);
+}
+.go svg{transition:transform .22s var(--ease)}
+.entry:hover .go svg{transform:translateX(5px)}
+
+/* next slot */
+.slot{
+  position:relative;margin-top:22px;border:1px dashed var(--rule-2);border-radius:4px;
+  padding:26px 30px;color:var(--muted);
+}
+.slot .tick{position:absolute;left:-76px;top:26px;width:76px;display:flex;align-items:center}
+.slot .tick .num{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--rule-2);width:45px}
+.slot .tick .dash{flex:1;height:1px;background:var(--rule)}
+.slot strong{
+  display:block;font-family:var(--display);font-weight:400;font-size:20px;
+  color:var(--ink-2);margin-bottom:4px;
+}
+.slot p{margin:0;font-size:14.5px;max-width:54ch}
+
+/* -------------------------------------------------------------- about --- */
+.about{padding:80px 0 0}
+.about h2{
+  font-family:var(--display);font-weight:400;font-size:30px;letter-spacing:-.015em;
+  margin:0 0 26px;padding-bottom:12px;border-bottom:1px solid var(--rule-2);color:var(--ink);
+}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:38px}
+.cols h3{font-family:var(--display);font-weight:400;font-size:21px;margin:0 0 8px;color:var(--ink)}
+.cols p{margin:0;font-size:15px;color:var(--ink-2)}
+.caution{
+  margin-top:38px;border-left:3px solid var(--seal);background:var(--card);
+  border-radius:0 4px 4px 0;padding:20px 24px;border-top:1px solid var(--rule);
+  border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+}
+.caution p{margin:0;font-size:14.5px;color:var(--ink-2)}
+.caution p + p{margin-top:10px}
+.caution strong{color:var(--seal);font-weight:600}
+.licence-line{
+  margin:24px 0 0;font-size:14.5px;color:var(--ink-2);
+  display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;
+}
+.licence-line a{color:var(--clay);text-underline-offset:3px}
+.cite-link{font-weight:600;text-decoration:none;white-space:nowrap}
+.cite-link:hover{text-decoration:underline}
+
+/* ------------------------------------------------------------- footer --- */
+footer{margin-top:88px;background:var(--field);color:#8AA4A0}
+footer .wrap{
+  padding:34px 28px 52px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;
+}
+footer a{color:#B6C9C5;text-underline-offset:3px}
+footer a:hover{color:#fff}
+
+/* ======================================================= the one sequence */
+/* On load: the seal stamps, the title wipes up word by word, the rule draws
+   and its ticks count out. Below the fold, entries unroll off the rule and
+   develop from grey to colour as they come into view. Nothing else moves. */
+
+@keyframes stamp{
+  0%  {opacity:0;transform:rotate(-16deg) scale(1.5)}
+  60% {opacity:.62;transform:rotate(-4deg) scale(.95)}
+  100%{opacity:.5;transform:rotate(-5deg) scale(1)}
+}
+@keyframes wipeup{to{transform:translateY(0)}}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tickin{from{opacity:0}to{opacity:1}}
+@keyframes railgrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes develop{
+  from{opacity:0;clip-path:inset(0 100% 0 0);filter:saturate(0) contrast(.82)}
+  to  {opacity:1;clip-path:inset(0 0 0 0);filter:none}
+}
+
+.js .hero h1 .w > i{transform:translateY(102%);animation:wipeup .82s var(--ease) both}
+.js .hero h1 .w:nth-child(1) > i{animation-delay:.18s}
+.js .hero h1 .w:nth-child(2) > i{animation-delay:.27s}
+.js .hero h1 .w:nth-child(3) > i{animation-delay:.36s}
+.js .stamp{animation:stamp .95s var(--ease) .34s both}
+.js .hero .said{animation:fadein .7s var(--ease) .5s both}
+.js .hero .lede{animation:fadein .7s var(--ease) .6s both}
+.js .hero .by{animation:fadein .7s var(--ease) .7s both}
+.js .hero-top{animation:fadein .6s var(--ease) .06s both}
+.js .scale line{animation:tickin .5s linear both}
+.js .conf{animation:fadein .8s var(--ease) .92s both}
+.js .rail::before{animation:railgrow 1.1s var(--ease) both;animation-play-state:paused}
+.js .rail.on::before{animation-play-state:running}
+.js .reveal{opacity:0}
+.js .reveal.on{animation:develop .78s var(--ease) both}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .js .hero h1 .w > i{transform:none}
+  .js .reveal,.js .reveal.on{opacity:1;clip-path:none;filter:none}
+  .js .rail::before{transform:none}
+}
+
+/* --------------------------------------------------------- responsive --- */
+@media (max-width:860px){
+  .conf-actions{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr;gap:26px}
+}
+@media (max-width:720px){
+  .wrap{padding:0 20px}
+  .hero-grid{grid-template-columns:1fr}
+  .stamp{width:78px;justify-self:start;order:-1;margin:0 0 22px;opacity:.6}
+  .hero-top{padding-bottom:34px;font-size:10px;letter-spacing:.1em}
+  .hero .lede{font-size:16px}
+  .scale{height:34px;margin-top:38px}
+  .conf{padding:24px 22px 24px 26px;margin-top:-20px}
+  .conf-facts li{grid-template-columns:1fr;gap:2px}
+  .conf-facts b{padding-top:0}
+  .register{padding-top:56px}
+  .rail{padding-left:0}
+  .rail::before{display:none}
+  .entry .tick,.slot .tick{
+    position:static;width:auto;padding:16px 22px 0 28px;
   }
-  .notice::before{
-    content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
-    background:var(--gold);border-radius:3px 0 0 3px;transition:width .18s ease;
-  }
-  .notice:hover::before{width:9px}
-  .notice .kicker{
-    font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--gold);margin:0 0 10px;
-  }
-  .notice h2{font-size:clamp(21px,3vw,27px);color:var(--slate-deep);margin:0 0 4px}
-  .notice .conf-sub{
-    font-family:"Newsreader",Georgia,serif;font-style:italic;font-weight:400;
-    font-size:16px;color:var(--ink-soft);margin:0 0 14px;
-  }
-  .notice .conf-meta{
-    font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.9;
-    color:var(--ink-soft);margin:0;
-  }
-  .notice .conf-meta span{color:var(--ink-faint)}
-  .notice p.conf-body{margin:16px 0 0;font-size:15px;color:var(--ink-soft);max-width:56ch}
-  .notice .conf-facts{
-    list-style:none;margin:18px 0 0;padding:0;max-width:56ch;
-    font-size:14px;line-height:1.5;color:var(--ink-soft);
-  }
-  .notice .conf-facts li{
-    padding:6px 0;border-bottom:1px solid var(--line);
-    display:grid;grid-template-columns:64px 1fr;gap:12px;
-  }
-  .notice .conf-facts li:last-child{border-bottom:none}
-  .notice .conf-facts b{
-    font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);
-    padding-top:3px;
-  }
-  @media (max-width:640px){
-    .notice .conf-facts li{grid-template-columns:1fr;gap:1px}
-    .notice .conf-facts b{padding-top:0}
-  }
-  .notice .go{color:var(--gold)}
-  .notice .conf-actions{
-    display:grid;grid-template-columns:1fr 1fr;gap:14px;
-    margin-top:24px;max-width:60ch;
-  }
-  .notice .cbtn{
-    display:flex;flex-direction:column;gap:4px;padding:15px 18px;
-    border-radius:3px;text-decoration:none;
-    transition:transform .18s ease, box-shadow .18s ease;
-  }
-  .notice .cbtn:hover{transform:translateY(-2px);box-shadow:0 5px 16px rgba(34,56,61,.17)}
-  .notice .cbtn-lab{
-    font-family:"IBM Plex Sans",system-ui,sans-serif;
-    font-size:14.5px;font-weight:600;line-height:1.3;
-  }
-  .notice .cbtn-sub{
-    font-family:"IBM Plex Mono",monospace;font-size:10px;
-    letter-spacing:.11em;text-transform:uppercase;line-height:1.5;
-  }
-  .notice .cbtn-primary{background:var(--slate-deep);color:#FFFFFF}
-  .notice .cbtn-primary .cbtn-sub{color:#C3D2D0}
-  .notice .cbtn-second{
-    background:var(--card);color:var(--slate-deep);
-    border:1px solid var(--line-strong);
-  }
-  .notice .cbtn-second .cbtn-sub{color:var(--ink-faint)}
-  @media (max-width:640px){
-    .notice{padding:22px 22px 20px 26px}
-    .notice .conf-actions{grid-template-columns:1fr;gap:11px}
-  }
+  .entry .tick .num,.slot .tick .num{width:auto;font-size:11.5px}
+  .entry .tick .dash,.slot .tick .dash{margin-left:12px}
+  .entry .in{padding:12px 22px 24px 28px}
+  .slot{padding:0 22px 22px}
+  .slot .tick{padding:20px 0 12px 6px}
+  .about{padding-top:60px}
+}
+
+/* ============================================================== photo band */
+/* Four free-licence photographs from Pexels, hot-linked from their CDN so
+   nothing is added to the repo. They are duotoned in CSS so the band reads as
+   one considered strip rather than four stock pictures. To swap one, change
+   the id in the URL: https://images.pexels.com/photos/ID/pexels-photo-ID.jpeg
+   Pexels licence: free to use, no attribution required. Credited anyway. */
+.band{background:var(--field);padding:0 0 4px}
+.band-in{
+  max-width:1000px;margin:0 auto;padding:0 28px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+}
+.plate{
+  position:relative;display:block;aspect-ratio:4/3;overflow:hidden;
+  background:var(--field-2);border-radius:2px;
+}
+.plate img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(1) contrast(1.06) brightness(.78);
+  transform:scale(1.02);
+  transition:filter .5s var(--ease),transform .5s var(--ease);
+}
+.plate::after{           /* the petrol duotone that ties the four together */
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(13,23,25,.18),rgba(13,23,25,.82));
+  mix-blend-mode:multiply;transition:opacity .5s var(--ease);
+}
+.plate .cap{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;padding:12px 14px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:#C6DBD6;
+  transition:color .4s var(--ease);
+}
+.plate:hover img,.plate:focus-visible img{filter:grayscale(.15) contrast(1) brightness(.95);transform:scale(1)}
+.plate:hover::after,.plate:focus-visible::after{opacity:.45}
+.plate:hover .cap,.plate:focus-visible .cap{color:#fff}
+.band-note-wrap{max-width:1000px;margin:0 auto;padding:16px 28px 30px}
+.band-note{margin:0;max-width:72ch;font-size:14px;line-height:1.6;color:#8AA4A0}
+@media (max-width:720px){
+  .band-in{grid-template-columns:repeat(2,1fr);padding:0 20px}
+  .plate{aspect-ratio:3/2}
+  .plate .cap{font-size:9.5px;padding:9px 10px;letter-spacing:.1em}
+  .band-note-wrap{padding:14px 20px 24px}
+  .band-note{font-size:13.5px}
+}
+
+/* ============================================================== the guide */
+/* A hand lens that walks the reader through the register. Pure inline SVG:
+   no image files, no licence, a couple of kilobytes. Rename it freely. */
+.guide{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  display:none;align-items:flex-end;gap:10px;
+}
+.guide.on{display:flex}
+.lens-btn{
+  position:relative;width:82px;height:82px;padding:0;border:none;background:none;
+  cursor:pointer;flex:none;filter:drop-shadow(0 10px 22px rgba(13,23,25,.34));
+}
+.lens-btn svg{width:100%;height:100%;display:block;overflow:visible}
+.lens-btn:focus-visible{outline:2px solid var(--gold);outline-offset:6px;border-radius:50%}
+.lens-rim{fill:none;stroke:#A87F2B;stroke-width:7}
+.lens-glass{fill:#DCEBE7;stroke:#F2F8F6;stroke-width:1.5}
+.lens-handle{fill:#8A6722}
+.lens-eye{fill:#fff}
+.lens-pupil{fill:#16262A}
+.lens-shine{fill:#fff;opacity:.9}
+.lens-brow{fill:none;stroke:#16262A;stroke-width:2.6;stroke-linecap:round}
+.lens-lid{fill:#DCEBE7;transform:scaleY(0);transform-origin:center;transform-box:fill-box}
+
+.bubble{
+  position:relative;max-width:300px;background:var(--card);color:var(--ink);
+  border:1px solid var(--rule);border-radius:12px 12px 4px 12px;
+  box-shadow:var(--lift-hi);padding:16px 18px 14px;
+}
+.bubble::after{
+  content:"";position:absolute;right:-7px;bottom:20px;width:12px;height:12px;
+  background:var(--card);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  transform:rotate(-45deg);
+}
+.bubble[hidden]{display:none}
+.bubble .step{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.15em;color:var(--muted);
+  margin:0 0 7px;
+}
+.bubble p.say{margin:0;font-size:14.5px;line-height:1.55}
+.bubble .acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.bubble button{
+  font-family:var(--sans);font-size:13px;font-weight:600;padding:7px 13px;
+  border-radius:3px;cursor:pointer;border:1px solid var(--rule-2);
+  background:var(--card);color:var(--ink);
+  transition:background .18s var(--ease),color .18s var(--ease),border-color .18s var(--ease);
+}
+.bubble button:hover{border-color:var(--field);background:var(--bench)}
+.bubble button.primary{background:var(--field);color:#fff;border-color:var(--field)}
+.bubble button.primary:hover{background:#1B3338}
+.bubble .shut{
+  position:absolute;top:6px;right:8px;border:none;background:none;padding:4px 6px;
+  font-size:17px;line-height:1;color:var(--muted);cursor:pointer;font-weight:400;
+}
+.bubble .shut:hover{color:var(--ink);background:none}
+
+/* the entry the lens is pointing at */
+.entry.spot{border-color:var(--accent)}
+.entry.spot::before{width:13px}
+
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes arrive{from{opacity:0;transform:translateY(26px) scale(.82)}to{opacity:1;transform:none}}
+@keyframes blink{0%,94%,100%{transform:scaleY(0)}96%,98%{transform:scaleY(1)}}
+@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:none}}
+.js .guide.on{animation:arrive .7s var(--ease) both}
+.js .lens-btn{animation:bob 4.2s ease-in-out 1.2s infinite}
+.js .lens-lid{transform-origin:center;transform-box:fill-box;animation:blink 6.5s ease-in-out infinite}
+.js .bubble{animation:pop .3s var(--ease) both}
+
+@media (max-width:720px){
+  .guide{right:12px;bottom:12px;left:12px;justify-content:flex-end}
+  .lens-btn{width:62px;height:62px}
+  .bubble{max-width:none;flex:1}
+}
+@media print{ .guide,.band{display:none} }
+
+@media print{
+  .hero{background:#fff;color:#000}
+  .stamp,.scale,.hero-top,footer{display:none}
+  .entry{box-shadow:none;break-inside:avoid;border:1px solid #999}
+  .rail{padding-left:0}
+  .rail::before{display:none}
+  body{background:#fff}
+}
 </style>
+<script>document.documentElement.className="js";</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -339,14 +526,10 @@
       "inLanguage": "en-IN",
       "description": "Open teaching resources in forensic medicine and toxicology — reference guides, interactive drills and a recall trainer for the examining doctor, aligned with the BNS, BNSS and BSA, 2023.",
       "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-      "author": {
-        "@id": "https://forensicworkbench.com/#author"
-      },
-      "publisher": {
-        "@id": "https://forensicworkbench.com/#author"
-      },
+      "author": { "@id": "https://forensicworkbench.com/#author" },
+      "publisher": { "@id": "https://forensicworkbench.com/#author" },
       "datePublished": "2026-07-29",
-      "dateModified": "2026-08-23"
+      "dateModified": "2026-09-15"
     },
     {
       "@type": "Event",
@@ -382,56 +565,22 @@
       "name": "Forensic Medicine Workbench · Medico-legal practice, step by step",
       "description": "A register of open medico-legal teaching resources for the examining doctor, aligned with the BNS, BNSS and BSA, 2023 and the MoHFW guidelines.",
       "inLanguage": "en-IN",
-      "isPartOf": {
-        "@id": "https://forensicworkbench.com/#website"
-      },
-      "author": {
-        "@id": "https://forensicworkbench.com/#author"
-      },
+      "isPartOf": { "@id": "https://forensicworkbench.com/#website" },
+      "author": { "@id": "https://forensicworkbench.com/#author" },
       "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "datePublished": "2026-07-29",
-      "dateModified": "2026-08-23",
+      "dateModified": "2026-09-15",
       "mainEntity": {
         "@type": "ItemList",
         "numberOfItems": 6,
         "itemListOrder": "https://schema.org/ItemListOrderAscending",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Medico-legal Care of the Sexual Violence Survivor",
-            "url": "https://forensicworkbench.com/medico-legal-care-sexual-violence-survivor.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "SAFE Evidence Sequencer",
-            "url": "https://forensicworkbench.com/safe-evidence-sequencer.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "MLR-Recall — IPC to BNS, BNSS and BSA",
-            "url": "https://forensicworkbench.com/mlr-recall.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Consent in Medical and Medico-legal Practice",
-            "url": "https://forensicworkbench.com/consent-study-notes.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "name": "How to Describe an Injury",
-            "url": "https://forensicworkbench.com/how-to-describe-an-injury.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "name": "Opening the Organs \u2014 Organ Dissection at Autopsy",
-            "url": "https://forensicworkbench.com/opening-the-organs.html"
-          }
+          { "@type": "ListItem", "position": 1, "name": "Medico-legal Care of the Sexual Violence Survivor", "url": "https://forensicworkbench.com/medico-legal-care-sexual-violence-survivor.html" },
+          { "@type": "ListItem", "position": 2, "name": "SAFE Evidence Sequencer", "url": "https://forensicworkbench.com/safe-evidence-sequencer.html" },
+          { "@type": "ListItem", "position": 3, "name": "MLR-Recall — IPC to BNS, BNSS and BSA", "url": "https://forensicworkbench.com/mlr-recall.html" },
+          { "@type": "ListItem", "position": 4, "name": "Consent in Medical and Medico-legal Practice", "url": "https://forensicworkbench.com/consent-study-notes.html" },
+          { "@type": "ListItem", "position": 5, "name": "How to Describe an Injury", "url": "https://forensicworkbench.com/how-to-describe-an-injury.html" },
+          { "@type": "ListItem", "position": 6, "name": "Opening the Organs — Organ Dissection at Autopsy", "url": "https://forensicworkbench.com/opening-the-organs.html" }
         ]
       }
     }
@@ -441,92 +590,116 @@
 </head>
 <body>
 
-<div class="topbar">
+<header class="hero">
   <div class="wrap">
-    <span>Medico-legal teaching resources</span>
-    <span><a href="mailto:dr.fmt.hsc@gmail.com">dr.fmt.hsc@gmail.com</a></span>
-  </div>
-</div>
 
-<header class="masthead">
-  <div class="wrap">
-   <div class="mast-grid">
-    <div class="mast-text">
-    <h1>Forensic Medicine Workbench</h1>
-    <p class="subtitle">Medico-legal practice, step by step</p>
-    <p class="lede">Working tools for the doctor on duty when a survivor arrives — what to do, in what order, and how to record it so that it holds in court.</p>
-    <div class="rule"></div>
-    <p class="credit"><strong>Dr Harvinder Singh Chhabra</strong> <span class="role">· <a href="mailto:dr.fmt.hsc@gmail.com">dr.fmt.hsc@gmail.com</a></span></p>
-    <p class="refline">
-      Aligned with BNS, BNSS and BSA, 2023 (in force 1 July 2024)<br>
-      MoHFW Guidelines &amp; Protocols for medico-legal care of survivors of sexual violence, 2014
-    </p>
+    <div class="hero-top">
+      <span>Open medico-legal teaching resources</span>
+      <span><a href="mailto:dr.fmt.hsc@gmail.com">dr.fmt.hsc@gmail.com</a></span>
     </div>
-    <img class="seal" src="seal.png" alt="" aria-hidden="true" decoding="async" width="640" height="640">
-   </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1><span class="w"><i>Forensic</i></span> <span class="w"><i>Medicine</i></span> <span class="w"><i>Workbench</i></span></h1>
+        <p class="said">Medico-legal practice, step by step</p>
+        <p class="lede">Working tools for the doctor on duty when a survivor arrives — what to do, in what order, and how to record it so that it holds in court.</p>
+        <p class="by">
+          <strong>Dr Harvinder Singh Chhabra</strong> · <a href="mailto:dr.fmt.hsc@gmail.com">dr.fmt.hsc@gmail.com</a><br>
+          Aligned with BNS, BNSS and BSA, 2023, in force 1 July 2024<br>
+          MoHFW Guidelines &amp; Protocols for medico-legal care of survivors of sexual violence, 2014
+        </p>
+      </div>
+      <img class="stamp" src="seal-light.png" alt="" aria-hidden="true" decoding="async" width="640" height="640">
+    </div>
+
+    <svg class="scale" id="scale" viewBox="0 0 1000 46" preserveAspectRatio="none" aria-hidden="true" focusable="false"></svg>
   </div>
 </header>
 
+
+<section class="band" aria-label="The medico-legal pathway in four pictures">
+  <div class="band-in">
+    <a class="plate" href="#reg-h">
+      <img src="https://images.pexels.com/photos/2280547/pexels-photo-2280547.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+           alt="A laboratory microscope, lens and optics in close focus"
+           loading="lazy" decoding="async" width="800" height="600">
+      <span class="cap">At the bench</span>
+    </a>
+    <a class="plate" href="#reg-h">
+      <img src="https://images.pexels.com/photos/8851556/pexels-photo-8851556.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+           alt="A glass slide set up on the stage of a microscope"
+           loading="lazy" decoding="async" width="800" height="600">
+      <span class="cap">Under the lens</span>
+    </a>
+    <a class="plate" href="#reg-h">
+      <img src="https://images.pexels.com/photos/6098057/pexels-photo-6098057.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+           alt="A clinician in gloves and mask writing notes on a clipboard"
+           loading="lazy" decoding="async" width="800" height="600">
+      <span class="cap">In the record</span>
+    </a>
+    <a class="plate" href="#reg-h">
+      <img src="https://images.pexels.com/photos/6077123/pexels-photo-6077123.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800"
+           alt="A figure of Justice holding scales, beside a gavel in a law library"
+           loading="lazy" decoding="async" width="800" height="600">
+      <span class="cap">In the court</span>
+    </a>
+  </div>
+  <div class="band-note-wrap"><p class="band-note">Four places a medico-legal case is decided: what you examine, what you analyse, what you write down, and what you can defend on oath. The register below works through all four.</p></div>
+</section>
+
 <main class="wrap">
 
-
-  <section class="notice" aria-labelledby="conf-h">
-    <p class="kicker">Hosted here for delegates</p>
+  <section class="conf" aria-labelledby="conf-h">
+    <p class="tag">Hosted here for delegates</p>
     <h2 id="conf-h">FORENSIC MEDICON 2027</h2>
-    <p class="conf-sub">48th Annual Conference of the Indian Academy of Forensic Medicine</p>
-    <p class="conf-meta">
-      2&ndash;6 February 2027<br>
-      Swami Rama Himalayan University, Jolly Grant, Dehradun<br>
-      <span>Theme &middot; Translational Forensics</span>
-    </p>
+    <p class="sub">48th Annual Conference of the Indian Academy of Forensic Medicine</p>
     <ul class="conf-facts">
-      <li><b>Host</b> Indian Academy of Forensic Medicine &middot; 48th annual conference</li>
-      <li><b>Dates</b> 2&ndash;6 February 2027</li>
+      <li><b>Host</b> Indian Academy of Forensic Medicine · 48th annual conference</li>
+      <li><b>Dates</b> 2–6 February 2027</li>
       <li><b>Venue</b> Swami Rama Himalayan University, Jolly Grant, Dehradun</li>
       <li><b>Theme</b> Translational Forensics</li>
-      <li><b>Rail</b> Haridwar Junction &middot; Doiwala &middot; conference buses from both</li>
-      <li><b>Air</b> Jolly Grant Airport, beside the campus &middot; shuttle on arrival days</li>
+      <li><b>Rail</b> Haridwar Junction · Doiwala · conference buses from both</li>
+      <li><b>Air</b> Jolly Grant Airport, beside the campus · shuttle on arrival days</li>
     </ul>
-    <p class="conf-body">
-      Registration and programme &mdash; official site. Accommodation, conference rates and
-      transfers &mdash; travel desk below.
-    </p>
+    <p class="body">Registration and programme are on the official site. Accommodation, conference rates and transfers are on the travel desk hosted here.</p>
     <div class="conf-actions">
-      <a class="cbtn cbtn-primary" href="https://forms.srhu.edu.in/forensic-medicon-2027/" rel="noopener">
-        <span class="cbtn-lab">Official conference site &rarr;</span>
-        <span class="cbtn-sub">Registration &middot; Abstracts &middot; Programme</span>
+      <a class="cbtn cbtn-a" href="https://forms.srhu.edu.in/forensic-medicon-2027/" rel="noopener">
+        <span class="lab">Official conference site &rarr;</span>
+        <span class="s">Registration · Abstracts · Programme</span>
       </a>
-      <a class="cbtn cbtn-second" href="/medicon2027/">
-        <span class="cbtn-lab">MEDICON 2027 conference links &rarr;</span>
-        <span class="cbtn-sub">Accommodation &middot; Hotels &middot; Shuttles &middot; Transfers</span>
+      <a class="cbtn cbtn-b" href="medicon2027/">
+        <span class="lab">MEDICON 2027 conference links &rarr;</span>
+        <span class="s">Accommodation · Hotels · Shuttles · Transfers</span>
       </a>
     </div>
   </section>
 
   <section class="register" aria-labelledby="reg-h">
-    <div class="sec-head">
+    <div class="reg-head">
       <h2 id="reg-h">The register</h2>
       <span class="count" id="count"></span>
     </div>
 
-    <div id="entries"></div>
+    <div class="rail" id="rail">
+      <div id="entries"></div>
 
-    <noscript>
-      <div class="slot" style="grid-template-columns:1fr">
-        <p><strong>Open a resource directly</strong>
-        <a href="medico-legal-care-sexual-violence-survivor.html">FMT-01 · Medico-legal Care of the Sexual Violence Survivor</a> ·
-        <a href="safe-evidence-sequencer.html">FMT-02 · SAFE Evidence Sequencer</a> ·
-        <a href="mlr-recall.html">FMT-03 · MLR-Recall — IPC to BNS, BNSS and BSA</a> ·
-        <a href="consent-study-notes.html">FMT-04 · Consent in Medical and Medico-legal Practice</a> ·
-        <a href="how-to-describe-an-injury.html">FMT-05 · How to Describe an Injury</a> ·
-        <a href="opening-the-organs.html">FMT-06 · Opening the Organs — Organ Dissection at Autopsy</a></p>
-      </div>
-    </noscript>
+      <noscript>
+        <div class="slot" style="padding:24px 28px">
+          <strong>Open a resource directly</strong>
+          <p>
+            <a href="medico-legal-care-sexual-violence-survivor.html">FMT-01 · Medico-legal Care of the Sexual Violence Survivor</a> ·
+            <a href="safe-evidence-sequencer.html">FMT-02 · SAFE Evidence Sequencer</a> ·
+            <a href="mlr-recall.html">FMT-03 · MLR-Recall — IPC to BNS, BNSS and BSA</a> ·
+            <a href="consent-study-notes.html">FMT-04 · Consent in Medical and Medico-legal Practice</a> ·
+            <a href="how-to-describe-an-injury.html">FMT-05 · How to Describe an Injury</a> ·
+            <a href="opening-the-organs.html">FMT-06 · Opening the Organs — Organ Dissection at Autopsy</a>
+          </p>
+        </div>
+      </noscript>
 
-    <div class="slot">
-      <div><span class="ref">FMT-07</span></div>
-      <div>
-        <strong>Next entry — in preparation</strong>
+      <div class="slot reveal">
+        <div class="tick"><span class="num">FMT-07</span><span class="dash"></span></div>
+        <strong>Next entry, in preparation</strong>
         <p>The Workbench grows. New guides and drills are added to the register as they are written.</p>
       </div>
     </div>
@@ -545,14 +718,14 @@
       </div>
     </div>
 
-    <div class="notice">
+    <div class="caution">
       <p><strong>These are teaching aids.</strong> They do not replace the statutory proforma, your hospital's protocol, or the current text of the law. Where a resource and the official proforma differ, the proforma governs.</p>
       <p>Clinical and legal responsibility for any examination rests with the examining doctor. Verify section numbers and procedural requirements against the current statute before relying on them in a report or in court.</p>
     </div>
 
     <p class="licence-line">
       Licensed <a href="licence.html">CC BY-NC-ND 4.0</a> — teach with it, print it, share it, with credit and unchanged.
-      <a class="cite-link" href="licence.html#h-cite">How to cite this →</a>
+      <a class="cite-link" href="licence.html#h-cite">How to cite this &rarr;</a>
     </p>
   </section>
 
@@ -561,28 +734,58 @@
 <footer>
   <div class="wrap">
     <span>© <span class="year">2026</span> Dr Harvinder Singh Chhabra · Forensic Medicine Workbench</span>
+    <span>Band photographs: Chokniti Khongchum, Mikhail Nilov, Laura James, Katrin Bolovtsova, via Pexels</span>
     <span><a href="licence.html">Copyright, licence and citation</a></span>
   </div>
 </footer>
 
-<script>
-/* ============================================================
-   ADD A NEW RESOURCE HERE
-   ------------------------------------------------------------
-   1. Drop the .html file into the /modules folder.
-   2. Copy one block below, paste it at the end of the list,
-      and edit the fields. Nothing else needs changing.
 
-      ref     catalogue number shown in the docket column
-      type    what kind of resource it is
-      accent  spine colour: clay | teal | moss | slate | seal | gold
-      title   name of the resource
-      blurb   one or two sentences on what it does
-      chips   short list of what it covers (or [] for none)
-      scope   small line under the type, e.g. "6 sections"
-      href    path to the file
-      action  the link text, written as an action
-   ============================================================ */
+<div class="guide" id="guide">
+  <div class="bubble" id="bubble" role="status" aria-live="polite" hidden>
+    <button class="shut" id="g-shut" aria-label="Dismiss the guide" title="Dismiss">&times;</button>
+    <p class="step" id="g-step"></p>
+    <p class="say" id="g-say"></p>
+    <div class="acts">
+      <button class="primary" id="g-next" type="button">Next</button>
+      <button id="g-open" type="button" hidden>Open it</button>
+    </div>
+  </div>
+
+  <button class="lens-btn" id="g-lens" type="button"
+          aria-label="Open the guide to the register" aria-expanded="false">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect class="lens-handle" x="59" y="60" width="12" height="36" rx="6"
+            transform="rotate(-45 65 78)"/>
+      <circle class="lens-glass" cx="42" cy="40" r="28"/>
+      <g id="g-eyes">
+        <ellipse class="lens-eye" cx="33" cy="40" rx="7.4" ry="9"/>
+        <ellipse class="lens-eye" cx="51" cy="40" rx="7.4" ry="9"/>
+        <g id="g-pupils">
+          <circle class="lens-pupil" cx="33" cy="41" r="3.9"/>
+          <circle class="lens-pupil" cx="51" cy="41" r="3.9"/>
+          <circle class="lens-shine" cx="31.4" cy="39" r="1.3"/>
+          <circle class="lens-shine" cx="49.4" cy="39" r="1.3"/>
+        </g>
+        <ellipse class="lens-lid" cx="33" cy="40" rx="8" ry="9.6"/>
+        <ellipse class="lens-lid" cx="51" cy="40" rx="8" ry="9.6"/>
+      </g>
+      <path class="lens-brow" d="M26 28c3-2.6 8-2.6 11 0"/>
+      <path class="lens-brow" d="M47 28c3-2.6 8-2.6 11 0"/>
+      <path class="lens-brow" d="M36 53c3.4 3.2 8.6 3.2 12 0"/>
+      <circle class="lens-rim" cx="42" cy="40" r="28"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+/* ==========================================================================
+   THE REGISTER
+   Add a resource: drop the .html file in the repo root, append one object
+   below, and add a matching entry to CITE_ITEMS in licence.html. The count,
+   the tick marks and the JSON-LD ItemList are the only other places a
+   resource is named — update the ItemList in the <head> too.
+   accent: clay | teal | moss | slate | seal | gold
+   ========================================================================== */
 const MODULES = [
   {
     ref: "FMT-01",
@@ -634,7 +837,7 @@ const MODULES = [
     accent: "gold",
     scope: "7 sections",
     title: "How to Describe an Injury",
-    blurb: "Build the description of a wound finding by finding, and watch it assemble itself as you work \u2014 with everything you have not recorded left standing in it as a coloured blank, which is how it will look to the lawyer cross-examining you. The nature of the injury, the age and the weapon are then worked out from the record rather than typed in.",
+    blurb: "Build the description of a wound finding by finding, and watch it assemble itself as you work — with everything you have not recorded left standing in it as a coloured blank, which is how it will look to the lawyer cross-examining you. The nature of the injury, the age and the weapon are then worked out from the record rather than typed in.",
     chips: ["Injury description", "Spot the defect", "Simple or grievous", "RIGHT head-injury score", "Samples", "Quick tables"],
     href: "how-to-describe-an-injury.html",
     action: "Open the trainer"
@@ -644,41 +847,202 @@ const MODULES = [
     type: "Dissection guide",
     accent: "slate",
     scope: "15 organs",
-    title: "Opening the Organs \u2014 Organ Dissection at Autopsy",
-    blurb: "Fifteen organs, each set out the same way \u2014 the block it leaves the body in and why, how the specimen is held, where the cut goes, and why that plane and no other. Pitched at two levels: nine organs with one accepted technique each for MBBS, all fifteen with the alternatives, the measurements and the special dissections for MD. A checklist for use at the table and worked practice questions on every organ.",
+    title: "Opening the Organs — Organ Dissection at Autopsy",
+    blurb: "Fifteen organs, each set out the same way — the block it leaves the body in and why, how the specimen is held, where the cut goes, and why that plane and no other. Pitched at two levels: nine organs with one accepted technique each for MBBS, all fifteen with the alternatives, the measurements and the special dissections for MD. A checklist for use at the table and worked practice questions on every organ.",
     chips: ["Heart", "Brain", "Lungs and airway", "Abdominal viscera", "Special dissections", "Normal weights"],
     href: "opening-the-organs.html",
     action: "Open the guide"
   }
 ];
 
-/* ---- rendering ---- */
-const ACCENTS = {
-  clay:"var(--clay)", teal:"var(--teal)", moss:"var(--moss)",
-  slate:"var(--slate)", seal:"var(--seal)", gold:"var(--gold)"
-};
-const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
-const ARROW = '<svg width="15" height="11" viewBox="0 0 15 11" fill="none" aria-hidden="true"><path d="M1 5.5h12M9 1.5l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const esc = s => String(s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-document.getElementById("entries").innerHTML = MODULES.map((m, i) => `
-  <article class="entry" style="--accent:${ACCENTS[m.accent] || "var(--slate)"}; animation-delay:${0.5 + i * 0.09}s">
-    <div class="docket">
-      <div><span class="k">Ref.</span><span class="ref">${esc(m.ref)}</span></div>
-      <div><span class="k">Format</span><span class="type">${esc(m.type)}</span></div>
-      ${m.scope ? `<div><span class="k">Scope</span><span class="scope">${esc(m.scope)}</span></div>` : ""}
-    </div>
-    <div class="body">
+const ARROW = '<svg width="15" height="11" viewBox="0 0 15 11" fill="none" aria-hidden="true">' +
+  '<path d="M9.2 1 14 5.5 9.2 10M14 5.5H0" stroke="currentColor" stroke-width="1.6" ' +
+  'stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+/* --- build the entries ---------------------------------------------------- */
+document.getElementById('entries').innerHTML = MODULES.map(m => `
+  <article class="entry reveal" style="--accent:var(--${esc(m.accent)})">
+    <div class="tick"><span class="num">${esc(m.ref)}</span><span class="dash"></span></div>
+    <div class="in">
+      <p class="meta">
+        <span class="kind">${esc(m.type)}</span>
+        <span class="dot">/</span>
+        <span>${esc(m.scope)}</span>
+      </p>
       <h3><a href="${esc(m.href)}">${esc(m.title)}</a></h3>
       <p>${esc(m.blurb)}</p>
-      ${m.chips && m.chips.length ? `<ul class="chips">${m.chips.map(c => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
+      ${m.chips && m.chips.length
+        ? `<ul class="chips">${m.chips.map(c => `<li>${esc(c)}</li>`).join('')}</ul>`
+        : ''}
       <span class="go">${esc(m.action)} ${ARROW}</span>
     </div>
-  </article>`).join("");
+  </article>`).join('');
 
-document.getElementById("count").textContent =
-  MODULES.length + (MODULES.length === 1 ? " entry" : " entries");
+/* --- the measuring rule under the hero ------------------------------------ */
+(function drawScale(){
+  const svg = document.getElementById('scale');
+  if(!svg) return;
+  const W = 1000, N = 50, step = W / N;
+  let out = '';
+  for(let i = 0; i <= N; i++){
+    const x = +(i * step).toFixed(2);
+    const major = i % 5 === 0;
+    const h = major ? 17 : 8;
+    out += `<line class="${major ? 'major' : ''}" x1="${x}" y1="${34 - h}" x2="${x}" y2="34" ` +
+           `style="animation-delay:${(1.05 + i * 0.012).toFixed(3)}s"/>`;
+  }
+  out += `<line class="base" x1="0" y1="34" x2="${W}" y2="34" style="animation-delay:1.0s"/>`;
+  svg.innerHTML = out;
+})();
 
-document.querySelectorAll(".year").forEach(el => el.textContent = new Date().getFullYear());
+/* --- count the register out ----------------------------------------------- */
+(function counter(){
+  const el = document.getElementById('count');
+  if(!el) return;
+  const n = MODULES.length;
+  const label = v => `${v} ${v === 1 ? 'entry' : 'entries'} · FMT-07 next`;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent = label(n); return; }
+  let v = 0;
+  el.textContent = label(0);
+  const t = setInterval(() => {
+    v++; el.textContent = label(v);
+    if(v >= n) clearInterval(t);
+  }, 95);
+})();
+
+/* --- develop the entries as they come into view --------------------------- */
+(function reveal(){
+  const items = document.querySelectorAll('.reveal');
+  const rail = document.getElementById('rail');
+  if(!('IntersectionObserver' in window)){
+    items.forEach(el => el.classList.add('on'));
+    if(rail) rail.classList.add('on');
+    return;
+  }
+  const io = new IntersectionObserver((rows, obs) => {
+    rows.forEach(r => {
+      if(!r.isIntersecting) return;
+      const i = [...items].indexOf(r.target);
+      r.target.style.animationDelay = (Math.min(i, 3) * 0.09) + 's';
+      r.target.classList.add('on');
+      obs.unobserve(r.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+  items.forEach(el => io.observe(el));
+
+  if(rail){
+    new IntersectionObserver((rows, obs) => {
+      rows.forEach(r => { if(r.isIntersecting){ rail.classList.add('on'); obs.disconnect(); } });
+    }, { threshold: 0.02 }).observe(rail);
+  }
+})();
+
+/* --- failsafe: nothing stays hidden if something throws -------------------- */
+setTimeout(() => document.querySelectorAll('.reveal:not(.on)').forEach(el => {
+  el.style.opacity = '1'; el.style.clipPath = 'none'; el.style.filter = 'none';
+}), 2600);
+
+
+/* ==========================================================================
+   THE HAND LENS
+   A guide to the register. Lines are written here, not generated. To add a
+   stop, append to SCRIPT below; ref must match a MODULES ref so "Open it"
+   knows where to go. Session-scoped only: dismissing it is remembered for
+   the tab and forgotten when the tab closes. Nothing is stored about anyone.
+   ========================================================================== */
+(function lens(){
+  const KEY = 'fmt-lens-dismissed';
+  const guide  = document.getElementById('guide');
+  const bubble = document.getElementById('bubble');
+  const btn    = document.getElementById('g-lens');
+  const stepEl = document.getElementById('g-step');
+  const sayEl  = document.getElementById('g-say');
+  const next   = document.getElementById('g-next');
+  const open   = document.getElementById('g-open');
+  const shut   = document.getElementById('g-shut');
+  if(!guide) return;
+
+  const SCRIPT = [
+    { ref:null, say:'I am the hand lens. Six tools sit in the register below. Tap Next and I will take you through them.' },
+    { ref:'FMT-01', say:'FMT-01 is the whole pathway for a sexual violence survivor, from consent through to deposition. Start here if you are on casualty tonight.' },
+    { ref:'FMT-02', say:'FMT-02 drills the order of the examination, and makes you set aside anything prohibited or not indicated in that case.' },
+    { ref:'FMT-03', say:'FMT-03 maps the old IPC, CrPC and IEA numbers onto the new ones. A hundred and nineteen cards, learn mode and quiz mode.' },
+    { ref:'FMT-04', say:'FMT-04 is the long read on consent: who may give it, where it fails, and what has to be written down.' },
+    { ref:'FMT-05', say:'FMT-05 builds an injury description finding by finding and leaves every gap standing in it. That is how it will look in cross-examination.' },
+    { ref:'FMT-06', say:'FMT-06 takes fifteen organs apart. One accepted technique each at MBBS level, the alternatives and the measurements at MD.' },
+    { ref:null, say:'That is the register. All of it is free, it runs offline once loaded, and it prints. Close me whenever you like.' }
+  ];
+
+  let i = 0, shown = false;
+  const store = {
+    get(){ try{ return sessionStorage.getItem(KEY); }catch(e){ return null; } },
+    set(){ try{ sessionStorage.setItem(KEY,'1'); }catch(e){} }
+  };
+  if(store.get()) return;
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setTimeout(() => { guide.classList.add('on'); }, reduce ? 0 : 1900);
+
+  function cardFor(ref){
+    return [...document.querySelectorAll('.entry')].find(
+      el => el.querySelector('.tick .num')?.textContent.trim() === ref);
+  }
+
+  function render(){
+    const s = SCRIPT[i];
+    stepEl.textContent = s.ref ? s.ref : (i === 0 ? 'The register' : 'That is all of it');
+    sayEl.textContent = s.say;
+    next.textContent = i >= SCRIPT.length - 1 ? 'Start again' : 'Next';
+    open.hidden = !s.ref;
+
+    document.querySelectorAll('.entry.spot').forEach(el => el.classList.remove('spot'));
+    if(s.ref){
+      const card = cardFor(s.ref);
+      if(card){
+        card.classList.add('spot');
+        card.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block:'center' });
+      }
+    }
+  }
+
+  function show(on){
+    shown = on;
+    bubble.hidden = !on;
+    if(on){ bubble.style.animation = 'none'; void bubble.offsetWidth; bubble.style.animation = ''; }
+    btn.setAttribute('aria-expanded', String(on));
+    if(on) render();
+    else document.querySelectorAll('.entry.spot').forEach(el => el.classList.remove('spot'));
+  }
+
+  btn.addEventListener('click', () => show(!shown));
+  next.addEventListener('click', () => { i = (i + 1) % SCRIPT.length; render(); });
+  open.addEventListener('click', () => {
+    const card = cardFor(SCRIPT[i].ref);
+    const a = card && card.querySelector('h3 a');
+    if(a) window.location.href = a.getAttribute('href');
+  });
+  shut.addEventListener('click', () => { store.set(); guide.classList.remove('on'); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && shown) show(false); });
+
+  /* the eyes follow the pointer, a little */
+  const pupils = document.getElementById('g-pupils');
+  if(pupils && !reduce && matchMedia('(pointer:fine)').matches){
+    addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width * .45);
+      const dy = e.clientY - (r.top  + r.height * .42);
+      const d  = Math.hypot(dx, dy) || 1;
+      const k  = Math.min(d, 260) / 260 * 3.2;
+      pupils.style.transform = `translate(${(dx/d*k).toFixed(2)}px, ${(dy/d*k).toFixed(2)}px)`;
+    }, { passive:true });
+  }
+})();
+
+/* --- copyright year -------------------------------------------------------- */
+document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
 </script>
 </body>
 </html>
