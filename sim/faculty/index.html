@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Teaching Forensic Medicine Without the Patient | Faculty run sheet</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23F7F6F1%22%2F%3E%3Cpath%20d%3D%22M32%209c1.8%200%202.9%201.6%203.5%203.6l.9%202.9%22%20fill%3D%22none%22%20stroke%3D%22%232C5D5A%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2246%22%20cy%3D%2213%22%20r%3D%223.2%22%20fill%3D%22%23B8801F%22%2F%3E%3Cpath%20d%3D%22M32%2015c11.5%200%2018.5%207.8%2018.5%2018v6.6C50.5%2050%2043%2057%2032%2057s-18.5-7-18.5-17.4V33C13.5%2022.8%2020.5%2015%2032%2015z%22%20fill%3D%22%232C5D5A%22%2F%3E%3Cellipse%20cx%3D%2232%22%20cy%3D%2235%22%20rx%3D%2214.5%22%20ry%3D%2213%22%20fill%3D%22%23F7F6F1%22%2F%3E%3Cellipse%20cx%3D%2226.3%22%20cy%3D%2233.6%22%20rx%3D%222.9%22%20ry%3D%223.7%22%20fill%3D%22%2318242E%22%2F%3E%3Cellipse%20cx%3D%2237.7%22%20cy%3D%2233.6%22%20rx%3D%222.9%22%20ry%3D%223.7%22%20fill%3D%22%2318242E%22%2F%3E%3Cpath%20d%3D%22M28.2%2041.6c1.8%201.8%205.8%201.8%207.6%200%22%20fill%3D%22none%22%20stroke%3D%22%2318242E%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F6F1; --card:#FFFFFF; --ink:#18242E; --muted:#5C6A73;
+  --rule:#DCDAD1; --rule-soft:#EAE8E0;
+  --accent:#2C5D5A; --accent-soft:#E4EDEB; --accent-mid:#7FB3AC;
+  --signal:#8F2A28; --signal-soft:#F5E6E4;
+  --live:#8A5A12; --live-soft:#F7EDDC;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#131A20; --card:#1B242C; --ink:#E7E5DC; --muted:#9AA6AD;
+    --rule:#2E3A43; --rule-soft:#232E36;
+    --accent:#8DC3BC; --accent-soft:#1E3230; --accent-mid:#4E827B;
+    --signal:#E0918D; --signal-soft:#33211F;
+    --live:#E2B063; --live-soft:#2E2618;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131A20; --card:#1B242C; --ink:#E7E5DC; --muted:#9AA6AD;
+  --rule:#2E3A43; --rule-soft:#232E36;
+  --accent:#8DC3BC; --accent-soft:#1E3230; --accent-mid:#4E827B;
+  --signal:#E0918D; --signal-soft:#33211F;
+  --live:#E2B063; --live-soft:#2E2618;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+.wrap{max-width:860px;margin:0 auto;padding:24px 20px 80px}
+h1{font-size:23px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px}
+h2{font-size:17px;font-weight:600;margin:34px 0 12px;padding-bottom:7px;border-bottom:1px solid var(--rule)}
+h3{font-size:15px;font-weight:600;margin:22px 0 8px}
+p{margin:0 0 12px;max-width:68ch}
+.lede{color:var(--muted);max-width:62ch}
+ul{margin:0 0 14px;padding-left:20px;max-width:68ch}
+li{margin-bottom:6px}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px;border-bottom:1px solid var(--rule);padding-bottom:12px}
+.nav button{flex:1 1 130px;padding:11px 8px;font-size:15px}
+button{font-family:inherit;font-size:15px;color:var(--ink);background:var(--card);
+  border:1px solid var(--rule);border-radius:7px;padding:9px 14px;cursor:pointer;transition:border-color .15s}
+button:hover{border-color:var(--accent)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+button.ghost{background:transparent}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:18px 20px;margin:14px 0}
+.job{font-size:17px;font-weight:500;margin:0 0 6px}
+.never{background:var(--signal-soft);border:1px solid var(--signal);border-radius:8px;padding:12px 15px;margin:14px 0}
+.never strong{color:var(--signal)}
+.pw{background:var(--accent-soft);border:1px solid var(--accent-mid);border-radius:8px;padding:13px 16px;margin:16px 0}
+.pw code{font-family:inherit;font-weight:600;letter-spacing:.08em;font-size:17px}
+.say{font-family:"Newsreader",Georgia,serif;font-size:18px;line-height:1.5;
+  border-left:3px solid var(--accent);padding:4px 0 4px 15px;margin:12px 0;max-width:62ch}
+.clock{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:14px 0}
+.time{font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;min-width:110px}
+.now{font-size:15px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:15px}
+td{border-bottom:1px solid var(--rule-soft);padding:9px 8px 9px 0;vertical-align:top}
+td.t{white-space:nowrap;color:var(--muted);width:82px;font-variant-numeric:tabular-nums}
+tr.on td{background:var(--live-soft)}
+tr.mine td.c{font-weight:500}
+tr.idle td.c{color:var(--muted)}
+label.chk{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--rule-soft);cursor:pointer}
+label.chk input{margin-top:4px;flex:none;width:17px;height:17px;accent-color:var(--accent)}
+label.chk input:checked + span{color:var(--muted);text-decoration:line-through}
+details{border:1px solid var(--rule);border-radius:8px;padding:11px 15px;margin:9px 0;background:var(--card)}
+summary{cursor:pointer;font-weight:500}
+details p{margin:10px 0 0}
+details ul{margin:10px 0 0}
+.law{border-left:3px solid var(--accent-mid);padding:2px 0 2px 15px;margin:12px 0;max-width:64ch;font-size:15px}
+.law b{font-weight:500}
+.empty{color:var(--muted);padding:24px 0}
+.vid{display:block;background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--accent);
+  border-radius:0 8px 8px 0;padding:14px 18px;margin:10px 0;text-decoration:none;color:var(--ink)}
+.vid:hover{border-color:var(--accent-mid);border-left-color:var(--accent)}
+.vid:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.vt{display:block;font-size:16px;font-weight:500;margin-bottom:3px}
+.vm{display:block;font-size:13px;color:var(--muted);margin-bottom:7px}
+.vw{display:block;font-size:15px;color:var(--muted);line-height:1.5;max-width:64ch}
+figure{margin:18px 0;padding:0}
+figcaption{font-size:14px;color:var(--muted);margin-top:8px;max-width:64ch}
+svg.info{display:block;width:100%;height:auto}
+.progress{font-size:14px;color:var(--muted);margin:10px 0 16px}
+.tick{display:flex;gap:9px;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--rule-soft);font-size:14px;color:var(--muted);cursor:pointer}
+.tick input{width:17px;height:17px;accent-color:var(--accent);flex:none}
+details[data-m] p:first-of-type{margin-top:10px}
+.opt{display:block;width:100%;text-align:left;margin:7px 0;padding:11px 14px;line-height:1.45;
+  font-family:inherit;font-size:15px;color:var(--ink);background:var(--card);border:1px solid var(--rule);border-radius:7px;cursor:pointer}
+.opt.right{background:#E6F0E5;border-color:#2F6B3A}
+.opt.wrong{background:var(--signal-soft);border-color:var(--signal)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .opt.right{background:#1E2C20;border-color:#8FC498}}
+:root[data-theme="dark"] .opt.right{background:#1E2C20;border-color:#8FC498}
+.fb{font-size:15px;margin:10px 0 0;color:var(--muted);max-width:66ch}
+.pair{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.pair button{flex:1;min-width:120px}
+.stmt{font-family:"Newsreader",Georgia,serif;font-size:18px;line-height:1.45;margin:0 0 4px}
+.count{font-size:14px;color:var(--muted);margin-top:12px}
+.fld{margin:12px 0}
+.fld label{display:block;font-size:14px;color:var(--muted);margin-bottom:5px}
+.fld input{width:100%;font-family:inherit;font-size:15px;color:var(--ink);background:var(--paper);
+  border:1px solid var(--rule);border-radius:7px;padding:10px 12px}
+.fld input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.built{font-family:"Newsreader",Georgia,serif;font-size:17px;line-height:1.5;
+  background:var(--accent-soft);border-radius:8px;padding:13px 16px;margin-top:12px}
+.ro{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:14px}
+footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px}
+[hidden]{display:none !important}
+@media(max-width:560px){.time{font-size:26px}.wrap{padding:18px 15px 60px}.nav button{font-size:14px;padding:10px 4px}}
+@media (prefers-reduced-motion: reduce){*{transition:none !important}}
+
+/* ===== v2 visual pass ===== */
+h1{font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:30px;letter-spacing:-.01em}
+h2{font-family:"Newsreader",Georgia,serif;font-weight:500;font-size:22px;letter-spacing:-.005em;
+   border-bottom:none;position:relative;padding-bottom:10px}
+h2::after{content:"";position:absolute;left:0;bottom:0;width:38px;height:2px;background:var(--accent);
+   border-radius:2px;transition:width .35s cubic-bezier(.2,.8,.2,1)}
+h3{font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+.navwrap{position:sticky;top:0;z-index:20;background:var(--paper);padding:10px 0 12px;margin:14px 0 6px;
+  border-bottom:1px solid var(--rule)}
+.navgroup{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}
+.navlabel{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  margin-right:6px;flex:none;opacity:.75}
+.nav button,.navgroup button{flex:0 1 auto;padding:8px 14px;font-size:14px;border-radius:999px;
+  transition:background .2s,border-color .2s,color .2s,transform .18s}
+.nav button:active,.navgroup button:active{transform:scale(.97)}
+
+button{border-radius:999px;transition:background .2s,border-color .2s,transform .18s,box-shadow .2s}
+button:hover{transform:translateY(-1px)}
+button:active{transform:translateY(0) scale(.98)}
+
+section{animation:rise .42s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.card,details,.vid{border-radius:14px;transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s,border-color .22s}
+.card:hover,.vid:hover{transform:translateY(-2px);box-shadow:0 10px 26px -18px rgba(0,0,0,.45)}
+details{overflow:hidden}
+details summary{list-style:none;position:relative;padding-right:26px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"";position:absolute;right:2px;top:50%;width:8px;height:8px;
+  border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:translateY(-70%) rotate(45deg);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details[open]{border-color:var(--accent-mid)}
+details[open] > *:not(summary){animation:rise .3s cubic-bezier(.2,.8,.2,1) both}
+
+.say{position:relative;border-left:none;padding:10px 0 10px 20px}
+.say::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:3px;
+  background:linear-gradient(var(--accent),var(--accent-mid))}
+
+.bar{height:3px;border-radius:3px;background:var(--rule-soft);overflow:hidden;margin:6px 0 2px;width:100%}
+.bar span{display:block;height:100%;width:0;border-radius:3px;
+  background:linear-gradient(90deg,var(--accent-mid),var(--accent));transition:width .5s linear}
+.time{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+
+label.chk input,label.tick input{transition:transform .15s}
+label.chk:active input,label.tick:active input{transform:scale(1.15)}
+
+/* guide */
+#gbtn{position:fixed;right:16px;bottom:16px;z-index:60;width:auto;padding:11px 18px;
+  background:var(--accent);color:var(--paper);border:none;
+  box-shadow:0 10px 30px -12px rgba(0,0,0,.5);font-size:15px}
+#gbtn:hover{transform:translateY(-2px)}
+#gpanel{position:fixed;right:16px;bottom:70px;z-index:60;width:min(340px,calc(100vw - 32px));
+  background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:18px 20px 16px;
+  box-shadow:0 24px 60px -24px rgba(0,0,0,.55);transform-origin:bottom right}
+#gpanel[hidden]{display:none}
+#gpanel.in{animation:pop .3s cubic-bezier(.2,.9,.25,1) both}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(8px)}to{opacity:1;transform:none}}
+#gpanel h4{margin:0 0 6px;font-size:15px;font-weight:600}
+#gpanel p{font-size:14px;line-height:1.5;margin:0 0 12px;color:var(--muted);max-width:none}
+#gpanel .grow{display:flex;gap:8px;align-items:center;justify-content:space-between}
+#gpanel .gdot{font-size:12px;color:var(--muted)}
+#gpanel button{font-size:14px;padding:7px 14px}
+@media (prefers-reduced-motion: reduce){
+  section,details[open] > *:not(summary),#gpanel.in{animation:none}
+  button:hover,.card:hover,.vid:hover{transform:none}
+}
+
+
+/* ===== buddy ===== */
+#gbtn{width:112px;height:112px;padding:0;border-radius:50%;background:transparent;border:none;
+  box-shadow:none;display:grid;place-items:center;right:12px;bottom:12px}
+#gbtn:hover{transform:none}
+#gbtn svg{width:104px;height:104px;overflow:visible;filter:drop-shadow(0 14px 26px rgba(0,0,0,.3))}
+@media(max-width:560px){
+  #gbtn{width:88px;height:88px}
+  #gbtn svg{width:82px;height:82px}
+  #gpanel{bottom:106px}
+}
+#gbtn .bd{transform-origin:32px 40px;animation:bob 4.2s ease-in-out infinite}
+#gbtn:hover .bd{animation:bob 1.6s ease-in-out infinite}
+#gbtn .eye{transform-origin:center;animation:blink 5.4s infinite}
+#gbtn .eye.r{animation-delay:.08s}
+#gbtn .halo{transform-origin:32px 36px;animation:halo 3.6s ease-out infinite;opacity:0}
+#gbtn .spark{transform-origin:46px 14px;animation:spark 3.6s ease-in-out infinite}
+#gbtn.talking .bd{animation:nod .9s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(-1.5deg)}}
+@keyframes nod{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-2px) rotate(3deg)}}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+@keyframes halo{0%{transform:scale(.8);opacity:.35}70%{transform:scale(1.5);opacity:0}100%{opacity:0}}
+@keyframes spark{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.35);opacity:.45}}
+#gpanel{bottom:132px}
+#gpanel::after{content:"";position:absolute;right:44px;bottom:-7px;width:14px;height:14px;
+  background:var(--card);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  transform:rotate(45deg)}
+@media (prefers-reduced-motion: reduce){
+  #gbtn .bd,#gbtn .eye,#gbtn .halo,#gbtn .spark,#gbtn.talking .bd{animation:none}
+}
+
+
+/* ===== licence, byline, watermark ===== */
+.wmark{position:fixed;inset:0;z-index:0;pointer-events:none;display:grid;place-items:center;overflow:hidden}
+.wmark span{font-family:"Newsreader",Georgia,serif;font-size:min(8vw,84px);color:var(--ink);
+  opacity:.035;transform:rotate(-24deg);white-space:nowrap;letter-spacing:.02em}
+.wrap{position:relative;z-index:1}
+.byline{font-size:14px;color:var(--muted);margin:2px 0 0}
+.disc{background:var(--signal-soft);border:1px solid var(--signal);border-radius:12px;padding:14px 17px;margin:18px 0}
+.disc strong{color:var(--signal)}
+.lic{margin-top:30px;padding-top:16px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted);line-height:1.6}
+.lic b{color:var(--ink);font-weight:600}
+.lic a{color:var(--accent)}
+
+.callno{font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;letter-spacing:.02em}
+</style>
+</head>
+<body>
+<div class="wmark" aria-hidden="true"><span>Dr Harvinder Singh Chhabra</span></div>
+<div class="wrap">
+
+<h1>Teaching Forensic Medicine Without the Patient</h1>
+<p class="lede" style="font-size:17px;color:var(--ink);margin-bottom:6px">An Introduction to Simulation-Based Learning</p>
+<p class="byline">Created by Dr Harvinder Singh Chhabra, Forensic Workbench</p>
+<p class="byline callno" style="margin-top:4px">Forensic Workbench &middot; FMT-07F</p>
+<p class="lede">Faculty run sheet. Pick your name first. Everything after that shows only your own cues.</p>
+<p class="lede" style="margin-top:8px">Tabs run in the order you need them. <strong>Prepare</strong> is everything before the day. <strong>Run</strong> is the one you hold in the hall. <strong>Look up</strong> is reference.</p>
+
+<div class="roles" id="roles"></div>
+
+<div class="disc"><strong>Please read.</strong> This is a teaching resource. It guides you; it does not decide for you. Every opinion you record in a real case, and every step you take with a real survivor, remains your own professional responsibility. Nothing here replaces the MoHFW 2014 guidelines, your institutional protocol, or your own judgement. For guidance: Dr Harvinder Singh Chhabra, dr.fmt.hsc@gmail.com.</div>
+<div class="navwrap">
+  <div class="navgroup"><span class="navlabel">Prepare</span>
+    <button id="navL" aria-pressed="false">1 · Learn the craft</button>
+    <button id="navW" aria-pressed="false">2 · Why this way</button>
+    <button id="navP" aria-pressed="false">3 · Full plan</button>
+    <button id="navS" aria-pressed="false">4 · Scenario</button>
+    <button id="navA" aria-pressed="true">5 · Your checklist</button>
+  </div>
+  <div class="navgroup"><span class="navlabel">Run</span>
+    <button id="navB" aria-pressed="false">On the day</button>
+  </div>
+  <div class="navgroup"><span class="navlabel">Look up</span>
+    <button id="navC" aria-pressed="false">Delegate view</button>
+    <button id="navR" aria-pressed="false">Read &amp; watch</button>
+  </div>
+</div>
+
+<section id="secW" hidden>
+<p class="lede">The design decisions, and the reasoning behind them. If a delegate asks why we did it this way, the answer is here.</p>
+
+<h2>Why two encounters</h2>
+<p>Because the second one is where the room actually learns.</p>
+<p>The first encounter is raw. Twenty-eight people are watching a colleague do something difficult. They are partly watching the person rather than the behaviour, and nobody has handed them the vocabulary yet. They see it, but they do not see it clearly.</p>
+<p>Then they spend sixteen minutes taking it apart. By the time the second learner walks in, the room has been told what to look for, and has just practised naming it out loud at their tables. They watch the second encounter with different eyes. That change, between the first and the second, is the thing we are teaching.</p>
+<h3>Three other things it buys</h3>
+<ul>
+<li><strong>The second learner has watched the first.</strong> So the debrief question becomes: you saw what happened last time, what did you do differently, and what happened when you did? That is a far better question than anything you can ask someone going in cold.</li>
+<li><strong>It shows that one variable changes everything.</strong> Same case. Same actor. Same room. She withholds consent for one part. The delegates see with their own eyes that a scenario is a machine with adjustable parts. That is what makes them think they could build one, which is the point of the design bench.</li>
+<li><strong>It shows the debrief twice, run by two people, with the same structure.</strong> The room concludes that debriefing is a technique, not a personality. Show it once and they will conclude you are just good at it.</li>
+</ul>
+<p>The cost is real and worth saying out loud. Only two of thirty sit in the chair. And the second encounter is thirteen minutes that could have gone somewhere else.</p>
+<p class="hint">If you ever have to drop one, drop the second encounter and keep both debriefs on the first. Never two encounters and one debrief. The scenario is not the intervention.</p>
+
+<h2>Why a fishbowl instead of stations</h2>
+<p>At four hours you rotate twenty people through four stations, and everyone sits in the chair. At two hours that same architecture gives you groups of seven and thirty-minute rounds. Too short for an encounter, a debrief and a meta-debrief.</p>
+<p>So we run one case in one room and everyone watches. Two people take the chair. The compensation is that thirty people watch a debrief being run properly, twice. For a faculty development purpose, that is worth more than thirty people running a simulation badly once.</p>
+
+<h2>Why every table has a job</h2>
+<p>Twenty-eight people watching with nothing to do is an audience. Twenty-eight people watching with one specific thing to look for is a faculty.</p>
+<p>Tables E and F are the two that change the temperature of a large room. E watches only Meera, which stops the audience grading the doctor and starts them seeing the case. F watches as defence counsel, which recovers part of the courtroom station we had to drop, and usually produces the sharpest single observation of the day.</p>
+
+<h2>Why the debrief gets more minutes than the scenario</h2>
+<p>Thirty-eight minutes of discussion against thirty-two of scenario. Drawn to scale on the first slide, so nobody misses it.</p>
+<p>The scenario only creates something to discuss. Across twenty years of reviews, the feature most consistently linked to learning is feedback and debriefing. Run a scenario and send people home and you have done a quarter of the teaching and generated all of the anxiety.</p>
+
+<h2>Why nothing is scored</h2>
+<p>Teaching and examining are different jobs. Mixing them damages both.</p>
+<p>The moment people believe they are being marked, they perform instead of learning. Nothing today is scored, nothing is reported to anyone's head of department, and we say so in the opening. That is not softness. It is the condition that makes the rest work.</p>
+
+<h2>Why the examination is narrated, never performed</h2>
+<p>A conference hall of thirty people watching a colleague be physically examined in a sexual assault scenario is the one thing here that could genuinely go wrong in public. It is also entirely avoidable.</p>
+<p>Narrating loses nothing we are trying to teach. The sequence, the consent, the explanation before each step, the prohibited practices: all of it is testable out loud. What we would gain by touching a person is realism we do not need and cannot justify.</p>
+</section>
+
+<section id="secP" hidden>
+<p class="lede">The whole session, step by step, with what happens inside each block. Tap any step. Times are from the start of the session.</p>
+
+<details><summary><strong>0:00 · 6 min</strong>: Opening, fiction contract, safeguarding <span class="tag">Chhabra</span></summary>
+<p>No slides. Stand, and say these, in this order.</p>
+<p class="say">This session is about a woman who has been sexually assaulted. We are going to watch a doctor examine her.</p>
+<p class="say">Nothing intimate is examined on anyone. Nobody is touched. The examination is said out loud and pointed out on the model.</p>
+<p class="say">The case is fiction. The woman you'll meet is a volunteer, not a patient. When I say Freeze, she stops being Meera and comes and sits with us.</p>
+<p class="say">If you want to leave, stand up and go. You don't have to say why. Nobody will ask you afterwards. Dr Valliyapan is at that door. The two seats nearest it are empty on purpose.</p>
+<p class="say">No photos. No recording. Nothing leaves this room.</p>
+<p class="say">Two colleagues are about to do something hard in front of thirty people. Everyone here is trained. Everyone here cares. Everyone here wants to do it better. That is what we are assuming.</p>
+<p class="hint">Point at Dr Valliyapan on his line, and at the empty seats on theirs. The last one is what buys you candour at minute forty-four.</p>
+<p class="hint">Meanwhile: Dr Raju outside with both actors. Dr Jainesh has tally sheets on every table and the timer tested. Dr Preet Inder Singh seated at the back, watching the audience rather than you.</p>
+</details>
+
+<details><summary><strong>0:06 · 12 min</strong>: Theory 1, why simulate <span class="tag">Chhabra</span></summary>
+<p><strong>Slide 1.</strong> One line: every doctor in this room examined their first survivor of sexual assault on a real survivor. Let it sit. Simulation does one thing, it moves the first attempt.</p>
+<p><strong>Slide 2.</strong> Knows, knows how, shows how, does. Our exams stop below shows how and our supervision starts after does. Simulation is the only tool that occupies the gap.</p>
+<p><strong>Slide 3.</strong> The learning cycle. The scenario is one quarter, the discussion is two. Say the sentence the whole session rests on: the simulation is not the intervention, the debrief is.</p>
+<p><strong>Slide 4.</strong> Three kinds of realism. Looks real, hangs together, feels real. The last two do the teaching and cost almost nothing. They are about to watch that happen.</p>
+<p><strong>Slide 5.</strong> The safe container: fiction contract, basic assumption, confidentiality. Three legs.</p>
+<p><strong>Slide 6.</strong> What simulation is not. Not a test, not a performance, not a replacement for clinical exposure, not a punishment for the junior-most person.</p>
+<p>Then stop and hand over. Take no questions. Questions at minute eighteen are usually a request to delay the uncomfortable thing.</p>
+</details>
+
+<details><summary><strong>0:18 · 5 min</strong>: Table jobs issued <span class="tag">Jainesh</span></summary>
+<p>Six jobs, A to F, one sheet per delegate. A safety and permission, B sequence and legal compliance, C communication and manner, D documentation, E Meera's advocate, F the defence.</p>
+<p>Then ninety seconds with two lines on the screen.</p>
+<p class="say">Opinion: he was insensitive. Behaviour: he asked why she went there alone at minute six, and she stopped looking at him. Write the second kind.</p>
+<p class="say">Words. Times. What changed.</p>
+<p class="say">Mark it proper or not proper. If it never came up, leave both blank.</p>
+<p class="hint">Meanwhile: actors move into position outside. Dr Preet Inder Singh confirms Learner 1 is seated at the front.</p>
+</details>
+
+<details><summary><strong>0:23 · 2 min</strong>: Door-handle phase <span class="tag">Learner 1</span></summary>
+<p>Dr Preet Inder Singh hands them the case card at the door and steps away. They read it standing, in view of the room, then say one sentence out loud: what their first move will be.</p>
+<p>Write that sentence down. It is the sharpest item in the debrief. What he said he would do, and what he does in the first thirty seconds, are almost never the same.</p>
+</details>
+
+<details><summary><strong>0:25 · 17 min</strong>: Encounter 1 <span class="tag">Raju runs it</span></summary>
+<p>Three beats. Arrival, safety and layered consent to minute six. History without a third retelling to twelve. Narrated examination and sampling plan to seventeen.</p>
+<p><strong>0:00</strong> Constable enters with Meera: "Doctor sahab, requisition hai. Jaldi karwa dijiye, SHO sahab poonch rahe hain." Then she stands inside the room and stays. Meera stands just inside the door, bag against her chest, and does not sit until invited.</p>
+<p><strong>0:02</strong> If he has not asked the constable to step out: "Yeh raat ko gayi kyun thi wahan, yeh bhi pooch lijiye." Does he shut it down, politely and firmly, in front of Meera?</p>
+<p><strong>0:05</strong> Meera: "Doctor sahab, andar ka check-up zaroori hai kya?" Forces the internal examination to be explained and consented to separately.</p>
+<p><strong>0:09</strong> Meera: "Police ko sab batana padega?" Forces honesty about disclosure rather than reassurance.</p>
+<p><strong>0:10</strong> If the constable left, she opens the door: "Ho gaya kya, sir?" Does he protect the space a second time?</p>
+<p><strong>0:13</strong> Only if Meera has reached disclosing: "Agar main mana kar doon toh?" Does he say out loud that refusal is allowed and treatment continues anyway?</p>
+<p><strong>0:15</strong> Constable from the doorway: "Report abhi mil jayegi na?"</p>
+<p>Throughout, Meera rises or falls on the ladder. Eight triggers drop her, any one of them. Making her start again. Any why about her own conduct. Any question about past sexual history. Talking about her in the third person in front of her. Touching her or the bag without asking. Starting an examination step without saying what it is. Saying alleged to her face. Promising absolute confidentiality.</p>
+<p>If she withdraws, Dr Raju may cue one half-step back up, once, and only if the learner names what went wrong and apologises. If not, freeze early at twelve and debrief the withdrawal.</p>
+<p class="hint">You watch and say nothing. If he narrates a two-finger test, let it finish. Dr Valliyapan watches the audience. Dr Jainesh signals you silently at fifteen and sixteen.</p>
+</details>
+
+<details><summary><strong>0:42 · 2 min</strong>: Freeze, then silent write <span class="tag">Chhabra, then Raju</span></summary>
+<p>One word, flat. Freeze.</p>
+<p>Dr Raju brings Meera out physically: she stands, leaves the chair, sits with the faculty, water in hand. The room has to see the fiction end.</p>
+<p>The learner fills the interim note template. Five prompts. Times. The three consent layers, with times. Her words, in three lines. What was seen, negatives written as negatives. What was done and given, with a follow-up date.</p>
+<p>Tables confer at a whisper. Dr Preet Inder Singh puts the note on the visualiser.</p>
+</details>
+
+<details><summary><strong>0:44 · 16 min</strong>: Debrief 1 <span class="tag">Chhabra leads, Jainesh clocks</span></summary>
+<p><strong>Reactions, 2 min.</strong></p>
+<p class="say">One word each. Just the word. You first.</p>
+<p class="hint">Learner, then Meera, then four or five hands. No analysis. No reassurance.</p>
+<p><strong>Description, 2 min.</strong></p>
+<p class="say">Table B. What happened, in order, in four sentences.</p>
+<p class="hint">Ask a table, never the learner. It agrees the facts, and it stops the learner opening by attacking themselves.</p>
+<p><strong>Harvest, 9 min.</strong> Tables A to F, ninety seconds each, countdown on screen, cut every time. Meera gives forty-five seconds inside this, first person and about behaviour: "when you closed the door and sat down, I felt I could stop holding the bag."</p>
+<p><strong>Application, 3 min.</strong> Two probes, advocacy first.</p>
+<p class="say">Before you went in, you said you'd start with… You did… What changed in those thirty seconds?</p>
+<p class="say">You never told her she could stop. That worries me. Consent becomes a signature, not a standing permission. What were you thinking at the time?</p>
+<p>If a prohibited practice happened:</p>
+<p class="say">That was the two-finger test. The Supreme Court has said it has no scientific basis. Where did you learn it?</p>
+<p class="hint">Two minutes on why it survives in our teaching. They learned it from someone senior.</p>
+</details>
+
+<details><summary><strong>1:00 · 4 min</strong>: Reset, tea, brief Learner 2 <span class="tag">all five</span></summary>
+<p>Dr Raju resets props and re-briefs Meera on the changed variable. Dr Jainesh collects round one sheets and swaps the table jobs across the pairs. Dr Valliyapan walks the room and checks anyone who went quiet. Dr Preet Inder Singh briefs Learner 2 for four minutes without showing them the case.</p>
+</details>
+
+<details><summary><strong>1:04 · 13 min</strong>: Encounter 2, consent withheld <span class="tag">Raju runs it</span></summary>
+<p>Same entry. Constable's blaming line at minute two.</p>
+<p><strong>0:04</strong> Meera, flatly and not tearfully: "Andar ka check-up main nahi karwaungi." The refusal comes early so it has room to matter. Does he accept it without arguing, and without treating refusal as a problem to solve?</p>
+<p><strong>0:07</strong> "Baaki sab kar lijiye, bas woh nahi." She is not refusing care. Does he carry on at full effort?</p>
+<p><strong>0:09</strong> "Police ko sab batana padega?" Does he tell her what will be written about the refusal?</p>
+<p><strong>0:11</strong> Only if disclosing: "Mujhe report ki copy milegi?"</p>
+<p>Freeze at thirteen.</p>
+</details>
+
+<details><summary><strong>1:17 · 12 min</strong>: Debrief 2 <span class="tag">Preet Inder opens</span></summary>
+<p>His part is the first four minutes only. Three lines, then he stops.</p>
+<p class="say">One word each. Just the word. You first.</p>
+<p class="say">Table B. What happened, in order, in four sentences.</p>
+<p class="say">Thank you. Back to Dr Chhabra.</p>
+<p>He fixes nothing, teaches nothing, rescues nobody. The discipline of stopping is the demonstration.</p>
+<p>Dr Chhabra takes analysis. Dr Jainesh runs four tables at seventy-five seconds, chosen by what actually happened, with E and F always reporting.</p>
+</details>
+
+<details><summary><strong>1:29 · 10 min</strong>: Meta-debrief <span class="tag">Chhabra</span></summary>
+<p class="say">Forget Meera for ten minutes. Look at what we just did twice.</p>
+<p>Four questions, about two minutes each.</p>
+<p class="say">Both times I started with one word each, then asked a table what happened, not the doctor. Why that order? What would have happened if I had opened with: so, how do you think that went?</p>
+<p class="say">Where did I tell you what I thought before I asked a question? Where did I only ask? What came back differently?</p>
+<p class="say">Dr Preet Inder Singh, you ran four minutes of that. What was hardest?</p>
+<p class="say">Dr Jainesh cut every table at ninety seconds, including the senior ones. What did that cost us? What did it buy us?</p>
+<p>Close by naming the trap. The open self-assessment question invites the learner to attack himself. The room then spends its energy consoling him instead of learning. It feels kind. It is the commonest way a good scenario is wasted.</p>
+</details>
+
+<details><summary><strong>1:39 · 9 min</strong>: Theory 2, debriefing science <span class="tag">Chhabra</span></summary>
+<p>Point back at the room constantly, because everything here now has something to attach to.</p>
+<p>The debrief is the active ingredient, and the reviews keep finding it. Four models they can use on Monday: plus/delta, GAS, PEARLS, and advocacy-inquiry inside any of them. Five ways facilitators lose a debrief. Assessment, and why nothing today was scored. Whether it transfers, answered honestly, T1 to T3. Then the costing slide on screen.</p>
+<p>End on the line that sets up the next nine minutes: the barrier has never been money, it is that nobody wrote the scenario down.</p>
+</details>
+
+<details><summary><strong>1:48 · 9 min</strong>: Design bench <span class="tag">tables, all five walking</span></summary>
+<p>Six boxes on one sheet: topic with one objective written as a behaviour, who plays whom, props with a cost, the one variable that changes learner behaviour, the freeze point, two debrief questions.</p>
+<p>Six minutes of work while all five of you walk the room. Two tables present for ninety seconds each, chosen by Dr Chhabra as he walks. Collect all six sheets and offer to circulate them.</p>
+</details>
+
+<details><summary><strong>1:57 · 3 min</strong>: Commitment cards and close <span class="tag">all five</span></summary>
+<p>Commitment cards, one sentence each, kept by them. Dr Raju thanks both volunteers by name, out loud, because they did the hardest job here.</p>
+<p>Then Dr Valliyapan, while people are still seated:</p>
+<p class="say">If today has been difficult for anyone, this number is on your table card. Please use it.</p>
+<p>Then five minutes of decompression. Standing, tea in hand, no content. Do not send anyone from this straight into the next parallel session.</p>
+</details>
+</section>
+
+<section id="secS" hidden>
+<p class="lede">The full scenario, as it will actually run. Dr Raju owns this tab. Everyone else should read it once so nothing in the hall is a surprise.</p>
+
+<h2>The case, fixed</h2>
+<div class="card">
+<p><strong>Meera Kandpal, 23.</strong> Works in a tailoring unit in Dehradun. Hindi-speaking. Brought to casualty at 14:40 by a woman police constable with a written requisition under Sections 63/64 BNS. Incident reported at about 19:30 the previous evening, so roughly nineteen hours ago. Her elder sister is waiting outside.</p>
+<p><strong>What she holds back</strong> until the learner earns it: the assailant is known to her, the brother of a co-worker, and she had gone to collect a payment. She bathed and changed, and brought the salwar in a plastic carry bag because her sister told her to. Abrasion on the left forearm, tenderness over the right cheek. Last period nineteen days ago, no contraception. She has already described the incident twice, at the police station and to a male doctor who sent her on. She is frightened her employer will find out.</p>
+</div>
+
+<h3>Why each fact is in there</h3>
+<ul>
+<li><strong>Nineteen hours.</strong> Inside the twenty-four-hour requirement of Section 184 BNSS and well inside the evidence window, so "too late" is not available as an escape.</li>
+<li><strong>Bathed and changed.</strong> Forces the learner to manage their own "there will be no evidence" anxiety without transmitting it to her.</li>
+<li><strong>Known assailant, gone to collect a payment.</strong> Closes off the stranger-in-the-dark script, and hands the blaming question its opening. Watch how fast someone reaches for it.</li>
+<li><strong>Two previous narrations.</strong> Sets up the single most testable behaviour in the room: does he make her tell it a third time from the beginning.</li>
+<li><strong>Nineteen days since her period.</strong> Mid-cycle, so emergency contraception is genuinely indicated. If the learner never offers it, that is a real omission and not a trick.</li>
+</ul>
+
+<h2>Room state at the start</h2>
+<ul>
+<li>Two chairs at forty-five degrees, the one nearer the door is hers. Screen. Couch or table standing in for one. Pelvic model on a side table, draped.</li>
+<li>Door frame or taped line for the constable's entrances.</li>
+<li>On the table: MoHFW proforma, layered consent page, interim note template, sterile swabs, paper envelopes, labels, seal.</li>
+<li>Tissues, water and a shawl within the learner's reach. Offering them is scoreable.</li>
+<li>Learner has read the case card outside and said one sentence aloud about their first move. Nothing else.</li>
+</ul>
+
+<h2>Rehearsal player</h2>
+<p class="lede">Pick an encounter. Press start. Cues light up as their minute arrives. Tick each one as it fires in the dry run. Anything still unticked at the end is a cue that does not work.</p>
+<div class="clock">
+  <button id="encA" aria-pressed="true">Encounter 1</button>
+  <button id="encB" aria-pressed="false">Encounter 2</button>
+</div>
+<div class="clock">
+  <span class="time" id="sdisp">00:00</span>
+  <button id="sstart">Start</button>
+  <button id="sreset" class="ghost">Reset</button>
+  <span class="now" id="snow">Not started</span>
+</div>
+<div class="bar"><span id="sbar"></span></div>
+<div id="cuetable"></div>
+<div class="fld" style="margin-top:14px">
+  <label for="drynote">What actually happened in the dry run</label>
+  <textarea id="drynote" placeholder="Cues that fired late. Lines that fell flat. Anything the learner did that we had not planned for."></textarea>
+</div>
+
+<h2>What the dry run found</h2>
+<p class="lede">The scenario was run against the clock before it was written up. Nine things broke. Seven are fixed in the cue list above. Two need the five of us to decide.</p>
+
+<details><summary>1. A pile-up at minutes three and four. Fixed.</summary>
+<p>Two cues landed sixty seconds apart, both while the learner was still taking consent. Nobody could handle both. The moment stopped testing anything. The constable's line moves to minute two. Hers moves to minute five.</p></details>
+
+<details><summary>2. The constable's last cue never fired in Encounter 2. Fixed.</summary>
+<p>Her question about the report sat at minute fourteen. The second encounter freezes at thirteen. Encounter 2 now has its own cue times instead of borrowing the first one's.</p></details>
+
+<details><summary>3. The changed variable arrived too late to change anything. Fixed.</summary>
+<p>Her refusal only works if the learner has got as far as proposing an examination. In the dry run, thirteen minutes went on consent and history. The refusal never came up. Encounter 2 was just a shorter Encounter 1. She now volunteers it herself at minute four. That is what makes the second encounter a different problem.</p></details>
+
+<details><summary>4. Withdrawal could kill fourteen minutes in front of thirty people. Fixed, with a limit.</summary>
+<p>Trigger withdrawal at minute three and the rule keeps her closed for the rest of the encounter. In a teaching room that is right. In a conference hall it is fourteen minutes of nothing. So Dr Raju may cue one half-step back up. Once only. And only if the learner names what he did and apologises. If he doesn't, Dr Chhabra freezes at minute twelve and debriefs the withdrawal. That is a better debrief than watching the clock run out.</p></details>
+
+<details><summary>5. Nobody owned the moment the learner walks toward her. Fixed.</summary>
+<p>The absolute rule has to be enforced in under two seconds. The run sheet never said by whom. It is Dr Raju. The line is: Doctor, describe it to us instead. Said flat, without stopping the encounter.</p></details>
+
+<details><summary>6. Two minutes of writing produced nothing worth cross-examining. Fixed.</summary>
+<p>The dry-run learner spent the writing window deciding on a layout. There is now a printed template with five prompts. The two minutes go on content, and Table D gets something real to attack.</p></details>
+
+<details><summary>7. Consent was being signed after the fiction had ended. Fixed.</summary>
+<p>The earlier version had the consent page completed at the freeze. That is backwards. Consent is taken during the consultation. He now ticks each layer as he takes it, and signs at the freeze.</p></details>
+
+<details><summary>8. Seventeen minutes may be too long for Beat 3. Needs a decision.</summary>
+<p>Narrating the examination took about four minutes, not five. The last minute drifted. Two options. Accept a loose ending, or cut Encounter 1 to sixteen and give the minute to the harvest. My view: leave it at seventeen. A learner running out of things to say is worth debriefing. Dr Chhabra decides.</p></details>
+
+<details><summary>9. The sister is written in but never used. Needs a decision.</summary>
+<p>Inviting her in is a scoreable act of support. It also shows the difference between a chaperone and a person she chose herself. But it needs a third volunteer and a chair. At a conference that is one more thing to go wrong. Staff her properly, or cut her from the case card. Half-staffing is the worst option. The learner asks for her, and nobody appears.</p></details>
+
+<h2>Interim note template</h2>
+<p class="lede">Half a page, printed, handed over at the freeze. Five prompts, nothing more.</p>
+<div class="card">
+<p>1. Time requisition received. Time examination began.<br>
+2. Consent: examination, samples, information to police. Each one agreed or declined, with the time.<br>
+3. What she said, in her own words, in no more than three lines.<br>
+4. What was seen. Size, shape, site, colour. Negatives written as negatives, with the reason.<br>
+5. What was done and what was given. Follow-up date.</p>
+</div>
+
+<h2>Before you call it ready</h2>
+<ul>
+<li>Run both encounters end to end with a stopwatch, with one of us playing the learner badly on purpose.</li>
+<li>Every cue in the player above should be tickable. One that never fires is a cue that does not work.</li>
+<li>Have someone sit in the back row and confirm they can hear Meera at her real volume, not a rehearsal volume.</li>
+<li>Time the two-minute writing window with the actual template in front of the actual learner.</li>
+<li>Deliberately trigger withdrawal at minute three and see whether the recovery rule in finding 4 holds.</li>
+</ul>
+</section>
+
+<section id="secA"><p class="empty">Pick a name above.</p></section>
+<section id="secB" hidden><p class="empty">Pick a name above.</p></section>
+
+<section id="secL" hidden>
+<p class="lede">Ten short pieces. None of us trained in this, so nothing here assumes you have. Work through them before the faculty walk-through, and tick each one when you could explain it to a colleague.</p>
+
+<h3>What we are actually running</h3>
+<figure>
+<svg class="info" viewBox="0 0 600 150" role="img" aria-label="How the 120 minutes are divided between framing, theory, scenario, discussion and design work"><title>Where the two hours go</title>
+  <rect x="8" y="26" width="97" height="38" rx="5" fill="var(--rule-soft)" stroke="var(--rule)"/>
+  <text x="56" y="50" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="IBM Plex Sans, system-ui, sans-serif">Framing</text>
+  <text x="56" y="80" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">20 min</text>
+  <rect x="109" y="26" width="102" height="38" rx="5" fill="var(--accent-soft)" stroke="var(--accent-mid)"/>
+  <text x="160" y="50" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="IBM Plex Sans, system-ui, sans-serif">Theory</text>
+  <text x="160" y="80" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">21 min</text>
+  <rect x="215" y="26" width="155" height="38" rx="5" fill="var(--accent-mid)" stroke="var(--accent-mid)"/>
+  <text x="292" y="50" text-anchor="middle" font-size="13" fill="var(--paper)" font-family="IBM Plex Sans, system-ui, sans-serif">Scenario</text>
+  <text x="292" y="80" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">32 min</text>
+  <rect x="374" y="18" width="184" height="54" rx="5" fill="var(--accent)" stroke="var(--accent)"/>
+  <text x="466" y="42" text-anchor="middle" font-size="14" fill="var(--paper)" font-family="IBM Plex Sans, system-ui, sans-serif">Discussion</text>
+  <text x="466" y="60" text-anchor="middle" font-size="12" fill="var(--paper)" opacity=".85" font-family="IBM Plex Sans, system-ui, sans-serif">both debriefs, plus the meta</text>
+  <text x="466" y="88" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">38 min</text>
+  <rect x="562" y="26" width="30" height="38" rx="5" fill="var(--rule-soft)" stroke="var(--rule)"/>
+  <text x="577" y="80" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">9</text>
+  <text x="8" y="122" font-size="13" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">Two people sit in the chair. The other twenty-eight work at their tables.</text>
+</svg>
+<figcaption>Drawn to scale. The discussion gets more minutes than the scenario, and that is the single design decision everything else follows from.</figcaption>
+</figure>
+
+<div class="progress" id="prog">0 of 10 ticked</div>
+
+<details data-m="1"><summary>1. Simulation is a technique, not equipment</summary>
+<p>The instinct is to think this needs a skills lab and a mannequin. It doesn't. You need four things. A case. Someone to play the patient. A room. And someone who can run the discussion afterwards.</p>
+<p>What it does is narrow. It moves the first attempt. Every one of us examined our first survivor on a real survivor. Alone. At an odd hour. Nobody watching. A student can score eighty per cent on sexual offences and still ask a survivor why she went there. A written paper cannot catch that. This can.</p>
+<p>Our whole session costs under a thousand rupees. That fact is part of what we are teaching.</p>
+</details>
+
+<details data-m="2"><summary>2. The prebrief, and why it is not a formality</summary>
+<p>Three things make a room safe enough for someone to be bad at something in front of thirty people.</p>
+<ul>
+<li><strong>The fiction contract.</strong> We agree to treat something artificial as real, and we agree that when the facilitator says freeze, it stops being real. Both halves matter, and the second half is the one people forget.</li>
+<li><strong>The basic assumption</strong>, said out loud: everyone here is intelligent, well trained, cares about doing well, and wants to improve. Say it every time, even when you doubt it.</li>
+<li><strong>Confidentiality.</strong> Nothing is scored, nothing is reported, nothing leaves the room.</li>
+</ul>
+<p>Skip it and two things follow. Defensive performance in the scenario. Silence in the discussion. People then decide simulation doesn't work. What failed was three minutes of framing.</p>
+<figure>
+<svg class="info" viewBox="0 0 600 190" role="img" aria-label="Three things hold up a room safe enough to be bad at something in public"><title>The safe container</title>
+  <rect x="40" y="14" width="520" height="40" rx="7" fill="var(--accent)" stroke="var(--accent)"/>
+  <text x="300" y="39" text-anchor="middle" font-size="14" fill="var(--paper)" font-family="IBM Plex Sans, system-ui, sans-serif">A room safe enough to be bad at something in public</text>
+  <rect x="48" y="86" width="158" height="62" rx="7" fill="var(--accent-soft)" stroke="var(--accent-mid)"/>
+  <text x="127" y="110" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="IBM Plex Sans, system-ui, sans-serif">Fiction contract</text>
+  <text x="127" y="130" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">it starts, and it stops</text>
+  <rect x="221" y="86" width="158" height="62" rx="7" fill="var(--accent-soft)" stroke="var(--accent-mid)"/>
+  <text x="300" y="110" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="IBM Plex Sans, system-ui, sans-serif">Basic assumption</text>
+  <text x="300" y="130" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">said out loud, every time</text>
+  <rect x="394" y="86" width="158" height="62" rx="7" fill="var(--accent-soft)" stroke="var(--accent-mid)"/>
+  <text x="473" y="110" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="IBM Plex Sans, system-ui, sans-serif">Confidentiality</text>
+  <text x="473" y="130" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">nothing is reported</text>
+  <path d="M127 84 L127 58" stroke="var(--accent-mid)" stroke-width="1.5" fill="none"/>
+  <path d="M300 84 L300 58" stroke="var(--accent-mid)" stroke-width="1.5" fill="none"/>
+  <path d="M473 84 L473 58" stroke="var(--accent-mid)" stroke-width="1.5" fill="none"/>
+  <text x="300" y="176" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">Remove any one leg and the whole thing sits on the floor.</text>
+</svg>
+<figcaption>Three minutes of speaking buys you the candour you need forty minutes later.</figcaption>
+</figure>
+</details>
+
+<details data-m="3"><summary>3. The freeze</summary>
+<p>One word, said flatly. Not "okay, I think we can stop there", not "shall we leave it?". Just "Freeze."</p>
+<p>The flatness is the point. The room sees the pretend thing end on command. Then she stands, leaves the chair, and sits with us. That movement closes the fiction better than any announcement.</p>
+<p>Call it on the clock, not when the scenario feels finished. Real consultations get interrupted. A learner who managed only consent and half a history in seventeen minutes has given you plenty to discuss.</p>
+</details>
+
+<details data-m="4"><summary>4. Not interrupting, which is the hardest habit to break</summary>
+<p>You are a teacher. Someone does it wrong in front of you. Every instinct says correct it now. Here, that instinct is the enemy.</p>
+<p>If the learner narrates a two-finger test, let it finish. Interrupt, and thirty people learn that you will step in and rescue them. Every performance after that goes cautious and false. You also lose the most useful thing in the room. An error you can examine with the person who made it.</p>
+<p>The exception is never about content. Stop only for three things. Someone is being harmed. The absolute rule is about to be broken. It has turned into comedy.</p>
+</details>
+
+<details data-m="5"><summary>5. Running a standardised patient</summary>
+<p>A standardised patient is not a volunteer who improvises. She works to a written brief. The brief is what makes her responses teach anything.</p>
+<ul>
+<li><strong>She responds to behaviour.</strong> Our Meera moves between closed, opening and disclosing depending on what the doctor does. That calibration is the engine. Without it the encounter is just a scene.</li>
+<li><strong>Named withdrawal triggers.</strong> Specific things, agreed in advance, that make her shut down. Asking her to repeat the account. Any question about why she went there. Touching her without asking.</li>
+<li><strong>No invention.</strong> Anything outside the brief gets "mujhe yaad nahi". A detail invented in front of thirty people cannot be quietly corrected.</li>
+<li><strong>Out of role at the freeze</strong>, physically and immediately.</li>
+</ul>
+<p>Budget 45 minutes to brief her, a week ahead. This is the item people cut when they are busy. It is also the item that decides whether the session works.</p>
+<figure>
+<svg class="info" viewBox="0 0 600 245" role="img" aria-label="The standardised patient moves between closed, opening and disclosing, and drops to withdrawal"><title>The response ladder</title>
+  <rect x="300" y="14" width="228" height="52" rx="7" fill="var(--accent)" stroke="var(--accent)"/>
+  <text x="414" y="37" text-anchor="middle" font-size="14" fill="var(--paper)" font-family="IBM Plex Sans, system-ui, sans-serif">Disclosing</text>
+  <text x="414" y="56" text-anchor="middle" font-size="12" fill="var(--paper)" opacity=".85" font-family="IBM Plex Sans, system-ui, sans-serif">gives detail unpushed</text>
+  <rect x="220" y="82" width="228" height="52" rx="7" fill="var(--accent-mid)" stroke="var(--accent-mid)"/>
+  <text x="334" y="105" text-anchor="middle" font-size="14" fill="var(--paper)" font-family="IBM Plex Sans, system-ui, sans-serif">Opening</text>
+  <text x="334" y="124" text-anchor="middle" font-size="12" fill="var(--paper)" opacity=".9" font-family="IBM Plex Sans, system-ui, sans-serif">sits, puts the bag down</text>
+  <rect x="140" y="150" width="228" height="52" rx="7" fill="var(--accent-soft)" stroke="var(--accent-mid)"/>
+  <text x="254" y="173" text-anchor="middle" font-size="14" fill="var(--ink)" font-family="IBM Plex Sans, system-ui, sans-serif">Closed</text>
+  <text x="254" y="192" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">two-word answers. The default</text>
+  <path d="M374 148 L374 138" stroke="var(--muted)" stroke-width="1.5" fill="none"/>
+  <path d="M369 144 L374 138 L379 144" stroke="var(--muted)" stroke-width="1.5" fill="none"/>
+  <path d="M294 80 L294 70" stroke="var(--muted)" stroke-width="1.5" fill="none"/>
+  <path d="M289 76 L294 70 L299 76" stroke="var(--muted)" stroke-width="1.5" fill="none"/>
+  <text x="392" y="145" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">he earns it</text>
+  <text x="312" y="77" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">he earns it again</text>
+  <rect x="8" y="150" width="112" height="52" rx="7" fill="var(--signal-soft)" stroke="var(--signal)"/>
+  <text x="64" y="173" text-anchor="middle" font-size="13" fill="var(--signal)" font-family="IBM Plex Sans, system-ui, sans-serif">Withdrawn</text>
+  <text x="64" y="192" text-anchor="middle" font-size="12" fill="var(--signal)" font-family="IBM Plex Sans, system-ui, sans-serif">and stays there</text>
+  <path d="M136 176 L126 176" stroke="var(--signal)" stroke-width="1.5" fill="none"/>
+  <path d="M132 171 L126 176 L132 181" stroke="var(--signal)" stroke-width="1.5" fill="none"/>
+  <text x="8" y="228" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">Any trigger drops her from any level: a blaming question, a touch without asking, a third retelling.</text>
+</svg>
+<figcaption>This calibration is what makes the encounter teach rather than merely happen. Going up takes work. Coming down takes one sentence.</figcaption>
+</figure>
+</details>
+
+<details data-m="6"><summary>6. Observing: behaviour, not opinion</summary>
+<p>An observation you can act on has words and a time in it. An impression has neither.</p>
+<p>He was insensitive. Nobody can discuss that. The learner can only agree or defend himself. He asked why she went there alone at minute six, and she stopped looking at him for four minutes. Everybody can examine that, including the man who said it.</p>
+<p>The test: could someone disagree with you about whether it happened? If yes, it is opinion.</p>
+<p>Try the six below. Most people get two wrong.</p>
+<div class="card" id="fsorter"></div>
+</details>
+
+<details data-m="7"><summary>7. The four phases of a debrief</summary>
+<p>This is where the learning happens, so it gets more minutes than the scenario. The order is not arbitrary.</p>
+<ul>
+<li><strong>Reactions, two minutes.</strong> One word each. You are letting the emotion out of the room before anyone tries to think. Do not analyse, do not reassure.</li>
+<li><strong>Description, two minutes.</strong> Ask a table, not the learner, what happened in sequence. This agrees the facts and it protects the learner from opening with an attack on themselves.</li>
+<li><strong>Analysis, the bulk.</strong> Two points, not twenty. This is where advocacy-inquiry lives.</li>
+<li><strong>Application, three minutes.</strong> One thing each person will do differently. Cut this and nothing changes on Monday.</li>
+</ul>
+<p>One thing to remember. Never open with: so, how do you think that went? A shaken learner will attack himself. The room then spends its energy consoling him instead of learning.</p>
+<figure>
+<svg class="info" viewBox="0 0 600 165" role="img" aria-label="The four phases of a debrief drawn to their minute lengths"><title>The shape of a debrief</title>
+  <rect x="8" y="30" width="72" height="46" rx="5" fill="var(--accent-soft)" stroke="var(--accent-mid)"/>
+  <text x="44" y="52" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="IBM Plex Sans, system-ui, sans-serif">Reactions</text>
+  <text x="44" y="68" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">2 min</text>
+  <rect x="86" y="30" width="72" height="46" rx="5" fill="var(--accent-soft)" stroke="var(--accent-mid)"/>
+  <text x="122" y="52" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="IBM Plex Sans, system-ui, sans-serif">Description</text>
+  <text x="122" y="68" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">2 min</text>
+  <rect x="164" y="22" width="322" height="62" rx="5" fill="var(--accent)" stroke="var(--accent)"/>
+  <text x="325" y="46" text-anchor="middle" font-size="14" fill="var(--paper)" font-family="IBM Plex Sans, system-ui, sans-serif">Analysis</text>
+  <text x="325" y="64" text-anchor="middle" font-size="12" fill="var(--paper)" opacity=".85" font-family="IBM Plex Sans, system-ui, sans-serif">the harvest, and two points only</text>
+  <text x="325" y="78" text-anchor="middle" font-size="12" fill="var(--paper)" opacity="0" font-family="IBM Plex Sans, system-ui, sans-serif"> </text>
+  <rect x="492" y="30" width="100" height="46" rx="5" fill="var(--accent-mid)" stroke="var(--accent-mid)"/>
+  <text x="542" y="52" text-anchor="middle" font-size="13" fill="var(--paper)" font-family="IBM Plex Sans, system-ui, sans-serif">Application</text>
+  <text x="542" y="68" text-anchor="middle" font-size="12" fill="var(--paper)" opacity=".9" font-family="IBM Plex Sans, system-ui, sans-serif">3 min</text>
+  <text x="8" y="110" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">Emotion out first. Then agree the facts. Only then think about them. Finish on what changes.</text>
+  <text x="8" y="136" font-size="12" fill="var(--signal)" font-family="IBM Plex Sans, system-ui, sans-serif">The phase that gets cut when you run late is the last one. It is the only part that changes practice.</text>
+</svg>
+<figcaption>Ask a table for the description, not the learner. It agrees the facts, and it stops the learner opening with an attack on themselves.</figcaption>
+</figure>
+</details>
+
+<details data-m="8"><summary>8. Advocacy and inquiry, the move to practise</summary>
+<p>Three parts, in one breath. What you saw. What worries you about it. Then a real question.</p>
+<p class="say">You never told her she could stop. That worries me. Consent becomes a signature, not a standing permission. What were you thinking at the time?</p>
+<p>It is honest, because your view is on the table instead of hidden. It is still curious, because you might be wrong about why he did it. And it gives him something specific to answer.</p>
+<figure>
+<svg class="info" viewBox="0 0 600 185" role="img" aria-label="The three parts of an advocacy and inquiry sentence"><title>One sentence, three parts</title>
+  <rect x="8" y="20" width="182" height="64" rx="7" fill="var(--accent-soft)" stroke="var(--accent-mid)"/>
+  <text x="99" y="44" text-anchor="middle" font-size="13" fill="var(--ink)" font-family="IBM Plex Sans, system-ui, sans-serif">What you saw</text>
+  <text x="99" y="63" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">words and a time</text>
+  <text x="99" y="77" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">no judgement yet</text>
+  <rect x="200" y="20" width="182" height="64" rx="7" fill="var(--accent-mid)" stroke="var(--accent-mid)"/>
+  <text x="291" y="44" text-anchor="middle" font-size="13" fill="var(--paper)" font-family="IBM Plex Sans, system-ui, sans-serif">What worries you</text>
+  <text x="291" y="63" text-anchor="middle" font-size="12" fill="var(--paper)" opacity=".9" font-family="IBM Plex Sans, system-ui, sans-serif">your own view, plainly</text>
+  <text x="291" y="77" text-anchor="middle" font-size="12" fill="var(--paper)" opacity=".9" font-family="IBM Plex Sans, system-ui, sans-serif">this is the honest part</text>
+  <rect x="392" y="20" width="200" height="64" rx="7" fill="var(--accent)" stroke="var(--accent)"/>
+  <text x="492" y="44" text-anchor="middle" font-size="13" fill="var(--paper)" font-family="IBM Plex Sans, system-ui, sans-serif">Your question</text>
+  <text x="492" y="63" text-anchor="middle" font-size="12" fill="var(--paper)" opacity=".85" font-family="IBM Plex Sans, system-ui, sans-serif">about their thinking</text>
+  <text x="492" y="77" text-anchor="middle" font-size="12" fill="var(--paper)" opacity=".85" font-family="IBM Plex Sans, system-ui, sans-serif">this is the curious part</text>
+  <path d="M8 100 L592 100" stroke="var(--muted)" stroke-width="1" fill="none"/>
+  <path d="M8 96 L8 104" stroke="var(--muted)" stroke-width="1" fill="none"/>
+  <path d="M592 96 L592 104" stroke="var(--muted)" stroke-width="1" fill="none"/>
+  <text x="300" y="120" text-anchor="middle" font-size="12" fill="var(--muted)" font-family="IBM Plex Sans, system-ui, sans-serif">one breath</text>
+  <text x="8" y="150" font-size="12" fill="var(--signal)" font-family="IBM Plex Sans, system-ui, sans-serif">Drop the middle box and you are interrogating. Drop the last box and you are lecturing.</text>
+</svg>
+<figcaption>Most people find the middle part hardest, because saying your concern out loud feels blunt. Hiding it is worse, and the room can always tell.</figcaption>
+</figure>
+<p>Build one yourself. Take any moment from your own teaching this week.</p>
+<div class="card" id="aibuild"></div>
+</details>
+
+<details data-m="9"><summary>9. The four ways a debrief is lost</summary>
+<p>Each of these feels reasonable at the time, which is why they are common.</p>
+<ul>
+<li><strong>The opener that invites self-attack.</strong> "How do you think that went?"</li>
+<li><strong>Hidden judgement.</strong> You have an opinion, you conceal it, and you ask leading questions until they guess it. This is sometimes taught as being non-judgemental. The room can always tell, and it feels like an interrogation.</li>
+<li><strong>Lecturing.</strong> If you are speaking for more than thirty seconds at a stretch, you have stopped debriefing.</li>
+<li><strong>Chasing every error.</strong> Pick two. Leave the rest. A debrief that covers everything changes nothing.</li>
+</ul>
+<p>Four things a facilitator might say. One of them is the one to copy.</p>
+<div class="card" id="fopener"></div>
+</details>
+
+<details data-m="10"><summary>10. Time, cutting, and looking after the room</summary>
+<p><strong>Cutting.</strong> Six tables at ninety seconds is nine minutes. Open the floor instead and three confident people will take twenty. Cut every table at the timer, including the professor, kindly and without apologising. The first time the room sees you cut someone senior, everyone relaxes, because the rule is visibly real.</p>
+<p><strong>Safeguarding.</strong> In a room of thirty, the statistics make it near certain that someone present has lived some version of this case. So: the subject goes in the programme in plain words, anyone may leave without explaining, one faculty member has no job except the room, and nobody who steps out is ever asked about it afterwards.</p>
+<p><strong>When you are behind.</strong> Cut the design bench first, the second encounter second. Never the discussion, and never the prebrief.</p>
+</details>
+
+<h2>Before you run it for real</h2>
+<p>Rehearse the whole thing once, the five of us, with one of us playing the learner. Forty-five minutes. It is the only way to find out that the microphone doesn't reach the back row. Or that a cue you wrote for yourself makes no sense at speed.</p>
+</section>
+
+<section id="secR" hidden>
+<p class="lede">Where this way of teaching came from, what to watch, and what to read if you want to go further.</p>
+
+<h2>Nine things worth knowing</h2>
+
+<details><summary>Aviation got there about sixty years before medicine</summary>
+<p>Edwin Link built his Blue Box flight trainer in 1929, from bellows and valves out of his family's pipe organ business. Pilots were practising emergencies on the ground. Doctors were still learning theirs on patients. The debt goes past equipment. The word debriefing came to us from aviation, and so did most of what we teach about teams.</p>
+</details>
+
+<details><summary>The most kissed face in the world belonged to a drowned woman</summary>
+<p>Resusci Anne arrived in 1960, made by a Norwegian toymaker, Åsmund Lærdal. Her face came from a death mask. An unidentified young woman pulled from the Seine in the 1880s, known as L'Inconnue de la Seine. Lærdal had seen a copy of it hanging in a relative's house. He picked a woman's face partly because he thought male trainees would not want to practise mouth-to-mouth on a man. About 300 million people have trained on her since.</p>
+</details>
+
+<details><summary>The first computer-controlled patient was built in 1967, then ignored for twenty years</summary>
+<p>Sim One breathed, blinked, had a pulse and responded to drugs. Exactly one was made. Computing was far too expensive and the idea found no market. High-fidelity mannequins did not come back until the late 1980s. Technology rarely fails on its merits.</p>
+</details>
+
+<details><summary>Harvey has been teaching cardiology since 1968</summary>
+<p>The cardiology simulator built by Michael Gordon at Miami is still in use, fifty years on. Nothing else in our field has that record. Worth asking why a limited, focused, mechanical thing outlasted so much cleverer equipment.</p>
+</details>
+
+<details><summary>Standardised patients were first dismissed as showbusiness</summary>
+<p>In the early 1960s a neurologist, Howard Barrows, trained a healthy person to play a patient so every student met the same case. Colleagues mocked it as a Hollywood technique. It became the OSCE, which is how most of us were examined.</p>
+</details>
+
+<details><summary>France ran a national simulation programme in the 1750s</summary>
+<p>Angélique du Coudray, a Paris midwife, built a life-size birthing model from cloth, leather and real pelvic bones. She toured France for decades with royal backing, teaching village midwives to deliver safely. Thousands trained on it. National-scale simulation training, three hundred years ago, with no electricity.</p>
+</details>
+
+<details><summary>Sushruta had students practise on vegetables first</summary>
+<p>The Sushruta Samhita says what to rehearse on before touching a patient. Incisions on gourds and melons. Punctures on a leather bag filled with water. Scraping on hides. What we are teaching at this workshop is not new to India. It is about as old as surgery.</p>
+</details>
+
+<details><summary>The single most quoted line in the field is a warning about equipment</summary>
+<p>David Gaba's line is that simulation is a technique, not a technology. Quoted constantly. Ignored almost as often, usually by places that buy a mannequin and then wonder why nothing changed.</p>
+</details>
+
+<details><summary>The evidence points at the conversation, not the kit</summary>
+<p>Across twenty years of reviews, one feature keeps coming out on top. Feedback and debriefing. Choose between a better mannequin and a better debrief, and the literature says buy the debrief. Our session costs under a thousand rupees. Same point, made with money.</p>
+</details>
+
+<h2>Watch</h2>
+<p class="lede">None is about our case, and that is deliberate. They cover the parts of the craft that are hardest to get from reading.</p>
+
+<a class="vid" href="https://www.youtube.com/watch?v=LhoLuui9gX8" target="_blank" rel="noopener">
+<span class="vt">Building a psychologically safe workplace</span>
+<span class="vm">Amy Edmondson, TEDxHGSE · 11 min</span>
+<span class="vw">The research behind the basic assumption. Her three moves are exactly what the prebrief does. Frame the work as a learning problem. Admit your own fallibility. Model curiosity. Watch this one first.</span></a>
+
+<a class="vid" href="https://www.youtube.com/watch?v=pXI6DoAQFh8" target="_blank" rel="noopener">
+<span class="vt">The neurobiology of sexual assault</span>
+<span class="vm">Rebecca Campbell, National Institute of Justice · about an hour</span>
+<span class="vw">Why a survivor may not resist. Why she may not remember in order. Why she may seem flat. This is the evidence under the one sentence we want delegates to leave with: absence of injury neither confirms nor excludes assault.</span></a>
+
+<a class="vid" href="https://www.youtube.com/watch?v=fWken5DsJcw" target="_blank" rel="noopener">
+<span class="vt">What is trauma-informed care?</span>
+<span class="vm">Animated, with a clinician narrator · 5 min</span>
+<span class="vw">The shift from what is wrong with you to what happened to you, told plainly. Useful as a shared reference point across the five of us.</span></a>
+
+<a class="vid" href="https://www.youtube.com/watch?v=sJ-md9yu0MQ" target="_blank" rel="noopener">
+<span class="vt">Simulation in medical student education</span>
+<span class="vm">Cate Nicholas and Elise Everett · about an hour</span>
+<span class="vw">A practical walk through building simulation into teaching, standardised patients included. A second voice on the mechanics before you run ours.</span></a>
+
+<h2>Read: the debriefing craft</h2>
+<p class="lede">Start here. These four shaped how our session is built.</p>
+
+<a class="vid" href="https://journals.lww.com/simulationinhealthcare/Fulltext/2006/00110/There_s_No_Such_Thing_as__Nonjudgmental_.6.aspx" target="_blank" rel="noopener">
+<span class="vt">There's no such thing as nonjudgmental debriefing</span>
+<span class="vm">Rudolph, Simon, Dufresne and Raemer, 2006</span>
+<span class="vw">The paper that names the trap in module 9 and gives you advocacy-inquiry as the way out. If you read one thing, read this.</span></a>
+
+<a class="vid" href="https://debrief2learn.org/" target="_blank" rel="noopener">
+<span class="vt">PEARLS pocket cards and debriefing tools</span>
+<span class="vm">Debrief2Learn · free downloads</span>
+<span class="vw">The four-phase structure we use, on a card you can hold while you run one. Print five.</span></a>
+
+<a class="vid" href="https://harvardmedsim.org/debriefing-assessment-for-simulation-in-healthcare-dash/" target="_blank" rel="noopener">
+<span class="vt">DASH: an assessment tool for debriefing</span>
+<span class="vm">Center for Medical Simulation · free handbook</span>
+<span class="vw">Six elements of a good debrief, with behavioural anchors. Use it on each other during the walk-through, not on delegates.</span></a>
+
+<a class="vid" href="https://harvardmedsim.org/topic/webinars-on-demand/" target="_blank" rel="noopener">
+<span class="vt">Free open access simulation materials</span>
+<span class="vm">Center for Medical Simulation</span>
+<span class="vw">Recorded sessions on prebriefing, debriefing and faculty development. Deep, and free.</span></a>
+
+<h2>Read: the evidence, in order of usefulness</h2>
+<ul>
+<li>Eppich and Cheng, <em>Promoting Excellence and Reflective Learning in Simulation (PEARLS)</em>, Simulation in Healthcare, 2015. The structure of our debrief.</li>
+<li>Rudolph, Raemer and Simon, <em>Establishing a safe container for learning in simulation</em>, Simulation in Healthcare, 2014. The prebrief, and why it is a standard rather than a courtesy.</li>
+<li>Cheng and colleagues, <em>Debriefing for technology-enhanced simulation: a systematic review and meta-analysis</em>, Medical Education, 2014. The evidence that the conversation carries the effect.</li>
+<li>Issenberg and colleagues, <em>Features and uses of high-fidelity medical simulations that lead to effective learning</em>, BEME review, Medical Teacher, 2005. Still the best map of what actually matters.</li>
+<li>Cook and colleagues, <em>Technology-enhanced simulation for health professions education</em>, JAMA, 2011. The big meta-analysis to quote when someone asks whether it works.</li>
+<li>Norman, Dror and Reznick, <em>The minimal relationship between simulation fidelity and transfer of learning</em>, Medical Education, 2012. The argument against buying expensive things.</li>
+<li>Miller, <em>The assessment of clinical skills, competence, performance</em>, Academic Medicine, 1990. Four pages, and the pyramid in slide 2.</li>
+<li>INACSL, <em>Healthcare Simulation Standards of Best Practice</em>, 2021. What good practice looks like, written down.</li>
+</ul>
+
+<h2>Read: the clinical and legal side</h2>
+<ul>
+<li>Ministry of Health and Family Welfare, <em>Guidelines and Protocols: Medico-legal Care for Survivors and Victims of Sexual Violence</em>, 2014. The proforma, the consent structure and the sampling sequence our case follows.</li>
+<li>World Health Organization, <em>Clinical Management of Rape and Intimate Partner Violence Survivors</em>, revised 2019.</li>
+<li><em>State of Jharkhand v. Shailendra Kumar Rai</em>, Supreme Court of India, 2022, on the two-finger test. Short, readable, and worth reading in the original rather than in summary.</li>
+<li><em>Lillu v. State of Haryana</em>, (2013) 14 SCC 643.</li>
+</ul>
+
+<p class="hint">Links checked when this page was written. Play or open each one before you circulate it, because pages move.</p>
+</section>
+
+<section id="secC" hidden>
+<div class="pw">The delegates' page is locked until you give them the word. It is <code>SIMULATE</code>. Not case-sensitive, and they only type it once.</div>
+<p class="ro">Read-only. This is what a delegate sees on their phone. Nothing you tick here is saved.</p>
+
+<h2>Their pre-workshop reading</h2>
+<p>Sent out a week ahead. It carries the safeguarding note, the running order, four tappable infographics, and three exercises.</p>
+<ul>
+<li><strong>Behaviour or opinion.</strong> Six statements to sort. This trains the exact skill they need at their table.</li>
+<li><strong>How a discussion opens.</strong> Four openers to choose between. The trap is "so, how do you think that went".</li>
+<li><strong>A four-question self-check</strong> on cost, on which part carries the learning, on not interrupting, and on not marking.</li>
+</ul>
+
+<h2>Their six table jobs</h2>
+<p class="lede">They pick their letter and get that list. Each item carries a <strong>Proper</strong> and a <strong>Not proper</strong> button and its own remarks box, with a button to timestamp a moment and a free notes field underneath. They are told that leaving both unmarked means it never came up, which is not the same as not proper. At the end they can download the filled sheet as a spreadsheet, or copy it as text.</p>
+<p class="hint">Printed sheets exist as well, for anyone who would rather write by hand or whose phone dies. Same items, same three columns.</p>
+<div id="jobs"></div>
+
+<h2>Their 90 seconds</h2>
+<p>A text box for what the table will read out when Dr Jainesh calls them. Three findings, no more.</p>
+
+<h2>The three questions, and the law</h2>
+<p>They have the model answers on their phone, so you are not competing with note-taking when these come up.</p>
+<div id="lawbox"></div>
+
+<h2>Their design sheet</h2>
+<p class="lede">Six boxes for the last nine minutes, then one commitment sentence and a button that copies everything out as text.</p>
+<ol id="benchlist"></ol>
+</section>
+
+<footer>Everything you tick is saved in this browser only. Nobody else sees it. <button id="wipe" class="ghost" style="font-size:13px;padding:5px 10px;margin-left:8px">Clear my copy</button></footer>
+<div class="lic"><p><b>Licence.</b> This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International Licence (CC BY-NC-ND 4.0). You may copy and share it for teaching, including in your own department, provided you credit the author, do not use it commercially and do not share altered versions. <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">creativecommons.org/licenses/by-nc-nd/4.0</a></p><p><b>Attribution.</b> Dr Harvinder Singh Chhabra, Forensic Workbench. Teaching Forensic Medicine Without the Patient: An Introduction to Simulation-Based Learning.</p><p><b>For guidance or to report an error.</b> dr.fmt.hsc@gmail.com</p></div>
+</div>
+
+<script>
+const FACULTY = [
+  {id:"hsc", name:"Dr Chhabra", role:"Workshop director and lead facilitator",
+   job:"You own the room's safety, both theory blocks, and the debriefs the audience has come to watch.",
+   never:"Never coach during an encounter, never correct a learner in front of the standardised patient, and never cut the application phase to save time.",
+   say:[
+     "This session is about a woman who has been sexually assaulted. We are going to watch a doctor examine her.",
+     "Nothing intimate is examined on anyone. Nobody is touched. The examination is said out loud and pointed out on the model.",
+     "The case is fiction. The woman you'll meet is a volunteer, not a patient. When I say Freeze, she stops being Meera and comes and sits with us.",
+     "If you want to leave, stand up and go. You don't have to say why. Nobody will ask you afterwards. Dr Valliyapan is at that door.",
+     "No photos. No recording. Nothing leaves this room.",
+     "Two colleagues are about to do something hard in front of thirty people. Everyone here is trained. Everyone here cares. Everyone here wants to do it better. That is what we are assuming.",
+     "One word each. Just the word. You first.",
+     "Table B. What happened, in order, in four sentences.",
+     "Before you went in, you said you'd start with… You did… What changed in those thirty seconds?",
+     "You never told her she could stop. That worries me. Consent becomes a signature, not a standing permission. What were you thinking at the time?",
+     "That was the two-finger test. The Supreme Court has said it has no scientific basis. Where did you learn it?"
+   ],
+   prep:["Content note into the conference programme","Cabaret seating confirmed in writing","Rehearse both debrief openings aloud with Dr Preet Inder Singh","Lead the 45-minute faculty walk-through of the cue sheet","Decide: does a participant or Dr Preet Inder Singh open Debrief 2","Circulate the delegate page a week ahead"]},
+
+  {id:"sr", name:"Dr Raju", role:"Scenario controller",
+   job:"The scenario is yours. If the encounter goes flat, that is your problem to fix, not the facilitator's.",
+   never:"Never let the standardised patient invent a detail. Anything outside her brief gets 'mujhe yaad nahi'.",
+   say:[
+     "Doctor, describe it to us instead. (If he walks towards her. Say it flat, do not stop the encounter.)",
+     "Theek hai sir, main bahar hoon. (Cue to the constable if the room deadlocks.)",
+     "Come and sit here. (To Meera, at the freeze. She stands, leaves the chair, takes the water.)",
+     "Mujhe yaad nahi. (What Meera says to anything outside her brief. Drill this with her.)"
+   ],
+   prep:["Recruit the standardised patient and the constable","45-minute SP briefing, one week out","15-minute constable briefing","Drill the hard skill: low affect at high volume","Agree hand signals with both actors","Plan the four-minute prop reset"]},
+
+  {id:"vp", name:"Dr Valliyapan", role:"Safety faculty",
+   job:"You look after everyone in the room. You do not assess, you do not facilitate, and this post is never reassigned.",
+   never:"Never ask someone who left to explain why. Not then, not afterwards, not ever.",
+   say:[
+     "No need to explain. Do you want to sit here, or shall I walk you out?",
+     "Would you like to step out for a few minutes?",
+     "If today has been difficult for anyone, this number is on your table card. Please use it."
+   ],
+   prep:["Red A5 pause card printed","Your name and a working number on all six table cards","Two seats nearest the exit left empty","Decide where you will take someone who steps out","Support contact ready to read aloud at the close"]},
+
+  {id:"jn", name:"Dr Jainesh", role:"Observation and harvest lead",
+   job:"Twenty-eight people are watching rather than performing. You are the reason their watching is work.",
+   never:"Never let a table run past its time, however senior the speaker. The first cut is what makes the rule real.",
+   say:[
+     "Opinion: he was insensitive. Behaviour: he asked why she went there alone at minute six, and she stopped looking at him. Write the second kind.",
+     "Words. Times. What changed.",
+     "Mark it proper or not proper. If it never came up, leave both blank.",
+     "That's time. Thank you. Table B."
+   ],
+   prep:["Print six table cards and thirty tally sheets","Lapel mics and countdown display confirmed with AV, in writing","Timer tested on the hall screen","Back-row hearing check on the morning","Swapped table jobs ready for the tea break"]},
+
+  {id:"pis", name:"Dr Preet Inder Singh", role:"Second facilitator and legal anchor",
+   job:"You open Debrief 2 and you take the legal questions, but only when cued and never for more than two minutes.",
+   never:"In your four minutes, never fix anything, never teach anything, never rescue the learner. Stopping is the demonstration.",
+   say:[
+     "One word each. Just the word. You first.",
+     "Table B. What happened, in order, in four sentences.",
+     "Thank you. Back to Dr Chhabra.",
+     "Section 184 BNSS, the old 164A CrPC. A registered medical practitioner. With her consent. Sent within twenty-four hours of the information reaching the police.",
+     "Section 48 BSA, the old 53A IEA. Her past sexual history is not relevant to consent. So asking about it gathers something the court is not allowed to use.",
+     "I can't say whether it looks like rape. That is a legal finding, not a medical one. I record what I found."
+   ],
+   prep:["Re-check whether Section 184 BNSS has been amended on the woman-doctor point","Recruit and brief Learners 1 and 2 privately, four minutes each","Visualiser ready for the interim note","Rehearse the four-minute opening with Dr Chhabra"]}
+];
+
+const PHASES = [
+  {t:0,m:6,name:"Opening and fiction contract",
+   hsc:"Deliver the opening. Name Dr Valliyapan and the door.",sr:"Wait outside with both actors.",
+   vp:"At the door, visible. Dr Chhabra names you aloud.",jn:"Tally sheets on every table. Timer tested.",
+   pis:"Seated at the far end, watching the audience."},
+  {t:6,m:12,name:"Theory 1, why simulate",
+   hsc:"Six slides. Take no questions at the end.",sr:"Final cue check with the SP and the constable.",
+   vp:"At the door.",jn:"Advance slides.",pis:"One prompt ready if the room is silent."},
+  {t:18,m:5,name:"Table jobs issued",
+   hsc:"Hand over to Dr Jainesh.",sr:"Actors into position outside.",vp:"At the door.",
+   jn:"You lead. Jobs A to F, then the 90-second worked example.",pis:"Check Learner 1 is seated and ready."},
+  {t:23,m:2,name:"Door-handle phase",
+   hsc:"Silent.",sr:"Cue the constable to stand by.",vp:"At the door.",jn:"Timer on screen.",
+   pis:"Hand Learner 1 the case card, then step away."},
+  {t:25,m:17,name:"Encounter 1",
+   hsc:"Watch. Speak only to say Freeze. Do not interrupt a wrong move.",
+   sr:"Run it. Ladder, fixed lines at 4, 9 and 13, constable's four beats.",
+   vp:"Watch the audience, not the scenario.",jn:"Silent timer. Signal at 15 and 16.",
+   pis:"Note the documentation and legal points."},
+  {t:42,m:2,name:"Freeze, then silent write",
+   hsc:"Call Freeze. One word, flat.",sr:"Bring the SP out of role. Seat her with the faculty, water.",
+   vp:"At the door.",jn:"Put two minutes on the screen.",pis:"Interim note onto the visualiser."},
+  {t:44,m:16,name:"Debrief 1, six-table harvest",
+   hsc:"You lead. Reactions, description, harvest, application.",
+   sr:"Sit with the SP. Cue her 45 seconds of feedback.",vp:"Watch the room.",
+   jn:"You run the clock. Tables A to F, 90 seconds, cut every time.",
+   pis:"Two legal clarifications, on cue only."},
+  {t:60,m:4,name:"Reset, tea, brief Learner 2",
+   hsc:"Recruit the Debrief 2 co-lead if you are using a participant.",
+   sr:"Reset props. Re-brief the SP on the changed variable.",
+   vp:"Walk the room. Check anyone who went quiet.",jn:"Collect round 1 sheets. Redistribute swapped jobs.",
+   pis:"Brief Learner 2 for four minutes. Do not show the case."},
+  {t:64,m:13,name:"Encounter 2, consent withheld",
+   hsc:"Watch. Freeze at 13.",sr:"Run it with the changed variable.",vp:"Watch the audience.",
+   jn:"Timer. Signal at 11 and 12.",pis:"Watch documentation only."},
+  {t:77,m:12,name:"Debrief 2, Preet Inder opens",
+   hsc:"Take analysis only. Hand the opening over.",sr:"SP out of role and seated.",vp:"At the door.",
+   jn:"Four tables at 75 seconds. E and F always report.",
+   pis:"You lead reactions and description, then hand back."},
+  {t:89,m:10,name:"Meta-debrief",
+   hsc:"You lead. Four questions.",sr:"Available on running the SP.",
+   vp:"Available on safeguarding if asked.",jn:"Answer question four, on the clock discipline.",
+   pis:"Answer question three: what was hard about co-leading."},
+  {t:99,m:9,name:"Theory 2, debriefing science",
+   hsc:"Six slides. Point back at the room throughout.",sr:"Pack down quietly.",vp:"At the door.",
+   jn:"Advance slides.",pis:"Ready on the assessment slide."},
+  {t:108,m:9,name:"Design bench",
+   hsc:"Walk the room. Pick the two tables to present.",sr:"Walk the room.",vp:"Walk the room.",
+   jn:"Timer, 90 seconds per presenting table.",pis:"Walk the room."},
+  {t:117,m:3,name:"Commitment cards and close",
+   hsc:"Commitment cards, thanks, decompression.",sr:"Thank both volunteers by name, in front of the room.",
+   vp:"Read the support contact aloud.",jn:"Collect all six design sheets.",
+   pis:"Collect consent pages and interim notes."}
+];
+
+const DRILLS = [
+  {who:"jn",q:"The back three tables cannot hear.",
+   a:"Stop at the sixty-second mark, not at minute ten. Ask the back rows directly, fix it, then restart the beat."},
+  {who:"hsc",q:"Part of the audience laughs.",
+   a:"At the freeze, calmly: that laugh was nerves, it's a normal reaction and I'd rather name it than let it sit there. Then back to what we saw."},
+  {who:"vp",q:"A participant stands up and leaves.",
+   a:"Nothing is said. The session continues. Follow about ten seconds later. No reference is ever made to it."},
+  {who:"vp",q:"The standardised patient is genuinely distressed.",
+   a:"Raise the pause card. Take her out yourself. She is not debriefed in front of the room, and that encounter does not resume."},
+  {who:"hsc",q:"The learner narrates a two-finger test.",
+   a:"Let it complete. Take it in the debrief. Interrupting teaches thirty people that you will rescue them, and every performance after that goes cautious."},
+  {who:"pis",q:"Someone defends the two-finger test from the floor.",
+   a:"Do not open with case law. Ask what the test is supposed to measure. Let the room reach the answer, then give them the judgment."},
+  {who:"sr",q:"The learner freezes completely and says nothing.",
+   a:"Cue the constable's second beat to restart movement. If still frozen, freeze early. Debriefing the freeze is an excellent debrief."},
+  {who:"hsc",q:"The learner starts playing it for laughs.",
+   a:"Freeze at once. Stop, resetting, this one we play straight. Restart from the door with no discussion."},
+  {who:"jn",q:"A professor is still talking at 90 seconds.",
+   a:"Cut, kindly and without apologising. That's time, thank you, Table B. The first cut is what makes the rule real for everyone else."},
+  {who:"hsc",q:"You are ten minutes behind at the 60-minute mark.",
+   a:"Encounter 2 down to ten minutes, design bench down to five. Never cut Theory 2 or the meta-debrief."}
+];
+
+const JOBS=[
+  {k:"A",name:"Safety and permission",why:"Whether she was asked, or whether it was assumed.",
+   items:["Door closed and screen used","Constable's presence negotiated with her, not assumed",
+     "Chaperone offered and named","Permission asked before every step",
+     "Permission asked before touching the clothing bag",
+     "Told out loud she can stop at any time","Told what happens next, before it happens"]},
+  {k:"B",name:"Sequence and legal compliance",why:"What was done, in what order, and what was skipped.",
+   items:["Identity, consent and time of arrival recorded first",
+     "Consent taken in three layers: examination, samples, police",
+     "Told that refusing one part does not stop treatment",
+     "Clothing described and packed in paper, not plastic",
+     "Sampling sequence stated and correct",
+     "No two-finger test, no habituation opinion, no opinion on whether rape occurred",
+     "Report forwarding and her own copy addressed"]},
+  {k:"C",name:"Communication and manner",why:"The words and the body. Questions written down exactly as asked.",
+   items:["Sat down, at eye level, angled seating",
+     "Was she made to repeat the whole account",
+     "Any question carrying blame, word for word",
+     "Alleged, or you say, used to her face",
+     "Silence tolerated for more than three seconds",
+     "Language matched to hers, no untranslated jargon",
+     "Tissue, water or a shawl offered"]},
+  {k:"D",name:"Documentation",why:"Would this note survive cross-examination in two years?",
+   items:["Note legible and in plain words",
+     "Injuries as size, shape, site and colour, before any interpretation",
+     "Negative findings recorded as negatives, with the reason",
+     "Times recorded: incident, arrival, examination, sampling",
+     "No conclusion drawn beyond the findings"]},
+  {k:"E",name:"Her advocate",why:"They watch her only. Not the doctor.",
+   items:["When did her posture change","When did she look away",
+     "What did she ask that went unanswered","What did she need that nobody offered",
+     "At what moment, if any, did she relax","Did anyone ask what she wanted to happen next"]},
+  {k:"F",name:"The defence",why:"They are counsel for the accused.",
+   items:["Gaps in the timeline","Negatives that were never recorded",
+     "Interpretation dressed up as observation",
+     "Anything inviting a question about her character",
+     "Anything a court would read as an opinion on guilt",
+     "Anything in the handling of clothing or samples"]}
+];
+
+const LAW=[
+  ["Section 184 BNSS 2023, formerly 164A CrPC.","Medical examination of a victim of rape. A registered medical practitioner, in a government or local authority hospital where available, with consent, and she is to be sent within twenty-four hours of the information being received."],
+  ["Section 48 BSA 2023, formerly 53A IEA.","Character and previous sexual experience are not relevant to consent. So a question about past sexual history is not merely unkind. It gathers something the court is forbidden to use."],
+  ["Section 120 BSA 2023, formerly 114A IEA.","Where intercourse is proved and she states in evidence that she did not consent, the Court shall presume she did not."],
+  ["Section 397 BNSS and Section 200 BNS.","Free first aid and treatment, and refusal to treat is punishable. Treatment is not conditional on an FIR, a requisition or a police escort."],
+  ["No two-finger test.","State of Jharkhand v. Shailendra Kumar Rai (2022): no scientific basis, re-traumatising, and conducting it amounts to misconduct."]
+];
+
+const BENCH=["Topic, and one objective written as a behaviour","Who plays whom","Props, with a cost",
+  "The one variable that changes learner behaviour","The freeze point","Two debrief questions"];
+
+let current=null;
+function store(id,obj){ try{ localStorage.setItem("frs:"+id, JSON.stringify(obj)); }catch(e){} }
+function load(id){ try{ return JSON.parse(localStorage.getItem("frs:"+id)) || {}; }catch(e){ return {}; } }
+
+const rolesEl=document.getElementById("roles");
+FACULTY.forEach(function(f){
+  const b=document.createElement("button");
+  b.textContent=f.name; b.setAttribute("aria-pressed","false");
+  b.onclick=function(){ pick(f.id); };
+  rolesEl.appendChild(b);
+});
+function pick(id){
+  current=FACULTY.filter(function(f){ return f.id===id; })[0];
+  const kids=rolesEl.children;
+  for(let i=0;i<kids.length;i++) kids[i].setAttribute("aria-pressed", FACULTY[i].id===id);
+  try{ localStorage.setItem("frs:me",id); }catch(e){}
+  renderBefore(); renderDay();
+}
+
+const navL=document.getElementById("navL");
+const navS=document.getElementById("navS");
+const navP=document.getElementById("navP");
+const navW=document.getElementById("navW");
+const navA=document.getElementById("navA"),navB=document.getElementById("navB"),navC=document.getElementById("navC");
+const navR=document.getElementById("navR");
+const secL=document.getElementById("secL");
+const secS=document.getElementById("secS");
+const secP=document.getElementById("secP");
+const secW=document.getElementById("secW");
+const secA=document.getElementById("secA"),secB=document.getElementById("secB"),secC=document.getElementById("secC");
+const secR=document.getElementById("secR");
+function show(w){
+  navL.setAttribute("aria-pressed",w==="L"); navP.setAttribute("aria-pressed",w==="P"); navW.setAttribute("aria-pressed",w==="W"); navS.setAttribute("aria-pressed",w==="S");
+  navA.setAttribute("aria-pressed",w==="A"); navB.setAttribute("aria-pressed",w==="B"); navC.setAttribute("aria-pressed",w==="C");
+  navR.setAttribute("aria-pressed",w==="R");
+  secL.hidden=w!=="L"; secP.hidden=w!=="P"; secW.hidden=w!=="W"; secS.hidden=w!=="S"; secA.hidden=w!=="A"; secB.hidden=w!=="B"; secC.hidden=w!=="C"; secR.hidden=w!=="R";
+  try{ localStorage.setItem("frs:tab",w); }catch(e){}
+  window.scrollTo({top:0});
+}
+navL.onclick=function(){ show("L"); };
+navW.onclick=function(){ show("W"); };
+navP.onclick=function(){ show("P"); };
+navS.onclick=function(){ show("S"); };
+navA.onclick=function(){ show("A"); };
+navB.onclick=function(){ show("B"); };
+navC.onclick=function(){ show("C"); };
+navR.onclick=function(){ show("R"); };
+
+function hm(min){ return Math.floor(min/60)+":"+String(min%60).padStart(2,"0"); }
+function mmss(sec){ const s=Math.max(0,Math.round(sec));
+  return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0"); }
+
+function renderBefore(){
+  const f=current, saved=load(f.id), el=secA;
+  el.innerHTML="";
+  const head=document.createElement("div"); head.className="card";
+  const r=document.createElement("p"); r.className="job"; r.textContent=f.role;
+  const j=document.createElement("p"); j.textContent=f.job;
+  head.appendChild(r); head.appendChild(j); el.appendChild(head);
+
+  const nev=document.createElement("div"); nev.className="never";
+  const st=document.createElement("strong"); st.textContent="Never. ";
+  nev.appendChild(st); nev.appendChild(document.createTextNode(f.never)); el.appendChild(nev);
+
+  const h1=document.createElement("h2"); h1.textContent="Your checklist"; el.appendChild(h1);
+  f.prep.forEach(function(item,i){
+    const l=document.createElement("label"); l.className="chk";
+    const cb=document.createElement("input"); cb.type="checkbox"; cb.checked=!!saved["p"+i];
+    cb.onchange=function(){ const s=load(f.id); s["p"+i]=cb.checked; store(f.id,s); };
+    const sp=document.createElement("span"); sp.textContent=item;
+    l.appendChild(cb); l.appendChild(sp); el.appendChild(l);
+  });
+
+  const h2=document.createElement("h2"); h2.textContent="Rehearse these out loud"; el.appendChild(h2);
+  f.say.forEach(function(s){ const q=document.createElement("p"); q.className="say"; q.textContent=s; el.appendChild(q); });
+
+  const mine=DRILLS.filter(function(d){ return d.who===f.id; });
+  if(mine.length){
+    const h3=document.createElement("h2"); h3.textContent="Know these before the day"; el.appendChild(h3);
+    mine.forEach(function(d){
+      const det=document.createElement("details");
+      const s=document.createElement("summary"); s.textContent=d.q;
+      const p=document.createElement("p"); p.textContent=d.a;
+      det.appendChild(s); det.appendChild(p); el.appendChild(det);
+    });
+  }
+}
+
+let started=null, ticker=null, paused=0;
+function renderDay(){
+  const f=current, el=secB;
+  el.innerHTML="";
+  const h1=document.createElement("h2"); h1.textContent="Run clock"; el.appendChild(h1);
+  const clock=document.createElement("div"); clock.className="clock";
+  clock.innerHTML='<span class="time" id="tdisp">00:00</span>';
+  const sb=document.createElement("button"); sb.id="startb";
+  sb.textContent = ticker ? "Pause" : (started ? "Resume" : "Start");
+  sb.onclick=toggle;
+  const rb=document.createElement("button"); rb.className="ghost"; rb.textContent="Reset"; rb.onclick=reset;
+  const nl=document.createElement("span"); nl.className="now"; nl.id="nowl"; nl.textContent="Not started";
+  clock.appendChild(sb); clock.appendChild(rb); clock.appendChild(nl);
+  el.appendChild(clock);
+  const bar=document.createElement("div"); bar.className="bar"; bar.innerHTML='<span id="tbar"></span>';
+  el.appendChild(bar);
+
+  const tbl=document.createElement("table");
+  PHASES.forEach(function(p,i){
+    const cue=p[f.id];
+    const tr=document.createElement("tr"); tr.id="ph"+i;
+    tr.className=(cue && cue.length>24)?"mine":"idle";
+    const td1=document.createElement("td"); td1.className="t"; td1.textContent=hm(p.t)+" ("+p.m+")";
+    const td2=document.createElement("td"); td2.className="c";
+    const b=document.createElement("strong"); b.style.fontWeight="500"; b.textContent=p.name;
+    td2.appendChild(b); td2.appendChild(document.createElement("br"));
+    td2.appendChild(document.createTextNode(cue));
+    tr.appendChild(td1); tr.appendChild(td2); tbl.appendChild(tr);
+  });
+  el.appendChild(tbl);
+
+  const h2=document.createElement("h2"); h2.textContent="Your lines"; el.appendChild(h2);
+  f.say.forEach(function(s){ const q=document.createElement("p"); q.className="say"; q.textContent=s; el.appendChild(q); });
+
+  const mine=DRILLS.filter(function(d){ return d.who===f.id; });
+  if(mine.length){
+    const h3=document.createElement("h2"); h3.textContent="If it goes wrong"; el.appendChild(h3);
+    mine.forEach(function(d){
+      const det=document.createElement("details");
+      const s=document.createElement("summary"); s.textContent=d.q;
+      const p=document.createElement("p"); p.textContent=d.a;
+      det.appendChild(s); det.appendChild(p); el.appendChild(det);
+    });
+  }
+  paint();
+}
+function toggle(){
+  const b=document.getElementById("startb");
+  if(ticker){ clearInterval(ticker); ticker=null; b.textContent="Resume"; return; }
+  if(!started) started=Date.now(); else started=Date.now()-paused*1000;
+  ticker=setInterval(paint,500); b.textContent="Pause"; paint();
+}
+function reset(){
+  if(ticker){ clearInterval(ticker); ticker=null; }
+  started=null; paused=0;
+  const b=document.getElementById("startb"); if(b) b.textContent="Start";
+  paint();
+}
+function paint(){
+  const d=document.getElementById("tdisp"), l=document.getElementById("nowl");
+  if(!d||!l) return;
+  if(!started){ d.textContent="00:00"; l.textContent="Not started"; mark(-1); return; }
+  const sec=(Date.now()-started)/1000;
+  if(!ticker) paused=sec;
+  d.textContent=mmss(sec);
+  const min=sec/60;
+  let idx=-1;
+  PHASES.forEach(function(p,i){ if(min>=p.t && min<p.t+p.m) idx=i; });
+  if(min>=120){ l.textContent="Finished"; mark(-1); return; }
+  const p=PHASES[idx];
+  l.textContent=p?(p.name+", "+Math.ceil(p.t+p.m-min)+" min left"):"Between phases";
+  mark(idx);
+}
+function mark(idx){
+  PHASES.forEach(function(p,i){
+    const r=document.getElementById("ph"+i);
+    if(r) r.classList.toggle("on", i===idx);
+  });
+  if(idx>=0){ const r=document.getElementById("ph"+idx); if(r) r.scrollIntoView({block:"nearest"}); }
+}
+
+(function buildDelegateView(){
+  const jb=document.getElementById("jobs");
+  JOBS.forEach(function(j){
+    const det=document.createElement("details");
+    const s=document.createElement("summary"); s.textContent="Table "+j.k+": "+j.name;
+    const p=document.createElement("p"); p.textContent=j.why;
+    const ul=document.createElement("ul");
+    j.items.forEach(function(it){ const li=document.createElement("li"); li.textContent=it; ul.appendChild(li); });
+    det.appendChild(s); det.appendChild(p); det.appendChild(ul); jb.appendChild(det);
+  });
+  const lb=document.getElementById("lawbox");
+  LAW.forEach(function(x){
+    const p=document.createElement("p"); p.className="law";
+    const b=document.createElement("b"); b.textContent=x[0]+" ";
+    p.appendChild(b); p.appendChild(document.createTextNode(x[1])); lb.appendChild(p);
+  });
+  const bl=document.getElementById("benchlist");
+  BENCH.forEach(function(x){ const li=document.createElement("li"); li.textContent=x; bl.appendChild(li); });
+})();
+
+/* ---------- training: module ticks ---------- */
+(function(){
+  const mods=document.querySelectorAll("details[data-m]");
+  function count(){
+    let n=0;
+    mods.forEach(function(d){ try{ if(localStorage.getItem("frs:m"+d.dataset.m)==="1") n++; }catch(e){} });
+    document.getElementById("prog").textContent=n+" of "+mods.length+" ticked";
+  }
+  mods.forEach(function(d){
+    const l=document.createElement("label"); l.className="tick";
+    const cb=document.createElement("input"); cb.type="checkbox";
+    try{ cb.checked=localStorage.getItem("frs:m"+d.dataset.m)==="1"; }catch(e){}
+    cb.onchange=function(){
+      try{ localStorage.setItem("frs:m"+d.dataset.m, cb.checked?"1":""); }catch(e){}
+      count();
+    };
+    const sp=document.createElement("span"); sp.textContent="I could explain this to a colleague";
+    l.appendChild(cb); l.appendChild(sp); d.appendChild(l);
+  });
+  count();
+})();
+
+/* ---------- training: behaviour or opinion ---------- */
+const FITEMS=[
+  {s:"He was insensitive to her.",b:false,why:"A conclusion. Nobody can discuss it. He can only agree or defend himself."},
+  {s:"He asked why she went there alone. She stopped making eye contact.",b:true,why:"The words, and what followed. This can be examined."},
+  {s:"He clearly hadn't read the protocol.",b:false,why:"A guess about what is in his head. You cannot see preparation. Only behaviour."},
+  {s:"He began the examination before telling her what he was going to do.",b:true,why:"Observable and specific. It names the omission, not the person."},
+  {s:"The whole consultation was rushed.",b:false,why:"An impression. Which part? At what minute? And what did she do about it?"},
+  {s:"She was not offered a chaperone at any point in twenty minutes.",b:true,why:"A negative finding, with a time. Negatives count as observations."}
+];
+(function(){
+  const box=document.getElementById("fsorter");
+  if(!box) return;
+  let i=0,score=0;
+  function draw(){
+    box.innerHTML="";
+    if(i>=FITEMS.length){
+      const p=document.createElement("p"); p.className="stmt"; p.textContent=score+" out of "+FITEMS.length+".";
+      const f=document.createElement("p"); f.className="fb";
+      f.textContent="This is also what you will be asking twenty-eight delegates to do at their tables, so it is worth being fluent in it yourself.";
+      const a=document.createElement("button"); a.className="ghost"; a.style.marginTop="10px"; a.textContent="Try again";
+      a.onclick=function(){ i=0;score=0;draw(); };
+      box.appendChild(p); box.appendChild(f); box.appendChild(a); return;
+    }
+    const it=FITEMS[i];
+    const p=document.createElement("p"); p.className="stmt"; p.textContent=it.s; box.appendChild(p);
+    const pair=document.createElement("div"); pair.className="pair";
+    ["Behaviour","Opinion"].forEach(function(lab,n){
+      const b=document.createElement("button"); b.textContent=lab;
+      b.onclick=function(){
+        const ok=((n===0)===it.b); if(ok) score++;
+        pair.querySelectorAll("button").forEach(function(x){ x.disabled=true; });
+        b.classList.add(ok?"right":"wrong");
+        const fb=document.createElement("p"); fb.className="fb";
+        fb.textContent=(ok?"Yes. ":"Not quite. ")+it.why; box.appendChild(fb);
+        const nx=document.createElement("button"); nx.className="ghost"; nx.style.marginTop="10px";
+        nx.textContent=(i===FITEMS.length-1)?"See score":"Next";
+        nx.onclick=function(){ i++; draw(); }; box.appendChild(nx);
+      };
+      pair.appendChild(b);
+    });
+    box.appendChild(pair);
+    const c=document.createElement("div"); c.className="count"; c.textContent=(i+1)+" of "+FITEMS.length;
+    box.appendChild(c);
+  }
+  draw();
+})();
+
+/* ---------- training: advocacy-inquiry builder ---------- */
+(function(){
+  const box=document.getElementById("aibuild");
+  if(!box) return;
+  const F=[
+    ["What you saw. Words and a time, no judgement.","You didn't tell her she could stop"],
+    ["What worries you about it. Your own view, said plainly.","consent then stays a signature rather than standing permission"],
+    ["Your question. Open, and about their thinking.","How were you thinking about it at the time?"]
+  ];
+  const ins=[];
+  F.forEach(function(f,i){
+    const d=document.createElement("div"); d.className="fld";
+    const l=document.createElement("label"); l.textContent=f[0];
+    const inp=document.createElement("input"); inp.type="text"; inp.placeholder=f[1];
+    try{ inp.value=localStorage.getItem("frs:ai"+i)||""; }catch(e){}
+    inp.oninput=function(){ try{ localStorage.setItem("frs:ai"+i,inp.value); }catch(e){} build(); };
+    d.appendChild(l); d.appendChild(inp); box.appendChild(d); ins.push(inp);
+  });
+  const out=document.createElement("div"); out.className="built"; box.appendChild(out);
+  const note=document.createElement("p"); note.className="fb"; box.appendChild(note);
+  function build(){
+    const a=ins[0].value.trim(), b=ins[1].value.trim(), c=ins[2].value.trim();
+    if(!a && !b && !c){ out.textContent="Fill the three boxes and your sentence assembles here."; note.textContent=""; return; }
+    out.textContent=(a||"…")+". My concern is that "+(b||"…")+". "+(c||"…");
+    const miss=[];
+    if(!a) miss.push("what you saw");
+    if(!b) miss.push("what worries you");
+    if(!c) miss.push("your question");
+    if(miss.length) note.textContent="Still missing: "+miss.join(", ")+".";
+    else if(c.length && c.slice(-1)!=="?") note.textContent="Your third part isn't a question. If it doesn't end in a question mark, you have told them rather than asked them.";
+    else note.textContent="That is the move. Say it in one breath, not as three separate sentences with pauses.";
+  }
+  build();
+})();
+
+/* ---------- training: which opener ---------- */
+const FOPENERS=[
+  {t:"So, how do you think that went?",ok:false,
+   f:"The commonest opener, and the most damaging. A shaken learner will attack himself. The room then spends its energy consoling him instead of learning."},
+  {t:"You didn't tell her she could stop. My concern is that consent then stays a signature rather than standing permission. How were you thinking about it?",ok:true,
+   f:"What you saw. What worries you. Then a real question. Honest, and still curious, because you might be wrong about why he did it."},
+  {t:"Let me tell you the three things that went wrong there.",ok:false,
+   f:"You may be right. He will still only learn to comply. His reasoning is the thing you are trying to change, and you never asked for it."},
+  {t:"Did you think about offering her a chaperone at all?",ok:false,
+   f:"A hidden opinion dressed as a question. You know the answer and are making him guess it. The room can always tell. It feels like an interrogation."}
+];
+(function(){
+  const box=document.getElementById("fopener");
+  if(!box) return;
+  FOPENERS.forEach(function(o){
+    const b=document.createElement("button"); b.className="opt"; b.textContent=o.t;
+    b.onclick=function(){
+      box.querySelectorAll("button").forEach(function(x){ x.disabled=true; });
+      b.classList.add(o.ok?"right":"wrong");
+      const fb=document.createElement("p"); fb.className="fb"; fb.textContent=o.f; box.appendChild(fb);
+      if(!o.ok){
+        const h=document.createElement("p"); h.className="fb"; h.textContent="The second one is the move to copy.";
+        box.appendChild(h);
+      }
+    };
+    box.appendChild(b);
+  });
+})();
+
+/* ---------- scenario cues and rehearsal player ---------- */
+const SCEN = {
+  1: {mins:17, beats:[[0,6,"Arrival, safety, layered consent"],[6,12,"History, without a third retelling"],[12,17,"Narrated examination and sampling plan"]], cues:[
+    {t:0,who:"Constable",line:"Doctor sahab, requisition hai. Jaldi karwa dijiye, SHO sahab poonch rahe hain.",
+     note:"Then stand inside the room and stay there. Do not leave unless asked.",
+     tests:"Does he notice her, and ask Meera whether she wants her present?"},
+    {t:0,who:"Meera",line:"(no line)",
+     note:"Level 1. Stand just inside the door, bag held against the chest, do not sit until invited.",
+     tests:"Does he offer a chair, close the door, and say what the next few minutes contain?"},
+    {t:2,who:"Constable",line:"Yeh raat ko gayi kyun thi wahan, yeh bhi pooch lijiye.",
+     note:"Only if he has not asked you to step out. If he has, stay out until minute 10.",
+     tests:"Does he shut it down, politely and firmly, in front of her?"},
+    {t:5,who:"Meera",line:"Doctor sahab, andar ka check-up zaroori hai kya?",
+     note:"Fires whatever level you are on.",
+     tests:"Does he explain the internal examination and take consent for it separately?"},
+    {t:9,who:"Meera",line:"Police ko sab batana padega?",
+     note:"Fires whatever level you are on.",
+     tests:"Does he deal with disclosure honestly, rather than by reassuring her?"},
+    {t:10,who:"Constable",line:"Ho gaya kya, sir?",
+     note:"Only if you were asked to step out. Open the door, put your head in.",
+     tests:"Does he protect the space a second time?"},
+    {t:13,who:"Meera",line:"Agar main mana kar doon toh?",
+     note:"Only if you have reached Level 3. Otherwise say nothing.",
+     tests:"Does he say out loud that refusal is allowed and that treatment continues anyway?"},
+    {t:15,who:"Constable",line:"Report abhi mil jayegi na?",
+     note:"From the doorway.",
+     tests:"Does he know the report goes to the investigating officer without delay, and that she is entitled to her documents?"},
+    {t:17,who:"Chhabra",line:"Freeze.",
+     note:"One word, flat. Meera stands, leaves the chair, sits with the faculty. Water in hand.",
+     tests:"The audience must see the fiction end."}
+  ]},
+  2: {mins:13, beats:[[0,5,"Arrival and consent"],[5,9,"The refusal, and what follows it"],[9,13,"What can still be done, narrated"]], cues:[
+    {t:0,who:"Constable",line:"Doctor sahab, requisition hai. Jaldi karwa dijiye.",
+     note:"Same entry. Stand inside and stay.",
+     tests:"Same as before. Most second learners have watched and will handle this better."},
+    {t:2,who:"Constable",line:"Yeh raat ko gayi kyun thi wahan, yeh bhi pooch lijiye.",
+     note:"Only if not asked to step out.",
+     tests:"Whether watching the first encounter changed anything."},
+    {t:4,who:"Meera",line:"Andar ka check-up main nahi karwaungi.",
+     note:"The changed variable, volunteered early so it has room to matter. Say it flatly, not tearfully.",
+     tests:"Does he accept it without arguing, and without treating refusal as a problem to solve?"},
+    {t:7,who:"Meera",line:"Baaki sab kar lijiye, bas woh nahi.",
+     note:"Offered once, unprompted, to show she is not refusing care.",
+     tests:"Does he carry on with everything she has consented to, at full effort?"},
+    {t:9,who:"Meera",line:"Police ko sab batana padega?",
+     note:"Fires whatever level you are on.",
+     tests:"Does he tell her what will be written about the refusal?"},
+    {t:11,who:"Meera",line:"Mujhe report ki copy milegi?",
+     note:"Only if you have reached Level 3.",
+     tests:"Her entitlement to her own documents."},
+    {t:13,who:"Chhabra",line:"Freeze.",
+     note:"One word, flat.",
+     tests:""}
+  ]}
+};
+
+(function(){
+  const tbl=document.getElementById("cuetable");
+  if(!tbl) return;
+  let enc=1, started=null, ticker=null, paused=0;
+  const eA=document.getElementById("encA"), eB=document.getElementById("encB");
+  eA.onclick=function(){ enc=1; eA.setAttribute("aria-pressed","true"); eB.setAttribute("aria-pressed","false"); reset(); draw(); };
+  eB.onclick=function(){ enc=2; eA.setAttribute("aria-pressed","false"); eB.setAttribute("aria-pressed","true"); reset(); draw(); };
+
+  function draw(){
+    const s=SCEN[enc];
+    tbl.innerHTML="";
+    s.beats.forEach(function(b){
+      const h=document.createElement("h3");
+      h.textContent=b[0]+" to "+b[1]+" min · "+b[2];
+      tbl.appendChild(h);
+      const t=document.createElement("table");
+      s.cues.forEach(function(c,i){
+        if(c.t<b[0]||c.t>=b[1]) if(!(b[1]===s.mins&&c.t===s.mins)) return;
+        const tr=document.createElement("tr"); tr.id="cue"+enc+"_"+i;
+        const td1=document.createElement("td"); td1.className="t"; td1.textContent=c.t+" min";
+        const td2=document.createElement("td"); td2.className="c";
+        const w=document.createElement("strong"); w.style.fontWeight="500"; w.textContent=c.who+": ";
+        td2.appendChild(w);
+        const ln=document.createElement("span"); ln.style.fontFamily='"Newsreader",Georgia,serif'; ln.style.fontSize="17px";
+        ln.textContent=c.line; td2.appendChild(ln);
+        const n=document.createElement("div"); n.style.fontSize="14px"; n.style.color="var(--muted)"; n.style.marginTop="4px";
+        n.textContent=c.note; td2.appendChild(n);
+        if(c.tests){
+          const q=document.createElement("div"); q.style.fontSize="14px"; q.style.color="var(--accent)"; q.style.marginTop="3px";
+          q.textContent="Tests: "+c.tests; td2.appendChild(q);
+        }
+        const l=document.createElement("label"); l.className="tick"; l.style.marginTop="8px"; l.style.paddingTop="8px";
+        const cb=document.createElement("input"); cb.type="checkbox";
+        const key="frs:cue"+enc+"_"+i;
+        try{ cb.checked=localStorage.getItem(key)==="1"; }catch(e){}
+        cb.onchange=function(){ try{ localStorage.setItem(key, cb.checked?"1":""); }catch(e){} };
+        const sp=document.createElement("span"); sp.textContent="fired on time in the dry run";
+        l.appendChild(cb); l.appendChild(sp); td2.appendChild(l);
+        tr.appendChild(td1); tr.appendChild(td2); t.appendChild(tr);
+      });
+      tbl.appendChild(t);
+    });
+    paintS();
+  }
+  function toggle(){
+    const b=document.getElementById("sstart");
+    if(ticker){ clearInterval(ticker); ticker=null; b.textContent="Resume"; return; }
+    if(!started) started=Date.now(); else started=Date.now()-paused*1000;
+    ticker=setInterval(paintS,500); b.textContent="Pause"; paintS();
+  }
+  function reset(){
+    if(ticker){ clearInterval(ticker); ticker=null; }
+    started=null; paused=0;
+    const b=document.getElementById("sstart"); if(b) b.textContent="Start";
+    paintS();
+  }
+  function paintS(){
+    const d=document.getElementById("sdisp"), l=document.getElementById("snow");
+    if(!d||!l) return;
+    const s=SCEN[enc];
+    if(!started){ d.textContent="00:00"; l.textContent="Encounter "+enc+", "+s.mins+" minutes"; hl(-1); return; }
+    const sec=(Date.now()-started)/1000;
+    if(!ticker) paused=sec;
+    d.textContent=String(Math.floor(sec/60)).padStart(2,"0")+":"+String(Math.round(sec)%60).padStart(2,"0");
+    const min=sec/60;
+    if(min>=s.mins){ l.textContent="Freeze. Encounter over."; hl(-1); return; }
+    let cur=-1;
+    s.cues.forEach(function(c,i){ if(min>=c.t && min<c.t+1) cur=i; });
+    const sb=document.getElementById("sbar"); if(sb) sb.style.width=Math.min(100,(min/s.mins)*100)+"%";
+    const nxt=s.cues.filter(function(c){ return c.t>min; })[0];
+    l.textContent=nxt?("next cue at "+nxt.t+" min · "+nxt.who):"next: the freeze";
+    hl(cur);
+  }
+  function hl(idx){
+    SCEN[enc].cues.forEach(function(c,i){
+      const r=document.getElementById("cue"+enc+"_"+i);
+      if(r) r.classList.toggle("on", i===idx);
+    });
+  }
+  document.getElementById("sstart").onclick=toggle;
+  document.getElementById("sreset").onclick=reset;
+  const dn=document.getElementById("drynote");
+  try{ dn.value=localStorage.getItem("frs:drynote")||""; }catch(e){}
+  dn.oninput=function(){ try{ localStorage.setItem("frs:drynote",dn.value); }catch(e){} };
+  draw();
+})();
+
+let me=null;
+try{ me=localStorage.getItem("frs:me"); }catch(e){}
+if(me && FACULTY.some(function(f){ return f.id===me; })) pick(me);
+
+var lastTab=null;
+try{ lastTab=localStorage.getItem("frs:tab"); }catch(e){}
+if(lastTab && "LPWSABCR".indexOf(lastTab)>=0) show(lastTab);
+
+document.getElementById("wipe").onclick=function(){
+  if(!confirm("Clear everything you have ticked and typed in this tool, on this device?")) return;
+  try{
+    var kill=[];
+    for(var i=0;i<localStorage.length;i++){ var k=localStorage.key(i); if(k && k.indexOf("frs:")===0) kill.push(k); }
+    kill.forEach(function(k){ localStorage.removeItem(k); });
+  }catch(e){}
+  location.reload();
+};
+
+/* ---------- the guide ---------- */
+(function(){
+  const TOUR = [
+    {h:"A quick tour", p:"Eight tabs, grouped by when you need them. Prepare is before the day. Run is the one you hold in the hall. Look up is reference."},
+    {h:"Pick your name first", p:"The row at the very top. After that, every tab shows your cues and your lines, not everyone else's."},
+    {h:"Start with tab 1", p:"Ten short pieces on how this kind of teaching works. Tick each one when you could explain it to a colleague."},
+    {h:"On the day, use Run", p:"Press Start when the session starts. Your row lights up as each phase arrives, and the bar shows how far through you are."}
+  ];
+  const PER = {
+    L:{h:"Learn the craft", p:"Ten pieces. None of us trained in this. Work through them before the walk-through. Pieces 4 and 8 are the two that change how you behave in the room."},
+    W:{h:"Why this way", p:"The design questions delegates ask out loud. Read it once so the answers are yours, not mine."},
+    P:{h:"Full plan", p:"The whole session, step by step. Tap any step. Anything in the serif type is a line you say out loud."},
+    S:{h:"Scenario", p:"Dr Raju owns this one. The cues, and the nine things the dry run broke. Run the rehearsal player with a stopwatch."},
+    A:{h:"Your checklist", p:"What you do before the day, and the lines to rehearse aloud. Ticks are saved on this device."},
+    B:{h:"On the day", p:"This is the one for the hall. Press Start at 0:00. Your cue lights up as its phase arrives."},
+    C:{h:"Delegate view", p:"What the audience has on their phones, read-only. The password to give them is SIMULATE."},
+    R:{h:"Read & watch", p:"History, videos and reading. Optional. The Debrief2Learn pocket cards are the most useful free thing here."}
+  };
+  const btn=document.createElement("button"); btn.id="gbtn"; btn.type="button";
+  btn.setAttribute("aria-label","Guide");
+  btn.innerHTML="<svg viewBox='0 0 64 64' aria-hidden='true'><circle class='halo' cx='32' cy='36' r='24' fill='none' stroke='var(--accent-mid)' stroke-width='2'/><g class='bd'><path d='M32 8c1.6 0 2.6 1.4 3.2 3.2l1 3.2' fill='none' stroke='var(--accent)' stroke-width='2.4' stroke-linecap='round'/><circle class='spark' cx='46' cy='14' r='2.6' fill='var(--warm)'/><path d='M32 14c11 0 18 7.6 18 17.6v6.8C50 49 42.6 56 32 56s-18-7-18-17.6v-6.8C14 21.6 21 14 32 14z' fill='var(--accent)'/><path d='M32 14c11 0 18 7.6 18 17.6v2.2C50 24 42.6 18.6 32 18.6S14 24 14 33.8v-2.2C14 21.6 21 14 32 14z' fill='var(--accent-mid)' opacity='.65'/><ellipse cx='32' cy='35' rx='14' ry='12.5' fill='var(--paper)' opacity='.96'/><ellipse class='eye' cx='26.5' cy='34' rx='2.5' ry='3.2' fill='var(--ink)'/><ellipse class='eye r' cx='37.5' cy='34' rx='2.5' ry='3.2' fill='var(--ink)'/><path d='M28.5 41.5c1.6 1.6 5.4 1.6 7 0' fill='none' stroke='var(--ink)' stroke-width='1.8' stroke-linecap='round'/></g></svg>";
+  const panel=document.createElement("div"); panel.id="gpanel"; panel.hidden=true;
+  panel.setAttribute("role","dialog"); panel.setAttribute("aria-label","Guide");
+  panel.innerHTML='<h4 id="gh"></h4><p id="gp"></p><div class="grow"><span class="gdot" id="gd"></span>'
+    +'<span><button id="gback" class="ghost">Back</button> <button id="gnext">Next</button></span></div>';
+  document.body.appendChild(panel); document.body.appendChild(btn);
+
+  let i=0, touring=false;
+  function seen(){ try{ return localStorage.getItem("frs:tour")==="1"; }catch(e){ return true; } }
+  function markSeen(){ try{ localStorage.setItem("frs:tour","1"); }catch(e){} }
+  function open(){ btn.classList.add("talking"); panel.hidden=false; panel.classList.remove("in"); void panel.offsetWidth; panel.classList.add("in"); }
+  function close(){ btn.classList.remove("talking"); panel.hidden=true; touring=false; }
+  function drawTour(){
+    const t=TOUR[i];
+    document.getElementById("gh").textContent=t.h;
+    document.getElementById("gp").textContent=t.p;
+    document.getElementById("gd").textContent=(i+1)+" of "+TOUR.length;
+    document.getElementById("gback").style.visibility = i? "visible":"hidden";
+    document.getElementById("gnext").textContent = i===TOUR.length-1 ? "Got it" : "Next";
+  }
+  function drawTab(){
+    let w="L"; try{ w=localStorage.getItem("frs:tab")||"A"; }catch(e){}
+    const t=PER[w]||PER.L;
+    document.getElementById("gh").textContent=t.h;
+    document.getElementById("gp").textContent=t.p;
+    document.getElementById("gd").textContent="This tab";
+    document.getElementById("gback").style.visibility="hidden";
+    document.getElementById("gnext").textContent="Close";
+  }
+  btn.onclick=function(){
+    if(!panel.hidden){ close(); return; }
+    if(!seen()){ touring=true; i=0; drawTour(); } else { touring=false; drawTab(); }
+    open();
+  };
+  document.getElementById("gnext").onclick=function(){
+    if(!touring){ close(); return; }
+    if(i===TOUR.length-1){ markSeen(); close(); return; }
+    i++; drawTour();
+  };
+  document.getElementById("gback").onclick=function(){ if(i>0){ i--; drawTour(); } };
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape" && !panel.hidden) close(); });
+  if(!seen()) setTimeout(function(){ touring=true; i=0; drawTour(); open(); }, 700);
+})();
+
+</script>
+</body>
+</html>
