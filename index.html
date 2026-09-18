@@ -569,10 +569,10 @@ footer a:hover{color:#fff}
       "author": { "@id": "https://forensicworkbench.com/#author" },
       "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
       "datePublished": "2026-07-29",
-      "dateModified": "2026-09-17",
+      "dateModified": "2026-09-18",
       "mainEntity": {
         "@type": "ItemList",
-        "numberOfItems": 7,
+        "numberOfItems": 8,
         "itemListOrder": "https://schema.org/ItemListOrderAscending",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Medico-legal Care of the Sexual Violence Survivor", "url": "https://forensicworkbench.com/medico-legal-care-sexual-violence-survivor.html" },
@@ -581,7 +581,8 @@ footer a:hover{color:#fff}
           { "@type": "ListItem", "position": 4, "name": "Consent in Medical and Medico-legal Practice", "url": "https://forensicworkbench.com/consent-study-notes.html" },
           { "@type": "ListItem", "position": 5, "name": "How to Describe an Injury", "url": "https://forensicworkbench.com/how-to-describe-an-injury.html" },
           { "@type": "ListItem", "position": 6, "name": "Opening the Organs — Organ Dissection at Autopsy", "url": "https://forensicworkbench.com/opening-the-organs.html" },
-          { "@type": "ListItem", "position": 7, "name": "Teaching Forensic Medicine Without the Patient", "url": "https://forensicworkbench.com/sim/" }
+          { "@type": "ListItem", "position": 7, "name": "OSPE Station Runner — Timed Stations on Tablets", "url": "https://forensicworkbench.com/ospe/" },
+          { "@type": "ListItem", "position": 8, "name": "Teaching Forensic Medicine Without the Patient", "url": "https://forensicworkbench.com/sim/" }
         ]
       }
     }
@@ -694,7 +695,8 @@ footer a:hover{color:#fff}
             <a href="consent-study-notes.html">FMT-04 · Consent in Medical and Medico-legal Practice</a> ·
             <a href="how-to-describe-an-injury.html">FMT-05 · How to Describe an Injury</a> ·
             <a href="opening-the-organs.html">FMT-06 · Opening the Organs — Organ Dissection at Autopsy</a> ·
-            <a href="sim/">FMT-07 · Teaching Forensic Medicine Without the Patient</a>
+            <a href="sim/">FMT-07 · Teaching Forensic Medicine Without the Patient</a> ·
+            <a href="ospe/">FMT-08 · OSPE Station Runner — Timed Stations on Tablets</a>
           </p>
         </div>
       </noscript>
@@ -865,6 +867,17 @@ const MODULES = [
     chips: ["Simulation-based learning", "Standardised patient", "Debriefing", "Observer checklists", "Design your own"],
     href: "sim/",
     action: "Enter with your invitation word"
+  },
+  {
+    ref: "FMT-08",
+    type: "Examination tool",
+    accent: "teal",
+    scope: "For examiners",
+    title: "OSPE Station Runner — Timed Stations on Tablets",
+    blurb: "Run an OSCE or OSPE on ordinary tablets. The examiner sets the stations, publishes them with one code, and watches the marks arrive as each student finishes. Students are known only by made-up roll numbers, and the answers never reach a tablet, so marking happens in the examiner's console. Question stations draw from a CBME-mapped bank; observed stations run as report forms, procedure sequences, examiner checklists or a structured viva. A tablet that loses its Wi-Fi keeps working and sends the results later.",
+    chips: ["Anonymous roll numbers", "Answer-free tablets", "Live marks", "Works offline", "CBME skills competencies"],
+    href: "ospe/",
+    action: "Open the station runner"
   }
 ];
 
@@ -980,7 +993,7 @@ setTimeout(() => document.querySelectorAll('.reveal:not(.on)').forEach(el => {
   if(!guide) return;
 
   const SCRIPT = [
-    { ref:null, say:'I am the hand lens. Seven tools sit in the register below. Tap Next and I will take you through them.' },
+    { ref:null, say:'I am the hand lens. Eight tools sit in the register below. Tap Next and I will take you through them.' },
     { ref:'FMT-01', say:'FMT-01 is the whole pathway for a sexual violence survivor, from consent through to deposition. Start here if you are on casualty tonight.' },
     { ref:'FMT-02', say:'FMT-02 drills the order of the examination, and makes you set aside anything prohibited or not indicated in that case.' },
     { ref:'FMT-03', say:'FMT-03 maps the old IPC, CrPC and IEA numbers onto the new ones. A hundred and nineteen cards, learn mode and quiz mode.' },
@@ -988,6 +1001,7 @@ setTimeout(() => document.querySelectorAll('.reveal:not(.on)').forEach(el => {
     { ref:'FMT-05', say:'FMT-05 builds an injury description finding by finding and leaves every gap standing in it. That is how it will look in cross-examination.' },
     { ref:'FMT-06', say:'FMT-06 takes fifteen organs apart. One accepted technique each at MBBS level, the alternatives and the measurements at MD.' },
     { ref:'FMT-07', say:'FMT-07 is for the teacher. It shows how to run a simulation without a real patient, and how to run the discussion that follows it. It opens by invitation, with a word from the faculty.' },
+    { ref:'FMT-08', say:'FMT-08 is for the examiner. It runs an OSCE or OSPE on tablets, keeps the answers off them, and marks as the students finish. Students are known only by made-up roll numbers.' },
     { ref:null, say:'That is the register. All of it is free, it runs offline once loaded, and it prints. Close me whenever you like.' }
   ];
 
