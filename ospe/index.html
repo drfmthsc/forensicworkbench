@@ -1468,6 +1468,38 @@ const TOURS = {
     { sel: ".stpick", text: "Once the exam opens, pick this tablet's station. The PIN keeps students out of these screens." }
   ]
 };
+/* ---------- Dr Hoot's voice: made in the browser, so there are no sound files ---------- */
+let AC = null;
+const soundOff = () => !!(sget("ospe.sound") || {}).off;
+function audioCtx() {
+  if (soundOff()) return null;
+  try {
+    AC = AC || new (window.AudioContext || window.webkitAudioContext)();
+    if (AC.state === "suspended") AC.resume();
+    return AC.state === "running" || AC.state === "suspended" ? AC : null;
+  } catch (e) { return null; }
+}
+function blow(ctx, at, { f, to, type = "sine", dur = .22, gain = .09 }) {
+  const o = ctx.createOscillator(), g = ctx.createGain();
+  o.type = type;
+  o.frequency.setValueAtTime(f, at);
+  o.frequency.exponentialRampToValueAtTime(to || f, at + dur);
+  g.gain.setValueAtTime(0.0001, at);
+  g.gain.exponentialRampToValueAtTime(gain, at + Math.min(.05, dur / 3));
+  g.gain.exponentialRampToValueAtTime(0.0001, at + dur);
+  o.connect(g).connect(ctx.destination);
+  o.start(at); o.stop(at + dur + .05);
+}
+/* Nothing sounds on a student's screen, and nothing sounds once a timer is running. */
+function say(name) {
+  if (["run", "ready", "done"].includes(UI.view) || document.body.classList.contains("calm")) return;
+  const ctx = audioCtx(); if (!ctx) return;
+  const t = ctx.currentTime;
+  if (name === "hoot") { blow(ctx, t, { f: 420, to: 360, dur: .26, gain: .07 }); blow(ctx, t + .32, { f: 390, to: 330, dur: .3, gain: .06 }); }
+  else if (name === "step") blow(ctx, t, { f: 640, to: 720, type: "triangle", dur: .09, gain: .05 });
+  else if (name === "done") { blow(ctx, t, { f: 784, dur: .35, gain: .06 }); blow(ctx, t + .09, { f: 1175, dur: .4, gain: .045 }); }
+  else if (name === "tap") blow(ctx, t, { f: 300, to: 220, type: "triangle", dur: .08, gain: .05 });
+}
 const TOUR = { name: null, i: 0 };
 const toursSeen = () => sget("ospe.tours") || {};
 const buddyHidden = () => !!(sget("ospe.buddy") || {}).hidden;
@@ -1476,6 +1508,7 @@ function startTour(name) {
   if (!TOURS[name]) return;
   closeBuddyMenu();
   TOUR.name = name; TOUR.i = 0; TOUR.scroll = scrollY; markSeen(name);
+  say("hoot");
   showStep();
 }
 function endTour() {
@@ -1524,8 +1557,11 @@ document.addEventListener("click", e => {
   if (!t) return;
   const a = t.dataset.tour;
   if (a === "skip") return endTour();
-  if (a === "back") { TOUR.i--; return showStep(); }
-  if (a === "next") { if (TOUR.i >= TOURS[TOUR.name].length - 1) return endTour(); TOUR.i++; return showStep(); }
+  if (a === "back") { TOUR.i--; say("step"); return showStep(); }
+  if (a === "next") {
+    if (TOUR.i >= TOURS[TOUR.name].length - 1) { say("done"); return endTour(); }
+    TOUR.i++; say("step"); return showStep();
+  }
 });
 document.addEventListener("keydown", e => {
   if (!TOUR.name) return;
@@ -1546,7 +1582,11 @@ function drawBuddy() {
   if (!btn) {
     btn = document.createElement("button");
     btn.id = "buddyBtn"; btn.type = "button";
-    btn.addEventListener("click", () => (document.getElementById("buddyMenu") ? closeBuddyMenu() : openBuddyMenu()));
+    btn.addEventListener("click", () => {
+      if (document.getElementById("buddyMenu")) return closeBuddyMenu();
+      say("hoot");
+      openBuddyMenu();
+    });
     document.body.appendChild(btn);
   }
   const hidden = buddyHidden();
@@ -1562,11 +1602,14 @@ function openBuddyMenu() {
   m.innerHTML = `<b>${BUDDY} says</b><p>${h(TIPS[tipKey()] || "I'm here if you need a hand.")}</p>
     <div class="row">${tour ? '<button type="button" class="primary" data-b="tour">Show me around</button>' : ""}
     <button type="button" class="ghost" data-b="hide">${hidden ? `Bring ${BUDDY} back` : "Make me smaller"}</button>
-    <button type="button" class="ghost" data-b="close">Close</button></div>`;
+    <button type="button" class="ghost" data-b="sound">${soundOff() ? "Turn my voice on" : "Turn my voice off"}</button>
+    <button type="button" class="ghost" data-b="close">Close</button></div>
+    <p class="fine">My voice stays quiet on the student screens and while a timer runs.</p>`;
   m.addEventListener("click", e => {
     const b = e.target.closest("[data-b]"); if (!b) return;
     if (b.dataset.b === "tour") startTour(tour);
     if (b.dataset.b === "hide") { sset("ospe.buddy", { hidden: !hidden }); closeBuddyMenu(); drawBuddy(); }
+    if (b.dataset.b === "sound") { const off = soundOff(); sset("ospe.sound", { off: !off }); if (off) say("hoot"); closeBuddyMenu(); openBuddyMenu(); }
     if (b.dataset.b === "close") closeBuddyMenu();
   });
   document.body.appendChild(m);
