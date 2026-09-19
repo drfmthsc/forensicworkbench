@@ -1,5 +1,5 @@
 /* Keeps the site usable on a tablet that loses Wi-Fi. Bump VERSION when you upload a new index.html. */
-const VERSION = "ospe-v6";
+const VERSION = "ospe-v7";
 const SDK = ["firebase-app.js", "firebase-auth.js", "firebase-firestore.js"].map(f => `https://www.gstatic.com/firebasejs/10.12.2/${f}`);
 self.addEventListener("install", e => e.waitUntil((async () => {
   const c = await caches.open(VERSION);
