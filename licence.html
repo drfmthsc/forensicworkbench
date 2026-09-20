@@ -190,6 +190,40 @@
     .copy,.picker,.back{display:none}
     .cite{break-inside:avoid}
   }
+
+  /* ======================================================================
+     LIGHT EDITION — matched to the register's daylight ground.
+     Same structure, same type; the palette is pitched up to match index.
+     ====================================================================== */
+  :root{
+    --paper:#FBF9FF; --card:#FFFFFF;
+    --ink:#171A33; --ink-soft:#3F4468; --ink-faint:#6B7196;
+    --line:#E6E3F5; --line-strong:#CFCBE8;
+    --slate:#4B63E8; --slate-deep:#3B2E8C;
+    --clay:#E2542B; --seal:#D63268; --moss:#2FA36B; --gold:#E39A05; --teal:#0E9E9E;
+    --shadow:0 1px 2px rgba(23,26,51,.05), 0 12px 30px -18px rgba(23,26,51,.28);
+  }
+  body{
+    background:
+      radial-gradient(60% 40% at 100% 0%, rgba(150,206,255,.28), transparent 62%),
+      radial-gradient(52% 34% at 0% 2%,  rgba(255,196,120,.26), transparent 60%),
+      var(--paper);
+    background-attachment:fixed;
+  }
+  .topbar{
+    background:linear-gradient(90deg,#E2542B,#E39A05 22%,#2FA36B 45%,#0E9E9E 65%,#4B63E8 85%,#D63268);
+    color:#fff;
+  }
+  .topbar span:last-child{color:rgba(255,255,255,.88)}
+  .topbar a:hover{color:#fff}
+  .pagehead{border-bottom-color:var(--line)}
+  h1,h2,h3{color:#141733}
+  a{color:inherit}
+  .back{color:var(--slate)}
+  .panel,.card,.box,section{border-radius:14px}
+  .lic-ref{color:var(--slate)}
+  :focus-visible{outline:2px solid #7A4BE8;outline-offset:3px;border-radius:3px}
+
 </style>
 <script type="application/ld+json">
 {
@@ -281,7 +315,7 @@
     <p>Every resource in the register is under the same licence.</p>
 
     <div class="panel" style="--pan:var(--moss)">
-      <span class="lic-ref">FMT-01 to FMT-07</span>
+      <span class="lic-ref">FMT-01 to FMT-09</span>
       <span class="lic-tag">CC BY-NC-ND 4.0</span>
       <h3>Attribution–NonCommercial–NoDerivatives 4.0 International</h3>
       <p>Teach with it, share it, print it for your students. Credit the author, keep it non-commercial, and pass it on unchanged.</p>
@@ -382,7 +416,10 @@ const CITE_ITEMS = [
   { key: "fmt04",  tab: "FMT-04 · The notes",   title: "Consent in medical and medico-legal practice",                       path: "consent-study-notes.html" },
   { key: "fmt05",  tab: "FMT-05 · The injury trainer", title: "How to describe an injury",                                   path: "how-to-describe-an-injury.html" },
   { key: "fmt06",  tab: "FMT-06 · The dissection guide", title: "Opening the organs: step by step organ dissection at autopsy", path: "opening-the-organs.html" },
-  { key: "fmt07",  tab: "FMT-07 · The simulation workbook", title: "Teaching forensic medicine without the patient: an introduction to simulation-based learning", path: "sim/" }
+  { key: "fmt07",  tab: "FMT-07 · The simulation workbook", title: "Teaching forensic medicine without the patient: an introduction to simulation-based learning", path: "sim/" },
+  { key: "fmt08",  tab: "FMT-08 · The station runner", title: "OSPE station runner: timed, self-marking OSCE and OSPE stations for tablets", path: "ospe/" },
+  { key: "fmt09",  tab: "FMT-09 · The Reading Room", title: "The Reading Room: forensic medicine and toxicology study notes for MBBS",       path: "notes/" },
+  { key: "fmt09a", tab: "FMT-09 · Asphyxial deaths", title: "Asphyxial deaths: a study companion for MBBS",                                path: "notes/asphyxial-deaths/" }
 ];
 
 /* ---- build ---- */

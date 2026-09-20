@@ -496,6 +496,178 @@ footer a:hover{color:#fff}
   .rail::before{display:none}
   body{background:#fff}
 }
+
+/* ==========================================================================
+   LIGHT EDITION — a brighter ground for the register.
+   The bones are unchanged: same rule, same spines, same sequence. What
+   changes is the light. The dark reading room becomes daylight, the spine
+   colours are pitched up, and the photographs keep their colour.
+   ========================================================================== */
+
+:root{
+  /* daylight ground */
+  --bench:#FBF9FF;
+  --bench-2:#F2EFFB;
+  --card:#FFFFFF;
+  --ink:#171A33;
+  --ink-2:#3F4468;
+  --muted:#6B7196;
+  --rule:#E6E3F5;
+  --rule-2:#CFCBE8;
+
+  /* spines, pitched up for daylight */
+  --clay:#E2542B;
+  --teal:#0E9E9E;
+  --moss:#2FA36B;
+  --seal:#D63268;
+  --gold:#E39A05;
+  --slate:#4B63E8;
+
+  --lift:0 1px 2px rgba(23,26,51,.05), 0 12px 30px -18px rgba(23,26,51,.28);
+  --lift-hi:0 2px 4px rgba(23,26,51,.06), 0 26px 50px -22px rgba(23,26,51,.34);
+}
+
+body{background:var(--bench)}
+
+/* ------------------------------------------------------------------ hero */
+.hero{
+  background:
+    radial-gradient(52% 58% at 8% 6%,   rgba(255,196,120,.55), transparent 62%),
+    radial-gradient(48% 62% at 92% 0%,  rgba(150,206,255,.55), transparent 60%),
+    radial-gradient(60% 70% at 62% 104%,rgba(196,176,255,.50), transparent 62%),
+    linear-gradient(170deg,#FFF6EC 0%,#F6F2FF 48%,#EAF7F4 100%);
+  color:var(--ink);
+}
+.hero::after{
+  background:radial-gradient(48% 46% at 26% 16%, rgba(255,255,255,.75), transparent 70%);
+}
+.hero-top{color:var(--muted)}
+.hero-top a{color:var(--ink-2);border-bottom-color:var(--rule-2)}
+.hero-top a:hover{color:var(--clay);border-bottom-color:var(--clay)}
+.hero h1{color:#141733}
+.hero h1 .w:nth-child(1) > i{color:#E2542B}   /* Forensic  */
+.hero h1 .w:nth-child(2) > i{color:#7A4BE8}   /* Medicine  */
+.hero h1 .w:nth-child(3) > i{color:#0E9E9E}   /* Workbench */
+.hero .said{color:#5A3FCB}
+.hero .lede{color:var(--ink-2)}
+.hero .by{color:var(--muted)}
+.hero .by strong{color:var(--ink)}
+.hero .by a{color:var(--clay);border-bottom-color:rgba(226,84,43,.35)}
+.hero .by a:hover{border-bottom-color:var(--clay)}
+.stamp{opacity:.5}
+.js .stamp{animation:none;opacity:.5;transform:rotate(-5deg)}
+
+.scale line{stroke:#D3CEEC}
+.scale line.major{stroke:#A79FD6}
+.scale .base{stroke:#A79FD6}
+
+/* ----------------------------------------------------------- photo band */
+/* The pictures carry their own colour now; a soft wash keeps them a set. */
+.band{
+  background:linear-gradient(180deg,#EAF7F4 0%,#F7F4FF 70%,var(--bench) 100%);
+  padding-bottom:6px;
+}
+.band-in{gap:10px}
+.plate{background:var(--bench-2);border-radius:14px}
+.plate img{filter:saturate(1.06) contrast(1.02) brightness(1.02);transform:scale(1.01)}
+.plate::after{
+  background:linear-gradient(180deg,rgba(23,26,51,0) 38%,rgba(23,26,51,.62) 100%);
+  mix-blend-mode:normal;
+}
+.plate .cap{color:#fff;font-weight:500}
+.plate:hover img,.plate:focus-visible img{filter:saturate(1.16) brightness(1.05);transform:scale(1.04)}
+.plate:hover::after,.plate:focus-visible::after{opacity:.85}
+.band-note{color:var(--ink-2)}
+
+/* ----------------------------------------------------------- conference */
+.conf{
+  border-radius:16px;border-color:var(--rule);
+  background:linear-gradient(180deg,#FFFDF6 0%,var(--card) 42%);
+}
+.conf::before{background:linear-gradient(180deg,#F5B818,var(--gold));border-radius:16px 0 0 16px}
+.conf .tag{color:#B87A05}
+.cbtn{border-radius:12px}
+.cbtn-a{background:linear-gradient(135deg,#4B63E8,#7A4BE8);color:#fff}
+.cbtn-a .s{color:#DCE0FF}
+.cbtn-b{background:var(--card);color:#2B3168;border-color:var(--rule-2)}
+.cbtn:hover{box-shadow:0 12px 26px -14px rgba(75,99,232,.65)}
+
+/* ------------------------------------------------------------- register */
+.reg-head{border-bottom-color:var(--rule-2)}
+.rail::before{background:linear-gradient(180deg,#C9B6FF,#9FE3D6 55%,transparent)}
+
+.entry{border-radius:16px;border-color:var(--rule)}
+.entry::before{
+  width:8px;border-radius:16px 0 0 16px;
+  background:linear-gradient(180deg,var(--accent),color-mix(in oklab,var(--accent) 55%,#7A4BE8));
+}
+.entry:hover::before{width:13px}
+.entry:hover{border-color:color-mix(in oklab,var(--accent) 38%,var(--rule))}
+.entry .in{
+  border-radius:0 16px 16px 0;
+  background:linear-gradient(120deg,color-mix(in oklab,var(--accent) 7%,#fff) 0%,var(--card) 58%);
+}
+.entry .meta .kind{
+  color:color-mix(in oklab,var(--accent) 78%,#1A1A2E);
+  background:color-mix(in oklab,var(--accent) 14%,#fff);
+  border-radius:999px;padding:3px 10px;
+}
+.entry h3{color:#141733}
+.chips li{
+  border-radius:999px;padding:5px 11px;
+  color:color-mix(in oklab,var(--accent) 72%,#22243F);
+  background:color-mix(in oklab,var(--accent) 10%,#fff);
+  border-color:color-mix(in oklab,var(--accent) 24%,#fff);
+}
+.go{color:color-mix(in oklab,var(--accent) 82%,#101223)}
+.slot{border-radius:16px;border-color:var(--rule-2);background:rgba(255,255,255,.55)}
+
+/* ---------------------------------------------------------------- about */
+.about h2,.reg-head h2{color:#141733}
+.caution{
+  border-radius:0 14px 14px 0;border-left-color:var(--seal);
+  background:linear-gradient(120deg,#FFF3F7,var(--card) 62%);
+}
+.caution strong{color:#C22A5E}
+.licence-line a{color:#7A4BE8}
+
+/* --------------------------------------------------------------- footer */
+footer{
+  margin-top:88px;color:var(--ink-2);
+  background:linear-gradient(180deg,var(--bench) 0%,#F0ECFC 100%);
+  border-top:3px solid transparent;
+  border-image:linear-gradient(90deg,#E2542B,#E39A05,#2FA36B,#0E9E9E,#4B63E8,#D63268) 1;
+}
+footer a{color:#5A3FCB}
+footer a:hover{color:#E2542B}
+
+/* ------------------------------------------------------------ hand lens */
+.bubble{border-radius:16px 16px 6px 16px;border-color:var(--rule)}
+.bubble::after{border-color:var(--rule)}
+.bubble button{border-radius:999px;border-color:var(--rule-2)}
+.bubble button:hover{background:var(--bench-2);border-color:#9FA3D6}
+.bubble button.primary{background:linear-gradient(135deg,#4B63E8,#7A4BE8);border-color:transparent}
+.bubble button.primary:hover{background:linear-gradient(135deg,#3B52D6,#6A3BD8)}
+.lens-rim{stroke:#E39A05}
+.lens-handle{fill:#C07F06}
+.lens-glass{fill:#EAF7F4;stroke:#fff}
+.lens-pupil{fill:#171A33}
+.lens-brow{stroke:#171A33}
+.lens-lid{fill:#EAF7F4}
+.lens-btn:focus-visible{outline-color:#7A4BE8}
+:focus-visible{outline-color:#7A4BE8}
+
+@media (max-width:720px){
+  .band-in{gap:8px}
+  .plate{border-radius:12px}
+  .entry .in{border-radius:0 0 16px 16px}
+}
+@media print{
+  .hero{background:#fff}
+  .hero h1{-webkit-text-fill-color:#000;color:#000}
+  footer{background:#fff;border-image:none}
+}
+
 </style>
 <script>document.documentElement.className="js";</script>
 <script type="application/ld+json">
@@ -572,7 +744,7 @@ footer a:hover{color:#fff}
       "dateModified": "2026-09-18",
       "mainEntity": {
         "@type": "ItemList",
-        "numberOfItems": 8,
+        "numberOfItems": 9,
         "itemListOrder": "https://schema.org/ItemListOrderAscending",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Medico-legal Care of the Sexual Violence Survivor", "url": "https://forensicworkbench.com/medico-legal-care-sexual-violence-survivor.html" },
@@ -582,7 +754,8 @@ footer a:hover{color:#fff}
           { "@type": "ListItem", "position": 5, "name": "How to Describe an Injury", "url": "https://forensicworkbench.com/how-to-describe-an-injury.html" },
           { "@type": "ListItem", "position": 6, "name": "Opening the Organs — Organ Dissection at Autopsy", "url": "https://forensicworkbench.com/opening-the-organs.html" },
           { "@type": "ListItem", "position": 7, "name": "OSPE Station Runner — Timed Stations on Tablets", "url": "https://forensicworkbench.com/ospe/" },
-          { "@type": "ListItem", "position": 8, "name": "Teaching Forensic Medicine Without the Patient", "url": "https://forensicworkbench.com/sim/" }
+          { "@type": "ListItem", "position": 8, "name": "Teaching Forensic Medicine Without the Patient", "url": "https://forensicworkbench.com/sim/" },
+          { "@type": "ListItem", "position": 9, "name": "The Reading Room — FMT Study Notes for MBBS", "url": "https://forensicworkbench.com/notes/" }
         ]
       }
     }
@@ -611,7 +784,7 @@ footer a:hover{color:#fff}
           MoHFW Guidelines &amp; Protocols for medico-legal care of survivors of sexual violence, 2014
         </p>
       </div>
-      <img class="stamp" src="seal-light.png" alt="" aria-hidden="true" decoding="async" width="640" height="640">
+      <img class="stamp" src="seal.png" alt="" aria-hidden="true" decoding="async" width="640" height="640">
     </div>
 
     <svg class="scale" id="scale" viewBox="0 0 1000 46" preserveAspectRatio="none" aria-hidden="true" focusable="false"></svg>
@@ -696,13 +869,15 @@ footer a:hover{color:#fff}
             <a href="how-to-describe-an-injury.html">FMT-05 · How to Describe an Injury</a> ·
             <a href="opening-the-organs.html">FMT-06 · Opening the Organs — Organ Dissection at Autopsy</a> ·
             <a href="sim/">FMT-07 · Teaching Forensic Medicine Without the Patient</a> ·
-            <a href="ospe/">FMT-08 · OSPE Station Runner — Timed Stations on Tablets</a>
+            <a href="ospe/">FMT-08 · OSPE Station Runner — Timed Stations on Tablets</a> ·
+            <a href="notes/">FMT-09 · The Reading Room — FMT Study Notes for MBBS</a> ·
+            <a href="notes/asphyxial-deaths/">FMT-09 · Asphyxial Deaths</a>
           </p>
         </div>
       </noscript>
 
       <div class="slot reveal">
-        <div class="tick"><span class="num">FMT-07</span><span class="dash"></span></div>
+        <div class="tick"><span class="num">FMT-10</span><span class="dash"></span></div>
         <strong>Next entry, in preparation</strong>
         <p>The Workbench grows. New guides and drills are added to the register as they are written.</p>
       </div>
@@ -878,6 +1053,17 @@ const MODULES = [
     chips: ["Anonymous roll numbers", "Answer-free tablets", "Live marks", "Works offline", "CBME skills competencies"],
     href: "ospe/",
     action: "Open the station runner"
+  },
+  {
+    ref: "FMT-09",
+    type: "Study notes",
+    accent: "slate",
+    scope: "15 topics",
+    title: "The Reading Room — FMT Study Notes for MBBS",
+    blurb: "Forensic medicine and toxicology for the MBBS examination, arranged by the CBME 2024 competency topics. Each topic gives the principle first, then the findings, then the law that governs what you write. Asphyxial deaths is open to everyone, with mind maps, a neck lab, flashcards, a quiz and case files. The remaining topics open for students whose email is on the class list.",
+    chips: ["CBME 2024 topics", "Asphyxia open to all", "Flashcards", "Quiz", "Case files", "Class list"],
+    href: "notes/",
+    action: "Enter the Reading Room"
   }
 ];
 

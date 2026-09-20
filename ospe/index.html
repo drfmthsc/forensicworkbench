@@ -4,20 +4,62 @@
 <meta charset="utf-8">
 <!--
   OSPE Station Runner, version 2.0 (online)
-  Created by Dr Harvinder Singh Chhabra, Assistant Professor, Forensic Medicine,
-  Himalayan Institute of Medical Sciences, Swami Rama Himalayan University, Dehradun.
-  (c) 2026 Dr Harvinder Singh Chhabra. Licensed under CC BY-NC 4.0
-  https://creativecommons.org/licenses/by-nc/4.0/
+  Created by Dr Harvinder Singh Chhabra, Forensic Workbench.
+  (c) 2026 Dr Harvinder Singh Chhabra. Licensed under CC BY-NC-ND 4.0
+  https://creativecommons.org/licenses/by-nc-nd/4.0/
   Cite as: Chhabra HS. OSPE Station Runner: timed, self-marking OSCE and OSPE stations
-  for tablets [computer program]. Version 2.0. Dehradun: Himalayan Institute of Medical
-  Sciences, Swami Rama Himalayan University; 2026.
+  for tablets [computer program]. Version 2.0. Forensic Workbench; 2026.
 -->
 <meta name="author" content="Dr Harvinder Singh Chhabra">
-<meta name="copyright" content="(c) 2026 Dr Harvinder Singh Chhabra, CC BY-NC 4.0">
+<meta name="copyright" content="(c) 2026 Dr Harvinder Singh Chhabra, CC BY-NC-ND 4.0">
 <meta name="theme-color" content="#6D3BF5">
-<link rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>OSPE Station Runner</title>
+<title>OSPE Station Runner: timed stations on tablets | Forensic Workbench</title>
+<meta name="description" content="Run timed OSCE and OSPE stations from tablets or phones. Build station sets, start one clock for every station, mark against a checklist while the candidate works, and export the marks. Built for teaching in Indian medical colleges.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://forensicworkbench.com/ospe/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Forensic Workbench">
+<meta property="og:title" content="OSPE Station Runner: timed stations on tablets">
+<meta property="og:description" content="Timed OSCE and OSPE stations run from tablets: one clock, checklist marking, marks exported at the end.">
+<meta property="og:url" content="https://forensicworkbench.com/ospe/">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OSPE Station Runner: timed stations on tablets">
+<meta name="twitter:description" content="Timed OSCE and OSPE stations, marked on tablets.">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "OSPE Station Runner",
+ "alternateName": "FMT-08",
+ "applicationCategory": "EducationalApplication",
+ "operatingSystem": "Any modern browser",
+ "url": "https://forensicworkbench.com/ospe/",
+ "description": "Run timed OSCE and OSPE stations from tablets or phones. Build station sets, start one clock for every station, mark against a checklist while the candidate works, and export the marks. Built for teaching in Indian medical colleges.",
+ "inLanguage": "en-IN",
+ "softwareVersion": "2.0",
+ "isAccessibleForFree": true,
+ "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "INR"
+ },
+ "author": {
+  "@type": "Person",
+  "name": "Dr Harvinder Singh Chhabra",
+  "email": "dr.fmt.hsc@gmail.com",
+  "url": "https://forensicworkbench.com/"
+ },
+ "isPartOf": {
+  "@type": "WebSite",
+  "name": "Forensic Workbench",
+  "url": "https://forensicworkbench.com/"
+ }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -644,7 +686,7 @@ async function onAuthChange(user) {
   catch (e) { UI.msg = "Couldn't reach the server: " + errText(e); UI.view = "signin"; render(); return; }
   ME = { uid: user.uid, email: user.email || "", admin, hasProfile: !!prof, name: prof ? prof.name : (user.displayName || ""), college: prof ? prof.college : "", approved: admin || !!(prof && prof.approved) };
   if (!ME.hasProfile) {
-    if (admin) { try { await DB.setUser(user.uid, { name: user.displayName || "Admin", college: "HIMS, SRHU, Dehradun", email: user.email, approved: false, createdAt: Date.now() }); ME.hasProfile = true; } catch (e) {} }
+    if (admin) { try { await DB.setUser(user.uid, { name: user.displayName || "Admin", college: "", email: user.email, approved: false, createdAt: Date.now() }); ME.hasProfile = true; } catch (e) {} }
     else { UI.view = "profile"; render(); return; }
   }
   if (!ME.approved) { UI.view = "pending"; render(); return; }
@@ -790,20 +832,20 @@ async function confirmBox(title, body, yes, danger) {
 
 /* ---------- licence and citation ---------- */
 const AUTHOR = "Dr Harvinder Singh Chhabra";
-const AFFIL = "Assistant Professor, Forensic Medicine, Himalayan Institute of Medical Sciences, Swami Rama Himalayan University, Dehradun";
+const AFFIL = "Forensic Workbench";
 const VERSION = "2.0";
-const CITATION = `Chhabra HS. OSPE Station Runner: timed, self-marking OSCE and OSPE stations for tablets [computer program]. Version ${VERSION}. Dehradun: Himalayan Institute of Medical Sciences, Swami Rama Himalayan University; 2026.`;
-const LIC_URL = "https://creativecommons.org/licenses/by-nc/4.0/";
+const CITATION = `Chhabra HS. OSPE Station Runner: timed, self-marking OSCE and OSPE stations for tablets [computer program]. Version ${VERSION}. Forensic Workbench; 2026.`;
+const LIC_URL = "https://creativecommons.org/licenses/by-nc-nd/4.0/";
 function licenceBlock() {
   return `<footer class="licence">
   <p class="by">Created by <b>${AUTHOR}</b>, ${AFFIL}.</p>
-  <p>© 2026 ${AUTHOR}. Licensed under <a href="${LIC_URL}" target="_blank" rel="noopener license">Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)</a>. You may share and adapt this tool for teaching and other non-commercial use, as long as you credit the author. Commercial use needs written permission from dr.fmt.hsc@gmail.com.</p>
+  <p>© 2026 ${AUTHOR}. Licensed under <a href="${LIC_URL}" target="_blank" rel="noopener license">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a>. You may share this tool for teaching and other non-commercial use, as long as you credit the author. Commercial use needs written permission from dr.fmt.hsc@gmail.com.</p>
   <p class="citehead">How to cite</p>
   <p class="cite" id="citeText">${h(CITATION)}</p>
   <button type="button" class="ghost small" data-act="copyCite">Copy citation</button>
 </footer>`;
 }
-const licenceLine = () => `<p class="licline">© 2026 ${AUTHOR}. CC BY-NC 4.0.</p>`;
+const licenceLine = () => `<p class="licline">© 2026 ${AUTHOR}. CC BY-NC-ND 4.0.</p>`;
 
 
 /* ---------- artwork: icons, the owl, the hero scene (all original) ---------- */
