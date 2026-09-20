@@ -3624,52 +3624,96 @@ function wire(){
 
 </script>
 
-<!-- visit counter: one small number, kept in the site's own Firebase project.
-     Counts a page once per browser session; fails silently if blocked. -->
-<div id="fw-visits" class="fw-visits" hidden></div>
+<!-- visit counter: an odometer for this page and for the whole Workbench.
+     Counts each page once per browser session, and keeps the numbers in the
+     site's own Firebase project. If the request is blocked it stays hidden. -->
+<div id="fw-visits" class="fw-visits" hidden aria-hidden="true">
+  <div class="fw-dial"><span class="fw-lab">This page</span><span class="fw-reels" id="fw-page"></span></div>
+  <span class="fw-sep"></span>
+  <div class="fw-dial"><span class="fw-lab">The Workbench</span><span class="fw-reels" id="fw-site"></span></div>
+</div>
 <style>
 .fw-visits{
-  margin:0;padding:14px 20px 26px;text-align:center;
+  display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;
+  margin:0;padding:22px 20px 30px;
   font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-  font-size:11.5px;letter-spacing:.06em;opacity:.65;
 }
-@media print{.fw-visits{display:none}}
+.fw-dial{display:flex;align-items:center;gap:9px}
+.fw-lab{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
+.fw-reels{display:inline-flex;gap:2px}
+.fw-reel{
+  position:relative;overflow:hidden;width:1.05em;height:1.55em;border-radius:3px;
+  font-size:16px;line-height:1.55em;text-align:center;
+}
+.fw-reel::before{content:"";position:absolute;inset:0;background:currentColor;opacity:.07;border-radius:3px}
+.fw-reel .fw-strip{position:absolute;left:0;right:0;top:0;z-index:1;transition:transform 1.05s cubic-bezier(.16,.84,.26,1)}
+.fw-reel .fw-strip i{display:block;height:1.55em;font-style:normal;opacity:.85}
+.fw-reel:nth-child(2) .fw-strip{transition-duration:1.18s}
+.fw-reel:nth-child(3) .fw-strip{transition-duration:1.31s}
+.fw-reel:nth-child(4) .fw-strip{transition-duration:1.44s}
+.fw-reel:nth-child(5) .fw-strip{transition-duration:1.57s}
+.fw-reel:nth-child(6) .fw-strip{transition-duration:1.7s}
+.fw-sep{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.3}
+@media (max-width:480px){ .fw-visits{gap:14px} .fw-reel{font-size:15px} .fw-lab{font-size:9.5px} }
+@media (prefers-reduced-motion: reduce){ .fw-reel .fw-strip{transition:none} }
+@media print{ .fw-visits{display:none} }
 </style>
 <script>
 (function(){
   var PROJECT="ospe-runner", KEY="AIzaSyAy_9SKkCaNTR1rYFZYF_6JLYtmwnk0MfM";
-  var page=(location.pathname.replace(/^\/|\/$|index\.html$/g,"")||"home").replace(/[^A-Za-z0-9_-]+/g,"-").slice(0,80);
-  var el=document.getElementById("fw-visits");
   var base="https://firestore.googleapis.com/v1/projects/"+PROJECT+"/databases/(default)/documents";
-  var doc="projects/"+PROJECT+"/databases/(default)/documents/counters/"+page;
-  function show(n){
-    if(!el||!(n>0))return;
-    el.textContent=n.toLocaleString("en-IN")+(n===1?" visit":" visits");
-    el.hidden=false;
-  }
-  function seen(){ try{ return sessionStorage.getItem("fw-counted:"+page)==="1"; }catch(e){ return false; } }
-  function mark(){ try{ sessionStorage.setItem("fw-counted:"+page,"1"); }catch(e){} }
+  var page=(location.pathname.replace(/^\/|\/$|index\.html$/g,"")||"home").replace(/[^A-Za-z0-9_-]+/g,"-").slice(0,80);
+  var box=document.getElementById("fw-visits");
+  var got={};
+
+  function docPath(k){ return "projects/"+PROJECT+"/databases/(default)/documents/counters/"+k; }
   function post(body){
     return fetch(base+":commit?key="+KEY,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)})
       .then(function(r){ return r.ok?r.json():Promise.reject(r.status); });
   }
-  function read(){
-    fetch(base+"/counters/"+page+"?key="+KEY).then(function(r){return r.ok?r.json():null;})
-      .then(function(o){ if(o&&o.fields&&o.fields.hits) show(Number(o.fields.hits.integerValue)); }).catch(function(){});
+  function bump(k){
+    return post({writes:[{transform:{document:docPath(k),fieldTransforms:[{fieldPath:"hits",increment:{integerValue:"1"}}]},currentDocument:{exists:true}}]})
+      .then(function(o){ var t=o.writeResults&&o.writeResults[0]&&o.writeResults[0].transformResults; return t&&t[0]?Number(t[0].integerValue):0; })
+      .catch(function(){
+        return post({writes:[{update:{name:docPath(k),fields:{hits:{integerValue:"1"}}},currentDocument:{exists:false}}]}).then(function(){ return 1; });
+      });
   }
-  if(seen()){ read(); return; }
-  post({writes:[{transform:{document:doc,fieldTransforms:[{fieldPath:"hits",increment:{integerValue:"1"}}]},currentDocument:{exists:true}}]})
-    .then(function(o){
-      mark();
-      var r=o.writeResults&&o.writeResults[0]&&o.writeResults[0].transformResults;
-      show(r&&r[0]?Number(r[0].integerValue):0);
-    })
-    .catch(function(){
-      // first visit to this page: make the counter, then show 1
-      post({writes:[{update:{name:doc,fields:{hits:{integerValue:"1"}}},currentDocument:{exists:false}}]})
-        .then(function(){ mark(); show(1); })
-        .catch(function(){ read(); });
+  function read(k){
+    return fetch(base+"/counters/"+k+"?key="+KEY).then(function(r){ return r.ok?r.json():null; })
+      .then(function(o){ return o&&o.fields&&o.fields.hits?Number(o.fields.hits.integerValue):0; });
+  }
+  function seen(){ try{ return sessionStorage.getItem("fw-counted:"+page)==="1"; }catch(e){ return false; } }
+  function mark(){ try{ sessionStorage.setItem("fw-counted:"+page,"1"); }catch(e){} }
+
+  // Each digit is a reel of 0 to 9 that rolls to its place.
+  function roll(el,n){
+    var s=String(Math.max(0,Math.round(n)));
+    el.innerHTML=s.split("").map(function(){
+      return '<span class="fw-reel"><span class="fw-strip">'+
+        "0123456789".split("").map(function(d){ return "<i>"+d+"</i>"; }).join("")+"</span></span>";
+    }).join("");
+    var strips=el.querySelectorAll(".fw-strip");
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        s.split("").forEach(function(d,i){ strips[i].style.transform="translateY(-"+(Number(d)*1.55)+"em)"; });
+      });
     });
+  }
+  function show(k,n){
+    got[k]=n;
+    if(got.page>0||got.site>0) box.hidden=false;
+    if(k==="page") roll(document.getElementById("fw-page"),n);
+    if(k==="site") roll(document.getElementById("fw-site"),n);
+  }
+  function fail(){ if(!(got.page>0||got.site>0)) box.hidden=true; }
+
+  if(seen()){
+    read(page).then(function(n){ show("page",n); }).catch(fail);
+    read("_site").then(function(n){ show("site",n); }).catch(fail);
+    return;
+  }
+  bump(page).then(function(n){ mark(); show("page",n); }).catch(fail);
+  bump("_site").then(function(n){ show("site",n); }).catch(fail);
 })();
 </script>
 </body>
