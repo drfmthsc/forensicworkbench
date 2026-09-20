@@ -146,6 +146,78 @@ footer{margin-top:58px;border-top:3px solid transparent;
   padding:22px 0 44px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
 footer a{color:var(--c7)}
 @media (max-width:620px){ .panel{padding:16px} }
+
+/* ------------------------------ live banner ------------------------------ */
+.live{
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:0 0 20px;padding:20px 22px;
+  border:1px solid transparent;border-radius:16px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(118deg,#7A4BE8 0%,#4B63E8 44%,#0E9E9E 100%);
+  box-shadow:0 20px 40px -24px rgba(75,99,232,.85);
+}
+.live::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(40% 70% at 82% 10%,rgba(255,255,255,.28),transparent 66%);
+}
+.livetag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+.pulse{width:9px;height:9px;border-radius:50%;background:#8DF0C4;box-shadow:0 0 0 0 rgba(141,240,196,.75);animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(141,240,196,0)}100%{box-shadow:0 0 0 0 rgba(141,240,196,0)}}
+.livebody{flex:1 1 260px;min-width:0}
+.livebody h2{font-family:var(--serif);font-weight:600;font-size:28px;margin:6px 0 4px;line-height:1.1}
+.livebody p{margin:0;font-size:14.5px;color:rgba(255,255,255,.92)}
+.livego{
+  position:relative;z-index:1;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap;
+  background:#fff;color:#3B2E8C;border-radius:999px;padding:12px 20px;
+  box-shadow:0 10px 24px -12px rgba(0,0,0,.55);transition:transform .18s ease, box-shadow .18s ease;
+}
+.livego:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px rgba(0,0,0,.6)}
+.livego span{display:inline-block;transition:transform .18s ease}
+.livego:hover span{transform:translateX(4px)}
+
+/* --------------------------- entrances and hovers ------------------------ */
+@keyframes riseIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.head > *{animation:riseIn .6s cubic-bezier(.2,.7,.3,1) both}
+.head h1{animation-delay:.02s} .head .said{animation-delay:.10s}
+.head .lede{animation-delay:.16s} .head .by{animation-delay:.24s}
+.live{animation:riseIn .6s cubic-bezier(.2,.7,.3,1) .1s both}
+li.topic{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s cubic-bezier(.2,.7,.3,1), box-shadow .2s ease, border-color .2s ease}
+li.topic.seen{opacity:1;transform:none}
+li.topic:hover{box-shadow:0 2px 4px rgba(23,26,51,.06),0 26px 50px -22px rgba(23,26,51,.4);border-color:var(--tc,var(--c5))}
+li.topic::before{transition:width .2s ease}
+li.topic:hover::before{width:10px}
+a.state.open{transition:transform .18s ease,box-shadow .18s ease}
+a.state.open:hover{transform:translateY(-2px);box-shadow:0 10px 22px -12px rgba(23,26,51,.6)}
+nav.tabs button{transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease}
+nav.tabs button:hover{transform:translateY(-1px)}
+
+/* ------------------------------- Dr Bones -------------------------------- */
+.bones{position:fixed;right:16px;bottom:16px;z-index:40;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.bones-btn{
+  width:72px;height:72px;border-radius:50%;border:1px solid var(--line2);background:var(--card);cursor:pointer;
+  box-shadow:var(--shadow);padding:6px;animation:bob 4.6s ease-in-out infinite;
+}
+.bones-btn:hover{animation-play-state:paused;transform:translateY(-3px) rotate(-3deg);transition:transform .2s ease}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.bones-btn svg{width:100%;height:100%;display:block;overflow:visible}
+.lid{transform-origin:center;animation:blink 6s infinite}
+.lid.two{animation-delay:.12s}
+@keyframes blink{0%,94%,100%{transform:scaleY(0)}96%,98%{transform:scaleY(1)}}
+.glint{animation:glint 6.5s ease-in-out infinite}
+@keyframes glint{0%,86%,100%{opacity:0;transform:translateX(0)}90%{opacity:.85}94%{opacity:0;transform:translateX(14px)}}
+.jaw{transform-origin:50% 40%;animation:chat .28s ease-in-out 6}
+.bones-say{
+  max-width:min(290px,78vw);background:var(--card);border:1px solid var(--line);border-radius:16px 16px 4px 16px;
+  box-shadow:var(--shadow);padding:13px 15px;font-size:14px;color:var(--ink2);animation:riseIn .32s ease both;
+}
+.bones-say strong{display:block;font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:3px}
+.bones-say .more{margin-top:10px;display:flex;gap:8px;justify-content:flex-end}
+.bones-say button{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line2);background:transparent;color:var(--ink2);cursor:pointer}
+@media (max-width:420px){ .bones-btn{width:60px;height:60px} }
+@media print{ .bones{display:none} }
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  li.topic{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
@@ -167,7 +239,7 @@ footer a{color:var(--c7)}
 <nav class="tabs" role="tablist" aria-label="Sections">
   <button role="tab" id="tab-topics" aria-controls="s-topics" aria-selected="true">Topics</button>
   <button role="tab" id="tab-signin" aria-controls="s-signin" aria-selected="false">Sign in</button>
-  <button role="tab" id="tab-staff" aria-controls="s-staff" aria-selected="false">Access list (staff)</button>
+  <button role="tab" id="tab-staff" aria-controls="s-staff" aria-selected="false" hidden>Access list (staff)</button>
 </nav>
 
 <section id="s-topics" role="tabpanel" aria-labelledby="tab-topics">
@@ -177,6 +249,14 @@ footer a{color:var(--c7)}
     <span class="who" id="who"></span>
     <button id="signOut" hidden>Sign out</button>
   </div>
+  <aside class="live">
+    <div class="livetag"><span class="pulse"></span>Live now</div>
+    <div class="livebody">
+      <h2>Asphyxial deaths</h2>
+      <p>Topic 4 is written and open to everyone, with no sign-in. Mind maps, a neck lab, 57 flashcards, a quiz and case files.</p>
+    </div>
+    <a class="livego" href="asphyxial-deaths/">Open it now <span aria-hidden="true">&rarr;</span></a>
+  </aside>
   <ul class="topics" id="topicList"></ul>
   <noscript><p>This page needs JavaScript switched on to show the topic list.</p></noscript>
 </section>
@@ -198,6 +278,7 @@ footer a{color:var(--c7)}
 <section id="s-staff" role="tabpanel" aria-labelledby="tab-staff" hidden>
   <div class="panel">
     <h2>Add students to the class list</h2>
+    <p style="border-left:3px solid var(--c2);padding-left:12px">Nothing typed here changes who can read the notes. This tab only works out the sealed lines. The class list changes when you paste them into <span style="font-family:var(--mono)">notes/index.html</span> and commit the file, which only you can do.</p>
     <ol class="steps">
       <li>Type your class word. It is the key the notes are locked with, and only you need it.</li>
       <li>Load a spreadsheet, or paste one student to a line as email then roll number. Either way, the box must hold the whole class every time, not only the new students.</li>
@@ -224,6 +305,43 @@ footer a{color:var(--c7)}
     <p class="note">Neither the addresses nor the roll numbers are written into the page in readable form. Each line holds a one-way fingerprint of the pair, and the class key sealed with the pair, so a reader of the source sees none of the three. A student needs both halves, which is why a guessed email alone gets nobody in. Removing a line stops a new sign-in from that student; anyone already signed in keeps their copy of the key until you change the class word and rebuild the topics.</p>
   </div>
 </section>
+
+<div class="bones" id="bones">
+  <div class="bones-say" id="bonesSay" hidden role="status" aria-live="polite"></div>
+  <button class="bones-btn" id="bonesBtn" aria-label="Ask Dr Bones" title="Dr Bones">
+    <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+      <defs>
+        <clipPath id="specL"><circle cx="24" cy="31" r="8.4"/></clipPath>
+        <clipPath id="specR"><circle cx="43" cy="31" r="8.4"/></clipPath>
+      </defs>
+      <!-- cranium -->
+      <path d="M32 6c13 0 21 9 21 21 0 7-3 11-6 14v7a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4v-7c-3-3-6-7-6-14C15 15 19 6 32 6Z" fill="#F4EFE4" stroke="#C9BFAB" stroke-width="1.4"/>
+      <!-- sockets -->
+      <ellipse cx="24" cy="31" rx="6.6" ry="7.4" fill="#2C2A38"/>
+      <ellipse cx="43" cy="31" rx="6.6" ry="7.4" fill="#2C2A38"/>
+      <circle cx="25.4" cy="31.6" r="2.5" fill="#EDEAF6"/>
+      <circle cx="44.4" cy="31.6" r="2.5" fill="#EDEAF6"/>
+      <rect class="lid" x="17" y="23" width="14" height="9" rx="4" fill="#F4EFE4"/>
+      <rect class="lid two" x="36" y="23" width="14" height="9" rx="4" fill="#F4EFE4"/>
+      <!-- spectacles -->
+      <g fill="none" stroke="#4B63E8" stroke-width="2">
+        <circle cx="24" cy="31" r="8.4"/><circle cx="43" cy="31" r="8.4"/>
+        <path d="M32.4 31h2.2M15.6 29.5 12 27M51.4 29.5 55 27"/>
+      </g>
+      <g clip-path="url(#specL)"><rect class="glint" x="16" y="22" width="5" height="20" fill="#fff" opacity="0" transform="rotate(18 20 31)"/></g>
+      <g clip-path="url(#specR)"><rect class="glint" x="35" y="22" width="5" height="20" fill="#fff" opacity="0" transform="rotate(18 39 31)"/></g>
+      <!-- nose and teeth -->
+      <path d="M33.6 38.4 32 35.2l-1.6 3.2c-.5 1 .2 2 1.6 2s2.1-1 1.6-2Z" fill="#2C2A38"/>
+      <g class="jaw">
+        <rect x="24" y="45" width="16" height="7.5" rx="2.2" fill="#F4EFE4" stroke="#C9BFAB" stroke-width="1.2"/>
+        <path d="M28 45v7.5M32 45v7.5M36 45v7.5" stroke="#C9BFAB" stroke-width="1.1"/>
+      </g>
+      <!-- bow tie, because he is that sort of skeleton -->
+      <path d="M32 56.5 25.5 53v7l6.5-3.5Zm0 0L38.5 53v7L32 56.5Z" fill="#D63268"/>
+      <circle cx="32" cy="56.5" r="1.8" fill="#8F2350"/>
+    </svg>
+  </button>
+</div>
 
 <footer>
   &copy; 2026 Dr Harvinder Singh Chhabra &middot; Forensic Workbench &middot;
@@ -332,7 +450,7 @@ async function doSignIn(){
     const classKey = await crypto.subtle.decrypt({name:"AES-GCM", iv:b64(row.i)}, key, b64(row.k));
     remember(tob64(classKey), email);
     msg.className = "msg ok"; msg.textContent = "Signed in. Your topics are on the Topics tab.";
-    drawTopics();
+    drawTopics(); watchTopics();
   }catch(e){
     msg.className = "msg err";
     msg.textContent = "That email and roll number pair isn't on the class list. Check both, or write to Dr Chhabra to be added.";
@@ -524,8 +642,80 @@ $("copyOut").addEventListener("click", async () => {
   try{ await navigator.clipboard.writeText($("output").value); $("staffMsg").className = "msg ok"; $("staffMsg").textContent = "Copied."; }
   catch(e){ $("output").select(); }
 });
-$("signOut").addEventListener("click", () => { forget(); drawTopics(); });
+$("signOut").addEventListener("click", () => { forget(); drawTopics(); watchTopics(); });
+/* ----------------------------- entrances ------------------------------ */
+function watchTopics(){
+  const cards = [...document.querySelectorAll("li.topic")];
+  if(!cards.length) return;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){
+    cards.forEach(c => c.classList.add("seen")); return;
+  }
+  // A plain scroll check rather than an observer: a card jumped past in one
+  // move still gets shown, which an observer misses because it never reports
+  // an element that went from below the fold to above it in a single step.
+  let queued = false, first = true;
+  function sweep(){
+    queued = false;
+    const line = innerHeight * 0.92;
+    let shown = 0;
+    for(const c of cards){
+      if(c.classList.contains("seen")) continue;
+      const top = c.getBoundingClientRect().top;
+      if(top > line) continue;
+      if(first && top > 0){ const d = shown++; setTimeout(() => c.classList.add("seen"), d * 55); }
+      else c.classList.add("seen");
+    }
+    first = false;
+    if(cards.every(c => c.classList.contains("seen"))){
+      removeEventListener("scroll", onScroll);
+      removeEventListener("resize", onScroll);
+    }
+  }
+  function onScroll(){ if(!queued){ queued = true; requestAnimationFrame(sweep); } }
+  addEventListener("scroll", onScroll, {passive:true});
+  addEventListener("resize", onScroll);
+  sweep();
+}
+
+/* ------------------------------ Dr Bones ------------------------------ */
+/* He knows four things and says them in turn. Nothing clever, but a page
+   of fifteen locked topics is friendlier with someone standing in it.   */
+const BONES = [
+  ["Dr Bones here", "Topic 4, asphyxial deaths, is open to everyone. Start there. The banner at the top takes you straight in."],
+  ["Locked topics", "The rest open once your email and roll number are on the class list. Ask Dr Chhabra to add you."],
+  ["A word on the bones", "The hyoid is the one everybody asks about. In hanging it fractures far less often than students expect, and almost never under thirty."],
+  ["How to use these notes", "Read the principle, then the findings, then the law. In the examination the marks sit in that order too."],
+  ["One device, one sign-in", "Sign in once and this device remembers you. On a shared computer, press Sign out when you finish."]
+];
+let bonesAt = 0;
+function saysBones(){
+  const box = $("bonesSay"), [head, body] = BONES[bonesAt % BONES.length];
+  box.innerHTML = `<strong>${head}</strong>${body}<div class="more">` +
+    `<button id="bonesNext">Tell me another</button><button id="bonesShut">Thanks</button></div>`;
+  box.hidden = false;
+  $("bonesNext").addEventListener("click", () => { bonesAt++; saysBones(); });
+  $("bonesShut").addEventListener("click", () => { box.hidden = true; });
+}
+$("bonesBtn").addEventListener("click", () => {
+  const box = $("bonesSay");
+  if(box.hidden){ saysBones(); } else { box.hidden = true; }
+});
+
+/* ------------------------- the staff tab hides ------------------------- */
+/* The tab only calculates; the class list changes when the file is
+   committed. It stays out of sight so students are not tempted to try.  */
+function staffVisible(){
+  const on = location.hash === "#staff" || /(^|[?&])staff=1/.test(location.search);
+  $("tab-staff").hidden = !on;
+  if(!on && $("tab-staff").getAttribute("aria-selected") === "true"){
+    $("tab-topics").click();
+  }
+}
+addEventListener("hashchange", staffVisible);
+staffVisible();
+
 drawTopics();
+watchTopics();
 </script>
 </body>
 </html>
