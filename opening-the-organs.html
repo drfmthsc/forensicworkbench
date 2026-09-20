@@ -3623,5 +3623,54 @@ function wire(){
 })();
 
 </script>
+
+<!-- visit counter: one small number, kept in the site's own Firebase project.
+     Counts a page once per browser session; fails silently if blocked. -->
+<div id="fw-visits" class="fw-visits" hidden></div>
+<style>
+.fw-visits{
+  margin:0;padding:14px 20px 26px;text-align:center;
+  font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px;letter-spacing:.06em;opacity:.65;
+}
+@media print{.fw-visits{display:none}}
+</style>
+<script>
+(function(){
+  var PROJECT="ospe-runner", KEY="AIzaSyAy_9SKkCaNTR1rYFZYF_6JLYtmwnk0MfM";
+  var page=(location.pathname.replace(/^\/|\/$|index\.html$/g,"")||"home").replace(/[^A-Za-z0-9_-]+/g,"-").slice(0,80);
+  var el=document.getElementById("fw-visits");
+  var base="https://firestore.googleapis.com/v1/projects/"+PROJECT+"/databases/(default)/documents";
+  var doc="projects/"+PROJECT+"/databases/(default)/documents/counters/"+page;
+  function show(n){
+    if(!el||!(n>0))return;
+    el.textContent=n.toLocaleString("en-IN")+(n===1?" visit":" visits");
+    el.hidden=false;
+  }
+  function seen(){ try{ return sessionStorage.getItem("fw-counted:"+page)==="1"; }catch(e){ return false; } }
+  function mark(){ try{ sessionStorage.setItem("fw-counted:"+page,"1"); }catch(e){} }
+  function post(body){
+    return fetch(base+":commit?key="+KEY,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)})
+      .then(function(r){ return r.ok?r.json():Promise.reject(r.status); });
+  }
+  function read(){
+    fetch(base+"/counters/"+page+"?key="+KEY).then(function(r){return r.ok?r.json():null;})
+      .then(function(o){ if(o&&o.fields&&o.fields.hits) show(Number(o.fields.hits.integerValue)); }).catch(function(){});
+  }
+  if(seen()){ read(); return; }
+  post({writes:[{transform:{document:doc,fieldTransforms:[{fieldPath:"hits",increment:{integerValue:"1"}}]},currentDocument:{exists:true}}]})
+    .then(function(o){
+      mark();
+      var r=o.writeResults&&o.writeResults[0]&&o.writeResults[0].transformResults;
+      show(r&&r[0]?Number(r[0].integerValue):0);
+    })
+    .catch(function(){
+      // first visit to this page: make the counter, then show 1
+      post({writes:[{update:{name:doc,fields:{hits:{integerValue:"1"}}},currentDocument:{exists:false}}]})
+        .then(function(){ mark(); show(1); })
+        .catch(function(){ read(); });
+    });
+})();
+</script>
 </body>
 </html>
