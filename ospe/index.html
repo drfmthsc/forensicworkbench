@@ -1082,7 +1082,8 @@ function vPeople() {
   <div class="row"><button type="button" data-act="refreshPeople">Refresh list</button></div>
   <h3>Shared question library</h3>
   <p>${UI.lib == null ? "Checking the library…" : `The library holds ${plural(UI.lib.questions, "question")} and ${plural(UI.lib.tasks || 0, "skills task")} under ${plural(UI.lib.topics, "topic")}.`} Examiners copy these into their own bank. Load the CBME file here once; loading an updated file replaces questions with the same ID and adds new ones.</p>
-  <div class="row"><label class="filebtn primary-file">Load library file<input type="file" accept=".json,application/json" data-ch="libFile"></label></div>`;
+  <div class="row"><label class="filebtn primary-file">Load library file<input type="file" accept=".json,application/json" data-ch="libFile"></label><button type="button" class="ghost" data-act="sampleBank">Download a sample file</button></div>
+  <p class="note">The library file has the same shape as a question bank. The sample shows every kind of question and skills task, with a note in the file explaining each field.</p>`;
 }
 async function loadPeople() {
   if (UI.peopleLoading) return;
@@ -1121,12 +1122,15 @@ function vBank() {
     <span class="grow"></span>
     <input id="newTopic" placeholder="New topic, e.g. Firearms" aria-label="New topic name"><button type="button" data-act="addTopic">Add topic</button>
   </div>
-  <p class="note">Showing ${list.length}. ${unv} of ${C.bank.length} questions still need vetting. Library questions arrive unvetted, so check each one against your reference texts before ticking it vetted.</p>
+  <p class="note">Import and library files are JSON, in the shape the sample file shows. Showing ${list.length}. ${unv} of ${C.bank.length} questions still need vetting. Library questions arrive unvetted, so check each one against your reference texts before ticking it vetted.</p>
   <div class="qlist">${list.map(qRow).join("") || '<p class="empty">No questions match. Change the filter or add one.</p>'}</div>
   ${(() => { const ph = C.bank.filter(q => q.image); return ph.length ? `<details class="credits"><summary>Photo credits (${ph.length})</summary><ol>${ph.map(q => `<li>${h(q.text.slice(0, 70))}${q.text.length > 70 ? "…" : ""}: ${creditLine(q) || "<b>no licence recorded</b>"}</li>`).join("")}</ol></details>` : ""; })()}
   <div class="bar end">
     <button type="button" data-act="expBank">Download bank</button>
     <label class="filebtn">Import bank<input type="file" accept=".json,application/json" data-ch="impBank"></label>
+    <button type="button" class="ghost" data-act="sampleBank">Download a sample file</button>
+    <span class="grow"></span>
+    <button type="button" class="ghost danger" data-act="wipeAll">Wipe all questions and results</button>
     
   </div>`;
 }
@@ -1773,6 +1777,68 @@ ACT.addTopic = () => {
   let id = slug(name), n = 2; while (C.topics.some(t => t.id === id)) id = slug(name) + "-" + n++;
   C.topics.push({ id, name }); UI.f.topic = id; UI.msg = `Topic added: ${name}. Add its questions next.`; saveC(); render();
 };
+/* A filled example of the import format. Every field a question or a task
+   may carry is shown once, and the readme lines in the file explain them,
+   so nobody has to guess the shape from an error message. */
+ACT.sampleBank = () => {
+  download("ospe-sample-bank.json", {
+    type: "ospe-bank",
+    v: 2,
+    readme: [
+      "Import this file with Import bank, then look at what arrived and edit it.",
+      "type must be ospe-bank and bank must be a list. Anything incomplete is left out.",
+      "An id that already exists is replaced, so keep ids stable and unique.",
+      "topic must match a topic id below, or a topic of that name is made for you.",
+      "cat is one of: Identification, Observation, Clinical & medicolegal.",
+      "Question types: sba (one right answer), msq (several), num (a number in a range).",
+      "answer: sba is the option number counting from 0; msq is a list of those numbers;",
+      "num is [lowest accepted, highest accepted].",
+      "marks defaults to 1. specimen is the tray label. group keeps two questions apart",
+      "in the same station. note is for the examiner and never reaches the tablet.",
+      "Photos are not in this file. Add them on the question itself, since they are",
+      "stored inside the file and make it large.",
+      "Skills tasks come under tasks: report, sequence, checklist or viva."
+    ],
+    topics: [
+      { id: "asphyxia", name: "Asphyxial deaths" },
+      { id: "injuries", name: "Mechanical injuries" }
+    ],
+    bank: [
+      { id: "sample-sba-1", topic: "asphyxia", cat: "Identification", type: "sba", marks: 1,
+        text: "A ligature mark runs obliquely, high on the neck, and stops below the mastoid on each side. What does the pattern suggest?",
+        options: ["Hanging", "Ligature strangulation", "Throttling", "A postmortem artefact"],
+        answer: 0, specimen: "A-1", note: "Ask why the mark stops where it does.", vetted: true },
+      { id: "sample-msq-1", topic: "asphyxia", cat: "Clinical & medicolegal", type: "msq", marks: 2,
+        text: "Which findings are recorded in the inquest report of a suspected hanging? Choose all that apply.",
+        options: ["The knot's position", "The ligature material", "The victim's religion", "The distance from the feet to the floor"],
+        answer: [0, 1, 3], group: "hanging-set" },
+      { id: "sample-num-1", topic: "injuries", cat: "Observation", type: "num", marks: 1,
+        text: "Measure the wound on the photograph and give its length in centimetres.",
+        answer: [4.5, 5.5], unit: "cm" }
+    ],
+    tasks: [
+      { id: "sample-checklist-1", topic: "asphyxia", kind: "checklist", minutes: 10, vetted: true,
+        title: "Examine the neck at autopsy",
+        scenario: "You are shown the neck structures of a man found hanging.",
+        items: [
+          { id: "c1", text: "Opens the neck in a bloodless field", marks: 1 },
+          { id: "c2", text: "Describes the ligature mark before dissecting", marks: 1 },
+          { id: "c3", text: "Examines the hyoid and thyroid cartilage separately", marks: 2 }
+        ] },
+      { id: "sample-sequence-1", topic: "injuries", kind: "sequence", minutes: 5,
+        title: "Order the steps of describing an injury",
+        steps: [
+          { id: "s1", text: "Note the type of injury" },
+          { id: "s2", text: "Measure its size" },
+          { id: "s3", text: "Fix its position from a fixed bony point" },
+          { id: "s4", text: "Describe the edges and the base" }
+        ],
+        distractors: [ { id: "d1", text: "State the weapon used" } ] }
+    ]
+  });
+  UI.msg = "Sample file downloaded. Open it to see the shape, or import it to see the questions arrive.";
+  render();
+};
 ACT.expBank = () => download(`question-bank_${stamp()}.json`, { type: "ospe-bank", v: 2, topics: C.topics, bank: C.bank, tasks: C.tasks });
 CH.impBank = async t => {
   const f = t.files[0]; if (!f) return;
@@ -2354,6 +2420,27 @@ ACT.expCsv = () => {
   const head = ["Roll", ...Array.from({ length: nSt }, (_, k) => `Station ${k + 1} (${(C.exam.stations[k] && topicName(C.exam.stations[k].topic)) || ""})`), "Stations sat", "Total", "Max", "Percent"];
   const lines = [head.concat(["Written answers to mark"]).map(q).join(",")].concat(rows.map(r => [r.roll, ...r.cells.map(x => x && !x.r.unmarked ? `${x.r.score}/${x.r.max}` : ""), r.sat, r.score, r.max, r.max ? Math.round((r.score / r.max) * 1000) / 10 : "", r.cells.reduce((s, x) => s + ((x && x.r.pending) || 0), 0)].map(q).join(",")));
   download(`marks_${slug(C.exam.title)}_${stamp()}.csv`, "\ufeff" + lines.join("\r\n"), "text/csv");
+};
+/* The clean slate: every question, every skills task and every result go.
+   Two confirmations, because there is no way back from it. */
+ACT.wipeAll = async () => {
+  const nQ = C.bank.length, nT = C.tasks.length, nR = (C.results || []).length;
+  if (!nQ && !nT && !nR) { UI.msg = "There is nothing to wipe."; return render(); }
+  const what = [nQ ? plural(nQ, "question") : "", nT ? plural(nT, "skills task") : "", nR ? plural(nR, "result") : ""].filter(Boolean).join(", ");
+  if (!await confirmBox("Wipe all questions and results?",
+      `${what} will be deleted from the database, for every exam of yours. Topics, the exam setup and the roll numbers stay as they are. Tablets keep their own copies until each one is cleared. This can't be undone.`,
+      "Wipe everything", true)) return;
+  if (!await confirmBox("Last check",
+      "There is no way back from this. If you want a copy, cancel and press Download bank first.",
+      "Yes, wipe it all", true)) return;
+  try {
+    UI.edit = null; UI.detail = null;
+    C.bank = []; C.tasks = [];
+    saveC();
+    if (nR && DB) await DB.deleteResults(C.results.map(r => r.id).filter(Boolean));
+    UI.msg = `Wiped: ${what} deleted. Your topics, exam setup and roll numbers are untouched.`;
+  } catch (e) { UI.msg = "Couldn't finish the wipe: " + errText(e); }
+  render();
 };
 ACT.clearResults = async () => {
   if (!await confirmBox("Delete all results?", "This removes every result from the database, for all your exams. It can't be undone. Tablets keep their own copies until they are cleared.", "Delete all", true)) return;
